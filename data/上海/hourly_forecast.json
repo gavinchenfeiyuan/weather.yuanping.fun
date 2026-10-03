@@ -7,63 +7,6 @@
   },
   "hours": [
     {
-      "forecastTime": "2026-10-03T15:00Z",
-      "condition": {
-        "text": "小雨",
-        "code": "305"
-      },
-      "temperature": {
-        "value": 18.63,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 19.92,
-        "unit": "°C"
-      },
-      "humidity": 0.95,
-      "wind": {
-        "direction": {
-          "degree": 42,
-          "compass": "ne"
-        },
-        "speed": {
-          "value": 1.29,
-          "unit": "m/s"
-        },
-        "scale": 1
-      },
-      "windGust": {
-        "value": 3.01,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 1.36,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 1.36,
-          "unit": "mm/h"
-        },
-        "type": "rain",
-        "probability": 0.95
-      },
-      "pressure": {
-        "value": 1016.14,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 6718,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 17.87,
-        "unit": "°C"
-      },
-      "cloudCover": 0.99,
-      "uvIndex": 0
-    },
-    {
       "forecastTime": "2026-10-03T16:00Z",
       "condition": {
         "text": "小雨",
@@ -4105,6 +4048,63 @@
       },
       "dewPoint": {
         "value": 10.14,
+        "unit": "°C"
+      },
+      "cloudCover": 0,
+      "uvIndex": 0
+    },
+    {
+      "forecastTime": "2026-10-06T15:00Z",
+      "condition": {
+        "text": "晴",
+        "code": "100"
+      },
+      "temperature": {
+        "value": 15.87,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 15.11,
+        "unit": "°C"
+      },
+      "humidity": 0.69,
+      "wind": {
+        "direction": {
+          "degree": 304,
+          "compass": "nw"
+        },
+        "speed": {
+          "value": 1.79,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 3.46,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1021.62,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 22186,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 10.13,
         "unit": "°C"
       },
       "cloudCover": 0,
