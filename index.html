@@ -445,12 +445,38 @@ function uvText(u){return u<=2?"最弱":u<=5?"弱":u<=7?"中等":u<=10?"强":"�
 function visText(m){return m>=1000?r1(m/1000)+" km":m+" m"}
 
 /* ================= 数据加载 ================= */
+const PREFIXES=["Data/","data/","./Data/","./data/"];
+let DATA_PREFIX=null;   // 探测到的可用数据目录
+async function fetchJSON(url){
+  const res=await fetch(url,{cache:"no-store"});
+  if(!res.ok)throw new Error("HTTP "+res.status);
+  const txt=await res.text();
+  return JSON.parse(txt.replace(/^\uFEFF/,""));   // 兼容带 BOM 的文件
+}
+async function probeStatus(city){ // 失败时给出各候选路径的真实状态码
+  const out=[];
+  for(const p of PREFIXES){
+    const u=p+encodeURIComponent(city)+"/realtime_weather.json";
+    try{ const r=await fetch(u,{cache:"no-store"}); out.push(p+"→"+r.status); }
+    catch(e){ out.push(p+"→网络错误"); }
+  }
+  return out;
+}
 async function loadCity(city){
   if(cache[city])return cache[city];
-  const dir="Data/"+encodeURIComponent(city)+"/";
-  const res=await Promise.all(FILES.map(f=>fetch(dir+f+".json").then(r=>r.json())));
-  const data={}; FILES.forEach((f,i)=>data[f]=res[i]);
-  cache[city]=data; return data;
+  const list=DATA_PREFIX?[DATA_PREFIX]:PREFIXES;
+  let err;
+  for(const p of list){
+    try{
+      const base=p+encodeURIComponent(city)+"/";
+      const res=await Promise.all(FILES.map(f=>fetchJSON(base+f+".json")));
+      DATA_PREFIX=p;
+      const data={}; FILES.forEach((f,i)=>data[f]=res[i]);
+      cache[city]=data; return data;
+    }catch(e){ err=e; }
+  }
+  const probe=await probeStatus(city);
+  throw new Error(`${err?err.message:"加载失败"}｜路径探测：${probe.join("，")}`);
 }
 
 /* ================= 主题/背景 ================= */
@@ -987,7 +1013,10 @@ async function showCompare(){
     const ds=await Promise.all(CITIES.map(c=>loadCity(c.id)));
     setBrandIcon(ds[0].realtime_weather); // 品牌图标跟随上海（首页主城）天气
     renderCmpCards(ds);renderCmpTable(ds);renderCmpDaily(ds);renderCmpHourly(ds);renderCmpRain(ds);
-  }catch(e){console.error(e)}
+  }catch(e){
+    console.error(e);
+    $("cmpExt").innerHTML=`<span class="chip" style="border-color:#ff5b5b55">⚠️ 数据加载失败：${e.message}</span>`;
+  }
   observeCards();
 }
 
@@ -1011,7 +1040,9 @@ async function show(city){
     renderAstro(d);
   }catch(e){
     console.error(e);
-    $("minutelySum").textContent="⚠️ 数据加载失败，请确认通过 HTTP 服务访问（非 file://）";
+    $("minutelySum").innerHTML=`⚠️ 数据加载失败：${e.message}<br>
+      <span style="font-size:12px;opacity:.75">请确认 Data 目录（含 8 个 JSON）已随页面一起部署，且通过 http(s) 访问</span>
+      <button class="cv-pill" style="margin-top:8px" onclick="location.reload()">重新加载</button>`;
   }
   observeCards();
 }
