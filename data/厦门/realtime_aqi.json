@@ -1,0 +1,131 @@
+{
+  "metadata": {
+    "tag": "d34cdba09fac8f5d89a1e30b4160d14a69e0213caa5d7e9342ae2278168a3466",
+    "attributions": [
+      "https://developer.qweather.com/attribution.html"
+    ]
+  },
+  "indexes": [
+    {
+      "code": "cn-mee",
+      "name": "AQI (CN)",
+      "aqi": 35,
+      "aqiDisplay": "35",
+      "level": "1",
+      "category": "优",
+      "color": {
+        "red": 0,
+        "green": 228,
+        "blue": 0,
+        "alpha": 1
+      },
+      "primaryPollutant": null,
+      "health": {
+        "effect": "空气质量令人满意，基本无空气污染。",
+        "advice": {
+          "generalPopulation": "各类人群可正常活动。",
+          "sensitivePopulation": "各类人群可正常活动。"
+        }
+      }
+    }
+  ],
+  "pollutants": [
+    {
+      "code": "pm2p5",
+      "name": "PM 2.5",
+      "fullName": "颗粒物（粒径小于等于2.5µm）",
+      "concentration": {
+        "value": 17.0,
+        "unit": "μg/m³"
+      },
+      "subIndexes": [
+        {
+          "code": "cn-mee",
+          "aqi": 25,
+          "aqiDisplay": "25"
+        }
+      ]
+    },
+    {
+      "code": "pm10",
+      "name": "PM 10",
+      "fullName": "颗粒物（粒径小于等于10µm）",
+      "concentration": {
+        "value": 34.0,
+        "unit": "μg/m³"
+      },
+      "subIndexes": [
+        {
+          "code": "cn-mee",
+          "aqi": 35,
+          "aqiDisplay": "35"
+        }
+      ]
+    },
+    {
+      "code": "no2",
+      "name": "NO2",
+      "fullName": "二氧化氮",
+      "concentration": {
+        "value": 7.0,
+        "unit": "μg/m³"
+      },
+      "subIndexes": [
+        {
+          "code": "cn-mee",
+          "aqi": 4,
+          "aqiDisplay": "4"
+        }
+      ]
+    },
+    {
+      "code": "o3",
+      "name": "O3",
+      "fullName": "臭氧",
+      "concentration": {
+        "value": 109.0,
+        "unit": "μg/m³"
+      },
+      "subIndexes": [
+        {
+          "code": "cn-mee",
+          "aqi": 35,
+          "aqiDisplay": "35"
+        }
+      ]
+    },
+    {
+      "code": "so2",
+      "name": "SO2",
+      "fullName": "二氧化硫",
+      "concentration": {
+        "value": 3.0,
+        "unit": "μg/m³"
+      },
+      "subIndexes": [
+        {
+          "code": "cn-mee",
+          "aqi": 1,
+          "aqiDisplay": "1"
+        }
+      ]
+    },
+    {
+      "code": "co",
+      "name": "CO",
+      "fullName": "一氧化碳",
+      "concentration": {
+        "value": 0.5,
+        "unit": "mg/m³"
+      },
+      "subIndexes": [
+        {
+          "code": "cn-mee",
+          "aqi": 6,
+          "aqiDisplay": "6"
+        }
+      ]
+    }
+  ],
+  "stations": []
+}

@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "tag": "6faa4cfd8955e3022a6e568953ac3028b6662caf06ccc69e84dbd2be1e18e8fe",
+    "attributions": [
+      "https://developer.qweather.com/attribution.html"
+    ]
+  },
+  "days": [
+    {
+      "forecastStartTime": "2026-10-02T16:00Z",
+      "forecastEndTime": "2026-10-03T16:00Z",
+      "indexes": [
+        {
+          "code": "cn-mee",
+          "name": "AQI (CN)",
+          "aqi": 46,
+          "aqiDisplay": "46",
+          "level": "1",
+          "category": "优",
+          "color": {
+            "red": 0,
+            "green": 228,
+            "blue": 0,
+            "alpha": 1
+          },
+          "primaryPollutant": null,
+          "health": {
+            "effect": "空气质量令人满意，基本无空气污染。",
+            "advice": {
+              "generalPopulation": "各类人群可正常活动。",
+              "sensitivePopulation": "各类人群可正常活动。"
+            }
+          }
+        }
+      ],
+      "pollutants": []
+    },
+    {
+      "forecastStartTime": "2026-10-03T16:00Z",
+      "forecastEndTime": "2026-10-04T16:00Z",
+      "indexes": [
+        {
+          "code": "cn-mee",
+          "name": "AQI (CN)",
+          "aqi": 36,
+          "aqiDisplay": "36",
+          "level": "1",
+          "category": "优",
+          "color": {
+            "red": 0,
+            "green": 228,
+            "blue": 0,
+            "alpha": 1
+          },
+          "primaryPollutant": null,
+          "health": {
+            "effect": "空气质量令人满意，基本无空气污染。",
+            "advice": {
+              "generalPopulation": "各类人群可正常活动。",
+              "sensitivePopulation": "各类人群可正常活动。"
+            }
+          }
+        }
+      ],
+      "pollutants": []
+    },
+    {
+      "forecastStartTime": "2026-10-04T16:00Z",
+      "forecastEndTime": "2026-10-05T16:00Z",
+      "indexes": [
+        {
+          "code": "cn-mee",
+          "name": "AQI (CN)",
+          "aqi": 50,
+          "aqiDisplay": "50",
+          "level": "1",
+          "category": "优",
+          "color": {
+            "red": 0,
+            "green": 228,
+            "blue": 0,
+            "alpha": 1
+          },
+          "primaryPollutant": null,
+          "health": {
+            "effect": "空气质量令人满意，基本无空气污染。",
+            "advice": {
+              "generalPopulation": "各类人群可正常活动。",
+              "sensitivePopulation": "各类人群可正常活动。"
+            }
+          }
+        }
+      ],
+      "pollutants": []
+    }
+  ]
+}
