@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>天气数据</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f5f6f8;
+    color: #222;
+  }
+  header {
+    padding: 16px 24px;
+    background: #1f2937;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  header h1 { font-size: 18px; margin: 0; }
+  header .meta { font-size: 12px; opacity: .7; }
+  header button {
+    margin-left: auto;
+    padding: 6px 14px;
+    border: 1px solid #4b5563;
+    background: transparent;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  header button:hover { background: #374151; }
+
+  .city-tabs {
+    display: flex;
+    gap: 8px;
+    padding: 12px 24px 0;
+    flex-wrap: wrap;
+  }
+  .city-tabs button {
+    padding: 6px 16px;
+    border: 1px solid #d1d5db;
+    background: #fff;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .city-tabs button.active {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    gap: 16px;
+    padding: 16px 24px 32px;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .card h2 {
+    font-size: 14px;
+    margin: 0;
+    padding: 10px 14px;
+    background: #f3f4f6;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card h2 .badge {
+    font-size: 11px;
+    background: #e5e7eb;
+    color: #4b5563;
+    padding: 1px 8px;
+    border-radius: 999px;
+    font-weight: normal;
+  }
+  .card h2 .time {
+    margin-left: auto;
+    font-size: 11px;
+    color: #6b7280;
+    font-weight: normal;
+  }
+  .card pre {
+    margin: 0;
+    padding: 12px 14px;
+    font-size: 12px;
+    line-height: 1.5;
+    max-height: 340px;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+  .err { color: #b91c1c; padding: 12px 14px; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>天气数据面板</h1>
+  <span class="meta" id="updated"></span>
+  <button onclick="loadAll()">刷新</button>
+</header>
+
+<div class="city-tabs" id="tabs"></div>
+<div class="grid" id="grid"></div>
+
+<script>
+// 城市列表（对应 data/ 下的目录名）
+const CITIES = ["上海", "莆田", "厦门"];
+
+// 任务名 -> 中文标题（对应 data/{city}/{name}.json）
+const TASKS = [
+  ["realtime_weather",   "实时天气"],
+  ["hourly_forecast",    "逐小时天气预报"],
+  ["daily_forecast",     "逐天天气预报"],
+  ["weather_alert",      "天气预警"],
+  ["weather_index",      "天气指数"],
+  ["minutely_precip",    "分钟降水"],
+  ["realtime_aqi",       "实时空气质量"],
+  ["daily_aqi_forecast", "空气质量逐天预报"],
+];
+
+let currentCity = CITIES[0];
+
+function renderTabs() {
+  const el = document.getElementById("tabs");
+  el.innerHTML = "";
+  CITIES.forEach(city => {
+    const b = document.createElement("button");
+    b.textContent = city;
+    b.className = city === currentCity ? "active" : "";
+    b.onclick = () => { currentCity = city; renderTabs(); renderGrid(); };
+    el.appendChild(b);
+  });
+}
+
+function renderGrid() {
+  const grid = document.getElementById("grid");
+  grid.innerHTML = "";
+  TASKS.forEach(([name, title]) => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <h2>${title}<span class="badge">${name}</span>
+        <span class="time" data-file="${name}"></span>
+      </h2>
+      <pre data-content="${name}">加载中…</pre>
+    `;
+    grid.appendChild(card);
+    loadOne(city_file(name));
+  });
+}
+
+function city_file(name) {
+  return `data/${encodeURIComponent(currentCity)}/${name}.json`;
+}
+
+async function loadOne(url) {
+  const name = url.split("/").pop().replace(".json", "");
+  const pre = document.querySelector(`pre[data-content="${name}"]`);
+  const timeEl = document.querySelector(`.time[data-file="${name}"]`);
+  if (!pre) return;
+
+  try {
+    const res = await fetch(url + "?t=" + Date.now(), { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    pre.textContent = JSON.stringify(data, null, 2);
+
+    // 尝试从数据里拿更新时间
+    const t = data.updateTime || data.obsTime || data.now?.obsTime;
+    if (timeEl) timeEl.textContent = t ? new Date(t).toLocaleString("zh-CN") : "";
+  } catch (e) {
+    pre.innerHTML = `<span class="err">加载失败：${e.message}</span>`;
+    if (timeEl) timeEl.textContent = "";
+  }
+}
+
+function loadAll() {
+  renderGrid();
+  document.getElementById("updated").textContent =
+    "刷新于 " + new Date().toLocaleString("zh-CN");
+}
+
+loadAll();
+</script>
+
+</body>
+</html>
