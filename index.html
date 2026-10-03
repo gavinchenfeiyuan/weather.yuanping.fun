@@ -176,24 +176,16 @@ header{display:flex;align-items:center;justify-content:space-between;gap:12px;pa
 .cmp-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto;gap:18px}
 .cmp-card{cursor:pointer;margin:0;padding:26px 28px;transition:background .25s,transform .25s,opacity .7s ease}
 .cmp-card:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
-.cv-top{display:flex;flex-direction:row;align-items:baseline;justify-content:center;gap:8px;margin-bottom:18px;text-align:center}
-.cv-city{font-size:17px;font-weight:700;letter-spacing:.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
-.cv-w{font-size:13px;color:var(--txt2);white-space:nowrap}
-.cv-two{display:flex;gap:26px;align-items:center;justify-content:center}
-.cv-left{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:8px;padding-right:26px;
-  border-right:1px solid rgba(255,255,255,.07)}
-.cv-left .qwi{font-size:50px;line-height:1}
-.cv-left .cv-temp{font-size:32px}
-.cv-right{flex:1;min-width:0;padding:0 4px}
-.cv-pills{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-content:center;height:100%}
-.cv-pill{display:flex;align-items:center;justify-content:center;gap:4px;font-size:12.5px;padding:6px 8px;
-  border-radius:999px;white-space:nowrap;overflow:hidden;
+.cv-tile{display:flex;flex-direction:column;align-items:center;text-align:center;padding:26px 28px}
+.cv-city{font-size:17px;font-weight:700;letter-spacing:.5px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cv-sub{font-size:12px;color:var(--txt3);margin-top:3px}
+.cv-w{font-size:13px;color:var(--txt2);margin-top:5px}
+.cv-ico{font-size:56px;line-height:1;margin:16px 0 12px;filter:drop-shadow(0 6px 16px rgba(0,0,0,.32))}
+.cv-temp{font-size:40px;font-weight:200;line-height:1;display:flex;align-items:flex-start;justify-content:center}
+.cv-temp em{font-size:15px;color:var(--txt2);font-weight:300;margin-top:3px;font-style:normal}
+.cv-range{font-size:12px;color:var(--txt3);margin-top:10px}
+.cv-pill{font-size:12.5px;padding:6px 12px;border-radius:999px;white-space:nowrap;
   background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.09)}
-.cv-pill span{color:var(--txt3)}
-.cv-pill b{font-weight:600}
-.cv-range{font-size:12px;color:var(--txt3);margin-top:4px;white-space:nowrap}
-.cv-temp{font-size:32px;font-weight:200;line-height:1;display:flex;align-items:flex-start;white-space:nowrap}
-.cv-temp em{font-size:14px;color:var(--txt2);font-weight:300;margin-top:2px;font-style:normal}
 .cmp-ext{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
 .t-scroll{overflow-x:auto}
 .cmp-table{width:100%;border-collapse:collapse;font-size:13px;min-width:520px}
@@ -206,7 +198,7 @@ header{display:flex;align-items:center;justify-content:space-between;gap:12px;pa
 .legend{display:flex;gap:18px;font-size:12px;color:var(--txt2);flex-wrap:wrap;margin-bottom:8px}
 .legend i{display:inline-block;width:16px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
 .legend i.dash{height:0;border-top:3px dashed #888;background:none!important}
-@media (max-width:860px){.cmp-grid{grid-template-columns:1fr;grid-template-rows:auto}.cmp-card.big{grid-row:auto}}
+@media (max-width:860px){.cmp-grid{gap:12px}.cmp-card{padding:20px 14px}.cv-ico{font-size:46px;margin:12px 0 10px}.cv-temp{font-size:32px}}
 .cmp-card.cmp-strip .cl{display:block;flex:1;min-width:0}
 
 /* ---------- astro ---------- */
@@ -223,6 +215,15 @@ header{display:flex;align-items:center;justify-content:space-between;gap:12px;pa
 footer{margin-top:34px;text-align:center;font-size:12px;color:var(--txt3);line-height:2}
 footer a{color:var(--txt2);text-decoration:none}
 footer a:hover{color:var(--accent)}
+.footer-beian{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 12px;margin-bottom:16px}
+.footer-beian>div{white-space:nowrap}
+.beian-logo{vertical-align:-2px;margin-right:5px;border-radius:2px}
+.footer-qweather{position:relative;padding-top:16px}
+.footer-qweather::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:110px;height:1px;background:rgba(255,255,255,.12)}
+@media (min-width:861px){
+  .footer-beian>div+div::before{content:"·";margin-right:12px;color:rgba(255,255,255,.28)}
+}
 .upd{font-size:11px;color:var(--txt3);margin-left:auto}
 
 .skel{color:var(--txt3);font-size:13px;padding:12px 0}
@@ -242,10 +243,12 @@ footer a:hover{color:var(--accent)}
   .grid6{grid-template-columns:repeat(2,1fr)}
   .pol{grid-template-columns:repeat(2,1fr)}
   .d-row{grid-template-columns:56px 28px 36px 1fr 36px 28px;gap:6px;font-size:13px}
-  .cv-ico{font-size:44px}
-  .cv-temp{font-size:28px}
-  .cv-feel{font-size:11px}
-  .cv-tile{padding:2px 4px}
+  .cmp-grid{grid-template-columns:1fr;gap:12px}
+  .footer-beian{flex-direction:column;gap:6px}
+  .cv-ico{font-size:52px;margin:14px 0 10px}
+  .cv-temp{font-size:36px}
+  .cv-city{font-size:16px}
+  .cv-tile{padding:22px 20px}
   header{justify-content:center}
 }
 </style>
@@ -396,7 +399,12 @@ footer a:hover{color:var(--accent)}
 </div>
 
   <footer>
-    <div><a href="https://www.qweather.com" target="_blank" rel="noopener">天气服务由和风天气驱动</a></div>
+    <div class="footer-beian">
+      <div><a href="mailto:838045868@qq.com">&copy; 2026 weather.yuanping.fun</a></div>
+      <div><a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer noopener">沪ICP备2026011298号-1</a></div>
+      <div><a href="https://beian.mps.gov.cn/#/query/webSearch?code=31011202022334" target="_blank" rel="noreferrer noopener"><img class="beian-logo" src="./RegisteredLogo.png" alt="" width="15" height="15" loading="lazy" onerror="this.remove()">沪公网安备 31011202022334 号</a></div>
+    </div>
+    <div class="footer-qweather"><a href="https://www.qweather.com" target="_blank" rel="noopener">天气服务由和风天气驱动</a></div>
   </footer>
 </div>
 
@@ -421,7 +429,6 @@ function iconColor(code){
   return"#cfd8dc";                       // 多云等
 }
 const COMPASS={n:"北风",nne:"东北偏北",ne:"东北风",ene:"东北偏东",e:"东风",ese:"东南偏东",se:"东南风",sse:"东南偏南",s:"南风",ssw:"西南偏南",sw:"西南风",wsw:"西南偏西",w:"西风",wnw:"西北偏西",nw:"西北风",nnw:"西北偏北"};
-const WIND_SHORT={n:"北",nne:"北",ne:"东北",ene:"东",e:"东",ese:"东",se:"东南",sse:"南",s:"南",ssw:"南",sw:"西南",wsw:"西",w:"西",wnw:"西",nw:"西北",nnw:"北"};
 const MOON={"new":["🌑","新月"],"waxing-crescent":["🌒","娥眉月"],"first-quarter":["🌓","上弦月"],"waxing-gibbous":["🌔","盈凸月"],"full":["🌕","满月"],"waning-gibbous":["🌖","亏凸月"],"last-quarter":["🌗","下弦月"],"waning-crescent":["🌘","残月"]};
 const IDX_ICON={"1":"🏃","2":"🚗","3":"👕","4":"🎣","5":"🌞","6":"🧳","7":"🤧","8":"😌","9":"🤒","10":"🌫️","11":"❄️","12":"🕶️","13":"💄","14":"👔","15":"🚦","16":"🧴"};
 const WEEK=["周日","周一","周二","周三","周四","周五","周六"];
@@ -795,7 +802,7 @@ function renderAstro(d){
 }
 
 /* ================= 三地对比 ================= */
-function drawMulti(canvasId,labels,series,unit,smooth=true){
+function drawMulti(canvasId,labels,series,unit,smooth=true,splits=[]){
   const c=$(canvasId),[ctx,W,H]=setupCanvas(c,240);
   const P={l:36,r:12,t:14,b:26},iw=W-P.l-P.r,ih=H-P.t-P.b;
   const all=series.flatMap(s=>s.pts);
@@ -813,6 +820,13 @@ function drawMulti(canvasId,labels,series,unit,smooth=true){
   ctx.textAlign="center";
   const step=Math.ceil(labels.length/10);
   labels.forEach((lb,i)=>{if(i%step===0){ctx.fillStyle="#6b7794";ctx.fillText(lb,X(i),H-8)}});
+  // 周界虚线（周日与周一之间）
+  splits.forEach(i=>{
+    if(i<0||i>=labels.length-1)return;
+    const mx=(X(i)+X(i+1))/2;
+    ctx.save();ctx.setLineDash([3,5]);ctx.strokeStyle="rgba(255,255,255,.22)";ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(mx,P.t-6);ctx.lineTo(mx,H-P.b+4);ctx.stroke();ctx.restore();
+  });
   // 平滑曲线（Catmull-Rom 转三次贝塞尔，tension 越小越平缓）
   const TENSION=0.75;
   for(const s of series){
@@ -840,27 +854,13 @@ function renderCmpCards(ds){
   $("cmpCards").innerHTML=order.map(i=>{
     const d=ds[i],city=CITIES[i],rt=d.realtime_weather,day0=d.daily_forecast.days[0],ix=d.realtime_aqi.indexes[0];
     const col=CITY_COLORS[city.id];
-    const pills=[
-      [`体感`,Math.round(rt.feelsLike.value)+"°C"],
-      [`湿度`,pct(rt.humidity)],
-      [`风力`,`${WIND_SHORT[rt.wind.direction.compass]||""} ${rt.wind.scale} 级`],
-      [`AQI`,`<b style="color:${aqiRGB(ix.color)}">${ix.aqiDisplay} ${ix.category}</b>`]
-    ];
     return `<div class="card cmp-card cv-tile" onclick="show(CITIES[${i}])">
-      <div class="cv-top">
-        <span class="cv-city">${city.name} · ${city.sub}</span>
-        <span class="cv-w" style="color:${iconColor(rt.condition.code)}">${rt.condition.text}</span>
-      </div>
-      <div class="cv-two">
-        <div class="cv-left">
-          <i class="qwi ${QI(rt.condition.code)}" style="color:${iconColor(rt.condition.code)}"></i>
-          <div class="cv-temp">${Math.round(rt.temperature.value)}<em>°C</em></div>
-          <div class="cv-range">${Math.round(day0.temperatureMin.value)}° ~ ${Math.round(day0.temperatureMax.value)}°</div>
-        </div>
-        <div class="cv-right">
-          <div class="cv-pills">${pills.map(p=>`<span class="cv-pill"><span>${p[0]}</span>${p[1]}</span>`).join("")}</div>
-        </div>
-      </div>
+      <div class="cv-city">${city.name}</div>
+      <div class="cv-sub">${city.sub}</div>
+      <div class="cv-w" style="color:${iconColor(rt.condition.code)}">${rt.condition.text}</div>
+      <i class="qwi cv-ico ${QI(rt.condition.code)}" style="color:${iconColor(rt.condition.code)}"></i>
+      <div class="cv-temp">${Math.round(rt.temperature.value)}<em>°C</em></div>
+      <div class="cv-range">今日 ${Math.round(day0.temperatureMin.value)}° ~ ${Math.round(day0.temperatureMax.value)}°</div>
     </div>`;
   }).join("");
 }
@@ -911,6 +911,15 @@ function renderCmpTable(ds){
   $("cmpExt").innerHTML=chips.map(c=>`<span class="chip">${c}</span>`).join("");
 }
 
+// 周界位置：周日与周一之间（周末 → 工作日分界）
+function weekSplits(days){
+  const out=[];
+  for(let i=0;i<days.length-1;i++){
+    if(new Date(days[i].forecastStartTime).getDay()===0)out.push(i);
+  }
+  return out;
+}
+
 function renderCmpDaily(ds){
   const days=ds[0].daily_forecast.days;
   const labels=days.map(x=>{const dt=new Date(x.forecastStartTime);return dayLabel(x.forecastStartTime)==="今天"?dt.getMonth()+1+"/"+dt.getDate():dayLabel(x.forecastStartTime)});
@@ -920,7 +929,7 @@ function renderCmpDaily(ds){
     series.push({name:CITIES[i].id+" 高",color:col,pts:d.daily_forecast.days.map(x=>x.temperatureMax.value)});
     series.push({name:CITIES[i].id+" 低",color:col,pts:d.daily_forecast.days.map(x=>x.temperatureMin.value),dash:true});
   });
-  drawMulti("cmpDailyChart",labels,series,"°");
+  drawMulti("cmpDailyChart",labels,series,"°",true,weekSplits(days));
   $("cmpDailyLegend").innerHTML=CITIES.map(c=>`<span><i style="background:${CITY_COLORS[c.id]}"></i>${c.name}</span>`).join("")+`<span><i class="dash"></i>最低温（虚线）</span>`;
 }
 
@@ -929,7 +938,12 @@ function renderCmpHourly(ds){
   const labels=hours.map(h=>{const dt=new Date(h.forecastTime);return pad(dt.getHours())+"时"});
   const series=ds.map((d,i)=>({name:CITIES[i].id,color:CITY_COLORS[CITIES[i].id],
     pts:d.hourly_forecast.hours.slice(0,24).map(h=>h.temperature.value)}));
-  drawMulti("cmpHourlyChart",labels,series,"°");
+  // 午夜（23 时与 0 时之间）分界
+  const splits=[];
+  for(let i=0;i<hours.length-1;i++){
+    if(new Date(hours[i].forecastTime).getHours()===23)splits.push(i);
+  }
+  drawMulti("cmpHourlyChart",labels,series,"°",true,splits);
   $("cmpHourlyLegend").innerHTML=CITIES.map(c=>`<span><i style="background:${CITY_COLORS[c.id]}"></i>${c.name}</span>`).join("");
 }
 
@@ -954,6 +968,13 @@ function renderCmpRain(ds){
     ctx.fillStyle="#6b7794";ctx.fillText(r1(v)+(g===4?"mm":""),P.l-6,y+3);
   }
   const n=labels.length,gw=iw/n,bw=Math.min(gw*.21,24);
+  // 周界虚线（周日与周一之间，落在两组柱之间的交界处）
+  weekSplits(days).forEach(i=>{
+    if(i<0||i>=n-1)return;
+    const mx=P.l+gw*(i+1);
+    ctx.save();ctx.setLineDash([3,5]);ctx.strokeStyle="rgba(255,255,255,.22)";ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(mx,P.t-14);ctx.lineTo(mx,H-P.b+4);ctx.stroke();ctx.restore();
+  });
   const hovDay=rainHover>=0?rainHit[rainHover].day:-1;   // 先取出旧命中，重建数组前用
   rainHit=[];
   for(let i=0;i<n;i++){
