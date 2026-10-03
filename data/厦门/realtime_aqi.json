@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "tag": "d34cdba09fac8f5d89a1e30b4160d14a69e0213caa5d7e9342ae2278168a3466",
+    "tag": "e991bb7c034ceb87e6be417abce237fd84e6ef6c443bccd3ea27fa480c9ef0c0",
     "attributions": [
       "https://developer.qweather.com/attribution.html"
     ]
@@ -9,8 +9,8 @@
     {
       "code": "cn-mee",
       "name": "AQI (CN)",
-      "aqi": 35,
-      "aqiDisplay": "35",
+      "aqi": 36,
+      "aqiDisplay": "36",
       "level": "1",
       "category": "优",
       "color": {
@@ -41,8 +41,8 @@
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 25,
-          "aqiDisplay": "25"
+          "aqi": 24,
+          "aqiDisplay": "24"
         }
       ]
     },
@@ -51,14 +51,14 @@
       "name": "PM 10",
       "fullName": "颗粒物（粒径小于等于10µm）",
       "concentration": {
-        "value": 34.0,
+        "value": 35.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 35,
-          "aqiDisplay": "35"
+          "aqi": 36,
+          "aqiDisplay": "36"
         }
       ]
     },
@@ -67,14 +67,14 @@
       "name": "NO2",
       "fullName": "二氧化氮",
       "concentration": {
-        "value": 7.0,
+        "value": 9.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 4,
-          "aqiDisplay": "4"
+          "aqi": 5,
+          "aqiDisplay": "5"
         }
       ]
     },
@@ -83,14 +83,14 @@
       "name": "O3",
       "fullName": "臭氧",
       "concentration": {
-        "value": 109.0,
+        "value": 103.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 35,
-          "aqiDisplay": "35"
+          "aqi": 33,
+          "aqiDisplay": "33"
         }
       ]
     },
@@ -105,8 +105,8 @@
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 1,
-          "aqiDisplay": "1"
+          "aqi": 2,
+          "aqiDisplay": "2"
         }
       ]
     },
