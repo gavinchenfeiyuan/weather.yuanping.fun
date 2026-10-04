@@ -1,7 +1,44 @@
 {
   "metadata": {
-    "tag": "9d0ad18e585671fc6e930bee15b36699e12d82f57b0ef0f0eb0d2966b4215f4b",
-    "zeroResult": true
+    "tag": "dc194acd02ea5db0cd0fa436416cc7b91388fe2e93ecae03c2bc9ca57d36d8c1",
+    "attributions": [
+      "国家预警信息发布中心",
+      "当前预警数据可能存在延迟或信息过时，以官方数据发布为准。"
+    ],
+    "zeroResult": false
   },
-  "alerts": []
+  "alerts": [
+    {
+      "id": "202610041753006224149090",
+      "senderName": "翔安区气象台",
+      "issuedTime": "2026-10-04T09:53Z",
+      "messageType": {
+        "code": "alert",
+        "supersedes": []
+      },
+      "eventType": {
+        "name": "雷电",
+        "code": "1014"
+      },
+      "urgency": null,
+      "severity": "moderate",
+      "certainty": null,
+      "icon": "1014",
+      "color": {
+        "code": "yellow",
+        "red": 239,
+        "green": 193,
+        "blue": 0,
+        "alpha": 1
+      },
+      "effectiveTime": "2026-10-04T09:53Z",
+      "onsetTime": "2026-10-04T09:53Z",
+      "expireTime": "2026-10-04T15:53Z",
+      "headline": "翔安区气象台发布雷电黄色预警信号",
+      "description": "翔安区气象台2026年10月04日17时53分发布雷电黄色预警信号：预计未来6小时我区部分镇街及近海有雷电活动，局地伴有短时强降水、6～8级短时大风等强对流天气。请注意防范强对流天气对公众活动、安全生产等的不利影响。预警信号生效区域：全区。",
+      "criteria": "6小时内可能发生雷电活动，可能会造成雷电灾害事故。",
+      "responseTypes": [],
+      "instruction": "1. 政府及相关部门按照职责做好防雷工作。\n2. 密切关注天气，尽量避免户外活动。"
+    }
+  ]
 }
