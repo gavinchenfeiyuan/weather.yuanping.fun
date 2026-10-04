@@ -13,22 +13,26 @@
         {
           "code": "cn-mee",
           "name": "AQI (CN)",
-          "aqi": 48,
-          "aqiDisplay": "48",
-          "level": "1",
-          "category": "优",
+          "aqi": 57,
+          "aqiDisplay": "57",
+          "level": "2",
+          "category": "良",
           "color": {
-            "red": 0,
-            "green": 228,
+            "red": 255,
+            "green": 255,
             "blue": 0,
             "alpha": 1
           },
-          "primaryPollutant": null,
+          "primaryPollutant": {
+            "code": "o3",
+            "name": "O3",
+            "fullName": "臭氧"
+          },
           "health": {
-            "effect": "空气质量令人满意，基本无空气污染。",
+            "effect": "空气质量可接受，但某些污染物可能对极少数异常敏感人群健康有较弱影响。",
             "advice": {
-              "generalPopulation": "各类人群可正常活动。",
-              "sensitivePopulation": "各类人群可正常活动。"
+              "generalPopulation": "一般人群可正常活动。",
+              "sensitivePopulation": "极少数异常敏感人群应减少户外活动。"
             }
           }
         }
@@ -42,8 +46,8 @@
         {
           "code": "cn-mee",
           "name": "AQI (CN)",
-          "aqi": 50,
-          "aqiDisplay": "50",
+          "aqi": 46,
+          "aqiDisplay": "46",
           "level": "1",
           "category": "优",
           "color": {
@@ -71,8 +75,8 @@
         {
           "code": "cn-mee",
           "name": "AQI (CN)",
-          "aqi": 52,
-          "aqiDisplay": "52",
+          "aqi": 54,
+          "aqiDisplay": "54",
           "level": "2",
           "category": "良",
           "color": {
