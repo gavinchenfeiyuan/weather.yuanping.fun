@@ -1,96 +1,39 @@
 {
   "metadata": {
-    "tag": "8e53f679f165bbe0e244c6b2491502c8c32178dea49311e0df36b4fbaa5314d8",
+    "tag": "8775640232e4c6c8cf98d449898994b28436ab08f9d8761a81ab217f4ffa5eae",
     "attributions": [
       "https://developer.qweather.com/attribution.html"
     ]
   },
   "hours": [
     {
-      "forecastTime": "2026-10-04T09:00Z",
-      "condition": {
-        "text": "多云",
-        "code": "101"
-      },
-      "temperature": {
-        "value": 20.39,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 20.67,
-        "unit": "°C"
-      },
-      "humidity": 0.85,
-      "wind": {
-        "direction": {
-          "degree": 12,
-          "compass": "nne"
-        },
-        "speed": {
-          "value": 2.94,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 6.64,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1016.48,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 21019,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 17.81,
-        "unit": "°C"
-      },
-      "cloudCover": 0.7,
-      "uvIndex": 0
-    },
-    {
       "forecastTime": "2026-10-04T10:00Z",
       "condition": {
-        "text": "多云",
-        "code": "101"
+        "text": "阴",
+        "code": "104"
       },
       "temperature": {
-        "value": 20.39,
+        "value": 20.44,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 21.41,
+        "value": 21.52,
         "unit": "°C"
       },
-      "humidity": 0.86,
+      "humidity": 0.88,
       "wind": {
         "direction": {
-          "degree": 50,
+          "degree": 55,
           "compass": "ne"
         },
         "speed": {
-          "value": 1.84,
+          "value": 1.9,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 5.17,
+        "value": 5.2,
         "unit": "m/s"
       },
       "precipitation": {
@@ -106,18 +49,18 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1016.95,
+        "value": 1017.29,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 21010,
+        "value": 23639,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 17.96,
+        "value": 18.3,
         "unit": "°C"
       },
-      "cloudCover": 0.76,
+      "cloudCover": 1,
       "uvIndex": 0
     },
     {
@@ -127,27 +70,27 @@
         "code": "101"
       },
       "temperature": {
-        "value": 20.24,
+        "value": 20.12,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 21.51,
+        "value": 21.42,
         "unit": "°C"
       },
-      "humidity": 0.83,
+      "humidity": 0.82,
       "wind": {
         "direction": {
-          "degree": 76,
-          "compass": "ene"
+          "degree": 79,
+          "compass": "e"
         },
         "speed": {
-          "value": 1.2,
+          "value": 0.99,
           "unit": "m/s"
         },
         "scale": 1
       },
       "windGust": {
-        "value": 4.93,
+        "value": 4.46,
         "unit": "m/s"
       },
       "precipitation": {
@@ -163,48 +106,48 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1017.66,
+        "value": 1017.97,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 21029,
+        "value": 20078,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 17.3,
+        "value": 16.93,
         "unit": "°C"
       },
-      "cloudCover": 0.72,
+      "cloudCover": 0.62,
       "uvIndex": 0
     },
     {
       "forecastTime": "2026-10-04T12:00Z",
       "condition": {
-        "text": "多云",
-        "code": "101"
+        "text": "晴间多云",
+        "code": "103"
       },
       "temperature": {
-        "value": 19.49,
+        "value": 19.5,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 19.73,
+        "value": 19.58,
         "unit": "°C"
       },
-      "humidity": 0.86,
+      "humidity": 0.83,
       "wind": {
         "direction": {
-          "degree": 354,
+          "degree": 356,
           "compass": "n"
         },
         "speed": {
-          "value": 2.64,
+          "value": 2.69,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 5.94,
+        "value": 6.25,
         "unit": "m/s"
       },
       "precipitation": {
@@ -220,79 +163,22 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1018.22,
+        "value": 1018.26,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 21029,
+        "value": 20998,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 17.04,
+        "value": 16.55,
         "unit": "°C"
       },
-      "cloudCover": 0.75,
+      "cloudCover": 0.33,
       "uvIndex": 0
     },
     {
       "forecastTime": "2026-10-04T13:00Z",
-      "condition": {
-        "text": "多云",
-        "code": "101"
-      },
-      "temperature": {
-        "value": 19.39,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 19.65,
-        "unit": "°C"
-      },
-      "humidity": 0.85,
-      "wind": {
-        "direction": {
-          "degree": 348,
-          "compass": "nnw"
-        },
-        "speed": {
-          "value": 2.51,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 5.39,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1018.46,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 21029,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 16.78,
-        "unit": "°C"
-      },
-      "cloudCover": 0.74,
-      "uvIndex": 0
-    },
-    {
-      "forecastTime": "2026-10-04T14:00Z",
       "condition": {
         "text": "晴间多云",
         "code": "103"
@@ -302,23 +188,23 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 19.64,
+        "value": 19.56,
         "unit": "°C"
       },
-      "humidity": 0.84,
+      "humidity": 0.83,
       "wind": {
         "direction": {
           "degree": 346,
           "compass": "nnw"
         },
         "speed": {
-          "value": 2.43,
+          "value": 2.51,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 4.91,
+        "value": 5.46,
         "unit": "m/s"
       },
       "precipitation": {
@@ -334,15 +220,72 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1018.43,
+        "value": 1018.52,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 21039,
+        "value": 21000,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 16.62,
+        "value": 16.48,
+        "unit": "°C"
+      },
+      "cloudCover": 0.36,
+      "uvIndex": 0
+    },
+    {
+      "forecastTime": "2026-10-04T14:00Z",
+      "condition": {
+        "text": "晴间多云",
+        "code": "103"
+      },
+      "temperature": {
+        "value": 19.27,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 19.38,
+        "unit": "°C"
+      },
+      "humidity": 0.84,
+      "wind": {
+        "direction": {
+          "degree": 344,
+          "compass": "nnw"
+        },
+        "speed": {
+          "value": 2.62,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 5.28,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1018.78,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 21023,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 16.48,
         "unit": "°C"
       },
       "cloudCover": 0.44,
@@ -351,31 +294,31 @@
     {
       "forecastTime": "2026-10-04T15:00Z",
       "condition": {
-        "text": "多云",
-        "code": "101"
+        "text": "少云",
+        "code": "102"
       },
       "temperature": {
-        "value": 18.85,
+        "value": 19.07,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 19.29,
+        "value": 19.39,
         "unit": "°C"
       },
-      "humidity": 0.87,
+      "humidity": 0.85,
       "wind": {
         "direction": {
-          "degree": 332,
+          "degree": 337,
           "compass": "nnw"
         },
         "speed": {
-          "value": 2.11,
+          "value": 2.25,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 4.99,
+        "value": 5.45,
         "unit": "m/s"
       },
       "precipitation": {
@@ -391,38 +334,95 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1018.47,
+        "value": 1018.55,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 20894,
+        "value": 19931,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 16.56,
+        "value": 16.43,
         "unit": "°C"
       },
-      "cloudCover": 0.7,
+      "cloudCover": 0.14,
       "uvIndex": 0
     },
     {
       "forecastTime": "2026-10-04T16:00Z",
       "condition": {
-        "text": "多云",
-        "code": "101"
+        "text": "少云",
+        "code": "102"
       },
       "temperature": {
-        "value": 18.69,
+        "value": 18.84,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 18.65,
+        "value": 18.69,
         "unit": "°C"
       },
-      "humidity": 0.86,
+      "humidity": 0.84,
       "wind": {
         "direction": {
-          "degree": 334,
+          "degree": 335,
+          "compass": "nnw"
+        },
+        "speed": {
+          "value": 2.87,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 6.61,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1018.27,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 19589,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 16.15,
+        "unit": "°C"
+      },
+      "cloudCover": 0.19,
+      "uvIndex": 0
+    },
+    {
+      "forecastTime": "2026-10-04T17:00Z",
+      "condition": {
+        "text": "晴间多云",
+        "code": "103"
+      },
+      "temperature": {
+        "value": 18.21,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 18.1,
+        "unit": "°C"
+      },
+      "humidity": 0.87,
+      "wind": {
+        "direction": {
+          "degree": 336,
           "compass": "nnw"
         },
         "speed": {
@@ -432,7 +432,7 @@
         "scale": 2
       },
       "windGust": {
-        "value": 6.35,
+        "value": 6.06,
         "unit": "m/s"
       },
       "precipitation": {
@@ -448,75 +448,18 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1018.2,
+        "value": 1018.17,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 19663,
+        "value": 18848,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 16.3,
+        "value": 16.06,
         "unit": "°C"
       },
-      "cloudCover": 0.86,
-      "uvIndex": 0
-    },
-    {
-      "forecastTime": "2026-10-04T17:00Z",
-      "condition": {
-        "text": "多云",
-        "code": "101"
-      },
-      "temperature": {
-        "value": 18.32,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 18.19,
-        "unit": "°C"
-      },
-      "humidity": 0.89,
-      "wind": {
-        "direction": {
-          "degree": 338,
-          "compass": "nnw"
-        },
-        "speed": {
-          "value": 2.9,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 6.83,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1017.8,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 19784,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 16.41,
-        "unit": "°C"
-      },
-      "cloudCover": 0.66,
+      "cloudCover": 0.32,
       "uvIndex": 0
     },
     {
@@ -526,27 +469,27 @@
         "code": "101"
       },
       "temperature": {
-        "value": 18.23,
+        "value": 18.31,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 18.1,
+        "value": 18.07,
         "unit": "°C"
       },
-      "humidity": 0.89,
+      "humidity": 0.86,
       "wind": {
         "direction": {
           "degree": 337,
           "compass": "nnw"
         },
         "speed": {
-          "value": 2.87,
+          "value": 2.9,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 6.78,
+        "value": 6.51,
         "unit": "m/s"
       },
       "precipitation": {
@@ -562,162 +505,48 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1017.53,
+        "value": 1017.99,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 19877,
+        "value": 19919,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 16.38,
+        "value": 15.92,
         "unit": "°C"
       },
-      "cloudCover": 0.59,
+      "cloudCover": 0.76,
       "uvIndex": 0
     },
     {
       "forecastTime": "2026-10-04T19:00Z",
       "condition": {
-        "text": "晴间多云",
-        "code": "103"
-      },
-      "temperature": {
-        "value": 18.23,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 17.89,
-        "unit": "°C"
-      },
-      "humidity": 0.84,
-      "wind": {
-        "direction": {
-          "degree": 337,
-          "compass": "nnw"
-        },
-        "speed": {
-          "value": 2.87,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 6.72,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1017.27,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 21049,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 15.39,
-        "unit": "°C"
-      },
-      "cloudCover": 0.38,
-      "uvIndex": 0
-    },
-    {
-      "forecastTime": "2026-10-04T20:00Z",
-      "condition": {
-        "text": "晴间多云",
-        "code": "103"
-      },
-      "temperature": {
-        "value": 18.16,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 17.63,
-        "unit": "°C"
-      },
-      "humidity": 0.79,
-      "wind": {
-        "direction": {
-          "degree": 334,
-          "compass": "nnw"
-        },
-        "speed": {
-          "value": 2.84,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 6.52,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1017.39,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 21049,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 14.52,
-        "unit": "°C"
-      },
-      "cloudCover": 0.38,
-      "uvIndex": 0
-    },
-    {
-      "forecastTime": "2026-10-04T21:00Z",
-      "condition": {
         "text": "少云",
         "code": "102"
       },
       "temperature": {
-        "value": 17.97,
+        "value": 18.32,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 17.43,
+        "value": 17.97,
         "unit": "°C"
       },
-      "humidity": 0.78,
+      "humidity": 0.83,
       "wind": {
         "direction": {
-          "degree": 332,
+          "degree": 336,
           "compass": "nnw"
         },
         "speed": {
-          "value": 2.73,
+          "value": 2.88,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 6.08,
+        "value": 6.37,
         "unit": "m/s"
       },
       "precipitation": {
@@ -737,14 +566,128 @@
         "unit": "hPa"
       },
       "visibility": {
-        "value": 21058,
+        "value": 19951,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 14.13,
+        "value": 15.36,
         "unit": "°C"
       },
-      "cloudCover": 0.18,
+      "cloudCover": 0.13,
+      "uvIndex": 0
+    },
+    {
+      "forecastTime": "2026-10-04T20:00Z",
+      "condition": {
+        "text": "少云",
+        "code": "102"
+      },
+      "temperature": {
+        "value": 18.2,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 17.64,
+        "unit": "°C"
+      },
+      "humidity": 0.79,
+      "wind": {
+        "direction": {
+          "degree": 334,
+          "compass": "nnw"
+        },
+        "speed": {
+          "value": 2.9,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 6.29,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1018.14,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 20403,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 14.53,
+        "unit": "°C"
+      },
+      "cloudCover": 0.16,
+      "uvIndex": 0
+    },
+    {
+      "forecastTime": "2026-10-04T21:00Z",
+      "condition": {
+        "text": "少云",
+        "code": "102"
+      },
+      "temperature": {
+        "value": 17.95,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 17.39,
+        "unit": "°C"
+      },
+      "humidity": 0.78,
+      "wind": {
+        "direction": {
+          "degree": 332,
+          "compass": "nnw"
+        },
+        "speed": {
+          "value": 2.72,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 6.01,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1018.34,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 21056,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 13.99,
+        "unit": "°C"
+      },
+      "cloudCover": 0.16,
       "uvIndex": 0
     },
     {
@@ -754,27 +697,27 @@
         "code": "102"
       },
       "temperature": {
-        "value": 17.94,
+        "value": 17.89,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 17.36,
+        "value": 17.24,
         "unit": "°C"
       },
       "humidity": 0.77,
       "wind": {
         "direction": {
-          "degree": 330,
+          "degree": 329,
           "compass": "nnw"
         },
         "speed": {
-          "value": 2.71,
+          "value": 2.76,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 5.78,
+        "value": 6.02,
         "unit": "m/s"
       },
       "precipitation": {
@@ -790,7 +733,7 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1018.46,
+        "value": 1018.5,
         "unit": "hPa"
       },
       "visibility": {
@@ -798,10 +741,10 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 13.88,
+        "value": 13.7,
         "unit": "°C"
       },
-      "cloudCover": 0.07,
+      "cloudCover": 0.08,
       "uvIndex": 0
     },
     {
@@ -811,27 +754,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 18.1,
+        "value": 18.04,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 17.61,
+        "value": 17.64,
         "unit": "°C"
       },
       "humidity": 0.77,
       "wind": {
         "direction": {
-          "degree": 327,
-          "compass": "nnw"
+          "degree": 325,
+          "compass": "nw"
         },
         "speed": {
-          "value": 2.6,
+          "value": 2.49,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 5.84,
+        "value": 5.95,
         "unit": "m/s"
       },
       "precipitation": {
@@ -847,15 +790,15 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1019.08,
+        "value": 1019.1,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 21059,
+        "value": 21074,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 13.92,
+        "value": 14.04,
         "unit": "°C"
       },
       "cloudCover": 0.04,
@@ -868,27 +811,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 18.93,
+        "value": 18.82,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 18.2,
+        "value": 18,
         "unit": "°C"
       },
       "humidity": 0.72,
       "wind": {
         "direction": {
-          "degree": 323,
+          "degree": 322,
           "compass": "nw"
         },
         "speed": {
-          "value": 2.97,
+          "value": 3.07,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 7.11,
+        "value": 7.43,
         "unit": "m/s"
       },
       "precipitation": {
@@ -904,18 +847,18 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1019.74,
+        "value": 1019.62,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 21879,
+        "value": 21982,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 13.76,
+        "value": 13.67,
         "unit": "°C"
       },
-      "cloudCover": 0.04,
+      "cloudCover": 0.01,
       "uvIndex": 2
     },
     {
@@ -925,27 +868,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 19.98,
+        "value": 19.86,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 19.26,
+        "value": 19.24,
         "unit": "°C"
       },
-      "humidity": 0.67,
+      "humidity": 0.68,
       "wind": {
         "direction": {
-          "degree": 330,
+          "degree": 328,
           "compass": "nnw"
         },
         "speed": {
-          "value": 3.01,
+          "value": 2.83,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 7.99,
+        "value": 7.75,
         "unit": "m/s"
       },
       "precipitation": {
@@ -961,7 +904,7 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1019.88,
+        "value": 1019.57,
         "unit": "hPa"
       },
       "visibility": {
@@ -969,10 +912,10 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 13.72,
+        "value": 13.69,
         "unit": "°C"
       },
-      "cloudCover": 0.03,
+      "cloudCover": 0.02,
       "uvIndex": 4
     },
     {
@@ -986,241 +929,13 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 20.05,
+        "value": 19.99,
         "unit": "°C"
       },
       "humidity": 0.6,
       "wind": {
         "direction": {
-          "degree": 337,
-          "compass": "nnw"
-        },
-        "speed": {
-          "value": 3.14,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 9.08,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1020,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 22083,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 12.93,
-        "unit": "°C"
-      },
-      "cloudCover": 0,
-      "uvIndex": 6
-    },
-    {
-      "forecastTime": "2026-10-05T03:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 21.99,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 20.85,
-        "unit": "°C"
-      },
-      "humidity": 0.55,
-      "wind": {
-        "direction": {
-          "degree": 343,
-          "compass": "nnw"
-        },
-        "speed": {
-          "value": 3.44,
-          "unit": "m/s"
-        },
-        "scale": 3
-      },
-      "windGust": {
-        "value": 10.03,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1019.8,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 23076,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 12.63,
-        "unit": "°C"
-      },
-      "cloudCover": 0,
-      "uvIndex": 7
-    },
-    {
-      "forecastTime": "2026-10-05T04:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 22.1,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 20.74,
-        "unit": "°C"
-      },
-      "humidity": 0.51,
-      "wind": {
-        "direction": {
-          "degree": 339,
-          "compass": "nnw"
-        },
-        "speed": {
-          "value": 3.45,
-          "unit": "m/s"
-        },
-        "scale": 3
-      },
-      "windGust": {
-        "value": 9.87,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1019.28,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 24603,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 11.43,
-        "unit": "°C"
-      },
-      "cloudCover": 0.01,
-      "uvIndex": 7
-    },
-    {
-      "forecastTime": "2026-10-05T05:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 22.09,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 20.65,
-        "unit": "°C"
-      },
-      "humidity": 0.49,
-      "wind": {
-        "direction": {
-          "degree": 336,
-          "compass": "nnw"
-        },
-        "speed": {
-          "value": 3.43,
-          "unit": "m/s"
-        },
-        "scale": 3
-      },
-      "windGust": {
-        "value": 9.59,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1018.7,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 24606,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 10.92,
-        "unit": "°C"
-      },
-      "cloudCover": 0.03,
-      "uvIndex": 5
-    },
-    {
-      "forecastTime": "2026-10-05T06:00Z",
-      "condition": {
-        "text": "多云",
-        "code": "101"
-      },
-      "temperature": {
-        "value": 22.15,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 20.91,
-        "unit": "°C"
-      },
-      "humidity": 0.51,
-      "wind": {
-        "direction": {
-          "degree": 337,
+          "degree": 340,
           "compass": "nnw"
         },
         "speed": {
@@ -1230,7 +945,292 @@
         "scale": 2
       },
       "windGust": {
-        "value": 9.6,
+        "value": 9.5,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1019.52,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 23047,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 13.01,
+        "unit": "°C"
+      },
+      "cloudCover": 0.01,
+      "uvIndex": 6
+    },
+    {
+      "forecastTime": "2026-10-05T03:00Z",
+      "condition": {
+        "text": "晴",
+        "code": "100"
+      },
+      "temperature": {
+        "value": 22,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 20.81,
+        "unit": "°C"
+      },
+      "humidity": 0.53,
+      "wind": {
+        "direction": {
+          "degree": 342,
+          "compass": "nnw"
+        },
+        "speed": {
+          "value": 3.38,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 9.81,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1019.41,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 24596,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 12.12,
+        "unit": "°C"
+      },
+      "cloudCover": 0.01,
+      "uvIndex": 7
+    },
+    {
+      "forecastTime": "2026-10-05T04:00Z",
+      "condition": {
+        "text": "少云",
+        "code": "102"
+      },
+      "temperature": {
+        "value": 22.08,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 20.79,
+        "unit": "°C"
+      },
+      "humidity": 0.51,
+      "wind": {
+        "direction": {
+          "degree": 338,
+          "compass": "nnw"
+        },
+        "speed": {
+          "value": 3.32,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 9.7,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1019.04,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 24603,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 11.36,
+        "unit": "°C"
+      },
+      "cloudCover": 0.06,
+      "uvIndex": 7
+    },
+    {
+      "forecastTime": "2026-10-05T05:00Z",
+      "condition": {
+        "text": "少云",
+        "code": "102"
+      },
+      "temperature": {
+        "value": 22.1,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 20.7,
+        "unit": "°C"
+      },
+      "humidity": 0.5,
+      "wind": {
+        "direction": {
+          "degree": 337,
+          "compass": "nnw"
+        },
+        "speed": {
+          "value": 3.44,
+          "unit": "m/s"
+        },
+        "scale": 3
+      },
+      "windGust": {
+        "value": 9.65,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1018.66,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 24606,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 11.21,
+        "unit": "°C"
+      },
+      "cloudCover": 0.05,
+      "uvIndex": 5
+    },
+    {
+      "forecastTime": "2026-10-05T06:00Z",
+      "condition": {
+        "text": "晴间多云",
+        "code": "103"
+      },
+      "temperature": {
+        "value": 22.14,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 20.97,
+        "unit": "°C"
+      },
+      "humidity": 0.51,
+      "wind": {
+        "direction": {
+          "degree": 336,
+          "compass": "nnw"
+        },
+        "speed": {
+          "value": 3.16,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 9.28,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1018.44,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 24606,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 11.5,
+        "unit": "°C"
+      },
+      "cloudCover": 0.36,
+      "uvIndex": 4
+    },
+    {
+      "forecastTime": "2026-10-05T07:00Z",
+      "condition": {
+        "text": "阴",
+        "code": "104"
+      },
+      "temperature": {
+        "value": 21.96,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 20.81,
+        "unit": "°C"
+      },
+      "humidity": 0.5,
+      "wind": {
+        "direction": {
+          "degree": 341,
+          "compass": "nnw"
+        },
+        "speed": {
+          "value": 3.06,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 9.7,
         "unit": "m/s"
       },
       "precipitation": {
@@ -1254,64 +1254,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 11.4,
-        "unit": "°C"
-      },
-      "cloudCover": 0.51,
-      "uvIndex": 4
-    },
-    {
-      "forecastTime": "2026-10-05T07:00Z",
-      "condition": {
-        "text": "阴",
-        "code": "104"
-      },
-      "temperature": {
-        "value": 21.91,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 20.74,
-        "unit": "°C"
-      },
-      "humidity": 0.51,
-      "wind": {
-        "direction": {
-          "degree": 340,
-          "compass": "nnw"
-        },
-        "speed": {
-          "value": 3.09,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 9.06,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1018.11,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 24613,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 11.27,
+        "value": 11.2,
         "unit": "°C"
       },
       "cloudCover": 0.9,
@@ -1324,27 +1267,27 @@
         "code": "101"
       },
       "temperature": {
-        "value": 21.77,
+        "value": 21.87,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 20.75,
+        "value": 20.79,
         "unit": "°C"
       },
       "humidity": 0.5,
       "wind": {
         "direction": {
-          "degree": 344,
+          "degree": 343,
           "compass": "nnw"
         },
         "speed": {
-          "value": 2.76,
+          "value": 2.87,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 7.54,
+        "value": 8.04,
         "unit": "m/s"
       },
       "precipitation": {
@@ -1360,48 +1303,48 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1018.26,
+        "value": 1018.42,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 23896,
+        "value": 23932,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 10.87,
+        "value": 10.97,
         "unit": "°C"
       },
-      "cloudCover": 0.66,
+      "cloudCover": 0.77,
       "uvIndex": 1
     },
     {
       "forecastTime": "2026-10-05T09:00Z",
       "condition": {
-        "text": "晴间多云",
-        "code": "103"
+        "text": "少云",
+        "code": "102"
       },
       "temperature": {
-        "value": 21.55,
+        "value": 21.47,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 20.51,
+        "value": 20.32,
         "unit": "°C"
       },
-      "humidity": 0.51,
+      "humidity": 0.53,
       "wind": {
         "direction": {
-          "degree": 348,
-          "compass": "nnw"
+          "degree": 351,
+          "compass": "n"
         },
         "speed": {
-          "value": 2.84,
+          "value": 3.12,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 6.37,
+        "value": 7.11,
         "unit": "m/s"
       },
       "precipitation": {
@@ -1417,48 +1360,48 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1018.68,
+        "value": 1018.85,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 23075,
+        "value": 22409,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 11.13,
+        "value": 11.6,
         "unit": "°C"
       },
-      "cloudCover": 0.29,
+      "cloudCover": 0.17,
       "uvIndex": 0
     },
     {
       "forecastTime": "2026-10-05T10:00Z",
       "condition": {
-        "text": "多云",
-        "code": "101"
+        "text": "少云",
+        "code": "102"
       },
       "temperature": {
-        "value": 20.55,
+        "value": 20.5,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 19.91,
+        "value": 19.75,
         "unit": "°C"
       },
-      "humidity": 0.56,
+      "humidity": 0.58,
       "wind": {
         "direction": {
-          "degree": 348,
-          "compass": "nnw"
+          "degree": 350,
+          "compass": "n"
         },
         "speed": {
-          "value": 2.26,
+          "value": 2.55,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 4.95,
+        "value": 5.67,
         "unit": "m/s"
       },
       "precipitation": {
@@ -1474,7 +1417,7 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1019.15,
+        "value": 1019.34,
         "unit": "hPa"
       },
       "visibility": {
@@ -1482,40 +1425,40 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 11.48,
+        "value": 11.95,
         "unit": "°C"
       },
-      "cloudCover": 0.58,
+      "cloudCover": 0.09,
       "uvIndex": 0
     },
     {
       "forecastTime": "2026-10-05T11:00Z",
       "condition": {
-        "text": "多云",
-        "code": "101"
+        "text": "少云",
+        "code": "102"
       },
       "temperature": {
-        "value": 20.36,
+        "value": 20.2,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 19.81,
+        "value": 19.52,
         "unit": "°C"
       },
-      "humidity": 0.57,
+      "humidity": 0.58,
       "wind": {
         "direction": {
-          "degree": 350,
-          "compass": "n"
+          "degree": 345,
+          "compass": "nnw"
         },
         "speed": {
-          "value": 2.13,
+          "value": 2.36,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 4.6,
+        "value": 5.08,
         "unit": "m/s"
       },
       "precipitation": {
@@ -1535,44 +1478,44 @@
         "unit": "hPa"
       },
       "visibility": {
-        "value": 22099,
+        "value": 21089,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 11.59,
+        "value": 11.78,
         "unit": "°C"
       },
-      "cloudCover": 0.53,
+      "cloudCover": 0.07,
       "uvIndex": 0
     },
     {
       "forecastTime": "2026-10-05T12:00Z",
       "condition": {
-        "text": "多云",
-        "code": "101"
+        "text": "少云",
+        "code": "102"
       },
       "temperature": {
-        "value": 20.1,
+        "value": 19.84,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 19.44,
+        "value": 19.07,
         "unit": "°C"
       },
-      "humidity": 0.58,
+      "humidity": 0.59,
       "wind": {
         "direction": {
-          "degree": 344,
+          "degree": 342,
           "compass": "nnw"
         },
         "speed": {
-          "value": 2.33,
+          "value": 2.46,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 4.66,
+        "value": 4.82,
         "unit": "m/s"
       },
       "precipitation": {
@@ -1588,162 +1531,48 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1020.31,
+        "value": 1020.4,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 21120,
+        "value": 21098,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 11.69,
+        "value": 11.66,
         "unit": "°C"
       },
-      "cloudCover": 0.55,
+      "cloudCover": 0.17,
       "uvIndex": 0
     },
     {
       "forecastTime": "2026-10-05T13:00Z",
       "condition": {
-        "text": "晴间多云",
-        "code": "103"
+        "text": "少云",
+        "code": "102"
       },
       "temperature": {
-        "value": 19.25,
+        "value": 19.06,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 18.68,
+        "value": 18.43,
         "unit": "°C"
       },
-      "humidity": 0.62,
+      "humidity": 0.63,
       "wind": {
         "direction": {
-          "degree": 335,
+          "degree": 336,
           "compass": "nnw"
         },
         "speed": {
-          "value": 2.15,
+          "value": 2.27,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 4.7,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1020.64,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 21122,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 11.8,
-        "unit": "°C"
-      },
-      "cloudCover": 0.3,
-      "uvIndex": 0
-    },
-    {
-      "forecastTime": "2026-10-05T14:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 18.95,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 18.23,
-        "unit": "°C"
-      },
-      "humidity": 0.64,
-      "wind": {
-        "direction": {
-          "degree": 321,
-          "compass": "nw"
-        },
-        "speed": {
-          "value": 2.45,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 5.55,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1020.58,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 21130,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 12.08,
-        "unit": "°C"
-      },
-      "cloudCover": 0,
-      "uvIndex": 0
-    },
-    {
-      "forecastTime": "2026-10-05T15:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 18.12,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 17.1,
-        "unit": "°C"
-      },
-      "humidity": 0.66,
-      "wind": {
-        "direction": {
-          "degree": 319,
-          "compass": "nw"
-        },
-        "speed": {
-          "value": 2.78,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 5.92,
+        "value": 4.61,
         "unit": "m/s"
       },
       "precipitation": {
@@ -1763,323 +1592,38 @@
         "unit": "hPa"
       },
       "visibility": {
-        "value": 21447,
+        "value": 21099,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 11.77,
+        "value": 11.91,
         "unit": "°C"
       },
-      "cloudCover": 0,
+      "cloudCover": 0.12,
       "uvIndex": 0
     },
     {
-      "forecastTime": "2026-10-05T16:00Z",
+      "forecastTime": "2026-10-05T14:00Z",
       "condition": {
         "text": "晴",
         "code": "100"
       },
       "temperature": {
-        "value": 17.79,
+        "value": 18.9,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 16.77,
-        "unit": "°C"
-      },
-      "humidity": 0.67,
-      "wind": {
-        "direction": {
-          "degree": 319,
-          "compass": "nw"
-        },
-        "speed": {
-          "value": 2.71,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 5.7,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1020.51,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 22117,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 11.6,
-        "unit": "°C"
-      },
-      "cloudCover": 0,
-      "uvIndex": 0
-    },
-    {
-      "forecastTime": "2026-10-05T17:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 17.08,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 15.9,
-        "unit": "°C"
-      },
-      "humidity": 0.67,
-      "wind": {
-        "direction": {
-          "degree": 320,
-          "compass": "nw"
-        },
-        "speed": {
-          "value": 2.72,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 5.49,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1020.25,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 22117,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 10.96,
-        "unit": "°C"
-      },
-      "cloudCover": 0.01,
-      "uvIndex": 0
-    },
-    {
-      "forecastTime": "2026-10-05T18:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 16.83,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 15.62,
-        "unit": "°C"
-      },
-      "humidity": 0.66,
-      "wind": {
-        "direction": {
-          "degree": 318,
-          "compass": "nw"
-        },
-        "speed": {
-          "value": 2.65,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 5.35,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1019.99,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 22119,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 10.54,
-        "unit": "°C"
-      },
-      "cloudCover": 0,
-      "uvIndex": 0
-    },
-    {
-      "forecastTime": "2026-10-05T19:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 16.16,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 14.85,
-        "unit": "°C"
-      },
-      "humidity": 0.67,
-      "wind": {
-        "direction": {
-          "degree": 317,
-          "compass": "nw"
-        },
-        "speed": {
-          "value": 2.67,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 5.25,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1019.89,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 21982,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 10.13,
-        "unit": "°C"
-      },
-      "cloudCover": 0,
-      "uvIndex": 0
-    },
-    {
-      "forecastTime": "2026-10-05T20:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 15.95,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 14.58,
+        "value": 18.3,
         "unit": "°C"
       },
       "humidity": 0.65,
       "wind": {
         "direction": {
-          "degree": 312,
-          "compass": "nw"
+          "degree": 327,
+          "compass": "nnw"
         },
         "speed": {
-          "value": 2.59,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 5.01,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1020.03,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 21837,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 9.5,
-        "unit": "°C"
-      },
-      "cloudCover": 0,
-      "uvIndex": 0
-    },
-    {
-      "forecastTime": "2026-10-05T21:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 15.31,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 13.89,
-        "unit": "°C"
-      },
-      "humidity": 0.67,
-      "wind": {
-        "direction": {
-          "degree": 311,
-          "compass": "nw"
-        },
-        "speed": {
-          "value": 2.53,
+          "value": 2.31,
           "unit": "m/s"
         },
         "scale": 2
@@ -2101,209 +1645,38 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1020.29,
+        "value": 1020.54,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 21119,
+        "value": 21006,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 9.18,
-        "unit": "°C"
-      },
-      "cloudCover": 0.02,
-      "uvIndex": 0
-    },
-    {
-      "forecastTime": "2026-10-05T22:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 16.07,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 14.65,
-        "unit": "°C"
-      },
-      "humidity": 0.63,
-      "wind": {
-        "direction": {
-          "degree": 305,
-          "compass": "nw"
-        },
-        "speed": {
-          "value": 2.57,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 4.93,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1020.7,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 21119,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 9.1,
-        "unit": "°C"
-      },
-      "cloudCover": 0.01,
-      "uvIndex": 0
-    },
-    {
-      "forecastTime": "2026-10-05T23:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 17.11,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 15.83,
-        "unit": "°C"
-      },
-      "humidity": 0.6,
-      "wind": {
-        "direction": {
-          "degree": 305,
-          "compass": "nw"
-        },
-        "speed": {
-          "value": 2.47,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 5.01,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1021.29,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 21837,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 9.3,
+        "value": 12.25,
         "unit": "°C"
       },
       "cloudCover": 0,
-      "uvIndex": 1
+      "uvIndex": 0
     },
     {
-      "forecastTime": "2026-10-06T00:00Z",
+      "forecastTime": "2026-10-05T15:00Z",
       "condition": {
         "text": "晴",
         "code": "100"
       },
       "temperature": {
-        "value": 18.27,
+        "value": 18.17,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 16.86,
+        "value": 17.2,
         "unit": "°C"
       },
-      "humidity": 0.58,
+      "humidity": 0.69,
       "wind": {
         "direction": {
-          "degree": 301,
-          "compass": "wnw"
-        },
-        "speed": {
-          "value": 2.84,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 6.42,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1021.71,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 22130,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 9.76,
-        "unit": "°C"
-      },
-      "cloudCover": 0.03,
-      "uvIndex": 2
-    },
-    {
-      "forecastTime": "2026-10-06T01:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 19.33,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 17.94,
-        "unit": "°C"
-      },
-      "humidity": 0.53,
-      "wind": {
-        "direction": {
-          "degree": 308,
+          "degree": 318,
           "compass": "nw"
         },
         "speed": {
@@ -2313,7 +1686,7 @@
         "scale": 2
       },
       "windGust": {
-        "value": 7.02,
+        "value": 6.1,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2329,48 +1702,48 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1021.92,
+        "value": 1020.75,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 22787,
+        "value": 21099,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 9.59,
+        "value": 12.32,
         "unit": "°C"
       },
-      "cloudCover": 0.03,
-      "uvIndex": 4
+      "cloudCover": 0,
+      "uvIndex": 0
     },
     {
-      "forecastTime": "2026-10-06T02:00Z",
+      "forecastTime": "2026-10-05T16:00Z",
       "condition": {
         "text": "晴",
         "code": "100"
       },
       "temperature": {
-        "value": 20.62,
+        "value": 17.86,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 19.16,
+        "value": 16.84,
         "unit": "°C"
       },
-      "humidity": 0.48,
+      "humidity": 0.68,
       "wind": {
         "direction": {
           "degree": 319,
           "compass": "nw"
         },
         "speed": {
-          "value": 2.93,
+          "value": 2.76,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 8.01,
+        "value": 5.95,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2386,48 +1759,48 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1021.85,
+        "value": 1020.67,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 24676,
+        "value": 21108,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 9.12,
+        "value": 11.8,
         "unit": "°C"
       },
-      "cloudCover": 0.04,
-      "uvIndex": 6
+      "cloudCover": 0,
+      "uvIndex": 0
     },
     {
-      "forecastTime": "2026-10-06T03:00Z",
+      "forecastTime": "2026-10-05T17:00Z",
       "condition": {
         "text": "晴",
         "code": "100"
       },
       "temperature": {
-        "value": 21.77,
+        "value": 17.06,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 20.19,
+        "value": 15.91,
         "unit": "°C"
       },
-      "humidity": 0.42,
+      "humidity": 0.68,
       "wind": {
         "direction": {
-          "degree": 329,
-          "compass": "nnw"
+          "degree": 320,
+          "compass": "nw"
         },
         "speed": {
-          "value": 3.01,
+          "value": 2.71,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 8.42,
+        "value": 5.52,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2443,48 +1816,48 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1021.37,
+        "value": 1020.64,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 24774,
+        "value": 21424,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 8.41,
+        "value": 11.09,
         "unit": "°C"
       },
-      "cloudCover": 0.03,
-      "uvIndex": 7
+      "cloudCover": 0,
+      "uvIndex": 0
     },
     {
-      "forecastTime": "2026-10-06T04:00Z",
+      "forecastTime": "2026-10-05T18:00Z",
       "condition": {
         "text": "晴",
         "code": "100"
       },
       "temperature": {
-        "value": 22.15,
+        "value": 16.8,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 20.49,
+        "value": 15.6,
         "unit": "°C"
       },
-      "humidity": 0.39,
+      "humidity": 0.67,
       "wind": {
         "direction": {
-          "degree": 333,
-          "compass": "nnw"
+          "degree": 318,
+          "compass": "nw"
         },
         "speed": {
-          "value": 2.93,
+          "value": 2.68,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 8.18,
+        "value": 5.36,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2500,48 +1873,162 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1020.81,
+        "value": 1020.38,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 25499,
+        "value": 21820,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 7.44,
+        "value": 10.67,
+        "unit": "°C"
+      },
+      "cloudCover": 0,
+      "uvIndex": 0
+    },
+    {
+      "forecastTime": "2026-10-05T19:00Z",
+      "condition": {
+        "text": "晴",
+        "code": "100"
+      },
+      "temperature": {
+        "value": 16.21,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 14.88,
+        "unit": "°C"
+      },
+      "humidity": 0.68,
+      "wind": {
+        "direction": {
+          "degree": 318,
+          "compass": "nw"
+        },
+        "speed": {
+          "value": 2.71,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 5.28,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1020.18,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 21116,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 10.22,
         "unit": "°C"
       },
       "cloudCover": 0.02,
-      "uvIndex": 7
+      "uvIndex": 0
     },
     {
-      "forecastTime": "2026-10-06T05:00Z",
+      "forecastTime": "2026-10-05T20:00Z",
       "condition": {
         "text": "晴",
         "code": "100"
       },
       "temperature": {
-        "value": 22.31,
+        "value": 16.04,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 20.53,
+        "value": 14.6,
         "unit": "°C"
       },
-      "humidity": 0.36,
+      "humidity": 0.66,
       "wind": {
         "direction": {
-          "degree": 339,
-          "compass": "nnw"
+          "degree": 314,
+          "compass": "nw"
         },
         "speed": {
-          "value": 2.94,
+          "value": 2.71,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 7.95,
+        "value": 5.27,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1020.05,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 21119,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 9.59,
+        "unit": "°C"
+      },
+      "cloudCover": 0,
+      "uvIndex": 0
+    },
+    {
+      "forecastTime": "2026-10-05T21:00Z",
+      "condition": {
+        "text": "晴",
+        "code": "100"
+      },
+      "temperature": {
+        "value": 15.32,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 13.83,
+        "unit": "°C"
+      },
+      "humidity": 0.66,
+      "wind": {
+        "direction": {
+          "degree": 310,
+          "compass": "nw"
+        },
+        "speed": {
+          "value": 2.64,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 5.16,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2561,14 +2048,470 @@
         "unit": "hPa"
       },
       "visibility": {
-        "value": 24844,
+        "value": 21119,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 6.57,
+        "value": 9.09,
         "unit": "°C"
       },
-      "cloudCover": 0.05,
+      "cloudCover": 0,
+      "uvIndex": 0
+    },
+    {
+      "forecastTime": "2026-10-05T22:00Z",
+      "condition": {
+        "text": "晴",
+        "code": "100"
+      },
+      "temperature": {
+        "value": 16.08,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 14.56,
+        "unit": "°C"
+      },
+      "humidity": 0.63,
+      "wind": {
+        "direction": {
+          "degree": 307,
+          "compass": "nw"
+        },
+        "speed": {
+          "value": 2.7,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 5.28,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1020.68,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 21119,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 8.98,
+        "unit": "°C"
+      },
+      "cloudCover": 0.01,
+      "uvIndex": 0
+    },
+    {
+      "forecastTime": "2026-10-05T23:00Z",
+      "condition": {
+        "text": "晴",
+        "code": "100"
+      },
+      "temperature": {
+        "value": 17.15,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 15.72,
+        "unit": "°C"
+      },
+      "humidity": 0.59,
+      "wind": {
+        "direction": {
+          "degree": 308,
+          "compass": "nw"
+        },
+        "speed": {
+          "value": 2.63,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 5.36,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1021.32,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 21911,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 9,
+        "unit": "°C"
+      },
+      "cloudCover": 0.01,
+      "uvIndex": 1
+    },
+    {
+      "forecastTime": "2026-10-06T00:00Z",
+      "condition": {
+        "text": "晴",
+        "code": "100"
+      },
+      "temperature": {
+        "value": 18.38,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 16.96,
+        "unit": "°C"
+      },
+      "humidity": 0.57,
+      "wind": {
+        "direction": {
+          "degree": 302,
+          "compass": "wnw"
+        },
+        "speed": {
+          "value": 2.87,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 6.53,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1021.92,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 22023,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 9.79,
+        "unit": "°C"
+      },
+      "cloudCover": 0.02,
+      "uvIndex": 2
+    },
+    {
+      "forecastTime": "2026-10-06T01:00Z",
+      "condition": {
+        "text": "晴",
+        "code": "100"
+      },
+      "temperature": {
+        "value": 19.45,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 18,
+        "unit": "°C"
+      },
+      "humidity": 0.53,
+      "wind": {
+        "direction": {
+          "degree": 307,
+          "compass": "nw"
+        },
+        "speed": {
+          "value": 2.97,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 7.44,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1022.07,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 22793,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 9.69,
+        "unit": "°C"
+      },
+      "cloudCover": 0.02,
+      "uvIndex": 4
+    },
+    {
+      "forecastTime": "2026-10-06T02:00Z",
+      "condition": {
+        "text": "晴",
+        "code": "100"
+      },
+      "temperature": {
+        "value": 20.7,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 19.13,
+        "unit": "°C"
+      },
+      "humidity": 0.47,
+      "wind": {
+        "direction": {
+          "degree": 316,
+          "compass": "nw"
+        },
+        "speed": {
+          "value": 3.06,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 7.99,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1021.79,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 24664,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 8.96,
+        "unit": "°C"
+      },
+      "cloudCover": 0.01,
+      "uvIndex": 6
+    },
+    {
+      "forecastTime": "2026-10-06T03:00Z",
+      "condition": {
+        "text": "晴",
+        "code": "100"
+      },
+      "temperature": {
+        "value": 21.76,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 20.02,
+        "unit": "°C"
+      },
+      "humidity": 0.41,
+      "wind": {
+        "direction": {
+          "degree": 328,
+          "compass": "nnw"
+        },
+        "speed": {
+          "value": 3.12,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 8.53,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1021.4,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 25838,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 7.83,
+        "unit": "°C"
+      },
+      "cloudCover": 0,
+      "uvIndex": 7
+    },
+    {
+      "forecastTime": "2026-10-06T04:00Z",
+      "condition": {
+        "text": "晴",
+        "code": "100"
+      },
+      "temperature": {
+        "value": 22.09,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 20.39,
+        "unit": "°C"
+      },
+      "humidity": 0.39,
+      "wind": {
+        "direction": {
+          "degree": 332,
+          "compass": "nnw"
+        },
+        "speed": {
+          "value": 2.97,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 8.33,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1020.85,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 26202,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 7.38,
+        "unit": "°C"
+      },
+      "cloudCover": 0,
+      "uvIndex": 7
+    },
+    {
+      "forecastTime": "2026-10-06T05:00Z",
+      "condition": {
+        "text": "晴",
+        "code": "100"
+      },
+      "temperature": {
+        "value": 22.24,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 20.36,
+        "unit": "°C"
+      },
+      "humidity": 0.36,
+      "wind": {
+        "direction": {
+          "degree": 335,
+          "compass": "nnw"
+        },
+        "speed": {
+          "value": 3.05,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 8.23,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1020.32,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 26209,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 6.31,
+        "unit": "°C"
+      },
+      "cloudCover": 0,
       "uvIndex": 6
     },
     {
@@ -2578,27 +2521,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 22.33,
+        "value": 22.28,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 20.47,
+        "value": 20.33,
         "unit": "°C"
       },
-      "humidity": 0.35,
+      "humidity": 0.34,
       "wind": {
         "direction": {
-          "degree": 343,
+          "degree": 337,
           "compass": "nnw"
         },
         "speed": {
-          "value": 2.95,
+          "value": 2.99,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 7.65,
+        "value": 7.82,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2614,18 +2557,18 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1019.91,
+        "value": 1019.97,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 24731,
+        "value": 26211,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 6,
+        "value": 5.52,
         "unit": "°C"
       },
-      "cloudCover": 0.04,
+      "cloudCover": 0,
       "uvIndex": 4
     },
     {
@@ -2635,27 +2578,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 22.19,
+        "value": 22.12,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 20.57,
+        "value": 20.36,
         "unit": "°C"
       },
-      "humidity": 0.36,
+      "humidity": 0.35,
       "wind": {
         "direction": {
-          "degree": 338,
+          "degree": 334,
           "compass": "nnw"
         },
         "speed": {
-          "value": 2.67,
+          "value": 2.8,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 6.79,
+        "value": 7.01,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2671,18 +2614,18 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1019.95,
+        "value": 1020.04,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 24716,
+        "value": 26212,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 6.5,
+        "value": 6.08,
         "unit": "°C"
       },
-      "cloudCover": 0.03,
+      "cloudCover": 0,
       "uvIndex": 2
     },
     {
@@ -2692,27 +2635,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 22.04,
+        "value": 21.93,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 20.77,
+        "value": 20.5,
         "unit": "°C"
       },
-      "humidity": 0.38,
+      "humidity": 0.37,
       "wind": {
         "direction": {
           "degree": 331,
           "compass": "nnw"
         },
         "speed": {
-          "value": 2.28,
+          "value": 2.39,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 5.77,
+        "value": 5.69,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2728,15 +2671,15 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1020.16,
+        "value": 1020.28,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 24696,
+        "value": 26219,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 7.22,
+        "value": 6.62,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -2749,27 +2692,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 21.95,
+        "value": 21.75,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 20.53,
+        "value": 20.38,
         "unit": "°C"
       },
       "humidity": 0.39,
       "wind": {
         "direction": {
-          "degree": 328,
-          "compass": "nnw"
+          "degree": 325,
+          "compass": "nw"
         },
         "speed": {
-          "value": 2.53,
+          "value": 2.38,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 4.72,
+        "value": 4.03,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2785,7 +2728,7 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1020.56,
+        "value": 1020.55,
         "unit": "hPa"
       },
       "visibility": {
@@ -2793,7 +2736,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 7.34,
+        "value": 7.04,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -2806,27 +2749,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 21.18,
+        "value": 21.08,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 20.71,
+        "value": 20.52,
         "unit": "°C"
       },
       "humidity": 0.43,
       "wind": {
         "direction": {
-          "degree": 174,
+          "degree": 178,
           "compass": "s"
         },
         "speed": {
-          "value": 1.18,
+          "value": 1.33,
           "unit": "m/s"
         },
         "scale": 1
       },
       "windGust": {
-        "value": 2.54,
+        "value": 2.52,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2842,15 +2785,15 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1021,
+        "value": 1020.83,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 23147,
+        "value": 23873,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 8.06,
+        "value": 8.1,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -2863,27 +2806,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 20.87,
+        "value": 20.8,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 20.55,
+        "value": 20.44,
         "unit": "°C"
       },
       "humidity": 0.44,
       "wind": {
         "direction": {
-          "degree": 185,
+          "degree": 189,
           "compass": "s"
         },
         "speed": {
-          "value": 0.94,
+          "value": 1,
           "unit": "m/s"
         },
         "scale": 1
       },
       "windGust": {
-        "value": 2.3,
+        "value": 2.38,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2899,7 +2842,7 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1021.48,
+        "value": 1021.33,
         "unit": "hPa"
       },
       "visibility": {
@@ -2907,7 +2850,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 8.05,
+        "value": 8.07,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -2920,11 +2863,11 @@
         "code": "100"
       },
       "temperature": {
-        "value": 20.44,
+        "value": 20.43,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 19.56,
+        "value": 19.51,
         "unit": "°C"
       },
       "humidity": 0.46,
@@ -2934,13 +2877,13 @@
           "compass": "nw"
         },
         "speed": {
-          "value": 1.81,
+          "value": 1.87,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 3.17,
+        "value": 3.07,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2956,15 +2899,15 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1021.89,
+        "value": 1021.86,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 23099,
+        "value": 23056,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 8.28,
+        "value": 8.32,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -2977,27 +2920,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 19.22,
+        "value": 19.35,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 18.33,
+        "value": 18.54,
         "unit": "°C"
       },
       "humidity": 0.5,
       "wind": {
         "direction": {
-          "degree": 311,
+          "degree": 306,
           "compass": "nw"
         },
         "speed": {
-          "value": 1.81,
+          "value": 1.72,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 3.1,
+        "value": 2.68,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3013,15 +2956,15 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1022.14,
+        "value": 1022.12,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 23056,
+        "value": 22967,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 8.48,
+        "value": 8.58,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -3034,27 +2977,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 19.03,
+        "value": 19.11,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 18.18,
+        "value": 18.3,
         "unit": "°C"
       },
       "humidity": 0.52,
       "wind": {
         "direction": {
-          "degree": 314,
-          "compass": "nw"
+          "degree": 301,
+          "compass": "wnw"
         },
         "speed": {
-          "value": 1.83,
+          "value": 1.79,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 2.72,
+        "value": 2.92,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3070,15 +3013,15 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1022.11,
+        "value": 1022.13,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 22969,
+        "value": 22904,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 8.91,
+        "value": 8.98,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -3091,27 +3034,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 18.81,
+        "value": 18.79,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 17.79,
+        "value": 17.69,
         "unit": "°C"
       },
       "humidity": 0.53,
       "wind": {
         "direction": {
-          "degree": 307,
-          "compass": "nw"
+          "degree": 301,
+          "compass": "wnw"
         },
         "speed": {
-          "value": 2.13,
+          "value": 2.21,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 3.02,
+        "value": 3.52,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3131,11 +3074,11 @@
         "unit": "hPa"
       },
       "visibility": {
-        "value": 22882,
+        "value": 22905,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 9.06,
+        "value": 8.98,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -3148,27 +3091,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 17.59,
+        "value": 17.66,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 16.44,
+        "value": 16.48,
         "unit": "°C"
       },
       "humidity": 0.57,
       "wind": {
         "direction": {
-          "degree": 304,
-          "compass": "nw"
+          "degree": 303,
+          "compass": "wnw"
         },
         "speed": {
-          "value": 2.24,
+          "value": 2.27,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 3.36,
+        "value": 3.64,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3184,15 +3127,15 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1021.85,
+        "value": 1021.94,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 22633,
+        "value": 22874,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 9.01,
+        "value": 8.97,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -3205,27 +3148,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 16.38,
+        "value": 16.47,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 15.2,
+        "value": 15.22,
         "unit": "°C"
       },
-      "humidity": 0.62,
+      "humidity": 0.61,
       "wind": {
         "direction": {
-          "degree": 303,
+          "degree": 304,
           "compass": "wnw"
         },
         "speed": {
-          "value": 2.22,
+          "value": 2.3,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 3.41,
+        "value": 3.85,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3241,15 +3184,15 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1021.81,
+        "value": 1021.93,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 22050,
+        "value": 22641,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 9.08,
+        "value": 8.96,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -3262,27 +3205,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 15.8,
+        "value": 15.99,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 14.63,
+        "value": 14.69,
         "unit": "°C"
       },
       "humidity": 0.64,
       "wind": {
         "direction": {
-          "degree": 301,
-          "compass": "wnw"
+          "degree": 307,
+          "compass": "nw"
         },
         "speed": {
-          "value": 2.16,
+          "value": 2.41,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 3.3,
+        "value": 4.23,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3298,15 +3241,15 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1021.88,
+        "value": 1021.87,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 22000,
+        "value": 22043,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 9.09,
+        "value": 9.2,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -3319,11 +3262,239 @@
         "code": "100"
       },
       "temperature": {
-        "value": 16.26,
+        "value": 16.38,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 15.11,
+        "value": 15.02,
+        "unit": "°C"
+      },
+      "humidity": 0.63,
+      "wind": {
+        "direction": {
+          "degree": 309,
+          "compass": "nw"
+        },
+        "speed": {
+          "value": 2.52,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 4.5,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1021.92,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 21993,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 9.2,
+        "unit": "°C"
+      },
+      "cloudCover": 0,
+      "uvIndex": 0
+    },
+    {
+      "forecastTime": "2026-10-06T20:00Z",
+      "condition": {
+        "text": "晴",
+        "code": "100"
+      },
+      "temperature": {
+        "value": 16.72,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 15.47,
+        "unit": "°C"
+      },
+      "humidity": 0.61,
+      "wind": {
+        "direction": {
+          "degree": 308,
+          "compass": "nw"
+        },
+        "speed": {
+          "value": 2.38,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 4.23,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1022.04,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 21437,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 9.2,
+        "unit": "°C"
+      },
+      "cloudCover": 0,
+      "uvIndex": 0
+    },
+    {
+      "forecastTime": "2026-10-06T21:00Z",
+      "condition": {
+        "text": "晴",
+        "code": "100"
+      },
+      "temperature": {
+        "value": 17.08,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 15.95,
+        "unit": "°C"
+      },
+      "humidity": 0.61,
+      "wind": {
+        "direction": {
+          "degree": 307,
+          "compass": "nw"
+        },
+        "speed": {
+          "value": 2.28,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 3.91,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1022.45,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 21196,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 9.49,
+        "unit": "°C"
+      },
+      "cloudCover": 0,
+      "uvIndex": 0
+    },
+    {
+      "forecastTime": "2026-10-06T22:00Z",
+      "condition": {
+        "text": "晴",
+        "code": "100"
+      },
+      "temperature": {
+        "value": 17.13,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 16.15,
+        "unit": "°C"
+      },
+      "humidity": 0.62,
+      "wind": {
+        "direction": {
+          "degree": 303,
+          "compass": "wnw"
+        },
+        "speed": {
+          "value": 2.14,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 3.57,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1022.96,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 20982,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 9.87,
+        "unit": "°C"
+      },
+      "cloudCover": 0,
+      "uvIndex": 0
+    },
+    {
+      "forecastTime": "2026-10-06T23:00Z",
+      "condition": {
+        "text": "晴",
+        "code": "100"
+      },
+      "temperature": {
+        "value": 17.8,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 16.86,
         "unit": "°C"
       },
       "humidity": 0.63,
@@ -3333,10 +3504,523 @@
           "compass": "wnw"
         },
         "speed": {
+          "value": 2.3,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 3.93,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1023.83,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 21031,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 10.55,
+        "unit": "°C"
+      },
+      "cloudCover": 0,
+      "uvIndex": 0
+    },
+    {
+      "forecastTime": "2026-10-07T00:00Z",
+      "condition": {
+        "text": "晴",
+        "code": "100"
+      },
+      "temperature": {
+        "value": 17.66,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 16.94,
+        "unit": "°C"
+      },
+      "humidity": 0.67,
+      "wind": {
+        "direction": {
+          "degree": 322,
+          "compass": "nw"
+        },
+        "speed": {
           "value": 2.18,
           "unit": "m/s"
         },
         "scale": 2
+      },
+      "windGust": {
+        "value": 4.53,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1024.51,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 21276,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 11.4,
+        "unit": "°C"
+      },
+      "cloudCover": 0,
+      "uvIndex": 2
+    },
+    {
+      "forecastTime": "2026-10-07T01:00Z",
+      "condition": {
+        "text": "晴",
+        "code": "100"
+      },
+      "temperature": {
+        "value": 20,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 19.37,
+        "unit": "°C"
+      },
+      "humidity": 0.58,
+      "wind": {
+        "direction": {
+          "degree": 321,
+          "compass": "nw"
+        },
+        "speed": {
+          "value": 2.2,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 5.12,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1024.73,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 22735,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 11.42,
+        "unit": "°C"
+      },
+      "cloudCover": 0,
+      "uvIndex": 3
+    },
+    {
+      "forecastTime": "2026-10-07T02:00Z",
+      "condition": {
+        "text": "晴",
+        "code": "100"
+      },
+      "temperature": {
+        "value": 21.94,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 21.19,
+        "unit": "°C"
+      },
+      "humidity": 0.48,
+      "wind": {
+        "direction": {
+          "degree": 324,
+          "compass": "nw"
+        },
+        "speed": {
+          "value": 2.23,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 5.48,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1024.56,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 24182,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 10.45,
+        "unit": "°C"
+      },
+      "cloudCover": 0,
+      "uvIndex": 5
+    },
+    {
+      "forecastTime": "2026-10-07T03:00Z",
+      "condition": {
+        "text": "晴",
+        "code": "100"
+      },
+      "temperature": {
+        "value": 23.64,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 22.7,
+        "unit": "°C"
+      },
+      "humidity": 0.4,
+      "wind": {
+        "direction": {
+          "degree": 327,
+          "compass": "nnw"
+        },
+        "speed": {
+          "value": 2.35,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 5.79,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1024.08,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 25885,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 9.36,
+        "unit": "°C"
+      },
+      "cloudCover": 0,
+      "uvIndex": 6
+    },
+    {
+      "forecastTime": "2026-10-07T04:00Z",
+      "condition": {
+        "text": "晴",
+        "code": "100"
+      },
+      "temperature": {
+        "value": 24.81,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 23.66,
+        "unit": "°C"
+      },
+      "humidity": 0.35,
+      "wind": {
+        "direction": {
+          "degree": 332,
+          "compass": "nnw"
+        },
+        "speed": {
+          "value": 2.56,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 6.12,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1023.5,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 26281,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 8.53,
+        "unit": "°C"
+      },
+      "cloudCover": 0,
+      "uvIndex": 6
+    },
+    {
+      "forecastTime": "2026-10-07T05:00Z",
+      "condition": {
+        "text": "晴",
+        "code": "100"
+      },
+      "temperature": {
+        "value": 25.83,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 24.53,
+        "unit": "°C"
+      },
+      "humidity": 0.32,
+      "wind": {
+        "direction": {
+          "degree": 338,
+          "compass": "nnw"
+        },
+        "speed": {
+          "value": 2.68,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 6.25,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1022.8,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 26300,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 7.8,
+        "unit": "°C"
+      },
+      "cloudCover": 0,
+      "uvIndex": 5
+    },
+    {
+      "forecastTime": "2026-10-07T06:00Z",
+      "condition": {
+        "text": "晴",
+        "code": "100"
+      },
+      "temperature": {
+        "value": 25.44,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 24.24,
+        "unit": "°C"
+      },
+      "humidity": 0.31,
+      "wind": {
+        "direction": {
+          "degree": 342,
+          "compass": "nnw"
+        },
+        "speed": {
+          "value": 2.35,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 5.66,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1022.38,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 26309,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 7.13,
+        "unit": "°C"
+      },
+      "cloudCover": 0,
+      "uvIndex": 4
+    },
+    {
+      "forecastTime": "2026-10-07T07:00Z",
+      "condition": {
+        "text": "晴",
+        "code": "100"
+      },
+      "temperature": {
+        "value": 25.09,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 24.11,
+        "unit": "°C"
+      },
+      "humidity": 0.32,
+      "wind": {
+        "direction": {
+          "degree": 348,
+          "compass": "nnw"
+        },
+        "speed": {
+          "value": 2,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 4.9,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1022.1,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 26312,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 7.12,
+        "unit": "°C"
+      },
+      "cloudCover": 0,
+      "uvIndex": 2
+    },
+    {
+      "forecastTime": "2026-10-07T08:00Z",
+      "condition": {
+        "text": "晴",
+        "code": "100"
+      },
+      "temperature": {
+        "value": 23.99,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 23.34,
+        "unit": "°C"
+      },
+      "humidity": 0.35,
+      "wind": {
+        "direction": {
+          "degree": 349,
+          "compass": "n"
+        },
+        "speed": {
+          "value": 1.55,
+          "unit": "m/s"
+        },
+        "scale": 1
       },
       "windGust": {
         "value": 3.56,
@@ -3359,500 +4043,44 @@
         "unit": "hPa"
       },
       "visibility": {
-        "value": 22001,
+        "value": 26299,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 9.15,
+        "value": 7.68,
         "unit": "°C"
       },
       "cloudCover": 0,
-      "uvIndex": 0
+      "uvIndex": 1
     },
     {
-      "forecastTime": "2026-10-06T20:00Z",
+      "forecastTime": "2026-10-07T09:00Z",
       "condition": {
         "text": "晴",
         "code": "100"
       },
       "temperature": {
-        "value": 16.74,
+        "value": 22.56,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 15.59,
+        "value": 22.94,
         "unit": "°C"
       },
-      "humidity": 0.61,
+      "humidity": 0.52,
       "wind": {
         "direction": {
-          "degree": 301,
-          "compass": "wnw"
-        },
-        "speed": {
-          "value": 2.2,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 3.76,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1022.42,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 21977,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 9.15,
-        "unit": "°C"
-      },
-      "cloudCover": 0,
-      "uvIndex": 0
-    },
-    {
-      "forecastTime": "2026-10-06T21:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 17.11,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 16.03,
-        "unit": "°C"
-      },
-      "humidity": 0.6,
-      "wind": {
-        "direction": {
-          "degree": 302,
-          "compass": "wnw"
-        },
-        "speed": {
-          "value": 2.17,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 3.71,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1022.68,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 21440,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 9.34,
-        "unit": "°C"
-      },
-      "cloudCover": 0,
-      "uvIndex": 0
-    },
-    {
-      "forecastTime": "2026-10-06T22:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 17.17,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 16.1,
-        "unit": "°C"
-      },
-      "humidity": 0.61,
-      "wind": {
-        "direction": {
-          "degree": 299,
-          "compass": "wnw"
-        },
-        "speed": {
-          "value": 2.22,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 3.78,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1023.27,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 21124,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 9.57,
-        "unit": "°C"
-      },
-      "cloudCover": 0,
-      "uvIndex": 0
-    },
-    {
-      "forecastTime": "2026-10-06T23:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 17.7,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 16.64,
-        "unit": "°C"
-      },
-      "humidity": 0.61,
-      "wind": {
-        "direction": {
-          "degree": 297,
-          "compass": "wnw"
-        },
-        "speed": {
-          "value": 2.38,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 4.15,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1023.93,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 21102,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 10.13,
-        "unit": "°C"
-      },
-      "cloudCover": 0,
-      "uvIndex": 0
-    },
-    {
-      "forecastTime": "2026-10-07T00:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 17.48,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 16.51,
-        "unit": "°C"
-      },
-      "humidity": 0.65,
-      "wind": {
-        "direction": {
-          "degree": 305,
-          "compass": "nw"
-        },
-        "speed": {
-          "value": 2.4,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 4.91,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1024.51,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 21744,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 10.78,
-        "unit": "°C"
-      },
-      "cloudCover": 0,
-      "uvIndex": 2
-    },
-    {
-      "forecastTime": "2026-10-07T01:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 19.8,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 18.85,
-        "unit": "°C"
-      },
-      "humidity": 0.57,
-      "wind": {
-        "direction": {
-          "degree": 306,
-          "compass": "nw"
-        },
-        "speed": {
-          "value": 2.58,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 5.58,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1024.61,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 22216,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 11.06,
-        "unit": "°C"
-      },
-      "cloudCover": 0,
-      "uvIndex": 3
-    },
-    {
-      "forecastTime": "2026-10-07T02:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 21.93,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 20.93,
-        "unit": "°C"
-      },
-      "humidity": 0.48,
-      "wind": {
-        "direction": {
-          "degree": 309,
-          "compass": "nw"
-        },
-        "speed": {
-          "value": 2.63,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 6.02,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1024.45,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 23197,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 10.47,
-        "unit": "°C"
-      },
-      "cloudCover": 0,
-      "uvIndex": 5
-    },
-    {
-      "forecastTime": "2026-10-07T03:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 23.44,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 22.69,
-        "unit": "°C"
-      },
-      "humidity": 0.43,
-      "wind": {
-        "direction": {
-          "degree": 320,
-          "compass": "nw"
-        },
-        "speed": {
-          "value": 2.24,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 5.8,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1024.05,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 24382,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 10.15,
-        "unit": "°C"
-      },
-      "cloudCover": 0,
-      "uvIndex": 6
-    },
-    {
-      "forecastTime": "2026-10-07T04:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 24.31,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 23.52,
-        "unit": "°C"
-      },
-      "humidity": 0.37,
-      "wind": {
-        "direction": {
-          "degree": 340,
+          "degree": 338,
           "compass": "nnw"
         },
         "speed": {
-          "value": 2.04,
+          "value": 0.97,
           "unit": "m/s"
         },
-        "scale": 2
+        "scale": 1
       },
       "windGust": {
-        "value": 5.76,
+        "value": 1.69,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3868,247 +4096,19 @@
         "probability": 0
       },
       "pressure": {
-        "value": 1023.42,
+        "value": 1022.23,
         "unit": "hPa"
       },
       "visibility": {
-        "value": 25873,
+        "value": 25494,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 8.85,
+        "value": 12.08,
         "unit": "°C"
       },
       "cloudCover": 0,
-      "uvIndex": 6
-    },
-    {
-      "forecastTime": "2026-10-07T05:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 24.62,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 23.65,
-        "unit": "°C"
-      },
-      "humidity": 0.33,
-      "wind": {
-        "direction": {
-          "degree": 4,
-          "compass": "n"
-        },
-        "speed": {
-          "value": 2.02,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 5.84,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1022.81,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 26289,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 7.46,
-        "unit": "°C"
-      },
-      "cloudCover": 0,
-      "uvIndex": 5
-    },
-    {
-      "forecastTime": "2026-10-07T06:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 24.22,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 23.21,
-        "unit": "°C"
-      },
-      "humidity": 0.34,
-      "wind": {
-        "direction": {
-          "degree": 17,
-          "compass": "nne"
-        },
-        "speed": {
-          "value": 2.05,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 5.8,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1022.44,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 26291,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 7.43,
-        "unit": "°C"
-      },
-      "cloudCover": 0.02,
-      "uvIndex": 4
-    },
-    {
-      "forecastTime": "2026-10-07T07:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 23.88,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 23.02,
-        "unit": "°C"
-      },
-      "humidity": 0.38,
-      "wind": {
-        "direction": {
-          "degree": 14,
-          "compass": "nne"
-        },
-        "speed": {
-          "value": 2.09,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 5.48,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1022.16,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 26203,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 8.68,
-        "unit": "°C"
-      },
-      "cloudCover": 0.02,
-      "uvIndex": 2
-    },
-    {
-      "forecastTime": "2026-10-07T08:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 23.39,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 22.95,
-        "unit": "°C"
-      },
-      "humidity": 0.43,
-      "wind": {
-        "direction": {
-          "degree": 11,
-          "compass": "nne"
-        },
-        "speed": {
-          "value": 1.75,
-          "unit": "m/s"
-        },
-        "scale": 2
-      },
-      "windGust": {
-        "value": 4.16,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1022.15,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 24936,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 10.09,
-        "unit": "°C"
-      },
-      "cloudCover": 0.03,
-      "uvIndex": 1
+      "uvIndex": 0
     }
   ]
 }
