@@ -1,40 +1,11 @@
 {
   "metadata": {
-    "tag": "6faa4cfd8955e3022a6e568953ac3028b6662caf06ccc69e84dbd2be1e18e8fe",
+    "tag": "c03c0f6c1a285a8662bbc97cfe16d3da12a804fd19d0a7acb55fee515b372377",
     "attributions": [
       "https://developer.qweather.com/attribution.html"
     ]
   },
   "days": [
-    {
-      "forecastStartTime": "2026-10-02T16:00Z",
-      "forecastEndTime": "2026-10-03T16:00Z",
-      "indexes": [
-        {
-          "code": "cn-mee",
-          "name": "AQI (CN)",
-          "aqi": 44,
-          "aqiDisplay": "44",
-          "level": "1",
-          "category": "优",
-          "color": {
-            "red": 0,
-            "green": 228,
-            "blue": 0,
-            "alpha": 1
-          },
-          "primaryPollutant": null,
-          "health": {
-            "effect": "空气质量令人满意，基本无空气污染。",
-            "advice": {
-              "generalPopulation": "各类人群可正常活动。",
-              "sensitivePopulation": "各类人群可正常活动。"
-            }
-          }
-        }
-      ],
-      "pollutants": []
-    },
     {
       "forecastStartTime": "2026-10-03T16:00Z",
       "forecastEndTime": "2026-10-04T16:00Z",
@@ -87,6 +58,39 @@
             "advice": {
               "generalPopulation": "各类人群可正常活动。",
               "sensitivePopulation": "各类人群可正常活动。"
+            }
+          }
+        }
+      ],
+      "pollutants": []
+    },
+    {
+      "forecastStartTime": "2026-10-05T16:00Z",
+      "forecastEndTime": "2026-10-06T16:00Z",
+      "indexes": [
+        {
+          "code": "cn-mee",
+          "name": "AQI (CN)",
+          "aqi": 52,
+          "aqiDisplay": "52",
+          "level": "2",
+          "category": "良",
+          "color": {
+            "red": 255,
+            "green": 255,
+            "blue": 0,
+            "alpha": 1
+          },
+          "primaryPollutant": {
+            "code": "pm2p5",
+            "name": "PM 2.5",
+            "fullName": "颗粒物（粒径小于等于2.5µm）"
+          },
+          "health": {
+            "effect": "空气质量可接受，但某些污染物可能对极少数异常敏感人群健康有较弱影响。",
+            "advice": {
+              "generalPopulation": "一般人群可正常活动。",
+              "sensitivePopulation": "极少数异常敏感人群应减少户外活动。"
             }
           }
         }
