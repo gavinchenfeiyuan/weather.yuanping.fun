@@ -6,6 +6,9 @@
 <title>偶滴天气 · weather.yuanping.fun</title>
 <meta name="description" content="上海浦东 · 厦门翔安 · 莆田涵江 三地实时天气、逐小时预报、空气质量与生活指数">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fontsapi.zeoseven.com" crossorigin>
+<link rel="preload" as="style" href="https://fontsapi.zeoseven.com/442/main/result.css" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fontsapi.zeoseven.com/442/main/result.css"></noscript>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/qweather-icons@1.3.0/font/qweather-icons.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌦️</text></svg>">
 <style>
@@ -17,7 +20,7 @@
   --rain:#4d9de0; --good:#00e400; --warn:#ffb020; --bad:#ff5b5b;
   --radius:20px;
   --shadow:0 8px 32px rgba(0,0,0,.35);
-  --font:"PingFang SC","HarmonyOS Sans SC","Microsoft YaHei",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font:"Maple Mono NF CN","PingFang SC","HarmonyOS Sans SC","Microsoft YaHei",-apple-system,"Segoe UI",Roboto,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -243,12 +246,16 @@ footer a:hover{color:var(--accent)}
   .grid6{grid-template-columns:repeat(2,1fr)}
   .pol{grid-template-columns:repeat(2,1fr)}
   .d-row{grid-template-columns:56px 28px 36px 1fr 36px 28px;gap:6px;font-size:13px}
-  .cmp-grid{grid-template-columns:1fr;gap:12px}
+  .cmp-grid{grid-template-columns:repeat(3,1fr);gap:8px}
   .footer-beian{flex-direction:column;gap:6px}
-  .cv-ico{font-size:52px;margin:14px 0 10px}
-  .cv-temp{font-size:36px}
-  .cv-city{font-size:16px}
-  .cv-tile{padding:22px 20px}
+  .cmp-card{padding:14px 6px}
+  .cv-ico{font-size:38px;margin:10px 0 8px}
+  .cv-temp{font-size:27px}
+  .cv-temp em{font-size:11px;margin-top:2px}
+  .cv-city{font-size:13px;letter-spacing:0}
+  .cv-sub{font-size:10px;margin-top:2px}
+  .cv-w{font-size:11px;margin-top:3px}
+  .cv-range{font-size:10px;margin-top:7px}
   header{justify-content:center}
 }
 </style>
