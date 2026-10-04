@@ -87,6 +87,8 @@ header{display:flex;align-items:center;justify-content:space-between;gap:12px;pa
 .chip{font-size:12px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid var(--card-brd);color:var(--txt2);display:flex;gap:6px;align-items:center}
 .chip b{color:var(--txt);font-weight:600}
 .aqi-chip{color:#fff;font-weight:600;border:0}
+.hero-chips2{display:flex;gap:8px;margin-top:8px}
+.hero-chips2 .chip{flex:1;justify-content:center}
 .hero-side{display:flex;flex-direction:column;gap:14px;justify-content:center}
 .sun-row{display:flex;justify-content:space-around;text-align:center}
 .sun-row .t{font-size:20px;font-weight:600;margin-top:2px}
@@ -311,10 +313,12 @@ footer a:hover{color:var(--accent)}
           <div class="hl" id="nowHL">--</div>
           <div class="chips">
             <span class="chip aqi-chip" id="aqiChip">AQI --</span>
-            <span class="chip">💧 湿 <b id="nowHum">--</b></span>
-            <span class="chip"><i class="ic">🌬️</i> <b id="nowWind">--</b></span>
           </div>
         </div>
+      </div>
+      <div class="hero-chips2">
+        <span class="chip">💧 湿度 <b id="nowHum">--</b></span>
+        <span class="chip"><i class="ic">🌬️</i> <b id="nowWind">--</b></span>
       </div>
       <div class="minutely-summary" id="minutelySum">降水实况加载中…</div>
     </div>
