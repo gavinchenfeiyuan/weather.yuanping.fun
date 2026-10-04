@@ -1,8 +1,12 @@
-const VERSION = "v1-20261004";
+const VERSION = "v2-20261004";
 const STATIC_CACHE = `weather-static-${VERSION}`;
 const DATA_CACHE = `weather-data-${VERSION}`;
-const STATIC_ASSETS = ["./", "./index.html", "./manifest.json", "./Pic/favicon.svg",
-  "./Pic/favicon-32.png", "./Pic/icon-192x192.png", "./Pic/icon-512x512.png"];
+const STATIC_ASSETS = ["./", "./index.html", "./manifest.json",
+  "./Pic/favicon.svg", "./Pic/favicon-32.png",
+  "./Pic/icon-120x120.png", "./Pic/icon-152x152.png",
+  "./Pic/icon-167x167.png", "./Pic/icon-180x180.png",
+  "./Pic/icon-192x192.png", "./Pic/icon-512x512.png",
+  "./Pic/icon-maskable-512.png", "./RegisteredLogo.png"];
 // 离线时的兜底首页（相对 Service Worker 自身位置解析，兼容子目录部署）
 const OFFLINE_PAGE = "./index.html";
 

@@ -6,10 +6,10 @@
       <stop offset="100%" stop-color="#0A1418"/>
     </radialGradient>
     <radialGradient id="ring" cx="380" cy="152" r="500" fx="380" fy="152" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FFF" stop-opacity="0.75"/>
-      <stop offset="25%" stop-color="#FFF" stop-opacity="0.40"/>
-      <stop offset="60%" stop-color="#FFF" stop-opacity="0.15"/>
-      <stop offset="100%" stop-color="#FFF" stop-opacity="0.05"/>
+      <stop offset="0%" stop-color="#FFF" stop-opacity="0.60"/>
+      <stop offset="25%" stop-color="#FFF" stop-opacity="0.32"/>
+      <stop offset="60%" stop-color="#FFF" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#FFF" stop-opacity="0.04"/>
     </radialGradient>
     <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="#FEE140" stop-opacity="0.72"/>
@@ -25,7 +25,7 @@
   <rect width="512" height="512" fill="url(#bg)" rx="112" ry="112"/>
 
   <g transform="translate(256 256)">
-    <circle r="170" fill="none" stroke="url(#ring)" stroke-width="16"/>
+    <circle r="170" fill="none" stroke="url(#ring)" stroke-width="13"/>
 
     <path fill="none" stroke="url(#curve)" stroke-linecap="round" stroke-width="32" d="M-212 118 Q-108 6, -28 82 T128 -28" opacity="0.9"/>
     <path fill="none" stroke="url(#curve)" stroke-linecap="round" stroke-width="32" d="M-215 62 Q-112 -58, -32 26 T126 -86" opacity="0.55"/>

@@ -257,14 +257,13 @@ header{display:flex;align-items:center;justify-content:space-between;gap:12px;pa
 .moon-name{text-align:center;font-size:15px;font-weight:600;margin-bottom:12px}
 
 /* ---------- 月相 SVG 图标 ---------- */
-.moon-icon{width:28px;height:28px;color:#c0c0c0;display:inline-block;vertical-align:middle;
-  transition:color .25s ease}
-.moon-icon:hover{color:#ffe500}
-/* 各展示位置按上下文尺寸适配（默认 28px 会在小字行里过大） */
-.sun-row .moon-icon{width:22px;height:22px}          /* hero 副卡：与 20px 时间文字同排 */
-.moon-big .moon-icon{width:54px;height:54px}         /* 天文区大月相 */
-.d-row .dw .moon-icon{width:17px;height:17px}        /* 多日预报行首 */
-.de-l .moon-icon{width:14px;height:14px;margin-right:2px}  /* 昼夜详情标签行内 */
+.moon-svg{display:inline-block;vertical-align:middle}
+/* 各展示位置尺寸（与替换前保持一致，位置和尺寸不变） */
+.moon-svg{width:28px;height:28px}                    /* 基础尺寸 */
+.sun-row .moon-svg{width:22px;height:22px}           /* hero 副卡：与 20px 时间文字同排 */
+.moon-big .moon-svg{width:54px;height:54px}          /* 天文区大月相 */
+.d-row .dw .moon-svg{width:17px;height:17px}         /* 多日预报行首 */
+.de-l .moon-svg{width:14px;height:14px;margin-right:2px}  /* 昼夜详情标签行内 */
 
 footer{margin-top:34px;text-align:center;font-size:12px;color:var(--txt3);line-height:2}
 footer a{color:var(--txt2);text-decoration:none}
@@ -362,47 +361,100 @@ html.swiping .card{backdrop-filter:none;-webkit-backdrop-filter:none}
 </style>
 </head>
 <body>
-<!-- 月相图标 sprite（8 相，viewBox 0 0 24 24 / 描边 1.5 / currentColor） -->
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-<symbol id="moon-new" viewBox="0 0 24 24">
-<title>新月</title>
-<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/>
-</symbol>
-<symbol id="moon-waxing-crescent" viewBox="0 0 24 24">
-<title>蛾眉月</title>
-<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/>
-<path d="M12 3a9 9 0 0 1 0 18A7 7 0 0 0 12 3z" fill="currentColor" opacity="0.2"/>
-</symbol>
-<symbol id="moon-first-quarter" viewBox="0 0 24 24">
-<title>上弦月</title>
-<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/>
-<path d="M12 3a9 9 0 0 1 0 18V3z" fill="currentColor" opacity="0.3"/>
-</symbol>
-<symbol id="moon-waxing-gibbous" viewBox="0 0 24 24">
-<title>盈凸月</title>
-<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/>
-<path d="M12 3a9 9 0 0 1 0 18A7 7 0 0 1 5 12a7 7 0 0 1 7-9z" fill="currentColor" opacity="0.4"/>
-</symbol>
-<symbol id="moon-full" viewBox="0 0 24 24">
-<title>满月</title>
-<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/>
-<circle cx="12" cy="12" r="9" fill="currentColor" opacity="0.5"/>
-</symbol>
-<symbol id="moon-waning-gibbous" viewBox="0 0 24 24">
-<title>亏凸月</title>
-<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/>
-<path d="M12 3a9 9 0 0 0 0 18 7 7 0 0 0 7-9 7 7 0 0 0-7-9z" fill="currentColor" opacity="0.4"/>
-</symbol>
-<symbol id="moon-last-quarter" viewBox="0 0 24 24">
-<title>下弦月</title>
-<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/>
-<path d="M12 3a9 9 0 0 0 0 18V3z" fill="currentColor" opacity="0.3"/>
-</symbol>
-<symbol id="moon-waning-crescent" viewBox="0 0 24 24">
-<title>残月</title>
-<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/>
-<path d="M12 3a9 9 0 0 0 0 18 7 7 0 0 1 0-18z" fill="currentColor" opacity="0.2"/>
-</symbol>
+<!-- 月相图标 sprite（8 相，viewBox 0 0 32 32；渐变月色 + 月海纹理 + mask 相位） -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="moonLit" cx="38%" cy="34%" r="72%">
+      <stop offset="0%"  stop-color="#FBF3DD"/>
+      <stop offset="45%" stop-color="#EFDFAE"/>
+      <stop offset="80%" stop-color="#D8BE84"/>
+      <stop offset="100%" stop-color="#B99A5C"/>
+    </radialGradient>
+    <radialGradient id="maria1">
+      <stop offset="0%"  stop-color="#5A4834" stop-opacity="0.5"/>
+      <stop offset="55%" stop-color="#5A4834" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#5A4834" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="maria2">
+      <stop offset="0%"  stop-color="#5A4834" stop-opacity="0.4"/>
+      <stop offset="55%" stop-color="#5A4834" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#5A4834" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="maria3">
+      <stop offset="0%"  stop-color="#5A4834" stop-opacity="0.32"/>
+      <stop offset="60%" stop-color="#5A4834" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#5A4834" stop-opacity="0"/>
+    </radialGradient>
+
+    <g id="moonBody">
+      <circle cx="16" cy="16" r="11" fill="url(#moonLit)"/>
+      <circle cx="11.5" cy="12.5" r="3.2" fill="url(#maria1)"/>
+      <circle cx="19.5" cy="13.5" r="2.6" fill="url(#maria1)"/>
+      <circle cx="13.5" cy="19"   r="2.4" fill="url(#maria2)"/>
+      <circle cx="20.5" cy="19"   r="2.0" fill="url(#maria2)"/>
+      <circle cx="16.5" cy="10.5" r="1.6" fill="url(#maria3)"/>
+      <circle cx="21.5" cy="16"   r="1.3" fill="url(#maria3)"/>
+      <circle cx="10.5" cy="17"   r="1.2" fill="url(#maria3)"/>
+      <circle cx="16" cy="16" r="11" fill="none" stroke="#50431F" stroke-opacity="0.18" stroke-width="0.8"/>
+    </g>
+
+    <mask x="0" y="0" width="32" height="32" id="mCrescent" maskUnits="userSpaceOnUse">
+      <rect width="32" height="32" fill="white"/>
+      <circle cx="9" cy="16" r="11" fill="black"/>
+    </mask>
+    <mask x="0" y="0" width="32" height="32" id="mFirstQuarter" maskUnits="userSpaceOnUse">
+      <rect width="32" height="32" fill="white"/>
+      <rect x="0" y="0" width="16" height="32" fill="black"/>
+    </mask>
+    <mask x="0" y="0" width="32" height="32" id="mWaxingGibbous" maskUnits="userSpaceOnUse">
+      <rect width="32" height="32" fill="white"/>
+      <circle cx="-2" cy="16" r="11" fill="black"/>
+    </mask>
+    <mask x="0" y="0" width="32" height="32" id="mWaningGibbous" maskUnits="userSpaceOnUse">
+      <rect width="32" height="32" fill="white"/>
+      <circle cx="34" cy="16" r="11" fill="black"/>
+    </mask>
+    <mask x="0" y="0" width="32" height="32" id="mLastQuarter" maskUnits="userSpaceOnUse">
+      <rect width="32" height="32" fill="white"/>
+      <rect x="16" y="0" width="16" height="32" fill="black"/>
+    </mask>
+    <mask x="0" y="0" width="32" height="32" id="mWaningCrescent" maskUnits="userSpaceOnUse">
+      <rect width="32" height="32" fill="white"/>
+      <circle cx="23" cy="16" r="11" fill="black"/>
+    </mask>
+  </defs>
+
+  <symbol id="moon-new" viewBox="0 0 32 32">
+    <circle cx="16" cy="16" r="11" fill="#3A4A63" opacity="0.55"/>
+  </symbol>
+  <symbol id="moon-waxing-crescent" viewBox="0 0 32 32">
+    <circle cx="16" cy="16" r="11" fill="#3A4A63" opacity="0.55"/>
+    <use href="#moonBody" mask="url(#mCrescent)"/>
+  </symbol>
+  <symbol id="moon-first-quarter" viewBox="0 0 32 32">
+    <circle cx="16" cy="16" r="11" fill="#3A4A63" opacity="0.55"/>
+    <use href="#moonBody" mask="url(#mFirstQuarter)"/>
+  </symbol>
+  <symbol id="moon-waxing-gibbous" viewBox="0 0 32 32">
+    <circle cx="16" cy="16" r="11" fill="#3A4A63" opacity="0.55"/>
+    <use href="#moonBody" mask="url(#mWaxingGibbous)"/>
+  </symbol>
+  <symbol id="moon-full" viewBox="0 0 32 32">
+    <circle cx="16" cy="16" r="11" fill="#3A4A63" opacity="0.55"/>
+    <use href="#moonBody"/>
+  </symbol>
+  <symbol id="moon-waning-gibbous" viewBox="0 0 32 32">
+    <circle cx="16" cy="16" r="11" fill="#3A4A63" opacity="0.55"/>
+    <use href="#moonBody" mask="url(#mWaningGibbous)"/>
+  </symbol>
+  <symbol id="moon-last-quarter" viewBox="0 0 32 32">
+    <circle cx="16" cy="16" r="11" fill="#3A4A63" opacity="0.55"/>
+    <use href="#moonBody" mask="url(#mLastQuarter)"/>
+  </symbol>
+  <symbol id="moon-waning-crescent" viewBox="0 0 32 32">
+    <circle cx="16" cy="16" r="11" fill="#3A4A63" opacity="0.55"/>
+    <use href="#moonBody" mask="url(#mWaningCrescent)"/>
+  </symbol>
 </svg>
 <canvas id="fx"></canvas>
 <div class="wrap">
@@ -594,10 +646,11 @@ const MOON_ID={"new":"moon-new","waxing-crescent":"moon-waxing-crescent","first-
   "waxing-gibbous":"moon-waxing-gibbous","full":"moon-full","waning-gibbous":"moon-waning-gibbous",
   "last-quarter":"moon-last-quarter","waning-crescent":"moon-waning-crescent"};
 const moonZh=p=>MOON[p]||"月相";
-// 渲染月相图标；phase 无法识别时回退到「当前展示内容」而不是留空
+// 渲染月相图标（尺寸由 CSS 按展示位置给出，各位置与替换前一致）
+// phase 无法识别时返回空串，调用处回退显示中文名
 function moonSvg(phase){
   const id=MOON_ID[phase];if(!id)return "";
-  return `<svg class="moon-icon" role="img" aria-label="${moonZh(phase)}"><use href="#${id}"/></svg>`;
+  return `<svg class="moon-svg" viewBox="0 0 32 32" role="img" aria-label="${moonZh(phase)}"><use href="#${id}"/></svg>`;
 }
 const IDX_ICON={"1":"🏃","2":"🚗","3":"👕","4":"🎣","5":"🌞","6":"🧳","7":"🤧","8":"😌","9":"🤒","10":"🌫️","11":"❄️","12":"🕶️","13":"💄","14":"👔","15":"🚦","16":"🧴"};
 const WEEK=["周日","周一","周二","周三","周四","周五","周六"];
