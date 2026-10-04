@@ -1,46 +1,7 @@
 {
   "metadata": {
-    "tag": "457e5708d9bab5f0d72f2ba61ad5e8f6e4b7b57f601ab23d0a1414004d66ac66",
-    "attributions": [
-      "国家预警信息发布中心",
-      "当前预警数据可能存在延迟或信息过时，以官方数据发布为准。"
-    ],
-    "zeroResult": false
+    "tag": "f4abe7db546670ff6367ebcbfcdefcb25add032b8ecc343030733e02ecada2e9",
+    "zeroResult": true
   },
-  "alerts": [
-    {
-      "id": "202610050027003744048705",
-      "senderName": "涵江区气象台",
-      "issuedTime": "2026-10-04T16:27Z",
-      "messageType": {
-        "code": "cancel",
-        "supersedes": [
-          "202610041432006520628819"
-        ]
-      },
-      "eventType": {
-        "name": "雷电",
-        "code": "1014"
-      },
-      "urgency": null,
-      "severity": "moderate",
-      "certainty": null,
-      "icon": "1014",
-      "color": {
-        "code": "yellow",
-        "red": 239,
-        "green": 193,
-        "blue": 0,
-        "alpha": 1
-      },
-      "effectiveTime": "2026-10-04T16:27Z",
-      "onsetTime": "2026-10-04T16:27Z",
-      "expireTime": "2026-10-04T17:27Z",
-      "headline": "涵江区气象台解除雷电黄色预警信号",
-      "description": "涵江区气象台2026年10月05日00时27分解除雷电黄色预警信号。",
-      "criteria": "6小时内可能发生雷电活动，可能会造成雷电灾害事故。",
-      "responseTypes": [],
-      "instruction": "1. 政府及相关部门按照职责做好防雷工作。\n2. 密切关注天气，尽量避免户外活动。"
-    }
-  ]
+  "alerts": []
 }
