@@ -10,7 +10,17 @@
 <link rel="preload" as="style" href="https://fontsapi.zeoseven.com/442/main/result.css" onload="this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fontsapi.zeoseven.com/442/main/result.css"></noscript>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/qweather-icons@1.8.0/font/qweather-icons.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌦️</text></svg>">
+<link rel="icon" type="image/svg+xml" href="./Pic/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="./Pic/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./Pic/icon-180x180.png">
+<link rel="apple-touch-icon" sizes="167x167" href="./Pic/icon-167x167.png">
+<link rel="apple-touch-icon" sizes="152x152" href="./Pic/icon-152x152.png">
+<link rel="apple-touch-icon" sizes="120x120" href="./Pic/icon-120x120.png">
+<link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#0b1020">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="偶滴天气">
 <style>
 :root{
   --bg0:#0b1020; --bg1:#101a33;
@@ -1843,6 +1853,16 @@ if(memSaved){
 }
 CITIES.forEach((c,i)=>setTimeout(()=>loadCity(c.id),800+i*300)); // 空闲预取
 addEventListener("resize",redrawCharts);
+
+/* ---- PWA：注册 Service Worker（load 后注册，避免阻塞首屏；失败不影响页面功能） ---- */
+addEventListener("load",()=>{
+  if(!("serviceWorker" in navigator)){console.log("[PWA] 当前环境不支持 Service Worker，跳过注册");return}
+  navigator.serviceWorker.register("./sw.js").then(reg=>{
+    console.log("[PWA] Service Worker 注册成功，作用域：",reg.scope);
+  }).catch(err=>{
+    console.log("[PWA] Service Worker 注册失败（不影响页面功能）：",err);
+  });
+});
 </script>
 </body>
 </html>
