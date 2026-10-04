@@ -14,6 +14,8 @@
 <style>
 :root{
   --bg0:#0b1020; --bg1:#101a33;
+  --app-bg:linear-gradient(160deg,var(--bg0),var(--bg1) 55%,#0a0f1e);
+  --app-top:#0b1020;
   --card:rgba(255,255,255,.07); --card-brd:rgba(255,255,255,.12);
   --txt:#eef2ff; --txt2:#9aa7c7; --txt3:#6b7794;
   --accent:#5ea8ff; --accent2:#8be0d4;
@@ -23,25 +25,25 @@
   --font:"Maple Mono NF CN","PingFang SC","HarmonyOS Sans SC","Microsoft YaHei",-apple-system,"Segoe UI",Roboto,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;min-height:100%;background:var(--app-top)}
 body{
   font-family:var(--font); color:var(--txt); min-height:100vh;
-  background:linear-gradient(160deg,var(--bg0),var(--bg1) 55%,#0a0f1e);
+  background:var(--app-bg);
   background-attachment:fixed;
   transition:background 1.2s ease;
   overflow-x:hidden;
 }
-body.theme-clear-day{background:linear-gradient(165deg,#123a6e 0%,#1b5a9e 45%,#0e2c54 100%)}
-body.theme-clear-night{background:linear-gradient(165deg,#070b18 0%,#101736 55%,#070a14 100%)}
-body.theme-cloud{background:linear-gradient(165deg,#1d2637 0%,#2c3a52 55%,#141b29 100%)}
-body.theme-rain{background:linear-gradient(165deg,#101c2b 0%,#1a3049 50%,#0c1622 100%)}
-body.theme-snow{background:linear-gradient(165deg,#1c2735 0%,#33465e 55%,#141d29 100%)}
+.theme-clear-day{--app-bg:linear-gradient(165deg,#123a6e 0%,#1b5a9e 45%,#0e2c54 100%);--app-top:#123a6e}
+.theme-clear-night{--app-bg:linear-gradient(165deg,#070b18 0%,#101736 55%,#070a14 100%);--app-top:#070b18}
+.theme-cloud{--app-bg:linear-gradient(165deg,#1d2637 0%,#2c3a52 55%,#141b29 100%);--app-top:#1d2637}
+.theme-rain{--app-bg:linear-gradient(165deg,#101c2b 0%,#1a3049 50%,#0c1622 100%);--app-top:#101c2b}
+.theme-snow{--app-bg:linear-gradient(165deg,#1c2735 0%,#33465e 55%,#141d29 100%);--app-top:#1c2735}
 
 #fx{position:fixed;inset:0;z-index:0;pointer-events:none}
 .wrap{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:0 18px 90px}
 
 /* ---------- header ---------- */
-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:22px 2px 6px;flex-wrap:wrap}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:calc(22px + env(safe-area-inset-top,0px)) 2px 6px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:10px;letter-spacing:.5px}
 .brand-txt{display:flex;flex-direction:column;line-height:1.15}
 .brand-name{font-weight:700;font-size:20px}
@@ -531,7 +533,7 @@ function applyTheme(rt){
   if(code>=300&&code<400)theme="theme-rain";
   else if(code>=400&&code<500)theme="theme-snow";
   else if(code===100||code===150)theme=night?"theme-clear-night":"theme-clear-day";
-  document.body.className=theme;
+  document.body.className=document.documentElement.className=theme;
   fxType=(theme==="theme-rain")?"rain":(theme==="theme-snow")?"snow":null;
   initFx();
 }
@@ -1236,7 +1238,7 @@ async function showCompare(){
   curCity="__cmp";
   $("viewCity").style.display="none";$("viewCompare").style.display="";
   document.querySelectorAll("#viewCompare .card").forEach(c=>c.classList.remove("show"));
-  document.body.className="theme-cloud";fxType=null;initFx();
+  document.body.className=document.documentElement.className="theme-cloud";fxType=null;initFx();
   try{
     const ds=await Promise.all(CITIES.map(c=>loadCity(c.id)));
     setBrandIcon(ds[0].realtime_weather); // 品牌图标跟随上海（首页主城）天气
