@@ -1,36 +1,36 @@
 {
   "metadata": {
-    "tag": "7cce165bf40e98483fb5e233028e916e7a2222fffd73bf0b8e5e41c82aba028b",
+    "tag": "aedaa8a9080e888d4939e391d9a5665b13aece01fc1299e72d5bca5c1f42cc58",
     "attributions": [
       "https://developer.qweather.com/attribution.html"
     ]
   },
   "condition": {
-    "text": "少云",
-    "code": "102"
+    "text": "晴",
+    "code": "100"
   },
   "temperature": {
-    "value": 25.52,
+    "value": 26.32,
     "unit": "°C"
   },
   "feelsLike": {
-    "value": 27.93,
+    "value": 28.99,
     "unit": "°C"
   },
-  "humidity": 0.79,
+  "humidity": 0.75,
   "wind": {
     "direction": {
-      "degree": 7,
-      "compass": "n"
+      "degree": 286,
+      "compass": "wnw"
     },
     "speed": {
-      "value": 1.59,
+      "value": 1.26,
       "unit": "m/s"
     },
     "scale": 1
   },
   "windGust": {
-    "value": 3.59,
+    "value": 3.57,
     "unit": "m/s"
   },
   "precipitation": {
@@ -45,17 +45,17 @@
     "type": "none"
   },
   "pressure": {
-    "value": 1013.33,
+    "value": 1013.61,
     "unit": "hPa"
   },
   "visibility": {
-    "value": 17560,
+    "value": 21170,
     "unit": "m"
   },
   "dewPoint": {
-    "value": 21.52,
+    "value": 21.57,
     "unit": "°C"
   },
-  "cloudCover": 0.1,
-  "uvIndex": 1
+  "cloudCover": 0.09,
+  "uvIndex": 2
 }
