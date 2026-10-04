@@ -99,6 +99,19 @@ header{display:flex;align-items:center;justify-content:space-between;gap:12px;pa
 .m-scale{display:flex;justify-content:space-between;font-size:11px;color:var(--txt3);margin-top:6px}
 .m-legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;font-size:11px;color:var(--txt3)}
 .ic{font-size:1.05em;vertical-align:-.14em;margin-right:4px;color:var(--txt2)}
+/* 指标/标签官方图标按天气类别着色（覆盖 .ic 的灰色） */
+.ic.qi-hot{color:#ff7043}            /* 最热 */
+.ic.qi-cold{color:#4fc3f7}           /* 最凉 */
+.ic.qi-air-quality{color:#5fbf6a}    /* 空气最好 */
+.ic.qi-low-humidity2{color:#ffa726}  /* 相对干爽 */
+.ic.qi-wind{color:#26c6da}           /* 风 */
+.ic.qi-low-visibility{color:#42a5f5} /* 能见度 / 最通透 */
+.ic.qi-rain{color:#42a5f5}           /* 降水 / 雨最多 */
+.ic.qi-sunny{color:#ffb300}          /* 日中 / 太阳 / 白天 */
+.ic.qi-clear-night{color:#9fa8da}    /* 夜间 */
+.ic.qi-warning-default{color:#ef5350}/* 预警 / 报错 */
+/* 月相图标统一暖金，避免灰扑扑 */
+.qi-new-moon,.qi-waxing-crescent,.qi-first-quarter,.qi-waxing-gibbous,.qi-full-moon,.qi-waning-gibbous,.qi-last-quarter,.qi-waning-crescent{color:#e6c870}
 .m-legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:-1px}
 
 /* ---------- hourly ---------- */
@@ -117,9 +130,12 @@ header{display:flex;align-items:center;justify-content:space-between;gap:12px;pa
 /* ---------- daily ---------- */
 .d-row{display:grid;grid-template-columns:74px 34px 44px 1fr 44px 34px;gap:10px;align-items:center;padding:11px 6px;border-bottom:1px solid rgba(255,255,255,.06);font-size:14px}
 .d-row:last-child{border-bottom:0}
-.d-row .dw{color:var(--txt2)}
+.d-row .dw{color:var(--txt2);display:flex;align-items:center;gap:6px}
 .d-row .dw b{color:var(--txt);display:block;font-size:13px}
-.d-row .dw b .qwi{font-size:14px;margin-right:3px;vertical-align:-2px;color:var(--txt2)}
+.d-row .dw b.mc{font-size:14px;line-height:1}
+.d-row .dw .dw-t{display:flex;flex-direction:column;line-height:1.3}
+.d-row .dw .dw-t b{font-size:13px}
+.d-row .dw b .qwi{font-size:14px;margin-right:3px;vertical-align:-2px;color:#e6c870}
 .d-row .qwi{font-size:25px}
 .d-row .pop{font-size:11px;color:var(--rain);text-align:center}
 .d-bar{position:relative;height:7px;border-radius:4px;background:rgba(255,255,255,.1)}
@@ -248,7 +264,8 @@ footer a:hover{color:var(--accent)}
   .idx-grid{grid-template-columns:repeat(2,1fr)}
   .grid6{grid-template-columns:repeat(2,1fr)}
   .pol{grid-template-columns:repeat(2,1fr)}
-  .d-row{grid-template-columns:56px 28px 36px 1fr 36px 28px;gap:6px;font-size:13px}
+  .d-row{grid-template-columns:64px 28px 40px 1fr 34px 28px;gap:7px;font-size:13px}
+  .d-row .dw b,.d-row .dw .dw-t{font-size:12px}
   .cmp-grid{grid-template-columns:repeat(3,1fr);gap:8px}
   .footer-beian{flex-direction:column;gap:6px}
   .cmp-card{padding:14px 6px}
@@ -260,6 +277,13 @@ footer a:hover{color:var(--accent)}
   .cv-w{font-size:11px;margin-top:3px}
   .cv-range{font-size:10px;margin-top:7px}
   header{justify-content:center}
+}
+@media (max-width:420px){
+  .idx-grid{grid-template-columns:1fr}
+  .idx{padding:12px 14px}
+  .idx .ic{font-size:18px}
+  .idx .in{font-size:12px}
+  .idx .iv{font-size:14px}
 }
 </style>
 </head>
@@ -431,14 +455,17 @@ const FILES=["realtime_weather","realtime_aqi","hourly_forecast","daily_forecast
 const QI=code=>`qi-${code}-fill`;
 function iconColor(code){
   const c=+code;
-  if(c===100)return"#ffd54f";            // 晴
-  if(c===150)return"#c5cae9";            // 晴夜
-  if(c>=300&&c<400)return"#6ec1ff";      // 雨
-  if(c>=400&&c<500)return"#e1f5fe";      // 雪
-  if(c>=500&&c<600)return"#b0bec5";      // 雾霾
-  if(c===104||c===154)return"#90a4ae";   // 阴
-  return"#cfd8dc";                       // 多云等
+  if(c===100||c===103)return"#ffb300";                       // 晴 / 晴间多云
+  if(c===150)return"#9fa8da";                                // 晴夜
+  if(c===101||c===102||c===151||c===152||c===153)return"#6db3f2"; // 多云 / 少云（带蓝，不再灰）
+  if(c===104||c===154)return"#5f86b3";                       // 阴（深一档蓝灰，与多云区分）
+  if(c>=500&&c<600)return"#c2a35a";                          // 雾 / 霾 / 沙尘（暖沙色，区别于云）
+  if(c>=400&&c<500)return"#74c7ec";                          // 雪（亮青，可见度更高）
+  if(c===302||c===303)return"#8a6fe0";                       // 雷阵雨（紫，区别于普通雨）
+  if(c>=300&&c<400)return"#36a9e0";                          // 雨 / 阵雨 / 小雨
+  return"#cfd8dc";                                           // 兜底
 }
+const axisFont=()=>innerWidth<=520?'11px sans-serif':'10px sans-serif'; // 移动端坐标轴标签稍大
 const COMPASS={n:"北风",nne:"东北偏北",ne:"东北风",ene:"东北偏东",e:"东风",ese:"东南偏东",se:"东南风",sse:"东南偏南",s:"南风",ssw:"西南偏南",sw:"西南风",wsw:"西南偏西",w:"西风",wnw:"西北偏西",nw:"西北风",nnw:"西北偏北"};
 const MOON={"new":["🌑","新月"],"waxing-crescent":["🌒","娥眉月"],"first-quarter":["🌓","上弦月"],"waxing-gibbous":["🌔","盈凸月"],"full":["🌕","满月"],"waning-gibbous":["🌖","亏凸月"],"last-quarter":["🌗","下弦月"],"waning-crescent":["🌘","残月"]};
 // 官方月相图标（qweather-icons 字体类名）
@@ -644,7 +671,7 @@ function renderMinutely(d){
   const hi=Math.max(major,Math.ceil(max*1.15/major)*major);
   const Y=v=>P.t+ih*(1-v/hi),zeroY=Y(0);
   const fmt=v=>v<1?String(+v.toFixed(2)):String(+v.toFixed(1));
-  ctx.font="10px sans-serif";ctx.textAlign="right";
+  ctx.font=axisFont();ctx.textAlign="right";
   for(let v=0;v<=hi+1e-6;v+=step){
     const y=Y(v),isMaj=Math.abs(v%major)<1e-6;
     ctx.setLineDash(isMaj?[]:[3,4]);
@@ -657,7 +684,7 @@ function renderMinutely(d){
   if(list.every(m=>+m.precip===0)){ // 空态：未来两小时无降水
     ctx.fillStyle="#9aa7c7";ctx.font="13px sans-serif";ctx.textAlign="center";
     ctx.fillText("未来两小时无降水 ☕",W/2,P.t+ih/2-6);
-    ctx.fillStyle="#6b7794";ctx.font="10px sans-serif";
+    ctx.fillStyle="#6b7794";ctx.font=axisFont();
     list.forEach((m,i)=>{if(i%6===0)ctx.fillText(m.fxTime.slice(11,16),P.l+i*bw+bw/2,H-8)});
     $("mLegend").innerHTML="";
     return;
@@ -670,7 +697,7 @@ function renderMinutely(d){
     g.addColorStop(0,col);g.addColorStop(1,col+"22");
     ctx.fillStyle=g;
     ctx.beginPath();ctx.roundRect(x,y,bw*.6,Math.max(h,v>0?2.5:0),3);ctx.fill();
-    if(i%6===0){ctx.fillStyle="#6b7794";ctx.font="10px sans-serif";ctx.textAlign="center";
+    if(i%6===0){ctx.fillStyle="#6b7794";ctx.font=axisFont();ctx.textAlign="center";
       ctx.fillText(m.fxTime.slice(11,16),P.l+i*bw+bw/2,H-8)}
   });
   // 图例（按本小时实际出现的等级显示）
@@ -699,7 +726,7 @@ function renderHourly(d){
     ctx.setLineDash(isMaj?[]:[3,4]);
     ctx.strokeStyle=isMaj?"rgba(255,255,255,.12)":"rgba(255,255,255,.09)";
     ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();
-    if(isMaj){ctx.fillStyle="#6b7794";ctx.font="10px sans-serif";ctx.textAlign="left";
+    if(isMaj){ctx.fillStyle="#6b7794";ctx.font=axisFont();ctx.textAlign="left";
       ctx.fillText(Math.round(v)+"°",4,y-3)}
   }
   ctx.setLineDash([]);ctx.textAlign="center";
@@ -719,7 +746,7 @@ function renderHourly(d){
     if(i%3===0){
       ctx.fillStyle="#eef2ff";ctx.font="11px sans-serif";ctx.fillText(Math.round(t)+"°",x,y-9);
       const dt=new Date(hours[i].forecastTime);
-      ctx.fillStyle="#6b7794";ctx.font="10px sans-serif";
+      ctx.fillStyle="#6b7794";ctx.font=axisFont();
       ctx.fillText((dt.getHours()===0?WEEK[dt.getDay()]+" ":"")+pad(dt.getHours())+"时",x,152);
     }
   });
@@ -762,7 +789,7 @@ function renderDaily(d){
     const mp=x.astro&&x.astro.moonPhase,mcls=moonCls(mp);
     const moonIcon=mcls?`<i class="qwi ${mcls}"></i>`:(MOON[mp]||["🌙"])[0];
     return `<div class="d-row" onclick="this.classList.toggle('open')">
-      <div class="dw"><b>${moonIcon} ${dayLabel(x.forecastStartTime)}</b>${dt.getMonth()+1}/${dt.getDate()}</div>
+      <div class="dw"><b class="mc">${moonIcon}</b><span class="dw-t"><b>${dayLabel(x.forecastStartTime)}</b>${dt.getMonth()+1}/${dt.getDate()}</span></div>
       <i class="qwi ${QI(x.daytime.condition.code)}" style="color:${iconColor(x.daytime.condition.code)}" title="白天 ${x.daytime.condition.text}"></i>
       <div class="pop">${pop>0.02?"💧"+Math.round(pop*100)+"%":""}</div>
       <div class="d-bar"><i style="left:${L}%;width:${Rr-L}%"></i></div>
@@ -891,7 +918,7 @@ function drawMulti(canvasId,labels,series,unit,smooth=true,splits=[]){
   lo=Math.floor(lo/maj)*maj;hi=Math.ceil(hi/maj)*maj;
   const X=i=>P.l+iw*(labels.length===1?.5:i/(labels.length-1));
   const Y=v=>P.t+ih*(1-(v-lo)/(hi-lo));
-  ctx.font="10px sans-serif";ctx.textAlign="right";
+  ctx.font=axisFont();ctx.textAlign="right";
   for(let v=lo;v<=hi+1e-6;v+=sub){
     const y=Y(v),isMaj=Math.abs(v%maj)<1e-6;
     ctx.setLineDash(isMaj?[]:[3,4]);
@@ -902,7 +929,7 @@ function drawMulti(canvasId,labels,series,unit,smooth=true,splits=[]){
   ctx.setLineDash([]);
   ctx.textAlign="center";
   const step=Math.ceil(labels.length/10);
-  labels.forEach((lb,i)=>{if(i%step===0){ctx.fillStyle="#6b7794";ctx.fillText(lb,X(i),H-8)}});
+  labels.forEach((lb,i)=>{if(i%step===0){ctx.fillStyle="#6b7794";ctx.font=axisFont();ctx.fillText(lb,X(i),H-8)}});
   // 周界虚线（周日与周一之间）
   splits.forEach(i=>{
     if(i<0||i>=labels.length-1)return;
@@ -1143,7 +1170,7 @@ function renderCmpRain(ds){
   const major=step*3;                                   // 主刻度（带数字）
   const hi=Math.max(major,Math.ceil(rough/major)*major);
   const Y=v=>P.t+ih*(1-v/hi),zeroY=Y(0);
-  ctx.font="10px sans-serif";ctx.textAlign="right";
+  ctx.font=axisFont();ctx.textAlign="right";
   for(let v=0;v<=hi+1e-6;v+=step){
     const y=Y(v),isMaj=Math.abs(v%major)<1e-6;
     ctx.setLineDash(isMaj?[]:[3,4]);
@@ -1192,7 +1219,7 @@ function renderCmpRain(ds){
     ctx.strokeStyle="rgba(255,255,255,.18)";ctx.stroke();
     ctx.fillStyle="#eef2ff";ctx.textAlign="left";ctx.fillText(txt,tx+9,17);
   }
-  ctx.fillStyle="#6b7794";ctx.font="10px sans-serif";ctx.textAlign="center";
+  ctx.fillStyle="#6b7794";ctx.font=axisFont();ctx.textAlign="center";
   for(let i=0;i<n;i++)ctx.fillText(labels[i],P.l+gw*i+gw/2,H-8);
   $("cmpRainLegend").innerHTML=CITIES.map(c2=>`<span><i style="background:${CITY_COLORS[c2.id]}"></i>${c2.name}</span>`).join("");
   // 悬停交互（只绑一次）
