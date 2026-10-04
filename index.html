@@ -311,7 +311,7 @@ footer a:hover{color:var(--accent)}
           <div class="hl" id="nowHL">--</div>
           <div class="chips">
             <span class="chip aqi-chip" id="aqiChip">AQI --</span>
-            <span class="chip">💧 湿度 <b id="nowHum">--</b></span>
+            <span class="chip">💧 湿 <b id="nowHum">--</b></span>
             <span class="chip"><i class="ic">🌬️</i> <b id="nowWind">--</b></span>
           </div>
         </div>
@@ -597,7 +597,7 @@ function renderHero(city,d){
   setBrandIcon(rt);
   $("nowTemp").textContent=Math.round(rt.temperature.value);  $("nowFeels").textContent=Math.round(rt.feelsLike.value);  $("nowCond").textContent=rt.condition.text;
   const day0=d.daily_forecast.days[0];
-  $("nowHL").innerHTML=`最高 <b>${Math.round(day0.temperatureMax.value)}°</b> · 最低 <b>${Math.round(day0.temperatureMin.value)}°</b>`;
+  $("nowHL").innerHTML=`最高 <b>${Math.round(day0.temperatureMax.value)}°</b> <br>最低 <b>${Math.round(day0.temperatureMin.value)}°</b>`;
   $("nowHum").textContent=pct(rt.humidity);
   $("nowWind").textContent=`${COMPASS[rt.wind.direction.compass]||""} ${rt.wind.scale}级`;
   const ix=d.realtime_aqi.indexes[0];
