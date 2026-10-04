@@ -1,46 +1,7 @@
 {
   "metadata": {
-    "tag": "cbd933142e35677d40d8aa9672e81bc13908e5f9efa37635dae4c644b8efebbb",
-    "attributions": [
-      "国家预警信息发布中心",
-      "当前预警数据可能存在延迟或信息过时，以官方数据发布为准。"
-    ],
-    "zeroResult": false
+    "tag": "0ad2f9f9fbd51a82ed5882f87477724e89cea1df497c5c372b00b8730a424453",
+    "zeroResult": true
   },
-  "alerts": [
-    {
-      "id": "202610042259000225678983",
-      "senderName": "翔安区气象台",
-      "issuedTime": "2026-10-04T14:59Z",
-      "messageType": {
-        "code": "cancel",
-        "supersedes": [
-          "202610041753006224149090"
-        ]
-      },
-      "eventType": {
-        "name": "雷电",
-        "code": "1014"
-      },
-      "urgency": null,
-      "severity": "moderate",
-      "certainty": null,
-      "icon": "1014",
-      "color": {
-        "code": "yellow",
-        "red": 239,
-        "green": 193,
-        "blue": 0,
-        "alpha": 1
-      },
-      "effectiveTime": "2026-10-04T14:59Z",
-      "onsetTime": "2026-10-04T14:59Z",
-      "expireTime": "2026-10-04T15:59Z",
-      "headline": "翔安区气象台解除雷电黄色预警信号",
-      "description": "翔安区气象台2026年10月04日22时59分解除雷电黄色预警信号。",
-      "criteria": "6小时内可能发生雷电活动，可能会造成雷电灾害事故。",
-      "responseTypes": [],
-      "instruction": "1. 政府及相关部门按照职责做好防雷工作。\n2. 密切关注天气，尽量避免户外活动。"
-    }
-  ]
+  "alerts": []
 }

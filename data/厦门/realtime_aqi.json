@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "tag": "03a8a33098c7cebbda7ce93bd2f884650625a620b1a28db7cc7a3da08db53b0d",
+    "tag": "f5c0970cf4438097d891b2f5d2a9e72e1fd2ef320ff283cbee3114d0afcf198f",
     "attributions": [
       "https://developer.qweather.com/attribution.html"
     ]
@@ -35,7 +35,7 @@
       "name": "PM 2.5",
       "fullName": "颗粒物（粒径小于等于2.5µm）",
       "concentration": {
-        "value": 14.0,
+        "value": 15.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
@@ -51,14 +51,14 @@
       "name": "PM 10",
       "fullName": "颗粒物（粒径小于等于10µm）",
       "concentration": {
-        "value": 20.0,
+        "value": 22.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 20,
-          "aqiDisplay": "20"
+          "aqi": 22,
+          "aqiDisplay": "22"
         }
       ]
     },
@@ -67,7 +67,7 @@
       "name": "NO2",
       "fullName": "二氧化氮",
       "concentration": {
-        "value": 7.0,
+        "value": 6.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
