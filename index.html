@@ -126,9 +126,10 @@ header{display:flex;align-items:center;justify-content:space-between;gap:12px;pa
 .h-card .ht{font-size:15px;font-weight:600}
 .h-card .hp{font-size:10px;color:var(--rain);margin-top:3px;min-height:13px}
 .h-card .hw{font-size:10px;color:var(--txt3);margin-top:2px}
+.h-card .hc-cond{font-size:10px;color:var(--txt2);margin-top:0;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
 
 /* ---------- daily ---------- */
-.d-row{display:grid;grid-template-columns:74px 34px 44px 1fr 44px 34px;gap:10px;align-items:center;padding:11px 6px;border-bottom:1px solid rgba(255,255,255,.06);font-size:14px}
+.d-row{display:grid;grid-template-columns:74px 50px 44px 1fr 44px 34px;gap:10px;align-items:center;padding:11px 6px;border-bottom:1px solid rgba(255,255,255,.06);font-size:14px}
 .d-row:last-child{border-bottom:0}
 .d-row .dw{color:var(--txt2);display:flex;align-items:center;gap:6px}
 .d-row .dw b{color:var(--txt);display:block;font-size:13px}
@@ -137,6 +138,8 @@ header{display:flex;align-items:center;justify-content:space-between;gap:12px;pa
 .d-row .dw .dw-t b{font-size:13px}
 .d-row .dw b .qwi{font-size:14px;margin-right:3px;vertical-align:-2px;color:#e6c870}
 .d-row .qwi{font-size:25px}
+.d-row .dc-ico{display:flex;flex-direction:column;align-items:center;gap:1px;line-height:1}
+.d-row .dc-cond{font-size:10px;color:var(--txt2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
 .d-row .pop{font-size:11px;color:var(--rain);text-align:center}
 .d-bar{position:relative;height:7px;border-radius:4px;background:rgba(255,255,255,.1)}
 .d-bar i{position:absolute;top:0;bottom:0;border-radius:4px;background:linear-gradient(90deg,#5ea8ff,#ffb46a,#ff7a59)}
@@ -264,7 +267,7 @@ footer a:hover{color:var(--accent)}
   .idx-grid{grid-template-columns:repeat(2,1fr)}
   .grid6{grid-template-columns:repeat(2,1fr)}
   .pol{grid-template-columns:repeat(2,1fr)}
-  .d-row{grid-template-columns:64px 28px 40px 1fr 34px 28px;gap:7px;font-size:13px}
+  .d-row{grid-template-columns:64px 46px 40px 1fr 34px 28px;gap:7px;font-size:13px}
   .d-row .dw b,.d-row .dw .dw-t{font-size:12px}
   .cmp-grid{grid-template-columns:repeat(3,1fr);gap:8px}
   .footer-beian{flex-direction:column;gap:6px}
@@ -292,7 +295,7 @@ footer a:hover{color:var(--accent)}
 <div class="wrap">
 
   <header>
-    <div class="brand">
+    <div class="brand" title="点击刷新">
       <i id="brandIcon" class="qwi"></i>
       <span class="brand-txt">
         <span class="brand-name">偶滴天气</span>
@@ -770,6 +773,7 @@ function renderHourly(d){
     const dt=new Date(h.forecastTime),p=h.precipitation&&h.precipitation.probability||0;
     return `<div class="h-card"><div class="hh">${pad(dt.getHours())}:00</div>
       <i class="qwi ${QI(h.condition.code)}" style="color:${iconColor(h.condition.code)}" title="${h.condition.text}"></i>
+      <div class="hc-cond">${h.condition.text}</div>
       <div class="ht">${Math.round(h.temperature.value)}°</div>
       <div class="hp">${p>0.02?Math.round(p*100)+"%":""}</div>
       <div class="hw">${h.wind.scale}级</div></div>`;
@@ -790,7 +794,7 @@ function renderDaily(d){
     const moonIcon=mcls?`<i class="qwi ${mcls}"></i>`:(MOON[mp]||["🌙"])[0];
     return `<div class="d-row" onclick="this.classList.toggle('open')">
       <div class="dw"><b class="mc">${moonIcon}</b><span class="dw-t"><b>${dayLabel(x.forecastStartTime)}</b>${dt.getMonth()+1}/${dt.getDate()}</span></div>
-      <i class="qwi ${QI(x.daytime.condition.code)}" style="color:${iconColor(x.daytime.condition.code)}" title="白天 ${x.daytime.condition.text}"></i>
+      <div class="dc-ico"><i class="qwi ${QI(x.daytime.condition.code)}" style="color:${iconColor(x.daytime.condition.code)}" title="白天 ${x.daytime.condition.text}"></i><span class="dc-cond">${x.daytime.condition.text}</span></div>
       <div class="pop">${pop>0.02?"💧"+Math.round(pop*100)+"%":""}</div>
       <div class="d-bar"><i style="left:${L}%;width:${Rr-L}%"></i></div>
       <div class="d-lo">${Math.round(x.temperatureMin.value)}°</div>
@@ -963,13 +967,18 @@ function drawMulti(canvasId,labels,series,unit,smooth=true,splits=[]){
 const WX_SNOW=[75,76,83,84,92,93,94,95,99,72,73,74];
 const WX_FOG=[19,20,21,22,23,25,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,
   52,53,54,55,56,57,58,59,60,61,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,
-  120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139];
+  120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,
+  500,501,502,503,504,505,506,507,508,509,510,511,512,513,514];  // 雾 / 霾 / 沙尘 / 浮沙
 const WX_KIND=c=>{
-  if(c===0||c===1||c===100||(c>=150&&c<300))return "sun";   // 晴 / 少云 / 夜间晴(150-299)
-  if(c===2||c===101||c===102)return "cloud";       // 阴 / 多云 / 夜多云
+  // 晴 / 晴间多云（含夜间版 150/153）
+  if(c===0||c===1||c===100||c===103||c===150||c===153)return "sun";
+  // 多云 / 少云 / 阴（含夜间版 151/152/154）
+  if(c===2||c===101||c===102||c===104||c===151||c===152||c===154)return "cloud";
+  if(c>=150&&c<200)return "cloud";      // 其余夜间 100 系归云天
+  if(c>=200&&c<300)return "cloud";      // 风系列无专门特效，归云天
   if(WX_SNOW.includes(c))return "snow";
-  if(WX_FOG.includes(c))return "fog";              // 雾 / 霾 / 沙尘 / 浮沙
-  return "rain";                                    // 其余（阵雨、小中大暴雨、雨夹雪等）
+  if(WX_FOG.includes(c))return "fog";   // 雾 / 霾 / 沙尘 / 浮沙
+  return "rain";                        // 300-399 雨系 + 兜底
 };
 const cvFX=[];
 function seedFX(o,w,h){
@@ -1291,7 +1300,7 @@ function observeCards(){
 }
 
 document.querySelector(".brand").style.cursor="pointer";
-document.querySelector(".brand").onclick=()=>showCompare();
+document.querySelector(".brand").onclick=()=>location.reload();  // 点击品牌图标刷新整页（fetch 已 no-store，拉取最新数据）
 
 showCompare();
 CITIES.forEach((c,i)=>setTimeout(()=>loadCity(c.id),800+i*300)); // 空闲预取
