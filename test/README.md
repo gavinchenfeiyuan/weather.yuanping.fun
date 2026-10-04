@@ -111,7 +111,11 @@ curl -o /dev/null -w "%{http_code}\n" "http://127.0.0.1:8770/Data/%E4%B8%8A%E6%B
 ```bash
 node test/moon-render-check.js http://127.0.0.1:8770/index.html --engine=chromium
 node test/moon-render-check.js http://127.0.0.1:8770/index.html --engine=webkit   # 较慢，需放宽超时
+node test/moon-render-check.js http://127.0.0.1:8770/index.html --png=check.png   # 另存截图留档
 ```
+
+中间截图默认写到**系统临时目录**并在分析后自动删除（`--keep` 可改为落在本目录），
+所以运行本脚本**不会在仓库里留下任何文件**。
 
 退出码：`0` 全部通过；`1` 有异常或引擎运行失败。
 
@@ -119,17 +123,21 @@ node test/moon-render-check.js http://127.0.0.1:8770/index.html --engine=webkit 
 > 历史上曾因用圆弧连接圆的两个对径极点（半径被 SVG 规范静默放大到 9）导致
 > 月牙**面积退化为 0**、凸月退化成接近满月；这类退化在视觉上极难察觉。
 
-### `moon-page-shot.js` —— 真实页面截图
+### `moon-page-shot.js` —— 真实页面核对 + 截图
 
-在真实页面中检查四处展示位的实例（尺寸 / `viewBox` / `aria-label`），并输出：
+在真实页面中检查四处展示位的实例（尺寸 / `viewBox` / `aria-label`），并截图供人工看外观：
 
-- `_shot-astro.png`：天文区大月相（54px）
-- `_shot-daily.png`：多日预报行（17px）+ 展开的昼夜详情
-- `moon-zoom.png`：全部 8 相 ×3.2 倍放大的对照图（用于肉眼核对形态）
+- `shot-astro.png`：天文区大月相（54px）
+- `shot-daily.png`：多日预报行（17px）+ 展开的昼夜详情
+- `shot-zoom.png`：全部 8 相 ×3.2 倍放大的对照图（用于肉眼核对形态）
 
 ```bash
 node test/moon-page-shot.js http://127.0.0.1:8770/index.html
+node test/moon-page-shot.js http://127.0.0.1:8770/index.html --out=./screenshots   # 指定输出目录留档
 ```
+
+> **截图默认写入系统临时目录**（运行结束会打印具体路径），因此本脚本**不会在仓库里留下任何文件**。
+> 需要留档时用 `--out=目录` 显式指定。
 
 **月相展示位与尺寸**（改动时保持这些不变）：
 

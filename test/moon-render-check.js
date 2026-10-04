@@ -9,7 +9,10 @@
  *   因此本脚本改为：在页面内插入真实 SVG 实例 → 截图 → 逐格分析像素。
  *
  * 用法：
- *   node test/moon-render-check.js <页面URL> [--engine=chromium|webkit|both] [--png=输出路径]
+ *   node test/moon-render-check.js <页面URL> [--engine=chromium|webkit|both] [--png=输出路径] [--keep]
+ * 参数：
+ *   --png=路径  额外把截图另存到该路径（需要留档时用）
+ *   --keep      保留内部临时截图（默认分析完即删除，避免在仓库里留垃圾）
  * 退出码：0 全部符合预期；1 有异常
  */
 const { chromium, webkit } = require("playwright");
@@ -18,6 +21,7 @@ const path = require("path");
 
 const PAGE = process.argv[2] || "http://127.0.0.1:8770/index.html";
 const engArg = (process.argv.find(a => a.startsWith("--engine=")) || "").split("=")[1] || "both";
+const KEEP = process.argv.includes("--keep");
 const pngArg = (process.argv.find(a => a.startsWith("--png=")) || "").split("=")[1] || null;
 
 const CELL = 96;   // 每个相位的截图格尺寸
@@ -104,7 +108,10 @@ async function renderEngine(engineName, engine) {
     return { n, w: Math.round(r.width), h: Math.round(r.height) };
   }, { phases: PHASES, cell: CELL });
 
-  const shotPath = path.join(__dirname, `_render-${engineName}.png`);
+  // 中间截图默认写到系统临时目录：它只是一次性分析素材，不该留在仓库里。
+  // 需要留档时用 --png=路径 另存，或用 --keep 改为落在本目录。
+  const shotDir = KEEP ? __dirname : require("os").tmpdir();
+  const shotPath = path.join(shotDir, `moon-render-${engineName}-${process.pid}.png`);
   // 用 page.screenshot + 坐标裁剪，而非 locator.screenshot：
   // WebKit 下对动态挂载的元素做 locator.screenshot 会长时间等待"元素稳定"直至超时。
   const box = await p.evaluate(({ cell, n }) => {
@@ -131,6 +138,8 @@ async function renderEngine(engineName, engine) {
     if (r.errs.length) console.log(`  控制台错误：${r.errs.join(" | ")}`);
 
     const res = await analyzePng(r.shotPath, PHASES.length);
+    // 分析完即清理中间截图（--keep 时保留，便于人工核对）
+    if (!KEEP) { try { fs.unlinkSync(r.shotPath); } catch (e) {} }
     if (res.error) { console.log(`  ✗ ${res.error}`); summary.push(false); continue; }
     const stats = res.out;
     const full = stats[4].lit || 1;

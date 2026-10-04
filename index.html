@@ -113,9 +113,16 @@ header{display:flex;align-items:center;justify-content:space-between;gap:12px;pa
 
 /* ---------- minutely ---------- */
 #minutelyChart{width:100%;height:150px;display:block}
+/* 降水空态覆盖层：canvas 无法渲染 SVG 图标，故用 DOM 叠在图表上 */
+.m-canvas-wrap{position:relative}
+.m-empty{position:absolute;inset:0;display:none;align-items:center;justify-content:center;gap:6px;
+  font-size:13px;color:var(--txt2);pointer-events:none}
+.m-empty.show{display:flex}
+.m-empty .ico{width:1.15em;height:1.15em}
 .m-scale{display:flex;justify-content:space-between;font-size:11px;color:var(--txt3);margin-top:6px}
 .m-legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;font-size:11px;color:var(--txt3)}
 .ic{font-size:1.05em;vertical-align:-.14em;margin-right:4px;color:var(--txt2)}
+.ico{width:1em;height:1em;display:inline-block;vertical-align:-.14em;flex:none;overflow:visible}
 .m-legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:-1px}
 
 /* ---------- hourly ---------- */
@@ -361,6 +368,61 @@ html.swiping .card{backdrop-filter:none;-webkit-backdrop-filter:none}
 </style>
 </head>
 <body>
+<!-- 通用装饰图标 sprite（渐变风格，与月相 sprite 并列；禁用 display:none 以免渐变失效） -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="g-white" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#BFCCDD"/></linearGradient>
+    <linearGradient id="g-sky" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#82CCFF"/><stop offset="1" stop-color="#2A6FD0"/></linearGradient>
+    <linearGradient id="g-sun" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#FFE57A"/><stop offset="1" stop-color="#EFA21F"/></linearGradient>
+    <linearGradient id="g-coral" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#FFA096"/><stop offset="1" stop-color="#D63E32"/></linearGradient>
+    <linearGradient id="g-mint" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#88F2DA"/><stop offset="1" stop-color="#159F85"/></linearGradient>
+    <linearGradient id="g-lilac" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#CCBBFF"/><stop offset="1" stop-color="#6A4EC7"/></linearGradient>
+    <linearGradient id="g-peach" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#FFC9A3"/><stop offset="1" stop-color="#D47237"/></linearGradient>
+    <linearGradient id="g-ink" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#4A5670"/><stop offset="1" stop-color="#1A2233"/></linearGradient>
+  </defs>
+
+  <!-- 通用 -->
+  <symbol id="i-pin" viewBox="0 0 32 32"><path d="M16 3c-5.5 0-10 4.5-10 10 0 7.5 10 16 10 16s10-8.5 10-16c0-5.5-4.5-10-10-10z" fill="url(#g-coral)"/><path d="M10 9c1-3 4-5 6-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" fill="none" opacity=".55"/><circle cx="16" cy="12.5" r="4" fill="#fff"/><circle cx="14.8" cy="11.3" r="1.3" fill="#fff" opacity=".7"/></symbol>
+  <symbol id="i-droplet" viewBox="0 0 32 32"><path d="M16 3S7 14 7 20.5a9 9 0 0 0 18 0C25 14 16 3 16 3z" fill="url(#g-sky)"/><path d="M11.5 21a4.5 4.5 0 0 0 4.5 4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" fill="none" opacity=".65"/><ellipse cx="12.5" cy="17" rx="1.6" ry="3" fill="#fff" opacity=".4"/></symbol>
+  <symbol id="i-wind" viewBox="0 0 32 32"><path d="M5 11h13a3 3 0 1 0-3-3" fill="none" stroke="url(#g-white)" stroke-width="3.2" stroke-linecap="round"/><path d="M5 16h16a3 3 0 1 1-3 3" fill="none" stroke="url(#g-sky)" stroke-width="3.2" stroke-linecap="round"/><path d="M5 21h9" fill="none" stroke="url(#g-white)" stroke-width="3.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 32 32"><circle cx="16" cy="16" r="12" fill="#FFD23F" opacity=".14"/><circle cx="16" cy="16" r="8.5" fill="#FFD23F" opacity=".22"/><circle cx="16" cy="16" r="6" fill="url(#g-sun)"/><ellipse cx="13.8" cy="13.5" rx="2.4" ry="1.8" fill="#fff" opacity=".55"/><g stroke="url(#g-sun)" stroke-width="2.5" stroke-linecap="round"><path d="M16 2v3M16 27v3M2 16h3M27 16h3M6 6l2 2M24 24l2 2M6 26l2-2M24 8l2-2"/></g></symbol>
+  <symbol id="i-uv" viewBox="0 0 32 32"><circle cx="13" cy="15" r="9" fill="#FFD23F" opacity=".18"/><circle cx="13" cy="15" r="6" fill="url(#g-sun)"/><ellipse cx="11" cy="13" rx="2" ry="1.5" fill="#fff" opacity=".5"/><g stroke="url(#g-sun)" stroke-width="2.2" stroke-linecap="round"><path d="M13 4v2M4 15h2M7 8l1.5 1.5M19 8l-1.5 1.5"/></g><path d="M22 24l3.5-3-3.5-3" fill="none" stroke="url(#g-coral)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 21h6" stroke="url(#g-coral)" stroke-width="2.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 32 32"><circle cx="16" cy="16" r="12" fill="#B39DFF" opacity=".15"/><path d="M24 21a11 11 0 1 1-10-16 9 9 0 0 0 10 16z" fill="url(#g-lilac)"/><circle cx="14" cy="15" r="1.2" fill="#0b1020" opacity=".18"/><circle cx="18" cy="20" r="1.8" fill="#0b1020" opacity=".13"/><circle cx="22" cy="9" r="1.5" fill="#FFE57A"/></symbol>
+  <symbol id="i-rain" viewBox="0 0 32 32"><path d="M9 20a5.5 5.5 0 0 1 1-11 7 7 0 0 1 13 2 4.5 4.5 0 0 1-1 9z" fill="url(#g-white)"/><ellipse cx="12" cy="13" rx="3.5" ry="2.4" fill="#fff" opacity=".55"/><g stroke="url(#g-sky)" stroke-width="2.8" stroke-linecap="round"><path d="M11 23l-1 4M17 23l-1 4M23 23l-1 4"/></g></symbol>
+  <symbol id="i-gauge" viewBox="0 0 32 32"><path d="M5 21a11 11 0 1 1 22 0" fill="none" stroke="url(#g-white)" stroke-width="3.2" stroke-linecap="round"/><path d="M16 21l5-6.5" stroke="url(#g-coral)" stroke-width="3" stroke-linecap="round"/><circle cx="16" cy="21" r="2.8" fill="url(#g-coral)"/><ellipse cx="14.6" cy="20" rx=".9" ry=".6" fill="#fff" opacity=".6"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 32 32"><path d="M3 16s5-8 13-8 13 8 13 8-5 8-13 8S3 16 3 16z" fill="url(#g-white)"/><circle cx="16" cy="16" r="5.5" fill="url(#g-sky)"/><circle cx="16" cy="16" r="2.4" fill="#0b1020"/><circle cx="14.4" cy="14.4" r=".9" fill="#fff"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 32 32"><path d="M9 23a6 6 0 0 1 1-12 7 7 0 0 1 13 2 5 5 0 0 1-1 10z" fill="url(#g-white)"/><ellipse cx="12" cy="15" rx="4" ry="2.8" fill="#fff" opacity=".55"/><circle cx="24" cy="9" r="3" fill="url(#g-sun)"/><circle cx="23.2" cy="8.2" r="1" fill="#fff" opacity=".65"/></symbol>
+  <symbol id="i-thermo" viewBox="0 0 32 32"><rect x="12" y="3" width="8" height="20" rx="4" fill="url(#g-white)"/><rect x="14" y="6" width="4" height="17" fill="url(#g-coral)"/><circle cx="16" cy="24" r="6" fill="url(#g-coral)"/><circle cx="14.2" cy="22.5" r="1.6" fill="#fff" opacity=".4"/><ellipse cx="14" cy="9" rx=".9" ry="3" fill="#fff" opacity=".6"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 32 32"><path d="M16 3 2 27h28z" fill="url(#g-coral)" stroke="url(#g-coral)" stroke-width="2" stroke-linejoin="round"/><path d="M16 5 5 25h22z" fill="#fff" opacity=".12"/><rect x="14.75" y="11" width="2.5" height="9" rx="1.25" fill="#fff"/><circle cx="16" cy="23.5" r="1.5" fill="#fff"/></symbol>
+  <symbol id="i-people" viewBox="0 0 32 32"><circle cx="11" cy="10" r="4.5" fill="url(#g-white)"/><path d="M3 27a8 8 0 0 1 16 0z" fill="url(#g-white)"/><circle cx="23" cy="13" r="3.5" fill="url(#g-sky)"/><path d="M17 27a6 6 0 0 1 12 0z" fill="url(#g-sky)"/></symbol>
+  <symbol id="i-sunrise" viewBox="0 0 32 32"><circle cx="16" cy="20" r="10" fill="#FFD23F" opacity=".18"/><path d="M8 21a8 8 0 0 1 16 0z" fill="url(#g-sun)"/><path d="M12.5 18a4 4 0 0 1 7 0" fill="#fff" opacity=".3"/><line x1="3" y1="24" x2="29" y2="24" stroke="url(#g-white)" stroke-width="2.5" stroke-linecap="round"/><g stroke="url(#g-sun)" stroke-width="2.5" stroke-linecap="round"><path d="M16 5v3M8 9l1.5 1.5M24 9l-1.5 1.5"/></g><path d="M16 14l-2.5-2.5M16 14l2.5-2.5" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none" opacity=".7"/></symbol>
+  <symbol id="i-sunset" viewBox="0 0 32 32"><circle cx="16" cy="20" r="10" fill="#FFAB76" opacity=".22"/><path d="M8 21a8 8 0 0 1 16 0z" fill="url(#g-peach)"/><path d="M12.5 18a4 4 0 0 1 7 0" fill="#fff" opacity=".3"/><line x1="3" y1="24" x2="29" y2="24" stroke="url(#g-white)" stroke-width="2.5" stroke-linecap="round"/><g stroke="url(#g-peach)" stroke-width="2.5" stroke-linecap="round"><path d="M16 10V7M8 12l-1.5-1.5M24 12l1.5-1.5"/></g><path d="M16 14l-2.5 2.5M16 14l2.5 2.5" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none" opacity=".7"/></symbol>
+
+  <!-- 生活指数 -->
+  <symbol id="i-run" viewBox="0 0 32 32"><circle cx="19" cy="6" r="3" fill="url(#g-white)"/><path d="M15 11l-4 5 3 5" stroke="url(#g-white)" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 21l-3 7" stroke="url(#g-sky)" stroke-width="3.5" stroke-linecap="round"/><path d="M14 14l6 1 5-4" stroke="url(#g-white)" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 15l3 5-1 5" stroke="url(#g-sky)" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-car" viewBox="0 0 32 32"><path d="M5 18l2-6.5a2.5 2.5 0 0 1 2.4-1.8h13.2a2.5 2.5 0 0 1 2.4 1.8L27 18v6a1.5 1.5 0 0 1-1.5 1.5h-2A1.5 1.5 0 0 1 22 24v-1.5H10V24a1.5 1.5 0 0 1-1.5 1.5h-2A1.5 1.5 0 0 1 5 24z" fill="url(#g-white)"/><path d="M8 15l1.5-3.3a1.4 1.4 0 0 1 1.3-.9h10.4a1.4 1.4 0 0 1 1.3.9L24 15z" fill="url(#g-sky)"/><ellipse cx="12" cy="12" rx="3" ry=".8" fill="#fff" opacity=".55"/><circle cx="10" cy="20" r="1.8" fill="#0b1020"/><circle cx="22" cy="20" r="1.8" fill="#0b1020"/></symbol>
+  <symbol id="i-shirt" viewBox="0 0 32 32"><path d="M11 4 5 7v6l3 1v12h16V14l3-1V7l-6-3-2 2h-6z" fill="url(#g-white)"/><path d="M12 6a4 4 0 0 0 8 0" fill="none" stroke="url(#g-sky)" stroke-width="2.2"/><path d="M11 4 5 7v6l3 1" fill="#fff" opacity=".2"/><path d="M13 13v11" stroke="#0b1020" stroke-width=".5" opacity=".12"/></symbol>
+  <symbol id="i-fish" viewBox="0 0 32 32"><path d="M28 16c-4-5-9-7-14-7 1 3 1 11 0 14 5 0 10-2 14-7z" fill="url(#g-sky)"/><path d="M14 9 8 3c1 3 1 5 1 6M14 23l-6 6c1-3 1-5 1-6" fill="url(#g-sky)"/><ellipse cx="19" cy="18" rx="3" ry="1.2" fill="#fff" opacity=".35"/><circle cx="23" cy="15.5" r="1.6" fill="#0b1020"/><circle cx="22.6" cy="15" r=".5" fill="#fff"/></symbol>
+  <symbol id="i-luggage" viewBox="0 0 32 32"><path d="M12 10V6a3 3 0 0 1 3-3h2a3 3 0 0 1 3 3v4" fill="none" stroke="url(#g-white)" stroke-width="2.5"/><rect x="5" y="10" width="22" height="17" rx="3" fill="url(#g-white)"/><rect x="5" y="18" width="22" height="1.8" fill="url(#g-sky)"/><path d="M7 12h18" stroke="#fff" stroke-width="1" opacity=".6"/><circle cx="11" cy="23" r="1.2" fill="#0b1020" opacity=".35"/><circle cx="21" cy="23" r="1.2" fill="#0b1020" opacity=".35"/></symbol>
+  <symbol id="i-allergy" viewBox="0 0 32 32"><circle cx="16" cy="17" r="11" fill="url(#g-white)"/><circle cx="16" cy="17" r="11" fill="url(#g-sun)" opacity=".18"/><ellipse cx="11" cy="12" rx="2.5" ry="1.8" fill="#fff" opacity=".65"/><path d="M12 15v.6M20 15v.6" stroke="#0b1020" stroke-width="2.5" stroke-linecap="round"/><path d="M12 23c1.5-2 3-2 4-1s3 1 4-1" stroke="#0b1020" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M24 5l.8 1.7 1.9.3-1.4 1.3.4 1.9L24 9.4l-1.7.8.4-1.9L21.3 7l1.9-.3z" fill="#FFE57A"/></symbol>
+  <symbol id="i-comfort" viewBox="0 0 32 32"><circle cx="16" cy="16" r="12" fill="url(#g-mint)" opacity=".28"/><circle cx="16" cy="16" r="9.5" fill="url(#g-mint)"/><ellipse cx="13" cy="12" rx="2.2" ry="1.6" fill="#fff" opacity=".4"/><path d="M12 14v.5M20 14v.5" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/><path d="M11 19c1.5 2 3 3 5 3s3.5-1 5-3" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/></symbol>
+  <symbol id="i-sick" viewBox="0 0 32 32"><rect x="13" y="4" width="6" height="24" rx="2.5" fill="url(#g-white)"/><rect x="4" y="13" width="24" height="6" rx="2.5" fill="url(#g-white)"/><rect x="13" y="4" width="6" height="24" rx="2.5" fill="url(#g-coral)" opacity=".22"/><rect x="4" y="13" width="24" height="6" rx="2.5" fill="url(#g-coral)" opacity=".22"/><rect x="14.5" y="5" width="1" height="22" fill="#fff" opacity=".55"/><rect x="5" y="14.5" width="22" height="1" fill="#fff" opacity=".55"/></symbol>
+  <symbol id="i-haze" viewBox="0 0 32 32"><path d="M5 11h14" stroke="url(#g-white)" stroke-width="3.2" stroke-linecap="round" fill="none"/><path d="M5 16h20" stroke="url(#g-peach)" stroke-width="3.2" stroke-linecap="round" fill="none"/><path d="M5 21h16" stroke="url(#g-white)" stroke-width="3.2" stroke-linecap="round" fill="none"/><path d="M22 11h3" stroke="url(#g-peach)" stroke-width="3.2" stroke-linecap="round" fill="none"/><path d="M24 21h3" stroke="url(#g-peach)" stroke-width="3.2" stroke-linecap="round" fill="none"/></symbol>
+  <symbol id="i-snowflake" viewBox="0 0 32 32"><g stroke="url(#g-sky)" stroke-width="2.8" stroke-linecap="round" fill="none"><path d="M16 4v24"/><path d="M5 10l22 12"/><path d="M27 10L5 22"/></g><g stroke="#fff" stroke-width="1" stroke-linecap="round" fill="none" opacity=".55"><path d="M16 5v22"/></g><g fill="url(#g-sky)"><path d="M16 2l-3 3h6z"/><path d="M16 30l-3-3h6z"/><path d="M5 10l1 3 3-2z"/><path d="M27 22l-1-3-3 2z"/></g></symbol>
+  <symbol id="i-sunglasses" viewBox="0 0 32 32"><path d="M3 12a4 4 0 0 1 4-4h18a4 4 0 0 1 4 4v1.5H3z" fill="url(#g-white)"/><circle cx="10" cy="18" r="5" fill="url(#g-sky)"/><circle cx="22" cy="18" r="5" fill="url(#g-sky)"/><ellipse cx="8.5" cy="16" rx="1.8" ry="1.2" fill="#fff" opacity=".4"/><ellipse cx="20.5" cy="16" rx="1.8" ry="1.2" fill="#fff" opacity=".4"/><path d="M13 17h6" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></symbol>
+  <symbol id="i-makeup" viewBox="0 0 32 32"><rect x="11" y="15" width="10" height="14" rx="2" fill="url(#g-white)"/><path d="M13 15V7l3-4 3 4v8z" fill="url(#g-coral)"/><rect x="13.5" y="8" width="1.5" height="6" fill="#fff" opacity=".5"/><rect x="12.5" y="21" width="7" height="1" fill="#0b1020" opacity=".18"/></symbol>
+  <symbol id="i-tie" viewBox="0 0 32 32"><path d="M12 4h8l-2 4-2 1-2-1z" fill="url(#g-white)"/><path d="M16 9v7l3 6-3 6-3-6 3-6z" fill="url(#g-lilac)"/><path d="M14 10l2 5-1 4" stroke="#fff" stroke-width=".8" opacity=".45" fill="none"/></symbol>
+  <symbol id="i-traffic" viewBox="0 0 32 32"><rect x="8" y="2" width="16" height="28" rx="6" fill="url(#g-white)"/><circle cx="16" cy="9" r="3" fill="url(#g-coral)"/><circle cx="16" cy="16" r="3" fill="url(#g-sun)"/><circle cx="16" cy="23" r="3" fill="url(#g-mint)"/><circle cx="15.2" cy="8.2" r=".8" fill="#fff" opacity=".7"/><circle cx="15.2" cy="15.2" r=".8" fill="#fff" opacity=".7"/><circle cx="15.2" cy="22.2" r=".8" fill="#fff" opacity=".7"/></symbol>
+  <symbol id="i-sunscreen" viewBox="0 0 32 32"><rect x="11" y="2" width="10" height="3" rx="1" fill="url(#g-white)"/><rect x="13" y="5" width="6" height="3" fill="url(#g-coral)"/><path d="M9 8h14l-1 19a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2z" fill="url(#g-sun)"/><ellipse cx="13" cy="15" rx="1.5" ry="3" fill="#fff" opacity=".45"/><circle cx="16" cy="20" r="3.5" fill="#fff" opacity=".25"/></symbol>
+
+  <!-- 对比 chips -->
+  <symbol id="i-fire" viewBox="0 0 32 32"><path d="M16 29c5.5 0 9-3.5 9-8 0-4.5-3.5-7-6-10.5 0 2.5-1 4-2.5 4C16.5 11 16 7 12 3c0 4-4 6.5-4 11.5C8 24 10 29 16 29z" fill="url(#g-coral)"/><path d="M16 29c2.5 0 4.5-2 4.5-4.5 0-2.5-2-3.5-3-5.5 0 1-.5 2-1.5 2 .5-2-.5-4-2-5.5 0 2.5-2 3.5-2 6 0 3.5 2 7.5 4 7.5z" fill="url(#g-sun)"/><path d="M14 24c.5 1 1.5 1.5 2 1.5" stroke="#fff" stroke-width="1" fill="none" opacity=".5" stroke-linecap="round"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 32 32"><path d="M5 27C5 16 13 7 28 5 26 20 17 27 5 27z" fill="url(#g-mint)"/><path d="M5 27c4-8 12-14 20-16" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" opacity=".65"/><path d="M9 23c2-2 5-4 8-5" stroke="#0b1020" stroke-width="1.2" fill="none" opacity=".15" stroke-linecap="round"/></symbol>
+  <symbol id="i-cactus" viewBox="0 0 32 32"><rect x="13" y="7" width="6" height="21" rx="3" fill="url(#g-mint)"/><path d="M8 12v3a3 3 0 0 0 3 3h2" fill="none" stroke="url(#g-mint)" stroke-width="3.2" stroke-linecap="round"/><path d="M24 16v3a3 3 0 0 1-3 3h-2" fill="none" stroke="url(#g-mint)" stroke-width="3.2" stroke-linecap="round"/><path d="M14 10v15" stroke="#fff" stroke-width="1" opacity=".45" stroke-linecap="round"/><path d="M9 15v1M23 19v1" stroke="#fff" stroke-width="1" opacity=".5" stroke-linecap="round"/></symbol>
+  <!-- 降水空态用（原为 canvas 文本里的咖啡 emoji；canvas 无法渲染 SVG，故改用 DOM 覆盖层） -->
+  <symbol id="i-coffee" viewBox="0 0 32 32"><g stroke="url(#g-white)" stroke-width="2" stroke-linecap="round" fill="none" opacity=".7"><path d="M12 4c-1.5 2 1.5 3 0 5"/><path d="M18 3c-1.5 2 1.5 3 0 5"/></g><path d="M6 12h16v7a7 7 0 0 1-7 7h-2a7 7 0 0 1-7-7z" fill="url(#g-white)"/><path d="M6 12h16v2.6H6z" fill="url(#g-peach)"/><path d="M22 14h2.4a3.4 3.4 0 0 1 0 6.8H22" fill="none" stroke="url(#g-white)" stroke-width="2.4" stroke-linecap="round"/><ellipse cx="10.6" cy="17" rx="1.5" ry="2.5" fill="#fff" opacity=".45"/><path d="M4 28h24" stroke="url(#g-white)" stroke-width="2.4" stroke-linecap="round"/></symbol>
+</svg>
+
 <!-- 月相图标 sprite（8 相，viewBox 0 0 32 32；渐变月色 + 月海纹理 + mask 相位） -->
 <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false">
   <defs>
@@ -475,7 +537,7 @@ html.swiping .card{backdrop-filter:none;-webkit-backdrop-filter:none}
   <!-- HERO -->
   <section class="hero">
     <div class="card hero-main" onclick="goView(0)" title="返回首页">
-      <div class="loc">📍 <b id="cityName">--</b><span class="upd" id="updTime"></span></div>
+      <div class="loc"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg> <b id="cityName">--</b><span class="upd" id="updTime"></span></div>
       <div class="now-line">
         <i class="now-icon qwi" id="nowIcon"></i>
         <div>
@@ -491,18 +553,18 @@ html.swiping .card{backdrop-filter:none;-webkit-backdrop-filter:none}
         </div>
       </div>
       <div class="hero-chips2">
-        <span class="chip">💧 湿度 <b id="nowHum">--</b></span>
-        <span class="chip"><i class="ic">🌬️</i> <b id="nowWind">--</b></span>
+        <span class="chip"><svg class="ico" aria-hidden="true"><use href="#i-droplet"/></svg> 湿度 <b id="nowHum">--</b></span>
+        <span class="chip"><i class="ic"><svg class="ico" aria-hidden="true"><use href="#i-wind"/></svg></i> <b id="nowWind">--</b></span>
       </div>
       <div class="minutely-summary" id="minutelySum">降水实况加载中…</div>
     </div>
     <div class="card hero-side">
       <svg class="sun-arc" id="sunArc" viewBox="0 0 320 110"></svg>
       <div class="sun-row">
-        <div><div class="l">🌅 日出</div><div class="t" id="sunrise">--:--</div></div>
-        <div><div class="l"><i class="ic">☀️</i> 日中</div><div class="t" id="solarNoon">--:--</div></div>
-        <div><div class="l">🌇 日落</div><div class="t" id="sunset">--:--</div></div>
-        <div><div class="l">🌙 月相</div><div class="t" id="moonMini">--</div></div>
+        <div><div class="l"><svg class="ico" aria-hidden="true"><use href="#i-sunrise"/></svg> 日出</div><div class="t" id="sunrise">--:--</div></div>
+        <div><div class="l"><svg class="ico" aria-hidden="true"><use href="#i-sun"/></svg> 日中</div><div class="t" id="solarNoon">--:--</div></div>
+        <div><div class="l"><svg class="ico" aria-hidden="true"><use href="#i-sunset"/></svg> 日落</div><div class="t" id="sunset">--:--</div></div>
+        <div><div class="l"><svg class="ico" aria-hidden="true"><use href="#i-moon"/></svg> 月相</div><div class="t" id="moonMini">--</div></div>
       </div>
     </div>
   </section>
@@ -510,7 +572,10 @@ html.swiping .card{backdrop-filter:none;-webkit-backdrop-filter:none}
   <!-- MINUTELY -->
   <section class="card" id="secMinutely">
     <div class="sec-title"><h2>降水</h2></div>
-    <canvas id="minutelyChart"></canvas>
+    <div class="m-canvas-wrap">
+      <canvas id="minutelyChart"></canvas>
+      <div class="m-empty" id="mEmpty"><svg class="ico" aria-hidden="true"><use href="#i-coffee"/></svg> 未来两小时无降水</div>
+    </div>
     <div class="m-legend" id="mLegend"></div>
     <div class="m-scale"><span id="mStart">现在</span><span>+1h</span><span>+2h</span></div>
   </section>
@@ -565,8 +630,8 @@ html.swiping .card{backdrop-filter:none;-webkit-backdrop-filter:none}
   <section class="card">
     <div class="sec-title"><h2>天文时刻</h2><span id="astroDate"></span></div>
     <div class="astro-grid">
-      <div class="astro-card"><h3><i class="ic">☀️</i> 太阳</h3><div class="astro-rows" id="sunRows"></div></div>
-      <div class="astro-card"><h3>🌙 月亮</h3>
+      <div class="astro-card"><h3><i class="ic"><svg class="ico" aria-hidden="true"><use href="#i-sun"/></svg></i> 太阳</h3><div class="astro-rows" id="sunRows"></div></div>
+      <div class="astro-card"><h3><svg class="ico" aria-hidden="true"><use href="#i-moon"/></svg> 月亮</h3>
         <div class="moon-big" id="moonBig"></div>
         <div class="moon-name" id="moonName">--</div>
         <div class="astro-rows" id="moonRows"></div>
@@ -652,9 +717,15 @@ function moonSvg(phase){
   const id=MOON_ID[phase];if(!id)return "";
   return `<svg class="moon-svg" viewBox="0 0 32 32" role="img" aria-label="${moonZh(phase)}"><use href="#${id}"/></svg>`;
 }
-const IDX_ICON={"1":"🏃","2":"🚗","3":"👕","4":"🎣","5":"🌞","6":"🧳","7":"🤧","8":"😌","9":"🤒","10":"🌫️","11":"❄️","12":"🕶️","13":"💄","14":"👔","15":"🚦","16":"🧴"};
+const IDX_ICON={"1":"run","2":"car","3":"shirt","4":"fish","5":"uv","6":"luggage","7":"allergy","8":"comfort","9":"sick","10":"haze","11":"snowflake","12":"sunglasses","13":"makeup","14":"tie","15":"traffic","16":"sunscreen"};
 const WEEK=["周日","周一","周二","周三","周四","周五","周六"];
 const $=id=>document.getElementById(id);
+// 装饰图标：引用通用 sprite 里的 <symbol>，尺寸默认 1em（跟随所在元素字号）
+function ico(name,size){
+  const id="i-"+name;
+  const s=size?` width="${size}" height="${size}"`:"";
+  return `<svg class="ico" aria-hidden="true"${s}><use href="#${id}"/></svg>`;
+}
 const cache={}; let curCity=null;
 const CITY_COLORS={"上海":"#5ea8ff","厦门":"#ffb46a","莆田":"#8be0d4"};
 
@@ -840,7 +911,7 @@ function renderAlerts(al){
   const a=al.alerts[0];
   const col=a.severityColor||"#ffb020";
   box.style.borderColor=col;box.style.background=col+"22";
-  box.innerHTML=`<h3><i class="ic">⚠️</i> ${a.title||"气象预警"}</h3><p>${a.text||a.description||""}</p>
+  box.innerHTML=`<h3><i class="ic">${ico("alert")}</i> ${a.title||"气象预警"}</h3><p>${a.text||a.description||""}</p>
     <p style="margin-top:6px">${a.startTime?("生效 "+hm(a.startTime)):""} ${a.endTime?("— "+hm(a.endTime)):""} ${a.sender||""}</p>`;
   box.className="show";
 }
@@ -874,7 +945,7 @@ function renderHero(city,d){
   drawSunArc(day0.astro);
   // 分钟级摘要 + 更新时间
   const mn=d.minutely_precip;
-  $("minutelySum").innerHTML='<i class="ic">🌧️</i>'+(mn.summary||'')+" ",(mn.summary||"未来 2 小时无明显降水");
+  $("minutelySum").innerHTML='<i class="ic">'+ico("rain")+'</i>'+(mn.summary||'')+" ",(mn.summary||"未来 2 小时无明显降水");
   $("updTime").textContent="更新 "+(mn.updateTime?mn.updateTime.slice(11,16):"");
 }
 
@@ -914,7 +985,7 @@ function setupCanvas(c,hCss){
 function renderMinutely(d){
   const list=d.minutely_precip.minutely||[];
   const c=$("minutelyChart"),[ctx,W,H]=setupCanvas(c,150);
-  if(!list.length){ctx.fillStyle="#9aa7c7";ctx.font="13px sans-serif";ctx.fillText("暂无数据",10,24);return}
+  if(!list.length){ctx.fillStyle="#9aa7c7";ctx.font="13px sans-serif";ctx.fillText("暂无数据",10,24);$("mEmpty").classList.remove("show");return}
   const P={l:36,r:6,t:12,b:24},iw=W-P.l-P.r,ih=H-P.t-P.b;
   const max=Math.max(.1,...list.map(m=>+m.precip));
   // 主刻度（实线带数字）= 细分步长 ×2，细分刻度为虚线无数字
@@ -934,14 +1005,14 @@ function renderMinutely(d){
   }
   ctx.setLineDash([]);
   const bw=iw/list.length;
-  if(list.every(m=>+m.precip===0)){ // 空态：未来两小时无降水
-    ctx.fillStyle="#9aa7c7";ctx.font="13px sans-serif";ctx.textAlign="center";
-    ctx.fillText("未来两小时无降水 ☕",W/2,P.t+ih/2-6);
-    ctx.fillStyle="#6b7794";ctx.font=axisFont();
+  if(list.every(m=>+m.precip===0)){ // 空态：未来两小时无降水（文案由 DOM 覆盖层呈现，含 SVG 图标）
+    ctx.fillStyle="#6b7794";ctx.font=axisFont();ctx.textAlign="center";
     list.forEach((m,i)=>{if(i%6===0)ctx.fillText(m.fxTime.slice(11,16),P.l+i*bw+bw/2,H-8)});
     $("mLegend").innerHTML="";
+    $("mEmpty").classList.add("show");
     return;
   }
+  $("mEmpty").classList.remove("show");
   list.forEach((m,i)=>{
     const v=+m.precip,h=v/hi*ih;
     const x=P.l+i*bw+bw*.2,y=Y(v);
@@ -1045,14 +1116,14 @@ function renderDaily(d){
     return `<div class="d-row" onclick="this.classList.toggle('open')">
       <div class="dw"><b class="mc">${moonIcon}</b><span class="dw-t"><b>${dayLabel(x.forecastStartTime)}</b>${dt.getMonth()+1}/${dt.getDate()}</span></div>
       <div class="dc-ico"><i class="qwi ${QI(x.daytime.condition.code)}" style="color:${iconColor(x.daytime.condition.code)}" title="白天 ${x.daytime.condition.text}"></i><span class="dc-cond">${x.daytime.condition.text}</span></div>
-      <div class="pop">${pop>0.02?"💧"+Math.round(pop*100)+"%":""}</div>
+      <div class="pop">${pop>0.02?ico("droplet")+Math.round(pop*100)+"%":""}</div>
       <div class="d-bar"><i style="left:${L}%;width:${Rr-L}%"></i></div>
       <div class="d-lo">${Math.round(x.temperatureMin.value)}°</div>
       <div class="d-hi">${Math.round(x.temperatureMax.value)}°</div>
       <div class="d-extra">
         <div class="de-block">
           <div class="de-g3">
-            <span class="de-l"></span><span class="de-h">☀️ 白天</span><span class="de-h">🌙 夜间</span>
+            <span class="de-l"></span><span class="de-h">${ico("sun")} 白天</span><span class="de-h">${ico("moon")} 夜间</span>
             <span class="de-l">天气</span><span class="de-v">${x.daytime.condition.text}</span><span class="de-v">${n.condition.text}</span>
             <span class="de-l">风力</span><span class="de-v">${windTxt(x.daytime.wind)}</span><span class="de-v">${windTxt(n.wind)}</span>
             <span class="de-l">降水</span><span class="de-v">${rainTxt(x.daytime.precipitation)}</span><span class="de-v">${rainTxt(n.precipitation)}</span>
@@ -1061,9 +1132,9 @@ function renderDaily(d){
         </div>
         <div class="de-block">
           <div class="de-g2">
-            <span class="de-l">🔆 紫外线</span><span class="de-v">${x.uvIndexMax}（${uvText(x.uvIndexMax)}）</span>
-            <span class="de-l">🌅 日出/日落</span><span class="de-v">${hm(x.astro.sunrise)} / ${hm(x.astro.sunset)}</span>
-            <span class="de-l">🌙 月出/月落</span><span class="de-v">${hm(x.astro.moonrise)} / ${hm(x.astro.moonset)}</span>
+            <span class="de-l">${ico("uv")} 紫外线</span><span class="de-v">${x.uvIndexMax}（${uvText(x.uvIndexMax)}）</span>
+            <span class="de-l">${ico("sunrise")} 日出/日落</span><span class="de-v">${hm(x.astro.sunrise)} / ${hm(x.astro.sunset)}</span>
+            <span class="de-l">${ico("moon")} 月出/月落</span><span class="de-v">${hm(x.astro.moonrise)} / ${hm(x.astro.moonset)}</span>
             <span class="de-l">${moonIcon}月相</span><span class="de-v">${moonZh(x.astro.moonPhase)}</span>
           </div>
         </div>
@@ -1076,18 +1147,18 @@ function renderDetails(d){
   const rt=d.realtime_weather;
   const deg=rt.wind.direction.degree;
   const items=[
-    {l:"💧 相对湿度",v:pct(rt.humidity),s:`露点 ${r1(rt.dewPoint.value)}°C`,m:rt.humidity*100},
-    {l:`<i class="ic">🌬️</i> 风`,v:`${rt.wind.scale}<small>级</small>`,s:`${COMPASS[rt.wind.direction.compass]||""} ${rt.wind.speed.value} m/s<br>阵风 ${rt.windGust.value} m/s`,
+    {l:ico("droplet")+" 相对湿度",v:pct(rt.humidity),s:`露点 ${r1(rt.dewPoint.value)}°C`,m:rt.humidity*100},
+    {l:`<i class="ic">${ico("wind")}</i> 风`,v:`${rt.wind.scale}<small>级</small>`,s:`${COMPASS[rt.wind.direction.compass]||""} ${rt.wind.speed.value} m/s<br>阵风 ${rt.windGust.value} m/s`,
      dial:`<svg class="wind-dial" viewBox="0 0 60 60"><circle cx="30" cy="30" r="27" fill="none" stroke="rgba(255,255,255,.15)"/>
        <text x="30" y="10" text-anchor="middle" fill="#6b7794" font-size="8">北</text>
        <g transform="rotate(${deg} 30 30)"><path d="M30 12 L34 32 L30 28 L26 32 Z" fill="#5ea8ff"/></g>
        <circle cx="30" cy="30" r="3" fill="#8be0d4"/></svg>`},
-    {l:"🧭 气压",v:Math.round(rt.pressure.value),u:"hPa"},
-    {l:`<i class="ic">👁️</i> 能见度`,v:visText(rt.visibility.value)},
-    {l:`<i class="ic">🌧️</i> 降水`,v:rt.precipitation.amount.value,u:"mm",s:`强度 ${rt.precipitation.intensity.value} mm/h<br>${rt.precipitation.type==="rain"?"雨":rt.precipitation.type==="snow"?"雪":"降水"}`},
-    {l:"☁️ 云量",v:pct(rt.cloudCover),m:rt.cloudCover*100},
-    {l:"🔆 紫外线",v:rt.uvIndex,s:uvText(rt.uvIndex)},
-    {l:"🌡 体感温度",v:r1(rt.feelsLike.value),u:"°C",s:`实况 ${r1(rt.temperature.value)}°C`}
+    {l:ico("gauge")+" 气压",v:Math.round(rt.pressure.value),u:"hPa"},
+    {l:`<i class="ic">${ico("eye")}</i> 能见度`,v:visText(rt.visibility.value)},
+    {l:`<i class="ic">${ico("rain")}</i> 降水`,v:rt.precipitation.amount.value,u:"mm",s:`强度 ${rt.precipitation.intensity.value} mm/h<br>${rt.precipitation.type==="rain"?"雨":rt.precipitation.type==="snow"?"雪":"降水"}`},
+    {l:ico("cloud")+" 云量",v:pct(rt.cloudCover),m:rt.cloudCover*100},
+    {l:ico("uv")+" 紫外线",v:rt.uvIndex,s:uvText(rt.uvIndex)},
+    {l:ico("thermo")+" 体感温度",v:r1(rt.feelsLike.value),u:"°C",s:`实况 ${r1(rt.temperature.value)}°C`}
   ];
   $("detailGrid").innerHTML=items.map(it=>`<div class="d-item">
     <div class="l">${it.l}</div>
@@ -1110,7 +1181,7 @@ function renderAqi(d){
     <circle cx="${ex}" cy="${ey}" r="7" fill="#fff" stroke="${col}" stroke-width="4"/>`;
   $("aqiN").textContent=ix.aqiDisplay;
   const c=$("aqiC");c.textContent=ix.category;c.style.background=col;
-  $("aqiHealth").innerHTML=`<b style="color:var(--txt)">健康提示</b>：<br>${ix.health.effect}<br>👥 ${ix.health.advice.generalPopulation}`+
+  $("aqiHealth").innerHTML=`<b style="color:var(--txt)">健康提示</b>：<br>${ix.health.effect}<br>${ico("people")} ${ix.health.advice.generalPopulation}`+
     (ix.primaryPollutant?`<br>首要污染物：${ix.primaryPollutant.name||ix.primaryPollutant.code}`:"");
   // 污染物
   const polMax={pm2p5:75,pm10:150,no2:80,o3:160,so2:150,co:4};
@@ -1145,7 +1216,7 @@ function renderIdx(d){
     });
     return `<div class="idx" onclick="this.classList.toggle('open')" title="${x.name} · ${x.category}">
       <div class="ix-top">
-        <span class="ic">${IDX_ICON[x.type]||"📌"}</span>
+        <span class="ic">${ico(IDX_ICON[x.type]||"pin")}</span>
         <span class="iv lv${x.level}">${x.category}</span>
       </div>
       <div class="in">${x.name}</div>
@@ -1383,17 +1454,17 @@ function renderCmpTable(ds){
   const wi=imax(gusts),vi=imax(visScore);
   const wcat=ds[wi].realtime_weather.wind.scale+" 级风";
   const chips=[
-    `<i class="ic">🔥</i> 最热 <b>${name(imax(temps))} ${Math.round(Math.max(...temps))}°C</b>`,
-    `<i class="ic">❄️</i> 最凉 <b>${name(imin(temps))} ${Math.round(Math.min(...temps))}°C</b>`,
-    `<i class="ic">🌿</i> 空气最好 <b>${name(imin(aqis))} AQI ${Math.min(...aqis)}（${ds[imin(aqis)].realtime_aqi.indexes[0].category}）</b>`,
-    `<i class="ic">🌵</i> 相对干爽 <b>${name(imin(hums))} 湿度 ${pct(Math.min(...hums))}</b>`,
-    `<i class="ic">🌬️</i> 风最大 <b>${name(wi)} （${wcat}）<br>阵风 ${r1(Math.max(...gusts))} m/s</b>`,
-    `<i class="ic">👁️</i> 最通透 <b>${name(vi)} 云量 ${pct(ds[vi].realtime_weather.cloudCover)}<br>能见度 ${visText(ds[vi].realtime_weather.visibility.value)}</b>`
+    `<i class="ic">${ico("fire")}</i> 最热 <b>${name(imax(temps))} ${Math.round(Math.max(...temps))}°C</b>`,
+    `<i class="ic">${ico("snowflake")}</i> 最凉 <b>${name(imin(temps))} ${Math.round(Math.min(...temps))}°C</b>`,
+    `<i class="ic">${ico("leaf")}</i> 空气最好 <b>${name(imin(aqis))} AQI ${Math.min(...aqis)}（${ds[imin(aqis)].realtime_aqi.indexes[0].category}）</b>`,
+    `<i class="ic">${ico("cactus")}</i> 相对干爽 <b>${name(imin(hums))} 湿度 ${pct(Math.min(...hums))}</b>`,
+    `<i class="ic">${ico("wind")}</i> 风最大 <b>${name(wi)} （${wcat}）<br>阵风 ${r1(Math.max(...gusts))} m/s</b>`,
+    `<i class="ic">${ico("eye")}</i> 最通透 <b>${name(vi)} 云量 ${pct(ds[vi].realtime_weather.cloudCover)}<br>能见度 ${visText(ds[vi].realtime_weather.visibility.value)}</b>`
   ];
   const mx=Math.max(...prs);
-  chips.push(mx>=0.5?`<i class="ic">🌧️</i> 雨最多 <b>${name(imax(prs))} ${r1(mx)} mm</b>`
-    :mx>0?`<i class="ic">🌧️</i> 三城暂无明显降水 <b>仅 ${r1(mx)} mm</b>`
-    :`<i class="ic">🌧️</i> 实时无降水 <b>三城均未下雨</b>`);
+  chips.push(mx>=0.5?`<i class="ic">${ico("rain")}</i> 雨最多 <b>${name(imax(prs))} ${r1(mx)} mm</b>`
+    :mx>0?`<i class="ic">${ico("rain")}</i> 三城暂无明显降水 <b>仅 ${r1(mx)} mm</b>`
+    :`<i class="ic">${ico("rain")}</i> 实时无降水 <b>三城均未下雨</b>`);
   // 生活指数各项之比（今日，等级低者胜）
   const idx0=ds.map(d=>{
     const all=d.weather_index.daily,dt=[...new Set(all.map(x=>x.date))].sort()[0];
@@ -1407,10 +1478,10 @@ function renderCmpTable(ds){
     const lvs=per.map(p=>+p.level),minL=Math.min(...lvs);
     const winners=CITIES.filter((c2,ci)=>lvs[ci]===minL).map(c2=>c2.name);
     const cat=per[lvs.indexOf(minL)].category;
-    const ico=IDX_ICON[ref.type]||"📌";
+    const icoName=IDX_ICON[ref.type]||"pin";
     chips.push(winners.length===3
-      ?`${ico} ${ref.name}：<br>（${cat}）<b>三城持平</b>`
-      :`${ico} ${ref.name}：<br>（${cat}）<b>${winners.join("/")}</b>`);
+      ?`${ico(icoName)} ${ref.name}：<br>（${cat}）<b>三城持平</b>`
+      :`${ico(icoName)} ${ref.name}：<br>（${cat}）<b>${winners.join("/")}</b>`);
   });
   $("cmpExt").innerHTML=chips.map(c=>`<span class="chip">${c}</span>`).join("");
 }
@@ -1546,7 +1617,7 @@ async function showCompare(){
     renderCmpCards(ds);renderCmpTable(ds);renderCmpDaily(ds);renderCmpHourly(ds);renderCmpRain(ds);
   }catch(e){
     console.error(e);
-    $("cmpExt").innerHTML=`<span class="chip" style="border-color:#ff5b5b55"><i class="ic">⚠️</i> 数据加载失败：${e.message}</span>`;
+    $("cmpExt").innerHTML=`<span class="chip" style="border-color:#ff5b5b55"><i class="ic">${ico("alert")}</i> 数据加载失败：${e.message}</span>`;
   }
   observeCards();
   initCardFX();
@@ -1574,7 +1645,7 @@ async function show(city){
     renderAstro(d);
   }catch(e){
     console.error(e);
-    $("minutelySum").innerHTML=`<i class="ic">⚠️</i> 数据加载失败：${e.message}<br>
+    $("minutelySum").innerHTML=`<i class="ic">${ico("alert")}</i> 数据加载失败：${e.message}<br>
       <span style="font-size:12px;opacity:.75">请确认 Data 目录（含 8 个 JSON）已随页面一起部署，且通过 http(s) 访问</span>
       <button class="cv-pill" style="margin-top:8px" onclick="location.reload()">重新加载</button>`;
   }

@@ -1,5 +1,27 @@
+#!/usr/bin/env node
+/*
+ * 月相图标的「真实页面」核对：检查四处展示位的实例属性，并截图供人工看外观
+ *
+ * 用法：
+ *   node test/moon-page-shot.js <页面URL> [--out=输出目录]
+ * 参数：
+ *   --out=目录  截图输出目录；**默认写入系统临时目录**，避免在仓库里堆积图片产物
+ *
+ * 产出（写到 --out 指定目录）：
+ *   shot-astro.png    天文区大月相（54px）
+ *   shot-daily.png    多日预报行（17px）+ 展开的昼夜详情
+ *   shot-zoom.png     全部 8 相 ×3.2 倍放大对照图
+ * 需要留档时可显式指定：--out=./screenshots
+ */
 const { chromium } = require("playwright");
+const fs = require("fs");
+const os = require("os");
+const path = require("path");
+
 const BASE = process.argv[2] || "http://127.0.0.1:8770/index.html";
+const OUT = (process.argv.find(a => a.startsWith("--out=")) || "").split("=")[1] || os.tmpdir();
+if (!fs.existsSync(OUT)) fs.mkdirSync(OUT, { recursive: true });
+const out = (name) => path.join(OUT, name);
 
 (async () => {
   const b = await chromium.launch();
@@ -43,8 +65,8 @@ const BASE = process.argv[2] || "http://127.0.0.1:8770/index.html";
   // 2. 天文区大月相截图
   await p.locator("#moonBig").scrollIntoViewIfNeeded();
   await p.waitForTimeout(500);
-  await p.locator(".astro-grid").screenshot({ path: "test/_shot-astro.png" });
-  console.log("  已截图 test/_shot-astro.png");
+  await p.locator(".astro-grid").screenshot({ path: out("shot-astro.png") });
+  console.log(`  已截图 ${out("shot-astro.png")}`);
 
   // 3. 多日预报（含展开详情）
   await p.locator(".d-row").first().scrollIntoViewIfNeeded();
@@ -55,8 +77,8 @@ const BASE = process.argv[2] || "http://127.0.0.1:8770/index.html";
     return { x: Math.max(0, a.left - 10), y: Math.max(0, a.top - 10),
       width: Math.min(a.width + 20, innerWidth), height: c.bottom - a.top + 20 };
   });
-  await p.screenshot({ path: "test/_shot-daily.png", clip: box });
-  console.log("  已截图 test/_shot-daily.png");
+  await p.screenshot({ path: out("shot-daily.png"), clip: box });
+  console.log(`  已截图 ${out("shot-daily.png")}`);
 
   // 4. 放大对比图
   //    注意：不能用 page.setContent 重建文档 —— 那样 defs 里的渐变/mask 会因 id 作用域变化而失效
@@ -99,9 +121,10 @@ const BASE = process.argv[2] || "http://127.0.0.1:8770/index.html";
     const r = document.getElementById("__moon_zoom").getBoundingClientRect();
     return { x: Math.round(r.left), y: Math.round(r.top), width: Math.ceil(r.width), height: Math.ceil(r.height) };
   });
-  await p.screenshot({ path: "test/moon-zoom.png", clip: zbox });
+  await p.screenshot({ path: out("shot-zoom.png"), clip: zbox });
   await p.evaluate(() => { const h = document.getElementById("__moon_zoom"); if (h) h.remove(); });
-  console.log(`  已截图 test/moon-zoom.png（${mounted.n} 个放大图标，${mounted.w}×${mounted.h}）`);
+  console.log(`  已截图 ${out("shot-zoom.png")}（${mounted.n} 个放大图标，${mounted.w}×${mounted.h}）`);
+  console.log(`\n  截图目录：${OUT}`);
 
   console.log(`\nERRORS: ${errs.length ? errs.join(" | ") : "none"}`);
   await b.close();
