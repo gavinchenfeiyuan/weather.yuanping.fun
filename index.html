@@ -25,7 +25,9 @@
   --font:"Maple Mono NF CN","PingFang SC","HarmonyOS Sans SC","Microsoft YaHei",-apple-system,"Segoe UI",Roboto,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;min-height:100%;background:var(--app-top)}
+html{scroll-behavior:smooth;min-height:100%;background:var(--app-top);
+  scrollbar-width:none;-ms-overflow-style:none}   /* 隐藏页面滚动条（滚动能力保留；iOS/移动端最明显，Safari 18.2+ 支持） */
+html::-webkit-scrollbar,body::-webkit-scrollbar{width:0;height:0;display:none}
 body{
   font-family:var(--font); color:var(--txt); min-height:100vh;
   background:var(--app-bg);
@@ -37,6 +39,7 @@ body{
 .theme-clear-night{--app-bg:linear-gradient(165deg,#070b18 0%,#101736 55%,#070a14 100%);--app-top:#070b18}
 .theme-cloud{--app-bg:linear-gradient(165deg,#1d2637 0%,#2c3a52 55%,#141b29 100%);--app-top:#1d2637}
 .theme-rain{--app-bg:linear-gradient(165deg,#101c2b 0%,#1a3049 50%,#0c1622 100%);--app-top:#101c2b}
+.theme-thunder{--app-bg:linear-gradient(165deg,#0c1420 0%,#1d2545 52%,#080d16 100%);--app-top:#0c1420}
 .theme-snow{--app-bg:linear-gradient(165deg,#1c2735 0%,#33465e 55%,#141d29 100%);--app-top:#1c2735}
 
 #fx{position:fixed;inset:0;z-index:0;pointer-events:none}
@@ -103,8 +106,6 @@ header{display:flex;align-items:center;justify-content:space-between;gap:12px;pa
 .m-scale{display:flex;justify-content:space-between;font-size:11px;color:var(--txt3);margin-top:6px}
 .m-legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;font-size:11px;color:var(--txt3)}
 .ic{font-size:1.05em;vertical-align:-.14em;margin-right:4px;color:var(--txt2)}
-/* 月相图标统一暖金，避免灰扑扑 */
-.qi-new-moon,.qi-waxing-crescent,.qi-first-quarter,.qi-waxing-gibbous,.qi-full-moon,.qi-waning-gibbous,.qi-last-quarter,.qi-waning-crescent{color:#e6c870}
 .m-legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:-1px}
 
 /* ---------- hourly ---------- */
@@ -129,7 +130,6 @@ header{display:flex;align-items:center;justify-content:space-between;gap:12px;pa
 .d-row .dw b.mc{font-size:14px;line-height:1}
 .d-row .dw .dw-t{display:flex;flex-direction:column;line-height:1.3}
 .d-row .dw .dw-t b{font-size:13px}
-.d-row .dw b .qwi{font-size:14px;margin-right:3px;vertical-align:-2px;color:#e6c870}
 .d-row .qwi{font-size:25px}
 .d-row .dc-ico{display:flex;flex-direction:column;align-items:center;gap:1px;line-height:1}
 .d-row .dc-cond{font-size:10px;color:var(--txt2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
@@ -138,8 +138,18 @@ header{display:flex;align-items:center;justify-content:space-between;gap:12px;pa
 .d-bar i{position:absolute;top:0;bottom:0;border-radius:4px;background:linear-gradient(90deg,#5ea8ff,#ffb46a,#ff7a59)}
 .d-lo{text-align:right;color:var(--txt2)}
 .d-hi{font-weight:600}
-.d-extra{grid-column:1/-1;display:none;font-size:12px;color:var(--txt2);line-height:1.9;padding:4px 6px 8px;gap:18px;flex-wrap:wrap}
-.d-row.open .d-extra{display:flex}
+/* 昼夜详情：结构化对照（长句 → 维度×昼夜 对齐网格） */
+.d-extra{grid-column:1/-1;display:none;padding:6px 6px 10px;gap:12px}
+.d-row.open .d-extra{display:grid;grid-template-columns:1.05fr 1fr}
+.de-block{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07);
+  border-radius:12px;padding:10px 12px;min-width:0}
+.de-g3{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);gap:5px 10px;
+  align-items:baseline;font-size:12.5px;line-height:1.5}
+.de-g2{display:grid;grid-template-columns:auto minmax(0,1fr);gap:5px 10px;
+  align-items:baseline;font-size:12.5px;line-height:1.5}
+.de-l{color:var(--txt3);font-size:11px;white-space:nowrap}
+.de-h{color:var(--txt);font-weight:600}
+.de-v{color:var(--txt2);min-width:0}
 .d-row{cursor:pointer}
 .d-row:hover{background:rgba(255,255,255,.04);border-radius:12px}
 
@@ -176,16 +186,22 @@ header{display:flex;align-items:center;justify-content:space-between;gap:12px;pa
 .stations{font-size:11px;color:var(--txt3);margin-top:14px;line-height:1.7}
 
 /* ---------- indices ---------- */
-.idx-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.idx{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:14px;cursor:pointer;transition:.25s}
+.idx-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.idx{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);border-radius:14px;
+  padding:11px 12px;cursor:pointer;transition:.25s;min-width:0}
 .idx:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
-.idx .ic{font-size:22px}
-.idx .in{font-size:13px;margin-top:8px;color:var(--txt2)}
-.idx .iv{font-size:15px;font-weight:700;margin-top:3px}
-.idx .it{display:none;font-size:12px;color:var(--txt2);line-height:1.7;margin-top:8px;border-top:1px dashed rgba(255,255,255,.12);padding-top:8px}
+.idx .ix-top{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.idx .ic{font-size:19px;line-height:1.1;flex:none}
+.idx .iv{font-size:12.5px;font-weight:700;line-height:1.2;text-align:right;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.idx .in{font-size:11px;margin-top:6px;color:var(--txt2);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.idx .it{display:none;font-size:12px;color:var(--txt2);line-height:1.7;margin-top:10px;border-top:1px dashed rgba(255,255,255,.12);padding-top:9px}
+.idx.open{grid-column:1/-1}                 /* 展开时占满整行，详情文字全宽可读 */
+.idx.open .in{white-space:normal;overflow:visible}
 .idx.open .it{display:block}
-.idx-days{display:flex;gap:6px;margin-top:8px}
-.idx-days i{flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,.15)}
+.idx-days{display:flex;gap:4px;margin-top:7px}
+.idx-days i{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.15)}
 .lv1{color:#7ee787}.lv2{color:#a5d6a7}.lv3{color:#ffd54f}.lv4{color:#ff8a65}.lv5{color:#ff5252}
 
 /* ---------- compare ---------- */
@@ -230,6 +246,16 @@ header{display:flex;align-items:center;justify-content:space-between;gap:12px;pa
 .moon-big{font-size:44px;text-align:center;margin-bottom:8px}
 .moon-name{text-align:center;font-size:15px;font-weight:600;margin-bottom:12px}
 
+/* ---------- 月相 SVG 图标 ---------- */
+.moon-icon{width:28px;height:28px;color:#c0c0c0;display:inline-block;vertical-align:middle;
+  transition:color .25s ease}
+.moon-icon:hover{color:#ffe500}
+/* 各展示位置按上下文尺寸适配（默认 28px 会在小字行里过大） */
+.sun-row .moon-icon{width:22px;height:22px}          /* hero 副卡：与 20px 时间文字同排 */
+.moon-big .moon-icon{width:54px;height:54px}         /* 天文区大月相 */
+.d-row .dw .moon-icon{width:17px;height:17px}        /* 多日预报行首 */
+.de-l .moon-icon{width:14px;height:14px;margin-right:2px}  /* 昼夜详情标签行内 */
+
 footer{margin-top:34px;text-align:center;font-size:12px;color:var(--txt3);line-height:2}
 footer a{color:var(--txt2);text-decoration:none}
 footer a:hover{color:var(--accent)}
@@ -251,8 +277,21 @@ footer a:hover{color:var(--accent)}
   .hero{grid-template-columns:1fr}
   .aqi-grid{grid-template-columns:1fr}
   .grid6{grid-template-columns:repeat(2,1fr)}
-  .idx-grid{grid-template-columns:repeat(3,1fr)}
+  .idx-grid{grid-template-columns:repeat(4,1fr)}
   .astro-grid{grid-template-columns:1fr}
+}
+/* 昼夜详情：窄屏两块竖向堆叠 */
+@media (max-width:760px){
+  .d-row.open .d-extra{grid-template-columns:1fr}
+}
+/* 窄屏降 3 列：4 列时卡片 <116px 会把「较少开启」等 4 字等级截断 */
+@media (max-width:600px){
+  .idx-grid{grid-template-columns:repeat(3,1fr)}
+}
+/* 窄屏 4 列时收窄图标与等级字号，保证「较适宜」等 4 字等级不被截断 */
+@media (max-width:640px){
+  .idx .ic{font-size:18px}
+  .idx .iv{font-size:11.5px}
 }
 @media (max-width:520px){
   .now-temp{font-size:60px}
@@ -275,11 +314,14 @@ footer a:hover{color:var(--accent)}
   header{justify-content:center}
 }
 @media (max-width:420px){
-  .idx-grid{grid-template-columns:1fr}
-  .idx{padding:12px 14px}
-  .idx .ic{font-size:18px}
-  .idx .in{font-size:12px}
-  .idx .iv{font-size:14px}
+  .d-extra{gap:10px;padding:4px 4px 8px}
+  .de-block{padding:9px 10px}
+  .de-g3,.de-g2{font-size:12px;gap:4px 9px}
+  .idx{padding:10px}
+  .idx .ic{font-size:17px}
+  .idx .iv{font-size:11.5px}
+  .idx .in{font-size:10.5px;margin-top:5px}
+  .idx-days{margin-top:6px}
 }
 
 /* ---------- 左右滑动切换页面 ---------- */
@@ -295,16 +337,63 @@ footer a:hover{color:var(--accent)}
   cursor:pointer;transition:background .3s,transform .3s,width .3s}
 #pager i:hover{background:rgba(255,255,255,.5)}
 #pager i.act{background:var(--accent);width:20px;border-radius:4px;transform:none}
-.view-in{animation:viewIn .36s cubic-bezier(.22,.61,.36,1) both}
-.view-back{animation:viewBack .36s cubic-bezier(.22,.61,.36,1) both}
-@keyframes viewIn{from{opacity:.25;transform:translateX(28px)}to{opacity:1;transform:none}}
-@keyframes viewBack{from{opacity:.25;transform:translateX(-28px)}to{opacity:1;transform:none}}
+/* ---------- 左右滑动切换页面 ---------- */
+/* 过渡只动 transform/opacity（合成器线程），并在过渡期间关掉卡片毛玻璃：
+   backdrop-filter 在元素位移时每帧都要重算模糊，是掉帧主因 */
+html.swiping #viewCity,html.swiping #viewCompare{will-change:transform,opacity}
+html.swiping .card{backdrop-filter:none;-webkit-backdrop-filter:none}
+.view-in{animation:viewIn .26s cubic-bezier(.22,.72,.2,1) both}
+.view-back{animation:viewBack .26s cubic-bezier(.22,.72,.2,1) both}
+@keyframes viewIn{from{opacity:.3;transform:translate3d(24%,0,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes viewBack{from{opacity:.3;transform:translate3d(-24%,0,0)}to{opacity:1;transform:translate3d(0,0,0)}}
 @media (prefers-reduced-motion:reduce){
   .view-in,.view-back{animation:none}
 }
 </style>
 </head>
 <body>
+<!-- 月相图标 sprite（8 相，viewBox 0 0 24 24 / 描边 1.5 / currentColor） -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+<symbol id="moon-new" viewBox="0 0 24 24">
+<title>新月</title>
+<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/>
+</symbol>
+<symbol id="moon-waxing-crescent" viewBox="0 0 24 24">
+<title>蛾眉月</title>
+<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/>
+<path d="M12 3a9 9 0 0 1 0 18A7 7 0 0 0 12 3z" fill="currentColor" opacity="0.2"/>
+</symbol>
+<symbol id="moon-first-quarter" viewBox="0 0 24 24">
+<title>上弦月</title>
+<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/>
+<path d="M12 3a9 9 0 0 1 0 18V3z" fill="currentColor" opacity="0.3"/>
+</symbol>
+<symbol id="moon-waxing-gibbous" viewBox="0 0 24 24">
+<title>盈凸月</title>
+<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/>
+<path d="M12 3a9 9 0 0 1 0 18A7 7 0 0 1 5 12a7 7 0 0 1 7-9z" fill="currentColor" opacity="0.4"/>
+</symbol>
+<symbol id="moon-full" viewBox="0 0 24 24">
+<title>满月</title>
+<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/>
+<circle cx="12" cy="12" r="9" fill="currentColor" opacity="0.5"/>
+</symbol>
+<symbol id="moon-waning-gibbous" viewBox="0 0 24 24">
+<title>亏凸月</title>
+<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/>
+<path d="M12 3a9 9 0 0 0 0 18 7 7 0 0 0 7-9 7 7 0 0 0-7-9z" fill="currentColor" opacity="0.4"/>
+</symbol>
+<symbol id="moon-last-quarter" viewBox="0 0 24 24">
+<title>下弦月</title>
+<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/>
+<path d="M12 3a9 9 0 0 0 0 18V3z" fill="currentColor" opacity="0.3"/>
+</symbol>
+<symbol id="moon-waning-crescent" viewBox="0 0 24 24">
+<title>残月</title>
+<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/>
+<path d="M12 3a9 9 0 0 0 0 18 7 7 0 0 1 0-18z" fill="currentColor" opacity="0.2"/>
+</symbol>
+</svg>
 <canvas id="fx"></canvas>
 <div class="wrap">
 
@@ -323,7 +412,7 @@ footer a:hover{color:var(--accent)}
 
   <!-- HERO -->
   <section class="hero">
-    <div class="card hero-main" onclick="showCompare()" title="返回首页">
+    <div class="card hero-main" onclick="goView(0)" title="返回首页">
       <div class="loc">📍 <b id="cityName">--</b><span class="upd" id="updTime"></span></div>
       <div class="now-line">
         <i class="now-icon qwi" id="nowIcon"></i>
@@ -416,7 +505,7 @@ footer a:hover{color:var(--accent)}
     <div class="astro-grid">
       <div class="astro-card"><h3><i class="ic">☀️</i> 太阳</h3><div class="astro-rows" id="sunRows"></div></div>
       <div class="astro-card"><h3>🌙 月亮</h3>
-        <div class="moon-big" id="moonEmoji">🌗</div>
+        <div class="moon-big" id="moonBig"></div>
         <div class="moon-name" id="moonName">--</div>
         <div class="astro-rows" id="moonRows"></div>
       </div>
@@ -482,13 +571,24 @@ function iconColor(code){
   if(c===104||c===154)return"#5f86b3";                       // 阴（深一档蓝灰，与多云区分）
   if(c>=500&&c<600)return"#c2a35a";                          // 雾 / 霾 / 沙尘（暖沙色，区别于云）
   if(c>=400&&c<500)return"#74c7ec";                          // 雪（亮青，可见度更高）
-  if(c===302||c===303)return"#8a6fe0";                       // 雷阵雨（紫，区别于普通雨）
+  if(c>=302&&c<=304)return"#8a6fe0";                         // 雷阵雨系（紫，区别于普通雨）
   if(c>=300&&c<400)return"#36a9e0";                          // 雨 / 阵雨 / 小雨
   return"#cfd8dc";                                           // 兜底
 }
 const axisFont=()=>innerWidth<=520?'11px sans-serif':'10px sans-serif'; // 移动端坐标轴标签稍大
 const COMPASS={n:"北风",nne:"东北偏北",ne:"东北风",ene:"东北偏东",e:"东风",ese:"东南偏东",se:"东南风",sse:"东南偏南",s:"南风",ssw:"西南偏南",sw:"西南风",wsw:"西南偏西",w:"西风",wnw:"西北偏西",nw:"西北风",nnw:"西北偏北"};
-const MOON={"new":["🌑","新月"],"waxing-crescent":["🌒","娥眉月"],"first-quarter":["🌓","上弦月"],"waxing-gibbous":["🌔","盈凸月"],"full":["🌕","满月"],"waning-gibbous":["🌖","亏凸月"],"last-quarter":["🌗","下弦月"],"waning-crescent":["🌘","残月"]};
+// 月相：中文名 + 对应 SVG sprite 符号 id
+const MOON={"new":"新月","waxing-crescent":"娥眉月","first-quarter":"上弦月","waxing-gibbous":"盈凸月",
+  "full":"满月","waning-gibbous":"亏凸月","last-quarter":"下弦月","waning-crescent":"残月"};
+const MOON_ID={"new":"moon-new","waxing-crescent":"moon-waxing-crescent","first-quarter":"moon-first-quarter",
+  "waxing-gibbous":"moon-waxing-gibbous","full":"moon-full","waning-gibbous":"moon-waning-gibbous",
+  "last-quarter":"moon-last-quarter","waning-crescent":"moon-waning-crescent"};
+const moonZh=p=>MOON[p]||"月相";
+// 渲染月相图标；phase 无法识别时回退到「当前展示内容」而不是留空
+function moonSvg(phase){
+  const id=MOON_ID[phase];if(!id)return "";
+  return `<svg class="moon-icon" role="img" aria-label="${moonZh(phase)}"><use href="#${id}"/></svg>`;
+}
 const IDX_ICON={"1":"🏃","2":"🚗","3":"👕","4":"🎣","5":"🌞","6":"🧳","7":"🤧","8":"😌","9":"🤒","10":"🌫️","11":"❄️","12":"🕶️","13":"💄","14":"👔","15":"🚦","16":"🧴"};
 const WEEK=["周日","周一","周二","周三","周四","周五","周六"];
 const $=id=>document.getElementById(id);
@@ -509,6 +609,10 @@ function dayLabel(iso){ // 依据 forecastStartTime 本地日期
 function aqiRGB(c){return `rgb(${c.red},${c.green},${c.blue})`}
 function uvText(u){return u<=2?"最弱":u<=5?"弱":u<=7?"中等":u<=10?"强":"很强"}
 function visText(m){return m>=1000?r1(m/1000)+" km":m+" m"}
+// 昼夜详情用：风向级数 / 降水量(含概率) 简洁文本
+function windTxt(w){const dir=COMPASS[w.direction.compass]||"";return dir?`${dir} ${w.scale}级`:`${w.scale}级`}
+function rainTxt(p){const mm=r1(p.amount.value||0),pr=p.probability?Math.round(p.probability*100):0;
+  return pr>0?`${mm}mm · ${pr}%`:`${mm}mm`}
 
 /* ================= 数据加载 ================= */
 const PREFIXES=["Data/","data/","./Data/","./data/"];
@@ -547,43 +651,113 @@ async function loadCity(city){
 
 /* ================= 主题/背景 ================= */
 let fxType=null;
+const THEMES=["theme-clear-day","theme-clear-night","theme-cloud","theme-rain","theme-thunder","theme-snow"];
+// 用 classList 增删而不是整体赋值：直接写 className 会抹掉 html 上的其它状态类（如过渡中的 swiping）
+function setTheme(theme){
+  document.body.className=theme;
+  const de=document.documentElement;
+  THEMES.forEach(t=>{if(t!==theme)de.classList.remove(t)});
+  de.classList.add(theme);
+}
 function applyTheme(rt){
   const code=+rt.condition.code;
   const d=cache[curCity].daily_forecast.days[0];
   let night=true;
   try{const now=Date.now();night=!(now>+new Date(d.astro.sunrise)&&now<+new Date(d.astro.sunset));}catch(e){}
   let theme="theme-cloud";
-  if(code>=300&&code<400)theme="theme-rain";
+  // 302/303/304 为雷阵雨系；另对雨系（300-399）做一次文字兜底，防个别冷门代码漏判
+  const isThunder=(code>=302&&code<=304)||(code>=300&&code<400&&/雷/.test(rt.condition.text||""));
+  if(code>=300&&code<400)theme=isThunder?"theme-thunder":"theme-rain";
   else if(code>=400&&code<500)theme="theme-snow";
   else if(code===100||code===150)theme=night?"theme-clear-night":"theme-clear-day";
-  document.body.className=document.documentElement.className=theme;
-  fxType=(theme==="theme-rain")?"rain":(theme==="theme-snow")?"snow":null;
+  setTheme(theme);
+  fxType=isThunder?"thunder":(theme==="theme-rain")?"rain":(theme==="theme-snow")?"snow":null;
   initFx();
 }
 
-/* ---- 雨/雪粒子 ---- */
+/* ---- 雨/雪粒子 + 雷天闪电 ---- */
 const fxC=$("fx"),fxCtx=fxC.getContext("2d");let parts=[];
+const REDUCED_MOTION=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const isRainFx=()=>fxType==="rain"||fxType==="thunder";   // 雷天复用雨粒子
+
+// 生成一条锯齿闪电（主干 + 若干分叉）；h 为画布高度，spread 控制摆幅
+function makeBolt(w,h,spread){
+  const amp=(spread||0.07)*w, step=h/14, pts=[[w*(.2+Math.random()*.6),0]];
+  let x=pts[0][0],y=0;
+  while(y<h){y+=step*(.7+Math.random()*.6);x+=(Math.random()-.5)*amp;pts.push([x,Math.min(y,h)])}
+  const forks=[];
+  for(let i=0,nf=1+Math.floor(Math.random()*3);i<nf;i++){
+    const k=3+Math.floor(Math.random()*Math.max(1,pts.length-7));
+    let fx0=pts[k][0],fy0=pts[k][1];
+    const fp=[[fx0,fy0]];
+    for(let j=0,n2=5+Math.floor(Math.random()*7);j<n2;j++){
+      fx0+=(Math.random()-.5)*amp*.85;fy0+=step*(.8+Math.random()*.7);
+      fp.push([fx0,fy0]);
+    }
+    forks.push(fp);
+  }
+  return {pts,forks};
+}
+
 function initFx(){
   fxC.width=innerWidth*devicePixelRatio;fxC.height=innerHeight*devicePixelRatio;
   fxC.style.width=innerWidth+"px";fxC.style.height=innerHeight+"px";
   parts=[];
+  ltAt=null;ltT0=-1e9;ltBolt=null;                 // 雷天状态重置（切换城市时重新计时）
   if(!fxType){fxCtx.clearRect(0,0,fxC.width,fxC.height);return}
-  const n=fxType==="rain"?110:70;
+  const n=isRainFx()?110:70;
   for(let i=0;i<n;i++)parts.push({
     x:Math.random()*fxC.width,y:Math.random()*fxC.height,
-    l:fxType==="rain"?(10+Math.random()*14)*devicePixelRatio:(2+Math.random()*3)*devicePixelRatio,
-    v:(fxType==="rain"?9+Math.random()*6:1+Math.random()*1.5)*devicePixelRatio,
+    l:isRainFx()?(10+Math.random()*14)*devicePixelRatio:(2+Math.random()*3)*devicePixelRatio,
+    v:(isRainFx()?9+Math.random()*6:1+Math.random()*1.5)*devicePixelRatio,
     o:.15+Math.random()*.3
   });
 }
 addEventListener("resize",initFx);
-(function loop(){
+
+/* 闪电：进入雷天后先来一下，之后每 6–15s 一次。
+   单次 = 主闪 → 约 100ms 后一次弱回声 → 余晖，共 ~0.8s；
+   刻意压低亮度并禁止高频闪烁，避免刺眼与光敏不适；用户开了"减弱动态效果"则完全不打闪。 */
+let ltAt=null,ltT0=-1e9,ltBolt=null;
+function ltEnv(dt){                                // 亮度包络
+  if(dt<70)return .30*dt/70;
+  if(dt<160)return .30-.20*(dt-70)/90;
+  if(dt<215)return .10+.08*(dt-160)/55;
+  if(dt<820)return .18*(1-(dt-215)/605);
+  return 0;
+}
+function drawLightning(T){
+  if(REDUCED_MOTION)return;
+  if(ltAt===null)ltAt=T+900+Math.random()*1600;    // 进入雷天后很快来第一下
+  if(T>=ltAt){ltT0=T;ltBolt=makeBolt(fxC.width,fxC.height);ltAt=T+6000+Math.random()*9000}
+  const dt=T-ltT0;
+  if(dt<0||dt>820){ltBolt=null;return}             // 只在整段结束后丢弃枝干（起始帧亮度为 0 不算结束）
+  const a=ltEnv(dt);
+  if(a<=0)return;
+  fxCtx.fillStyle=`rgba(190,212,255,${a})`;        // 全屏泛光
+  fxCtx.fillRect(0,0,fxC.width,fxC.height);
+  if(ltBolt&&dt<230){                              // 枝干只在最亮阶段可见
+    fxCtx.save();
+    fxCtx.globalAlpha=.9*(1-dt/230);
+    fxCtx.strokeStyle="rgba(238,246,255,1)";
+    fxCtx.shadowColor="rgba(190,215,255,.95)";fxCtx.shadowBlur=16*devicePixelRatio;
+    fxCtx.lineWidth=2.2*devicePixelRatio;fxCtx.lineJoin="round";fxCtx.lineCap="round";
+    const path=pts=>{fxCtx.beginPath();pts.forEach(([px,py],i)=>i?fxCtx.lineTo(px,py):fxCtx.moveTo(px,py));fxCtx.stroke()};
+    path(ltBolt.pts);
+    fxCtx.lineWidth=1.2*devicePixelRatio;
+    ltBolt.forks.forEach(path);
+    fxCtx.restore();
+  }
+}
+
+(function loop(now){
   requestAnimationFrame(loop);
   if(!fxType)return;
+  const T=now||performance.now();
   fxCtx.clearRect(0,0,fxC.width,fxC.height);
   for(const p of parts){
     fxCtx.strokeStyle=fxCtx.fillStyle=`rgba(255,255,255,${p.o})`;
-    if(fxType==="rain"){
+    if(isRainFx()){
       fxCtx.lineWidth=1*devicePixelRatio;fxCtx.beginPath();
       fxCtx.moveTo(p.x,p.y);fxCtx.lineTo(p.x+p.l*.15,p.y-p.l);fxCtx.stroke();
       p.y+=p.v;p.x-=p.v*.12;
@@ -593,6 +767,7 @@ addEventListener("resize",initFx);
     }
     if(p.y>fxC.height){p.y=-20;p.x=Math.random()*fxC.width}
   }
+  if(fxType==="thunder")drawLightning(T);
 })();
 
 /* ================= 渲染 ================= */
@@ -632,8 +807,7 @@ function renderHero(city,d){
   $("sunrise").textContent=hm(day0.astro.sunrise);
   $("sunset").textContent=hm(day0.astro.sunset);
   $("solarNoon").textContent=hm(day0.astro.solarNoon);
-  const mp=MOON[day0.astro.moonPhase]||["🌙","--"];
-  $("moonMini").innerHTML=mp[0];
+  $("moonMini").innerHTML=moonSvg(day0.astro.moonPhase)||moonZh(day0.astro.moonPhase);
   drawSunArc(day0.astro);
   // 分钟级摘要 + 更新时间
   const mn=d.minutely_precip;
@@ -804,7 +978,7 @@ function renderDaily(d){
     const L=(x.temperatureMin.value-glo)/span*100,Rr=(x.temperatureMax.value-glo)/span*100;
     const n=x.nighttime;
     const mp=x.astro&&x.astro.moonPhase;
-    const moonIcon=(MOON[mp]||["🌙"])[0];
+    const moonIcon=moonSvg(mp);
     return `<div class="d-row" onclick="this.classList.toggle('open')">
       <div class="dw"><b class="mc">${moonIcon}</b><span class="dw-t"><b>${dayLabel(x.forecastStartTime)}</b>${dt.getMonth()+1}/${dt.getDate()}</span></div>
       <div class="dc-ico"><i class="qwi ${QI(x.daytime.condition.code)}" style="color:${iconColor(x.daytime.condition.code)}" title="白天 ${x.daytime.condition.text}"></i><span class="dc-cond">${x.daytime.condition.text}</span></div>
@@ -813,12 +987,23 @@ function renderDaily(d){
       <div class="d-lo">${Math.round(x.temperatureMin.value)}°</div>
       <div class="d-hi">${Math.round(x.temperatureMax.value)}°</div>
       <div class="d-extra">
-        <span><i class="ic">☀️</i> 白天 ${x.daytime.condition.text} · ${COMPASS[x.daytime.wind.direction.compass]||""}${x.daytime.wind.scale}级 · 降水 ${x.daytime.precipitation.amount.value}mm</span>
-        <span><i class="ic">🌙</i> 夜间 ${n.condition.text} · ${COMPASS[n.wind.direction.compass]||""}${n.wind.scale}级 · 降水 ${n.precipitation.amount.value}mm</span>
-        <span>💧 湿度 ${pct(x.daytime.humidity)}/${pct(n.humidity)}</span>
-        <span>🔆 UV ${x.uvIndexMax}（${uvText(x.uvIndexMax)}）</span>
-        <span>🌅 ${hm(x.astro.sunrise)} / 🌇 ${hm(x.astro.sunset)}</span>
-        <span>${(MOON[x.astro.moonPhase]||["🌙"])[0]} 月出 ${hm(x.astro.moonrise)} 月落 ${hm(x.astro.moonset)}</span>
+        <div class="de-block">
+          <div class="de-g3">
+            <span class="de-l"></span><span class="de-h">☀️ 白天</span><span class="de-h">🌙 夜间</span>
+            <span class="de-l">天气</span><span class="de-v">${x.daytime.condition.text}</span><span class="de-v">${n.condition.text}</span>
+            <span class="de-l">风力</span><span class="de-v">${windTxt(x.daytime.wind)}</span><span class="de-v">${windTxt(n.wind)}</span>
+            <span class="de-l">降水</span><span class="de-v">${rainTxt(x.daytime.precipitation)}</span><span class="de-v">${rainTxt(n.precipitation)}</span>
+            <span class="de-l">湿度</span><span class="de-v">${pct(x.daytime.humidity)}</span><span class="de-v">${pct(n.humidity)}</span>
+          </div>
+        </div>
+        <div class="de-block">
+          <div class="de-g2">
+            <span class="de-l">🔆 紫外线</span><span class="de-v">${x.uvIndexMax}（${uvText(x.uvIndexMax)}）</span>
+            <span class="de-l">🌅 日出/日落</span><span class="de-v">${hm(x.astro.sunrise)} / ${hm(x.astro.sunset)}</span>
+            <span class="de-l">🌙 月出/月落</span><span class="de-v">${hm(x.astro.moonrise)} / ${hm(x.astro.moonset)}</span>
+            <span class="de-l">${moonIcon}月相</span><span class="de-v">${moonZh(x.astro.moonPhase)}</span>
+          </div>
+        </div>
       </div></div>`;
   }).join("");
 }
@@ -895,12 +1080,14 @@ function renderIdx(d){
       const it=all.find(y=>y.type===x.type&&y.date===dt);
       return it?+it.level:0;
     });
-    return `<div class="idx" onclick="this.classList.toggle('open')">
-      <div class="ic">${IDX_ICON[x.type]||"📌"}</div>
+    return `<div class="idx" onclick="this.classList.toggle('open')" title="${x.name} · ${x.category}">
+      <div class="ix-top">
+        <span class="ic">${IDX_ICON[x.type]||"📌"}</span>
+        <span class="iv lv${x.level}">${x.category}</span>
+      </div>
       <div class="in">${x.name}</div>
-      <div class="iv lv${x.level}">${x.category}</div>
       <div class="idx-days">${trend.map(l=>`<i style="background:${["","#7ee787","#a5d6a7","#ffd54f","#ff8a65","#ff5252"][l]||"#666"}"></i>`).join("")}</div>
-      <div class="it">${x.text}<br></div>
+      <div class="it">${x.text}</div>
     </div>`;
   }).join("");
 }
@@ -915,8 +1102,8 @@ function renderAstro(d){
     ["民用晨光",hm(a.civilDawn)],["民用昏影",hm(a.civilDusk)],["航海晨光",hm(a.nauticalDawn)],["航海昏影",hm(a.nauticalDusk)],
     ["天文晨光",hm(a.astronomicalDawn)],["天文昏影",hm(a.astronomicalDusk)]];
   $("sunRows").innerHTML=rows.map(r=>`<div class="r"><span>${r[0]}</span><b>${r[1]}</b></div>`).join("");
-  const mp=MOON[a.moonPhase]||["🌙","未知"];
-  $("moonEmoji").innerHTML=mp[0];$("moonName").textContent=mp[1];
+  $("moonBig").innerHTML=moonSvg(a.moonPhase)||moonZh(a.moonPhase);
+  $("moonName").textContent=moonZh(a.moonPhase);
   const mrows=[["月出",hm(a.moonrise)],["月落",hm(a.moonset)],["月中天",hm(a.moonTransit)],["月下点",hm(a.moonUnderfoot)]];
   $("moonRows").innerHTML=mrows.map(r=>`<div class="r"><span>${r[0]}</span><b>${r[1]}</b></div>`).join("");
 }
@@ -991,23 +1178,27 @@ const WX_KIND=c=>{
   if(c>=200&&c<300)return "cloud";      // 风系列无专门特效，归云天
   if(WX_SNOW.includes(c))return "snow";
   if(WX_FOG.includes(c))return "fog";   // 雾 / 霾 / 沙尘 / 浮沙
+  if(c>=302&&c<=304)return "thunder";   // 雷阵雨 / 强雷阵雨 / 雷阵雨伴冰雹（雨 + 打闪）
   return "rain";                        // 300-399 雨系 + 兜底
 };
 const cvFX=[];
 function seedFX(o,w,h){
   o.w=w;o.h=h;o.parts=[];
-  const n={rain:70,snow:46,cloud:14,fog:6,sun:18}[o.kind]||0;
+  o.ltAt=undefined;o.ltT0=undefined;o.bolt=null;          // 雷天计时随卡片重建重置
+  const rain=(o.kind==="rain"||o.kind==="thunder");
+  const n={rain:70,thunder:70,snow:46,cloud:14,fog:6,sun:18}[o.kind]||0;
   for(let i=0;i<n;i++)o.parts.push({
     x:Math.random()*w,y:Math.random()*h,
-    v:(o.kind==="rain"?0.5+Math.random()*0.9:0.15+Math.random()*0.35),
-    l:o.kind==="rain"?8+Math.random()*14:1.6+Math.random()*2.4,
+    v:(rain?0.5+Math.random()*0.9:0.15+Math.random()*0.35),
+    l:rain?8+Math.random()*14:1.6+Math.random()*2.4,
     r:Math.random()*6.28, s:0.4+Math.random()*1.4
   });
 }
 function sizeFX(){
-  cvFX.forEach(o=>{
-    const dpr=Math.min(devicePixelRatio||1,2);
-    const w=o.cv.clientWidth,h=o.cv.clientHeight;
+  const dpr=Math.min(devicePixelRatio||1,2);
+  const sizes=cvFX.map(o=>[o.cv.clientWidth,o.cv.clientHeight]);   // 先集中读，避免读写交替触发多次布局
+  cvFX.forEach((o,i)=>{
+    const w=sizes[i][0],h=sizes[i][1];
     if(!w||!h)return;
     o.cv.width=w*dpr;o.cv.height=h*dpr;
     o.ctx.setTransform(dpr,0,0,dpr,0,0);
@@ -1042,7 +1233,7 @@ function drawFX(o,t){
       g.addColorStop(0,"rgba(255,255,255,0)");g.addColorStop(.5,"rgba(255,255,255,.055)");g.addColorStop(1,"rgba(255,255,255,0)");
       c.fillStyle=g;c.fillRect(p.x-50,p.y,100,10+p.l*4);
     });
-  }else if(o.kind==="rain"){
+  }else if(o.kind==="rain"||o.kind==="thunder"){
     c.lineCap="round";c.strokeStyle="rgba(190,220,255,.30)";c.lineWidth=1.1;
     o.parts.forEach(p=>{
       p.y+=p.v*7;p.x-=p.v*1.1;                 // 落向：左下
@@ -1050,12 +1241,35 @@ function drawFX(o,t){
       if(p.x<-10)p.x=w+10;
       c.beginPath();c.moveTo(p.x,p.y);c.lineTo(p.x+p.l*.16,p.y-p.l);c.stroke();  // 尾迹在身后
     });
+    if(o.kind==="thunder")drawCardLightning(c,o,w,h,t);
   }else{ // snow
     o.parts.forEach(p=>{
       p.y+=p.v*p.s*1.6;p.x+=Math.sin(t/900+p.r)*.5;
       if(p.y>h+6){p.y=-6;p.x=Math.random()*w}
       c.fillStyle="rgba(255,255,255,.55)";c.beginPath();c.arc(p.x,p.y,p.l,0,7);c.fill();
     });
+  }
+}
+/* 卡片内闪电：单次短闪 ~0.45s、间隔 7–16s，亮度比全屏更低（三张卡同时更需克制）；
+   只做「一亮一暗」，不连闪；"减弱动态效果"下不打闪。 */
+function drawCardLightning(c,o,w,h,t){
+  if(REDUCED_MOTION)return;
+  if(o.ltAt===undefined)o.ltAt=t+1500+Math.random()*3000;
+  if(t>=o.ltAt){o.ltT0=t;o.bolt=makeBolt(w,h,.09);o.ltAt=t+7000+Math.random()*9000}
+  if(o.ltT0===undefined)return;
+  const dt=t-o.ltT0;
+  if(dt<0||dt>380){o.bolt=null;return}             // 只在整段结束后丢弃枝干（起始帧亮度为 0 不算结束）
+  const a=dt<80?.20*dt/80:.20*(1-(dt-80)/300);
+  if(a<=0)return;
+  c.fillStyle=`rgba(200,218,255,${a})`;c.fillRect(0,0,w,h);
+  if(o.bolt&&dt<210){
+    c.save();c.globalAlpha=.9*(1-dt/210);
+    c.strokeStyle="#eef4ff";c.lineWidth=1;c.lineJoin="round";c.lineCap="round";
+    const path=pts=>{c.beginPath();pts.forEach(([px,py],i)=>i?c.lineTo(px,py):c.moveTo(px,py));c.stroke()};
+    path(o.bolt.pts);
+    c.lineWidth=.7;
+    o.bolt.forks.forEach(path);
+    c.restore();
   }
 }
 let fxRAF=null,fxT0=performance.now();
@@ -1080,7 +1294,7 @@ function renderCmpCards(ds){
   $("cmpCards").innerHTML=order.map(i=>{
     const d=ds[i],city=CITIES[i],rt=d.realtime_weather,day0=d.daily_forecast.days[0],ix=d.realtime_aqi.indexes[0];
     const col=CITY_COLORS[city.id];
-    return `<div class="card cmp-card cv-tile" data-wx="${rt.condition.code}" onclick="show(CITIES[${i}])">
+    return `<div class="card cmp-card cv-tile" data-wx="${rt.condition.code}" onclick="goView(${i+1})">
       <canvas class="cv-fx"></canvas>
       <div class="cv-city">${city.name}</div>
       <div class="cv-sub">${city.sub}</div>
@@ -1258,10 +1472,11 @@ function renderCmpRain(ds){
 }
 
 async function showCompare(){
+  memRemember();                                   // 先记住离开前的页面与位置
   curCity="__cmp";
-  $("viewCity").style.display="none";$("viewCompare").style.display="";
+  setView("cmp");                                  // 过渡中会被挂起，等换页时统一切换
   document.querySelectorAll("#viewCompare .card").forEach(c=>c.classList.remove("show"));
-  document.body.className=document.documentElement.className="theme-cloud";fxType=null;initFx();
+  setTheme("theme-cloud");fxType=null;initFx();
   try{
     const ds=await Promise.all(CITIES.map(c=>loadCity(c.id)));
     setBrandIcon(ds[0].realtime_weather); // 品牌图标跟随上海（首页主城）天气
@@ -1277,9 +1492,11 @@ async function showCompare(){
 
 /* ================= 主流程 ================= */
 async function show(city){
+  memRemember();                                   // 先记住离开前的页面与位置
   curCity=city.id;
-  document.querySelectorAll(".card").forEach(c=>c.classList.remove("show"));
-  $("viewCity").style.display="";$("viewCompare").style.display="none";
+  // 只重置本视图的卡片：旧页在过渡中要能完整地滑出（全局重置会让它瞬间变空）
+  $("viewCity").querySelectorAll(".card").forEach(c=>c.classList.remove("show"));
+  setView("city");                                 // 过渡中会被挂起，等换页时统一切换
   try{
     const d=await loadCity(city.id);
     applyTheme(d.realtime_weather);
@@ -1303,13 +1520,24 @@ async function show(city){
 }
 
 /* ---- 入场动画 ---- */
-let io,ioTimer;
+let io,ioTimer,deferReveal=false;
+// 过渡期间置 true：把卡片揭示交给 IntersectionObserver 异步判定，
+// 避免 getBoundingClientRect 在关键路径上强制整页布局（实测这一下能占 100ms+）
 function observeCards(){
   io=io||new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");io.unobserve(e.target)}}),{threshold:.08});
-  document.querySelectorAll(".card:not(.show)").forEach(c=>{
-    const r=c.getBoundingClientRect();
-    if(r.top<innerHeight&&r.bottom>0)c.classList.add("show");else io.observe(c);
-  });
+  const pending=[...document.querySelectorAll(".card:not(.show)")];
+  if(deferReveal){
+    pending.forEach(c=>io.observe(c));
+  }else{
+    // 先集中读取所有位置，再统一改 class：混着写会触发「布局抖动」
+    const vis=[],later=[];
+    pending.forEach(c=>{
+      const r=c.getBoundingClientRect();
+      ((r.top<innerHeight&&r.bottom>0)?vis:later).push(c);
+    });
+    vis.forEach(c=>c.classList.add("show"));
+    later.forEach(c=>io.observe(c));
+  }
   clearTimeout(ioTimer);
   ioTimer=setTimeout(()=>document.querySelectorAll(".card").forEach(c=>c.classList.add("show")),2500);
 }
@@ -1320,6 +1548,54 @@ const VIEWS=["__cmp",...CITIES.map(c=>c.id)];
 const VIEW_LABEL=v=>v==="__cmp"?"三地对比":(CITIES.find(c=>c.id===v)||{}).name||v;
 
 function curViewIndex(){const i=VIEWS.indexOf(curCity);return i<0?0:i}
+// 当前可见的视图容器（过渡中可能是尚未切换完成的一方）
+const visibleView=()=>($("viewCity").style.display==="none"?$("viewCompare"):$("viewCity"));
+
+/* ================= 位置记忆（localStorage） ================= */
+// 记住「上次停留的页面 + 该页滚动位置」，下次打开直接回到原处，不再从首页开始
+const LS_KEY="weather_view_v1";
+let mem={view:"__cmp",scroll:{}};
+
+function memLoad(){
+  try{
+    const o=JSON.parse(localStorage.getItem(LS_KEY)||"null");
+    if(!o||typeof o!=="object")return null;
+    if(typeof o.view!=="string"||VIEWS.indexOf(o.view)<0)return null;   // 页面标识已失效则忽略
+    if(!o.scroll||typeof o.scroll!=="object"||Array.isArray(o.scroll))o.scroll={};
+    return {view:o.view,scroll:o.scroll};
+  }catch(e){return null}                          // 数据损坏/隐私模式：静默回落到首页
+}
+function memSave(){
+  try{localStorage.setItem(LS_KEY,JSON.stringify(mem))}catch(e){}
+}
+// 记录「当前页面 + 当前滚动位置」（离开页面或滚动停止时调用）
+function memRemember(){
+  if(!curCity)return;
+  mem.view=curCity;
+  mem.scroll[curCity]=Math.round(window.scrollY||0);
+  memSave();
+}
+// 滚动停止（防抖 150ms）后记录位置
+let memT=null;
+addEventListener("scroll",()=>{
+  if(!curCity)return;
+  clearTimeout(memT);memT=setTimeout(memRemember,150);
+},{passive:true});
+
+// 恢复到指定滚动位置。页面高度受字体加载影响，故在 2s 内多次校正；
+// 用户一旦主动滚动即放弃校正（避免和用户抢滚动）。用 instant 绕过 CSS 的平滑滚动。
+let memLock=false;
+const memRelease=()=>{memLock=false};
+["wheel","touchstart","keydown","mousedown"].forEach(ev=>addEventListener(ev,memRelease,{passive:true}));
+function memRestore(y){
+  if(!(y>0))return;
+  memLock=true;
+  const put=()=>{if(memLock)window.scrollTo({top:y,left:0,behavior:"instant"})};
+  let n=0;
+  const tick=()=>{put();if(++n<7)setTimeout(tick,300)};
+  tick();
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(put).catch(()=>{});
+}
 
 function renderPager(){
   const box=$("pager");if(!box)return;
@@ -1330,20 +1606,137 @@ function renderPager(){
   box.classList.add("on");
 }
 
-// 切换到第 k 个页面（dir 决定动画方向）
-function goView(k){
+/* ---- 视图显隐：过渡期间先挂起，等「换页」那一步再统一切换 ----
+   否则目标视图会提前出现在旧页下方（两个视图都在文档流里），造成跳动 */
+let holdView=false;
+function applyView(which){
+  $("viewCity").style.display=which==="city"?"":"none";
+  $("viewCompare").style.display=which==="cmp"?"":"none";
+}
+function setView(which){if(!holdView)applyView(which)}
+
+// canvas 图表按真实宽度重画（视图由隐藏变可见后必须做一次，隐藏时宽度为 0）
+function redrawCharts(){
+  if(!curCity)return;
+  if(curCity==="__cmp"){
+    const ds=CITIES.map(c=>cache[c.id]);
+    if(ds.every(Boolean)){renderCmpDaily(ds);renderCmpHourly(ds);renderCmpRain(ds)}
+  }else if(cache[curCity]){renderMinutely(cache[curCity]);renderHourly(cache[curCity])}
+}
+
+/* ---- 切页过渡：出场 → 换页 → 入场 ----
+   1) 出场只动 transform/opacity（合成器线程），可与主线程渲染并行不掉帧；
+   2) 双重 rAF 保证出场首帧已绘制，再开始渲染（否则长任务会吞掉动画开头）；
+   3) 出场与渲染都完成才换页，并播入场动画。 */
+const OUT_MS=150,IN_MS=260;
+
+function clearTransit(el){
+  if(!el)return;
+  el.style.transition="";el.style.transform="";el.style.opacity="";el.style.animation="";el.style.visibility="";
+}
+function endSwiping(){
+  document.documentElement.classList.remove("swiping");
+  const a=$("viewCity"),b=$("viewCompare");
+  if(a)a.classList.remove("transit");
+  if(b)b.classList.remove("transit");
+}
+// 弹回原位：从手指离开处平滑回到 0（时长随位移变化，短距离快、长距离缓）
+function snapBack(el,ms){
+  if(!el){endSwiping();return}
+  const t=ms||220;
+  el.style.transition=`transform ${t}ms cubic-bezier(.22,.72,.2,1),opacity ${t}ms ease`;
+  el.style.transform="";el.style.opacity="";
+  setTimeout(()=>{clearTransit(el);endSwiping()},t+60);
+}
+
+// 立刻结算进行中的过渡（被打断时用：直接换页，不播入场动画）
+function settleTx(){
+  const t=tx;if(!t||t.done)return;
+  t.done=true;tx=null;
+  holdView=false;
+  applyView(t.v==="__cmp"?"cmp":"city");
+  if(t.from!==t.target)t.from.style.display="none";
+  clearTransit(t.from);clearTransit(t.target);
+  t.target.classList.remove("view-in","view-back");
+  window.scrollTo(0,0);
+  if(t.wasHidden){if(curCity==="__cmp")initCardFX();redrawCharts();observeCards()}
+  endSwiping();
+}
+
+// 正常完成：换页 + 入场动画
+function commitTx(t,animateIn){
+  if(!t||t.done)return;
+  t.done=true;tx=null;
+  holdView=false;
+  applyView(t.v==="__cmp"?"cmp":"city");            // 此刻才切换显隐
+  t.target.style.visibility="";                     // 提前布局用的隐藏态解除
+  if(t.from!==t.target)t.from.style.display="none";
+  clearTransit(t.from);
+  window.scrollTo(0,0);
+  if(t.wasHidden){                                  // 渲染时视图不可见：图表/特效需按真实尺寸重做
+    if(curCity==="__cmp")initCardFX();
+    redrawCharts();
+    observeCards();
+  }
+  const el=t.target;
+  el.classList.remove("view-in","view-back");
+  void el.offsetWidth;                              // 强制重排以重放动画
+  el.classList.add("transit");
+  const animate=animateIn&&!REDUCED_MOTION;
+  if(animate)el.classList.add(t.dir>0?"view-in":"view-back");
+  if(t.restore!==null)memRestore(t.restore);        // 打开页面：回到历史位置
+  const fin=()=>{clearTransit(el);endSwiping();deferReveal=false;observeCards()};
+  if(animate){el.addEventListener("animationend",fin,{once:true});setTimeout(fin,IN_MS+240)}
+  else fin();
+}
+
+let tx=null;                                       // 进行中的过渡
+
+// 切换到第 k 个页面（dir 决定动画方向；opt.restore 为数字时表示「回到历史位置」）
+function goView(k,opt){
   if(k<0||k>=VIEWS.length)return;
   const v=VIEWS[k];
   if(v===curCity)return;
+  settleTx();                                      // 上一次过渡还在跑就先立刻结算
+  const restore=(opt&&typeof opt.restore==="number")?opt.restore:null;
   const dir=k>curViewIndex()?1:-1;
+  const from=visibleView();
   const target=v==="__cmp"?$("viewCompare"):$("viewCity");
+  const wasHidden=target.style.display==="none";
+  const t=tx={v,from,target,dir,wasHidden,restore,done:false};
+  document.documentElement.classList.add("swiping");
+  holdView=true;                                   // 渲染期间挂起显隐切换
+  deferReveal=true;                                // 渲染期间不做同步布局（见 observeCards）
+  if(wasHidden){
+    // 提前把目标视图放进布局树（不可见）：让「整页布局」这笔大开销发生在出场动画期间，
+    // 同时渲染时能量到正确宽度，图表一次就画对
+    target.style.display="";
+    target.style.visibility="hidden";
+  }
+
+  // 1) 出场：旧页从手指离开处继续滑出并淡出
+  let outP=Promise.resolve();
+  if(restore===null&&!REDUCED_MOTION){
+    from.classList.add("transit");
+    from.style.transition=`transform ${OUT_MS}ms cubic-bezier(.4,0,.7,1),opacity ${OUT_MS}ms ease`;
+    from.style.transform=`translate3d(${-dir*30}%,0,0)`;
+    from.style.opacity=".12";
+    outP=new Promise(res=>{
+      let done=false;const fin=()=>{if(!done){done=true;res()}};
+      from.addEventListener("transitionend",fin,{once:true});
+      setTimeout(fin,OUT_MS+80);
+    });
+  }
+
+  // 2) 渲染与出场并行（先让出一帧，出场动画才不会被长任务卡住）
   const run=v==="__cmp"?showCompare():show(CITIES.find(c=>c.id===v));
-  window.scrollTo(0,0);
-  Promise.resolve(run).catch(()=>{}).then(()=>{
-    target.classList.remove("view-in","view-back");
-    void target.offsetWidth;                       // 强制重排以重放动画
-    target.classList.add(dir>0?"view-in":"view-back");
-  });
+  renderPager();                                   // 指示点立刻响应，不等渲染
+  const runP=new Promise(res=>requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    Promise.resolve(run).catch(()=>{}).then(res);
+  })));
+  const guard=new Promise(res=>setTimeout(res,4000));  // 兜底：网络异常也不至于卡在半途
+
+  Promise.all([outP,Promise.race([runP,guard])]).then(()=>commitTx(t,true));
 }
 
 // 横向滚动容器内的滑动不应触发翻页（逐小时卡片、对比表格）
@@ -1356,13 +1749,28 @@ function inHScroll(node){
   return false;
 }
 
-let swX=0,swY=0,swT=0,swOn=false,swAxis=null;
-const SW_MIN=55,SW_MAXT=900;                       // 最小位移 / 最大时长
+let swX=0,swY=0,swT=0,swOn=false,swAxis=null,swEl=null,swDrag=0,swRAF=0;
+const SW_MIN=52,SW_MAXT=900;                       // 提交阈值 / 最长耗时
+const SW_FLICK=36,SW_FLICK_T=240;                  // 快速轻扫：位移小但够快也算切换
+
+// 边缘阻尼：没有相邻页时只跟动一点点，形成「拉不动」的手感
+function edgeDamp(dx){
+  const i=curViewIndex();
+  return ((dx<0&&i>=VIEWS.length-1)||(dx>0&&i<=0))?.35:1;
+}
+function paintDrag(){
+  swRAF=0;
+  if(!swEl)return;
+  const d=swDrag*edgeDamp(swDrag);
+  swEl.style.transform=`translate3d(${d}px,0,0)`;                 // 跟手：页面实时跟随手指
+  swEl.style.opacity=String(Math.max(.5,1-Math.abs(d)/innerWidth*.45));
+}
 
 addEventListener("touchstart",e=>{
   if(e.touches.length!==1){swOn=false;return}      // 双指（缩放）不参与
   const t=e.touches[0];
-  swOn=!inHScroll(t.target);swAxis=null;
+  swOn=!inHScroll(t.target);
+  swAxis=null;swEl=null;swDrag=0;
   swX=t.clientX;swY=t.clientY;swT=Date.now();
 },{passive:true});
 
@@ -1372,19 +1780,36 @@ addEventListener("touchmove",e=>{
   if(swAxis===null){
     if(Math.abs(dx)<8&&Math.abs(dy)<8)return;
     swAxis=Math.abs(dx)>Math.abs(dy)*1.1?"x":"y";
+    if(swAxis==="x"){
+      settleTx();                                  // 若上一段过渡未结束：先立刻结算，再接管
+      swEl=visibleView();
+      swEl.classList.remove("view-in","view-back");
+      clearTransit(swEl);
+      swEl.classList.add("transit");
+      document.documentElement.classList.add("swiping");   // 升层 + 关毛玻璃，拖动才顺滑
+    }
   }
-  if(swAxis==="y")swOn=false;                      // 判定为竖向滚动，放弃翻页
+  if(swAxis!=="x"){swOn=false;return}              // 判定为竖向滚动，放弃翻页
+  swDrag=dx;
+  if(!swRAF)swRAF=requestAnimationFrame(paintDrag); // 每帧最多写一次，避免重复样式计算
 },{passive:true});
 
 addEventListener("touchend",e=>{
   if(!swOn){swOn=false;return}
   swOn=false;
-  const t=e.changedTouches[0],dx=t.clientX-swX,dy=t.clientY-swY;
-  if(swAxis!=="x")return;
-  if(Math.abs(dx)<SW_MIN||Math.abs(dy)>Math.abs(dx)*.9)return;
-  if(Date.now()-swT>SW_MAXT)return;
-  const i=curViewIndex();
-  goView(dx<0?i+1:i-1);                            // 左滑下一页 / 右滑上一页
+  if(swRAF){cancelAnimationFrame(swRAF);swRAF=0}
+  if(swAxis!=="x"||!swEl)return;
+  const t=e.changedTouches[0],dx=t.clientX-swX,dy=t.clientY-swY,dt=Date.now()-swT;
+  const i=curViewIndex(),k=i+(dx<0?1:-1);
+  const flick=Math.abs(dx)>=SW_FLICK&&dt<=SW_FLICK_T;
+  const ok=(Math.abs(dx)>=SW_MIN||flick)&&Math.abs(dy)<=Math.abs(dx)*.9&&dt<=SW_MAXT
+    &&k>=0&&k<VIEWS.length&&VIEWS[k]!==curCity;
+  if(ok)goView(k);                                 // 位移足够：交给过渡引擎（从当前位置接着滑）
+  else snapBack(swEl,Math.min(320,150+Math.abs(dx)));   // 否则弹回，时长随位移缓和变化
+},{passive:true});
+addEventListener("touchcancel",()=>{
+  if(swRAF){cancelAnimationFrame(swRAF);swRAF=0}
+  swOn=false;snapBack(swEl,200);
 },{passive:true});
 
 $("pager").addEventListener("click",e=>{
@@ -1405,14 +1830,19 @@ addEventListener("keydown",e=>{
 document.querySelector(".brand").style.cursor="pointer";
 document.querySelector(".brand").onclick=()=>location.reload();  // 点击品牌图标刷新整页（fetch 已 no-store，拉取最新数据）
 
-showCompare();
+// 滚动恢复由本页接管（浏览器自带的恢复对动态渲染页面不准）
+if("scrollRestoration" in history)history.scrollRestoration="manual";
+// 有历史位置 → 直接回到上次的页面与位置；首次访问 → 三地对比首页
+const memSaved=memLoad();
+if(memSaved){
+  mem=memSaved;
+  const k=VIEWS.indexOf(mem.view);
+  goView(k<0?0:k,{restore:mem.scroll[mem.view]||0});
+}else{
+  showCompare();
+}
 CITIES.forEach((c,i)=>setTimeout(()=>loadCity(c.id),800+i*300)); // 空闲预取
-addEventListener("resize",()=>{
-  if(!curCity)return;
-  if(curCity==="__cmp"){
-    const ds=CITIES.map(c=>cache[c.id]);if(ds.every(Boolean)){renderCmpDaily(ds);renderCmpHourly(ds);renderCmpRain(ds)}
-  }else if(cache[curCity]){renderMinutely(cache[curCity]);renderHourly(cache[curCity])}
-});
+addEventListener("resize",redrawCharts);
 </script>
 </body>
 </html>
