@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "tag": "ce194c1de7068da7550c339279858592ff7088fcbe69fe9c0ca8b207c449089f",
+    "tag": "6bf3591297b3d5c047f002e8019179e1155c7cc2a2b6cb0d1f302e985af442fe",
     "attributions": [
       "https://developer.qweather.com/attribution.html"
     ]
@@ -10,52 +10,52 @@
     "code": "104"
   },
   "temperature": {
-    "value": 20.69,
+    "value": 21.35,
     "unit": "°C"
   },
   "feelsLike": {
-    "value": 21.95,
+    "value": 23.24,
     "unit": "°C"
   },
-  "humidity": 0.87,
+  "humidity": 0.82,
   "wind": {
     "direction": {
-      "degree": 340,
-      "compass": "nnw"
+      "degree": 21,
+      "compass": "nne"
     },
     "speed": {
-      "value": 1.65,
+      "value": 0.64,
       "unit": "m/s"
     },
-    "scale": 2
+    "scale": 1
   },
   "windGust": {
-    "value": 4.33,
+    "value": 3.97,
     "unit": "m/s"
   },
   "precipitation": {
     "amount": {
-      "value": 0.81,
+      "value": 0,
       "unit": "mm"
     },
     "intensity": {
-      "value": 0.9,
+      "value": 0,
       "unit": "mm/h"
     },
-    "type": "rain"
+    "type": "none"
   },
   "pressure": {
-    "value": 1015.99,
+    "value": 1016.89,
     "unit": "hPa"
   },
   "visibility": {
-    "value": 17250,
+    "value": 28880,
     "unit": "m"
   },
   "dewPoint": {
-    "value": 18.36,
+    "value": 18.12,
     "unit": "°C"
   },
-  "cloudCover": 0.93,
+  "cloudCover": 1,
   "uvIndex": 0
 }
