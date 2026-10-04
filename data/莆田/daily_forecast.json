@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "tag": "0fcb0e5c039c4c64fbed0eeed167f8ed9496d7bb515c337a544ba42650c2a774",
+    "tag": "c6b1d3597af409679f2926b8920f5ff369ac29b4c6c344408c85685b6b90289a",
     "attributions": [
       "https://developer.qweather.com/attribution.html"
     ]
@@ -31,37 +31,37 @@
         "unit": "°C"
       },
       "temperatureMin": {
-        "value": 26.39,
+        "value": 26.24,
         "unit": "°C"
       },
       "temperatureAvg": {
-        "value": 29.31,
+        "value": 29.37,
         "unit": "°C"
       },
-      "uvIndexMax": 7,
+      "uvIndexMax": 6,
       "daytime": {
         "forecastStartTime": "2026-10-03T23:00Z",
         "forecastEndTime": "2026-10-04T11:00Z",
         "condition": {
-          "text": "阵雨",
-          "code": "300"
+          "text": "强雷阵雨",
+          "code": "303"
         },
         "temperatureMax": {
           "value": 31.99,
           "unit": "°C"
         },
         "temperatureMin": {
-          "value": 26.71,
+          "value": 26.24,
           "unit": "°C"
         },
-        "humidity": 0.64,
+        "humidity": 0.66,
         "wind": {
           "direction": {
-            "degree": 118,
+            "degree": 115,
             "compass": "ese"
           },
           "speed": {
-            "value": 1.47,
+            "value": 1.09,
             "unit": "m/s"
           },
           "scale": 1
@@ -72,7 +72,7 @@
         },
         "precipitation": {
           "amount": {
-            "value": 5.78,
+            "value": 7.74,
             "unit": "mm"
           },
           "probability": 0.8,
@@ -88,7 +88,7 @@
           "code": "306"
         },
         "temperatureMax": {
-          "value": 27.13,
+          "value": 27.62,
           "unit": "°C"
         },
         "temperatureMin": {
@@ -102,7 +102,7 @@
             "compass": "nne"
           },
           "speed": {
-            "value": 2.01,
+            "value": 2.26,
             "unit": "m/s"
           },
           "scale": 2
@@ -113,7 +113,7 @@
         },
         "precipitation": {
           "amount": {
-            "value": 8.79,
+            "value": 7.75,
             "unit": "mm"
           },
           "probability": 1,
@@ -154,7 +154,7 @@
         "value": 25,
         "unit": "°C"
       },
-      "uvIndexMax": 4,
+      "uvIndexMax": 2,
       "daytime": {
         "forecastStartTime": "2026-10-04T23:00Z",
         "forecastEndTime": "2026-10-05T11:00Z",
@@ -188,7 +188,7 @@
         },
         "precipitation": {
           "amount": {
-            "value": 4.62,
+            "value": 4.51,
             "unit": "mm"
           },
           "probability": 0.95,
@@ -229,7 +229,7 @@
         },
         "precipitation": {
           "amount": {
-            "value": 0.24,
+            "value": 0.26,
             "unit": "mm"
           },
           "probability": 0.3,
@@ -270,7 +270,7 @@
         "value": 23.73,
         "unit": "°C"
       },
-      "uvIndexMax": 8,
+      "uvIndexMax": 6,
       "daytime": {
         "forecastStartTime": "2026-10-05T23:00Z",
         "forecastEndTime": "2026-10-06T11:00Z",
@@ -409,7 +409,7 @@
             "compass": "ne"
           },
           "speed": {
-            "value": 4.35,
+            "value": 4.39,
             "unit": "m/s"
           },
           "scale": 3

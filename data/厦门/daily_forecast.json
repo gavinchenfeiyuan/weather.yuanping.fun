@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "tag": "0fcb0e5c039c4c64fbed0eeed167f8ed9496d7bb515c337a544ba42650c2a774",
+    "tag": "c6b1d3597af409679f2926b8920f5ff369ac29b4c6c344408c85685b6b90289a",
     "attributions": [
       "https://developer.qweather.com/attribution.html"
     ]
@@ -35,10 +35,10 @@
         "unit": "°C"
       },
       "temperatureAvg": {
-        "value": 29.18,
+        "value": 28.82,
         "unit": "°C"
       },
-      "uvIndexMax": 7,
+      "uvIndexMax": 8,
       "daytime": {
         "forecastStartTime": "2026-10-03T23:00Z",
         "forecastEndTime": "2026-10-04T11:00Z",
@@ -51,28 +51,28 @@
           "unit": "°C"
         },
         "temperatureMin": {
-          "value": 26.87,
+          "value": 26.16,
           "unit": "°C"
         },
-        "humidity": 0.63,
+        "humidity": 0.64,
         "wind": {
           "direction": {
-            "degree": 142,
-            "compass": "se"
+            "degree": 156,
+            "compass": "sse"
           },
           "speed": {
-            "value": 1.77,
+            "value": 1.27,
             "unit": "m/s"
           },
-          "scale": 2
+          "scale": 1
         },
         "windGustMax": {
-          "value": 9.82,
+          "value": 9.13,
           "unit": "m/s"
         },
         "precipitation": {
           "amount": {
-            "value": 5.72,
+            "value": 6.88,
             "unit": "mm"
           },
           "probability": 0.5,
@@ -88,7 +88,7 @@
           "code": "305"
         },
         "temperatureMax": {
-          "value": 27.08,
+          "value": 26.3,
           "unit": "°C"
         },
         "temperatureMin": {
@@ -98,11 +98,11 @@
         "humidity": 0.88,
         "wind": {
           "direction": {
-            "degree": 46,
+            "degree": 45,
             "compass": "ne"
           },
           "speed": {
-            "value": 4.28,
+            "value": 4.59,
             "unit": "m/s"
           },
           "scale": 3
@@ -113,7 +113,7 @@
         },
         "precipitation": {
           "amount": {
-            "value": 3.04,
+            "value": 2.65,
             "unit": "mm"
           },
           "probability": 1,
@@ -188,7 +188,7 @@
         },
         "precipitation": {
           "amount": {
-            "value": 5.18,
+            "value": 5.22,
             "unit": "mm"
           },
           "probability": 0.95,
@@ -405,11 +405,11 @@
         "humidity": 0.51,
         "wind": {
           "direction": {
-            "degree": 47,
+            "degree": 46,
             "compass": "ne"
           },
           "speed": {
-            "value": 5.94,
+            "value": 6.04,
             "unit": "m/s"
           },
           "scale": 4
