@@ -611,25 +611,42 @@ function renderMinutely(d){
   const list=d.minutely_precip.minutely||[];
   const c=$("minutelyChart"),[ctx,W,H]=setupCanvas(c,150);
   if(!list.length){ctx.fillStyle="#9aa7c7";ctx.font="13px sans-serif";ctx.fillText("暂无数据",10,24);return}
-  const max=Math.max(.5,...list.map(m=>+m.precip));
-  const bw=W/list.length;
+  const P={l:36,r:6,t:12,b:24},iw=W-P.l-P.r,ih=H-P.t-P.b;
+  const max=Math.max(.1,...list.map(m=>+m.precip));
+  // 主刻度（实线带数字）= 细分步长 ×2，细分刻度为虚线无数字
+  const cands=[.1,.2,.5,1,2,5,10,20,50];
+  const step=cands.find(s=>max*1.15/s<=6)||100;
+  const major=step*2;
+  const hi=Math.max(major,Math.ceil(max*1.15/major)*major);
+  const Y=v=>P.t+ih*(1-v/hi),zeroY=Y(0);
+  const fmt=v=>v<1?String(+v.toFixed(2)):String(+v.toFixed(1));
+  ctx.font="10px sans-serif";ctx.textAlign="right";
+  for(let v=0;v<=hi+1e-6;v+=step){
+    const y=Y(v),isMaj=Math.abs(v%major)<1e-6;
+    ctx.setLineDash(isMaj?[]:[3,4]);
+    ctx.strokeStyle=isMaj?"rgba(255,255,255,.12)":"rgba(255,255,255,.09)";
+    ctx.beginPath();ctx.moveTo(P.l,y);ctx.lineTo(W-P.r,y);ctx.stroke();
+    if(isMaj){ctx.fillStyle="#6b7794";ctx.fillText(fmt(v),P.l-6,y+3)}
+  }
+  ctx.setLineDash([]);
+  const bw=iw/list.length;
   if(list.every(m=>+m.precip===0)){ // 空态：未来两小时无降水
-    ctx.strokeStyle="rgba(255,255,255,.14)";ctx.beginPath();
-    ctx.moveTo(0,H-24);ctx.lineTo(W,H-24);ctx.stroke();
     ctx.fillStyle="#9aa7c7";ctx.font="13px sans-serif";ctx.textAlign="center";
-    ctx.fillText("未来两小时无降水 ☕",W/2,H/2-6);
+    ctx.fillText("未来两小时无降水 ☕",W/2,P.t+ih/2-6);
+    ctx.fillStyle="#6b7794";ctx.font="10px sans-serif";
+    list.forEach((m,i)=>{if(i%6===0)ctx.fillText(m.fxTime.slice(11,16),P.l+i*bw+bw/2,H-8)});
     return;
   }
   list.forEach((m,i)=>{
-    const v=+m.precip,h=v/max*(H-44);
-    const x=i*bw+bw*.2,y=H-24-h;
-    const g=ctx.createLinearGradient(0,y,0,H-24);
+    const v=+m.precip,h=v/hi*ih;
+    const x=P.l+i*bw+bw*.2,y=Y(v);
+    const g=ctx.createLinearGradient(0,y,0,zeroY);
     g.addColorStop(0,"rgba(94,168,255,.95)");g.addColorStop(1,"rgba(94,168,255,.25)");
     ctx.fillStyle=g;
     ctx.beginPath();ctx.roundRect(x,y,bw*.6,Math.max(h,v>0?2.5:0),3);ctx.fill();
-    if(v>0){ctx.fillStyle="#9ec7ff";ctx.font="9px sans-serif";ctx.textAlign="center";ctx.fillText(v.toFixed(2),i*bw+bw/2,y-4)}
+    if(v>0){ctx.fillStyle="#9ec7ff";ctx.font="9px sans-serif";ctx.textAlign="center";ctx.fillText(v.toFixed(2),P.l+i*bw+bw/2,y-4)}
     if(i%6===0){ctx.fillStyle="#6b7794";ctx.font="10px sans-serif";ctx.textAlign="center";
-      ctx.fillText(m.fxTime.slice(11,16),i*bw+bw/2,H-8)}
+      ctx.fillText(m.fxTime.slice(11,16),P.l+i*bw+bw/2,H-8)}
   });
 }
 
@@ -641,14 +658,29 @@ function renderHourly(d){
   const dpr=devicePixelRatio||1;c.width=W*dpr;c.height=170*dpr;c.style.height="170px";
   const ctx=c.getContext("2d");ctx.scale(dpr,dpr);
   const temps=hours.map(h=>h.temperature.value);
-  const lo=Math.min(...temps),hi=Math.max(...temps),span=Math.max(hi-lo,1);
-  const Y=t=>30+(1-(t-lo)/span)*80;
+  const t0=Math.min(...temps),t1=Math.max(...temps);
+  // 主刻度 3°（对齐倍数，带数字）+ 1° 细分虚线
+  const sub=(t1-t0)<=12?1:(t1-t0)<=30?2:5, maj=sub*3;
+  const lo=Math.floor(t0/maj)*maj, hi=Math.ceil(t1/maj)*maj;
+  const P={t:26,b:52},ih=170-P.t-P.b;
+  const Y=t=>P.t+(1-(t-lo)/(hi-lo))*ih;
+  const zeroY=P.t+ih;
+  // 网格
+  for(let v=lo;v<=hi+1e-6;v+=sub){
+    const y=Y(v),isMaj=Math.abs(v%maj)<1e-6;
+    ctx.setLineDash(isMaj?[]:[3,4]);
+    ctx.strokeStyle=isMaj?"rgba(255,255,255,.12)":"rgba(255,255,255,.09)";
+    ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();
+    if(isMaj){ctx.fillStyle="#6b7794";ctx.font="10px sans-serif";ctx.textAlign="left";
+      ctx.fillText(Math.round(v)+"°",4,y-3)}
+  }
+  ctx.setLineDash([]);ctx.textAlign="center";
   // 区域渐变
-  const g=ctx.createLinearGradient(0,20,0,130);
+  const g=ctx.createLinearGradient(0,P.t,0,zeroY);
   g.addColorStop(0,"rgba(94,168,255,.35)");g.addColorStop(1,"rgba(94,168,255,0)");
   ctx.beginPath();ctx.moveTo(cw/2,Y(temps[0]));
   temps.forEach((t,i)=>ctx.lineTo(i*cw+cw/2,Y(t)));
-  ctx.lineTo(W-cw/2,135);ctx.lineTo(cw/2,135);ctx.closePath();ctx.fillStyle=g;ctx.fill();
+  ctx.lineTo(W-cw/2,zeroY);ctx.lineTo(cw/2,zeroY);ctx.closePath();ctx.fillStyle=g;ctx.fill();
   // 线 + 点 + 标签
   ctx.beginPath();temps.forEach((t,i)=>{const x=i*cw+cw/2,y=Y(t);i?ctx.lineTo(x,y):ctx.moveTo(x,y)});
   ctx.strokeStyle="#5ea8ff";ctx.lineWidth=2;ctx.stroke();
@@ -667,7 +699,7 @@ function renderHourly(d){
   hours.forEach((h,i)=>{
     const p=h.precipitation&&h.precipitation.probability||0;
     if(p>0.02){ctx.fillStyle="rgba(77,157,224,.5)";
-      ctx.fillRect(i*cw+cw*.3,135-p*22,cw*.4,p*22)}
+      ctx.fillRect(i*cw+cw*.3,zeroY-p*22,cw*.4,p*22)}
   });
   // 卡片
   $("hourCards").innerHTML=hours.map(h=>{
