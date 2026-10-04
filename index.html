@@ -380,19 +380,19 @@ footer a:hover{color:var(--accent)}
   <section class="cmp-grid" id="cmpCards"></section>
 
   <section class="card">
-    <div class="sec-title"><h2>10 日气温对比</h2><span>实线最高温 · 虚线最低温</span></div>
+    <div class="sec-title"><h2>多日气温</h2></div>
     <div class="legend" id="cmpDailyLegend"></div>
     <canvas id="cmpDailyChart" style="width:100%"></canvas>
   </section>
 
   <section class="card">
-    <div class="sec-title"><h2>24 小时气温对比</h2><span>逐小时</span></div>
+    <div class="sec-title"><h2>24小时气温</h2></div>
     <div class="legend" id="cmpHourlyLegend"></div>
     <canvas id="cmpHourlyChart" style="width:100%"></canvas>
   </section>
 
   <section class="card">
-    <div class="sec-title"><h2>10 日降雨量对比</h2><span>分组柱状 · 逐日总量（白天 + 夜间）· 悬停查看</span></div>
+    <div class="sec-title"><h2>多日降雨量</h2></div>
     <div class="legend" id="cmpRainLegend"></div>
     <canvas id="cmpRainChart" style="width:100%"></canvas>
   </section>
@@ -531,7 +531,7 @@ addEventListener("resize",initFx);
     fxCtx.strokeStyle=fxCtx.fillStyle=`rgba(255,255,255,${p.o})`;
     if(fxType==="rain"){
       fxCtx.lineWidth=1*devicePixelRatio;fxCtx.beginPath();
-      fxCtx.moveTo(p.x,p.y);fxCtx.lineTo(p.x-p.l*.15,p.y+p.l);fxCtx.stroke();
+      fxCtx.moveTo(p.x,p.y);fxCtx.lineTo(p.x+p.l*.15,p.y-p.l);fxCtx.stroke();
       p.y+=p.v;p.x-=p.v*.12;
     }else{
       fxCtx.beginPath();fxCtx.arc(p.x,p.y,p.l,0,7);fxCtx.fill();
@@ -813,15 +813,22 @@ function drawMulti(canvasId,labels,series,unit,smooth=true,splits=[]){
   const all=series.flatMap(s=>s.pts);
   let lo=Math.min(...all),hi=Math.max(...all);
   lo=Math.max(0,Math.floor(lo-1));hi=Math.ceil(hi+1);
+  // 网格：主刻度带数字（3 的倍数），细分刻度为虚线无数字
+  const range=hi-lo;
+  const sub=range<=12?1:range<=30?2:5;
+  const maj=sub*3;
+  lo=Math.floor(lo/maj)*maj;hi=Math.ceil(hi/maj)*maj;
   const X=i=>P.l+iw*(labels.length===1?.5:i/(labels.length-1));
   const Y=v=>P.t+ih*(1-(v-lo)/(hi-lo));
-  // 网格 + Y 轴
   ctx.font="10px sans-serif";ctx.textAlign="right";
-  for(let g=0;g<=4;g++){
-    const v=lo+(hi-lo)*g/4,y=Y(v);
-    ctx.strokeStyle="rgba(255,255,255,.08)";ctx.beginPath();ctx.moveTo(P.l,y);ctx.lineTo(W-P.r,y);ctx.stroke();
-    ctx.fillStyle="#6b7794";ctx.fillText(Math.round(v)+unit,P.l-6,y+3);
+  for(let v=lo;v<=hi+1e-6;v+=sub){
+    const y=Y(v),isMaj=Math.abs(v%maj)<1e-6;
+    ctx.setLineDash(isMaj?[]:[3,4]);
+    ctx.strokeStyle=isMaj?"rgba(255,255,255,.12)":"rgba(255,255,255,.09)";
+    ctx.beginPath();ctx.moveTo(P.l,y);ctx.lineTo(W-P.r,y);ctx.stroke();
+    if(isMaj){ctx.fillStyle="#6b7794";ctx.fillText(Math.round(v)+(v===hi?unit:""),P.l-6,y+3)}
   }
+  ctx.setLineDash([]);
   ctx.textAlign="center";
   const step=Math.ceil(labels.length/10);
   labels.forEach((lb,i)=>{if(i%step===0){ctx.fillStyle="#6b7794";ctx.fillText(lb,X(i),H-8)}});
@@ -918,10 +925,10 @@ function drawFX(o,t){
   }else if(o.kind==="rain"){
     c.lineCap="round";c.strokeStyle="rgba(190,220,255,.30)";c.lineWidth=1.1;
     o.parts.forEach(p=>{
-      p.y+=p.v*7;p.x+=p.v*1.1;
+      p.y+=p.v*7;p.x-=p.v*1.1;                 // 落向：左下
       if(p.y>h+12){p.y=-12;p.x=Math.random()*w}
-      if(p.x>w+10)p.x=-10;
-      c.beginPath();c.moveTo(p.x,p.y);c.lineTo(p.x-p.l*.28,p.y+p.l);c.stroke();
+      if(p.x<-10)p.x=w+10;
+      c.beginPath();c.moveTo(p.x,p.y);c.lineTo(p.x+p.l*.16,p.y-p.l);c.stroke();  // 尾迹在身后
     });
   }else{ // snow
     o.parts.forEach(p=>{
@@ -1059,14 +1066,21 @@ function renderCmpRain(ds){
     r1((x.daytime.precipitation.amount.value||0)+(x.nighttime.precipitation.amount.value||0))));
   const c=$("cmpRainChart"),[ctx,W,H]=setupCanvas(c,250);
   const P={l:34,r:12,t:24,b:26},iw=W-P.l-P.r,ih=H-P.t-P.b;
-  const hi=Math.max(2,Math.ceil(Math.max(...vals.flat(),0)*1.25));
+  const raw=Math.max(...vals.flat(),0);
+  const rough=Math.max(1,Math.ceil(raw*1.15));
+  const step=rough<=14?1:rough<=30?2:rough<=60?5:10;   // 细分刻度
+  const major=step*3;                                   // 主刻度（带数字）
+  const hi=Math.max(major,Math.ceil(rough/major)*major);
   const Y=v=>P.t+ih*(1-v/hi),zeroY=Y(0);
   ctx.font="10px sans-serif";ctx.textAlign="right";
-  for(let g=0;g<=4;g++){
-    const v=hi*g/4,y=Y(v);
-    ctx.strokeStyle="rgba(255,255,255,.08)";ctx.beginPath();ctx.moveTo(P.l,y);ctx.lineTo(W-P.r,y);ctx.stroke();
-    ctx.fillStyle="#6b7794";ctx.fillText(r1(v)+(g===4?"mm":""),P.l-6,y+3);
+  for(let v=0;v<=hi+1e-6;v+=step){
+    const y=Y(v),isMaj=Math.abs(v%major)<1e-6;
+    ctx.setLineDash(isMaj?[]:[3,4]);
+    ctx.strokeStyle=isMaj?"rgba(255,255,255,.12)":"rgba(255,255,255,.09)";
+    ctx.beginPath();ctx.moveTo(P.l,y);ctx.lineTo(W-P.r,y);ctx.stroke();
+    if(isMaj){ctx.fillStyle="#6b7794";ctx.fillText(v+(v===hi?"mm":""),P.l-6,y+3)}
   }
+  ctx.setLineDash([]);
   const n=labels.length,gw=iw/n,bw=Math.min(gw*.21,24);
   // 周界虚线（周日与周一之间，落在两组柱之间的交界处）
   weekSplits(days).forEach(i=>{
@@ -1089,8 +1103,6 @@ function renderCmpRain(ds){
         g.addColorStop(0,col);g.addColorStop(1,col+"33");
         ctx.fillStyle=g;
         ctx.beginPath();ctx.roundRect(x,Y(v),bw,Math.max(zeroY-Y(v),2.5),4);ctx.fill();
-        if(v>=0.5){ctx.fillStyle=col;ctx.font="9.5px sans-serif";ctx.textAlign="center";
-          ctx.fillText(v,x+bw/2,Y(v)-5)}
       }else{
         ctx.fillStyle="rgba(255,255,255,.16)";ctx.fillRect(x+bw*.2,zeroY-2,bw*.6,2);
       }
