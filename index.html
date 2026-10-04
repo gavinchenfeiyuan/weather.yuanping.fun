@@ -281,6 +281,27 @@ footer a:hover{color:var(--accent)}
   .idx .in{font-size:12px}
   .idx .iv{font-size:14px}
 }
+
+/* ---------- 左右滑动切换页面 ---------- */
+#pager{position:fixed;left:50%;transform:translateX(-50%);
+  bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  display:flex;align-items:center;gap:8px;z-index:40;padding:8px 12px;border-radius:999px;
+  background:rgba(10,15,28,.45);border:1px solid rgba(255,255,255,.13);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 6px 22px rgba(0,0,0,.32);
+  opacity:0;transition:opacity .5s ease;pointer-events:none}
+#pager.on{opacity:1;pointer-events:auto}
+#pager i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.28);
+  cursor:pointer;transition:background .3s,transform .3s,width .3s}
+#pager i:hover{background:rgba(255,255,255,.5)}
+#pager i.act{background:var(--accent);width:20px;border-radius:4px;transform:none}
+.view-in{animation:viewIn .36s cubic-bezier(.22,.61,.36,1) both}
+.view-back{animation:viewBack .36s cubic-bezier(.22,.61,.36,1) both}
+@keyframes viewIn{from{opacity:.25;transform:translateX(28px)}to{opacity:1;transform:none}}
+@keyframes viewBack{from{opacity:.25;transform:translateX(-28px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .view-in,.view-back{animation:none}
+}
 </style>
 </head>
 <body>
@@ -439,6 +460,8 @@ footer a:hover{color:var(--accent)}
     </div>
     <div class="footer-qweather"><a href="https://www.qweather.com" target="_blank" rel="noopener">天气服务由和风天气驱动</a></div>
   </footer>
+
+  <div id="pager" role="tablist" aria-label="切换页面"></div>
 </div>
 
 <script>
@@ -1249,6 +1272,7 @@ async function showCompare(){
   }
   observeCards();
   initCardFX();
+  renderPager();
 }
 
 /* ================= 主流程 ================= */
@@ -1275,6 +1299,7 @@ async function show(city){
       <button class="cv-pill" style="margin-top:8px" onclick="location.reload()">重新加载</button>`;
   }
   observeCards();
+  renderPager();
 }
 
 /* ---- 入场动画 ---- */
@@ -1288,6 +1313,94 @@ function observeCards(){
   clearTimeout(ioTimer);
   ioTimer=setTimeout(()=>document.querySelectorAll(".card").forEach(c=>c.classList.add("show")),2500);
 }
+
+/* ================= 左右滑动切换页面 ================= */
+// 页面顺序：首页（三地对比）→ 上海 → 莆田 → 厦门
+const VIEWS=["__cmp",...CITIES.map(c=>c.id)];
+const VIEW_LABEL=v=>v==="__cmp"?"三地对比":(CITIES.find(c=>c.id===v)||{}).name||v;
+
+function curViewIndex(){const i=VIEWS.indexOf(curCity);return i<0?0:i}
+
+function renderPager(){
+  const box=$("pager");if(!box)return;
+  const i=curViewIndex();
+  box.innerHTML=VIEWS.map((v,k)=>
+    `<i data-i="${k}" class="${k===i?"act":""}" title="${VIEW_LABEL(v)}" role="tab" aria-selected="${k===i}"></i>`
+  ).join("");
+  box.classList.add("on");
+}
+
+// 切换到第 k 个页面（dir 决定动画方向）
+function goView(k){
+  if(k<0||k>=VIEWS.length)return;
+  const v=VIEWS[k];
+  if(v===curCity)return;
+  const dir=k>curViewIndex()?1:-1;
+  const target=v==="__cmp"?$("viewCompare"):$("viewCity");
+  const run=v==="__cmp"?showCompare():show(CITIES.find(c=>c.id===v));
+  window.scrollTo(0,0);
+  Promise.resolve(run).catch(()=>{}).then(()=>{
+    target.classList.remove("view-in","view-back");
+    void target.offsetWidth;                       // 强制重排以重放动画
+    target.classList.add(dir>0?"view-in":"view-back");
+  });
+}
+
+// 横向滚动容器内的滑动不应触发翻页（逐小时卡片、对比表格）
+function inHScroll(node){
+  for(let n=node;n&&n.nodeType===1;n=n.parentElement){
+    if(n.classList&&(n.classList.contains("h-scroll")||n.classList.contains("t-scroll")))return true;
+    const ox=getComputedStyle(n).overflowX;
+    if(ox==="auto"||ox==="scroll")return true;
+  }
+  return false;
+}
+
+let swX=0,swY=0,swT=0,swOn=false,swAxis=null;
+const SW_MIN=55,SW_MAXT=900;                       // 最小位移 / 最大时长
+
+addEventListener("touchstart",e=>{
+  if(e.touches.length!==1){swOn=false;return}      // 双指（缩放）不参与
+  const t=e.touches[0];
+  swOn=!inHScroll(t.target);swAxis=null;
+  swX=t.clientX;swY=t.clientY;swT=Date.now();
+},{passive:true});
+
+addEventListener("touchmove",e=>{
+  if(!swOn)return;
+  const t=e.touches[0],dx=t.clientX-swX,dy=t.clientY-swY;
+  if(swAxis===null){
+    if(Math.abs(dx)<8&&Math.abs(dy)<8)return;
+    swAxis=Math.abs(dx)>Math.abs(dy)*1.1?"x":"y";
+  }
+  if(swAxis==="y")swOn=false;                      // 判定为竖向滚动，放弃翻页
+},{passive:true});
+
+addEventListener("touchend",e=>{
+  if(!swOn){swOn=false;return}
+  swOn=false;
+  const t=e.changedTouches[0],dx=t.clientX-swX,dy=t.clientY-swY;
+  if(swAxis!=="x")return;
+  if(Math.abs(dx)<SW_MIN||Math.abs(dy)>Math.abs(dx)*.9)return;
+  if(Date.now()-swT>SW_MAXT)return;
+  const i=curViewIndex();
+  goView(dx<0?i+1:i-1);                            // 左滑下一页 / 右滑上一页
+},{passive:true});
+
+$("pager").addEventListener("click",e=>{
+  const b=e.target.closest("i[data-i]");if(!b)return;
+  goView(+b.dataset.i);
+});
+
+// 桌面端：← → 方向键翻页（输入框/可编辑区域除外）
+addEventListener("keydown",e=>{
+  if(e.defaultPrevented||e.metaKey||e.ctrlKey||e.altKey)return;
+  const t=e.target;
+  if(t&&(t.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)))return;
+  if(e.key!=="ArrowLeft"&&e.key!=="ArrowRight")return;
+  const i=curViewIndex();
+  goView(e.key==="ArrowRight"?i+1:i-1);
+});
 
 document.querySelector(".brand").style.cursor="pointer";
 document.querySelector(".brand").onclick=()=>location.reload();  // 点击品牌图标刷新整页（fetch 已 no-store，拉取最新数据）
