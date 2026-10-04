@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>偶滴天气 · weather.yuanping.fun</title>
-<meta name="description" content="上海浦东 · 厦门翔安 · 莆田涵江 三地实时天气、逐小时预报、空气质量与生活指数">
+<meta name="description" content="上海浦东 · 莆田涵江 · 厦门翔安 三地实时天气、逐小时预报、空气质量与生活指数">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="preconnect" href="https://fontsapi.zeoseven.com" crossorigin>
 <link rel="preload" as="style" href="https://fontsapi.zeoseven.com/442/main/result.css" onload="this.rel='stylesheet'">
@@ -464,11 +464,6 @@ function iconColor(code){
 const axisFont=()=>innerWidth<=520?'11px sans-serif':'10px sans-serif'; // 移动端坐标轴标签稍大
 const COMPASS={n:"北风",nne:"东北偏北",ne:"东北风",ene:"东北偏东",e:"东风",ese:"东南偏东",se:"东南风",sse:"东南偏南",s:"南风",ssw:"西南偏南",sw:"西南风",wsw:"西南偏西",w:"西风",wnw:"西北偏西",nw:"西北风",nnw:"西北偏北"};
 const MOON={"new":["🌑","新月"],"waxing-crescent":["🌒","娥眉月"],"first-quarter":["🌓","上弦月"],"waxing-gibbous":["🌔","盈凸月"],"full":["🌕","满月"],"waning-gibbous":["🌖","亏凸月"],"last-quarter":["🌗","下弦月"],"waning-crescent":["🌘","残月"]};
-// 官方月相图标（qweather-icons 字体类名）
-const MOON_ICON={"new":"qi-new-moon","waxing-crescent":"qi-waxing-crescent","first-quarter":"qi-first-quarter",
-  "waxing-gibbous":"qi-waxing-gibbous","full":"qi-full-moon","waning-gibbous":"qi-waning-gibbous",
-  "last-quarter":"qi-last-quarter","waning-crescent":"qi-waning-crescent"};
-const moonCls=p=>(p&&MOON_ICON[p])||"";
 const IDX_ICON={"1":"🏃","2":"🚗","3":"👕","4":"🎣","5":"🌞","6":"🧳","7":"🤧","8":"😌","9":"🤒","10":"🌫️","11":"❄️","12":"🕶️","13":"💄","14":"👔","15":"🚦","16":"🧴"};
 const WEEK=["周日","周一","周二","周三","周四","周五","周六"];
 const $=id=>document.getElementById(id);
@@ -613,7 +608,7 @@ function renderHero(city,d){
   $("sunset").textContent=hm(day0.astro.sunset);
   $("solarNoon").textContent=hm(day0.astro.solarNoon);
   const mp=MOON[day0.astro.moonPhase]||["🌙","--"];
-  $("moonMini").innerHTML=`<i class="qwi ${moonCls(day0.astro.moonPhase)}"></i>`||mp[0];
+  $("moonMini").innerHTML=mp[0];
   drawSunArc(day0.astro);
   // 分钟级摘要 + 更新时间
   const mn=d.minutely_precip;
@@ -783,8 +778,8 @@ function renderDaily(d){
     const pop=x.daytime.precipitation?x.daytime.precipitation.probability||0:0;
     const L=(x.temperatureMin.value-glo)/span*100,Rr=(x.temperatureMax.value-glo)/span*100;
     const n=x.nighttime;
-    const mp=x.astro&&x.astro.moonPhase,mcls=moonCls(mp);
-    const moonIcon=mcls?`<i class="qwi ${mcls}"></i>`:(MOON[mp]||["🌙"])[0];
+    const mp=x.astro&&x.astro.moonPhase;
+    const moonIcon=(MOON[mp]||["🌙"])[0];
     return `<div class="d-row" onclick="this.classList.toggle('open')">
       <div class="dw"><b class="mc">${moonIcon}</b><span class="dw-t"><b>${dayLabel(x.forecastStartTime)}</b>${dt.getMonth()+1}/${dt.getDate()}</span></div>
       <div class="dc-ico"><i class="qwi ${QI(x.daytime.condition.code)}" style="color:${iconColor(x.daytime.condition.code)}" title="白天 ${x.daytime.condition.text}"></i><span class="dc-cond">${x.daytime.condition.text}</span></div>
@@ -798,7 +793,7 @@ function renderDaily(d){
         <span>💧 湿度 ${pct(x.daytime.humidity)}/${pct(n.humidity)}</span>
         <span>🔆 UV ${x.uvIndexMax}（${uvText(x.uvIndexMax)}）</span>
         <span>🌅 ${hm(x.astro.sunrise)} / 🌇 ${hm(x.astro.sunset)}</span>
-        <span><i class="qwi ${moonCls(x.astro.moonPhase)}"></i> 月出 ${hm(x.astro.moonrise)} 月落 ${hm(x.astro.moonset)}</span>
+        <span>${(MOON[x.astro.moonPhase]||["🌙"])[0]} 月出 ${hm(x.astro.moonrise)} 月落 ${hm(x.astro.moonset)}</span>
       </div></div>`;
   }).join("");
 }
@@ -809,14 +804,14 @@ function renderDetails(d){
   const deg=rt.wind.direction.degree;
   const items=[
     {l:"💧 相对湿度",v:pct(rt.humidity),s:`露点 ${r1(rt.dewPoint.value)}°C`,m:rt.humidity*100},
-    {l:`<i class="ic">🌬️</i> 风`,v:`${rt.wind.scale}<small>级</small>`,s:`${COMPASS[rt.wind.direction.compass]||""} ${rt.wind.speed.value} m/s · 阵风 ${rt.windGust.value} m/s`,
+    {l:`<i class="ic">🌬️</i> 风`,v:`${rt.wind.scale}<small>级</small>`,s:`${COMPASS[rt.wind.direction.compass]||""} ${rt.wind.speed.value} m/s<br>阵风 ${rt.windGust.value} m/s`,
      dial:`<svg class="wind-dial" viewBox="0 0 60 60"><circle cx="30" cy="30" r="27" fill="none" stroke="rgba(255,255,255,.15)"/>
        <text x="30" y="10" text-anchor="middle" fill="#6b7794" font-size="8">北</text>
        <g transform="rotate(${deg} 30 30)"><path d="M30 12 L34 32 L30 28 L26 32 Z" fill="#5ea8ff"/></g>
        <circle cx="30" cy="30" r="3" fill="#8be0d4"/></svg>`},
     {l:"🧭 气压",v:Math.round(rt.pressure.value),u:"hPa"},
     {l:`<i class="ic">👁️</i> 能见度`,v:visText(rt.visibility.value)},
-    {l:`<i class="ic">🌧️</i> 降水`,v:rt.precipitation.amount.value,u:"mm",s:`强度 ${rt.precipitation.intensity.value} mm/h · ${rt.precipitation.type==="rain"?"雨":rt.precipitation.type==="snow"?"雪":"降水"}`},
+    {l:`<i class="ic">🌧️</i> 降水`,v:rt.precipitation.amount.value,u:"mm",s:`强度 ${rt.precipitation.intensity.value} mm/h<br>${rt.precipitation.type==="rain"?"雨":rt.precipitation.type==="snow"?"雪":"降水"}`},
     {l:"☁️ 云量",v:pct(rt.cloudCover),m:rt.cloudCover*100},
     {l:"🔆 紫外线",v:rt.uvIndex,s:uvText(rt.uvIndex)},
     {l:"🌡 体感温度",v:r1(rt.feelsLike.value),u:"°C",s:`实况 ${r1(rt.temperature.value)}°C`}
@@ -842,14 +837,14 @@ function renderAqi(d){
     <circle cx="${ex}" cy="${ey}" r="7" fill="#fff" stroke="${col}" stroke-width="4"/>`;
   $("aqiN").textContent=ix.aqiDisplay;
   const c=$("aqiC");c.textContent=ix.category;c.style.background=col;
-  $("aqiHealth").innerHTML=`<b style="color:var(--txt)">健康提示</b>：${ix.health.effect}<br>👥 ${ix.health.advice.generalPopulation}`+
+  $("aqiHealth").innerHTML=`<b style="color:var(--txt)">健康提示</b>：<br>${ix.health.effect}<br>👥 ${ix.health.advice.generalPopulation}`+
     (ix.primaryPollutant?`<br>首要污染物：${ix.primaryPollutant.name||ix.primaryPollutant.code}`:"");
   // 污染物
   const polMax={pm2p5:75,pm10:150,no2:80,o3:160,so2:150,co:4};
   $("polGrid").innerHTML=d.realtime_aqi.pollutants.map(p=>{
     const v=p.concentration.value,sub=p.subIndexes[0];
     const w=Math.min(v/(polMax[p.code]||100)*100,100);
-    return `<div class="pol-i"><div class="pn">${p.name} · ${p.fullName}</div>
+    return `<div class="pol-i"><div class="pn">${p.name} ${p.fullName}</div>
       <div class="pv">${v}<small> ${p.concentration.unit}</small></div>
       <div class="meter"><i style="width:${w}%"></i></div>
       <div class="pa">分指数 IAQI ${sub?sub.aqiDisplay:"--"}</div></div>`;
@@ -862,7 +857,7 @@ function renderAqi(d){
       <div class="fc2" style="color:${aqiRGB(i2.color)}">${i2.category}</div></div>`;
   }).join("");
   const st=d.realtime_aqi.stations||[];
-  $("aqiStations").textContent=st.length?("监测站点："+st.map(s=>s.name).join(" · ")):"";
+  $("aqiStations").textContent=st.length?("监测站点："+st.map(s=>s.name).join(" ")):"";
 }
 
 /* ---- 生活指数 ---- */
@@ -896,7 +891,7 @@ function renderAstro(d){
     ["天文晨光",hm(a.astronomicalDawn)],["天文昏影",hm(a.astronomicalDusk)]];
   $("sunRows").innerHTML=rows.map(r=>`<div class="r"><span>${r[0]}</span><b>${r[1]}</b></div>`).join("");
   const mp=MOON[a.moonPhase]||["🌙","未知"];
-  $("moonEmoji").innerHTML=`<i class="qwi ${moonCls(a.moonPhase)}"></i>`;$("moonName").textContent=mp[1];
+  $("moonEmoji").innerHTML=mp[0];$("moonName").textContent=mp[1];
   const mrows=[["月出",hm(a.moonrise)],["月落",hm(a.moonset)],["月中天",hm(a.moonTransit)],["月下点",hm(a.moonUnderfoot)]];
   $("moonRows").innerHTML=mrows.map(r=>`<div class="r"><span>${r[0]}</span><b>${r[1]}</b></div>`).join("");
 }
