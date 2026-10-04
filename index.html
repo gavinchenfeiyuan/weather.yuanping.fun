@@ -423,7 +423,9 @@ html.swiping .card{backdrop-filter:none;-webkit-backdrop-filter:none}
   <symbol id="i-coffee" viewBox="0 0 32 32"><g stroke="url(#g-white)" stroke-width="2" stroke-linecap="round" fill="none" opacity=".7"><path d="M12 4c-1.5 2 1.5 3 0 5"/><path d="M18 3c-1.5 2 1.5 3 0 5"/></g><path d="M6 12h16v7a7 7 0 0 1-7 7h-2a7 7 0 0 1-7-7z" fill="url(#g-white)"/><path d="M6 12h16v2.6H6z" fill="url(#g-peach)"/><path d="M22 14h2.4a3.4 3.4 0 0 1 0 6.8H22" fill="none" stroke="url(#g-white)" stroke-width="2.4" stroke-linecap="round"/><ellipse cx="10.6" cy="17" rx="1.5" ry="2.5" fill="#fff" opacity=".45"/><path d="M4 28h24" stroke="url(#g-white)" stroke-width="2.4" stroke-linecap="round"/></symbol>
 </svg>
 
-<!-- 月相图标 sprite（8 相，viewBox 0 0 32 32；渐变月色 + 月海纹理 + mask 相位） -->
+<!-- 月相图形定义（供动态绘制引用：月色渐变 + 月海纹理）
+     注意：本容器不可用 display:none —— 那样会让内部渐变失效（实测）。
+     相位裁切由 JS 生成的 clipPath 完成，故此处不再需要 mask / symbol。 -->
 <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false">
   <defs>
     <radialGradient id="moonLit" cx="38%" cy="34%" r="72%">
@@ -447,7 +449,6 @@ html.swiping .card{backdrop-filter:none;-webkit-backdrop-filter:none}
       <stop offset="60%" stop-color="#5A4834" stop-opacity="0.14"/>
       <stop offset="100%" stop-color="#5A4834" stop-opacity="0"/>
     </radialGradient>
-
     <g id="moonBody">
       <circle cx="16" cy="16" r="11" fill="url(#moonLit)"/>
       <circle cx="11.5" cy="12.5" r="3.2" fill="url(#maria1)"/>
@@ -459,64 +460,7 @@ html.swiping .card{backdrop-filter:none;-webkit-backdrop-filter:none}
       <circle cx="10.5" cy="17"   r="1.2" fill="url(#maria3)"/>
       <circle cx="16" cy="16" r="11" fill="none" stroke="#50431F" stroke-opacity="0.18" stroke-width="0.8"/>
     </g>
-
-    <mask x="0" y="0" width="32" height="32" id="mCrescent" maskUnits="userSpaceOnUse">
-      <rect width="32" height="32" fill="white"/>
-      <circle cx="9" cy="16" r="11" fill="black"/>
-    </mask>
-    <mask x="0" y="0" width="32" height="32" id="mFirstQuarter" maskUnits="userSpaceOnUse">
-      <rect width="32" height="32" fill="white"/>
-      <rect x="0" y="0" width="16" height="32" fill="black"/>
-    </mask>
-    <mask x="0" y="0" width="32" height="32" id="mWaxingGibbous" maskUnits="userSpaceOnUse">
-      <rect width="32" height="32" fill="white"/>
-      <circle cx="-2" cy="16" r="11" fill="black"/>
-    </mask>
-    <mask x="0" y="0" width="32" height="32" id="mWaningGibbous" maskUnits="userSpaceOnUse">
-      <rect width="32" height="32" fill="white"/>
-      <circle cx="34" cy="16" r="11" fill="black"/>
-    </mask>
-    <mask x="0" y="0" width="32" height="32" id="mLastQuarter" maskUnits="userSpaceOnUse">
-      <rect width="32" height="32" fill="white"/>
-      <rect x="16" y="0" width="16" height="32" fill="black"/>
-    </mask>
-    <mask x="0" y="0" width="32" height="32" id="mWaningCrescent" maskUnits="userSpaceOnUse">
-      <rect width="32" height="32" fill="white"/>
-      <circle cx="23" cy="16" r="11" fill="black"/>
-    </mask>
   </defs>
-
-  <symbol id="moon-new" viewBox="0 0 32 32">
-    <circle cx="16" cy="16" r="11" fill="#3A4A63" opacity="0.55"/>
-  </symbol>
-  <symbol id="moon-waxing-crescent" viewBox="0 0 32 32">
-    <circle cx="16" cy="16" r="11" fill="#3A4A63" opacity="0.55"/>
-    <use href="#moonBody" mask="url(#mCrescent)"/>
-  </symbol>
-  <symbol id="moon-first-quarter" viewBox="0 0 32 32">
-    <circle cx="16" cy="16" r="11" fill="#3A4A63" opacity="0.55"/>
-    <use href="#moonBody" mask="url(#mFirstQuarter)"/>
-  </symbol>
-  <symbol id="moon-waxing-gibbous" viewBox="0 0 32 32">
-    <circle cx="16" cy="16" r="11" fill="#3A4A63" opacity="0.55"/>
-    <use href="#moonBody" mask="url(#mWaxingGibbous)"/>
-  </symbol>
-  <symbol id="moon-full" viewBox="0 0 32 32">
-    <circle cx="16" cy="16" r="11" fill="#3A4A63" opacity="0.55"/>
-    <use href="#moonBody"/>
-  </symbol>
-  <symbol id="moon-waning-gibbous" viewBox="0 0 32 32">
-    <circle cx="16" cy="16" r="11" fill="#3A4A63" opacity="0.55"/>
-    <use href="#moonBody" mask="url(#mWaningGibbous)"/>
-  </symbol>
-  <symbol id="moon-last-quarter" viewBox="0 0 32 32">
-    <circle cx="16" cy="16" r="11" fill="#3A4A63" opacity="0.55"/>
-    <use href="#moonBody" mask="url(#mLastQuarter)"/>
-  </symbol>
-  <symbol id="moon-waning-crescent" viewBox="0 0 32 32">
-    <circle cx="16" cy="16" r="11" fill="#3A4A63" opacity="0.55"/>
-    <use href="#moonBody" mask="url(#mWaningCrescent)"/>
-  </symbol>
 </svg>
 <canvas id="fx"></canvas>
 <div class="wrap">
@@ -688,7 +632,7 @@ const CITIES=[
   {id:"莆田", name:"莆田", sub:"涵江区"},
   {id:"厦门", name:"厦门", sub:"翔安区"}
 ];
-const FILES=["realtime_weather","realtime_aqi","hourly_forecast","daily_forecast","daily_aqi_forecast","minutely_precip","weather_index","weather_alert"];
+const FILES=["realtime_weather","realtime_aqi","hourly_forecast","daily_forecast","daily_aqi_forecast","minutely_precip","weather_index","weather_alert","moon_phase"];
 const QI=code=>`qi-${code}-fill`;
 function iconColor(code){
   const c=+code;
@@ -704,18 +648,62 @@ function iconColor(code){
 }
 const axisFont=()=>innerWidth<=520?'11px sans-serif':'10px sans-serif'; // 移动端坐标轴标签稍大
 const COMPASS={n:"北风",nne:"东北偏北",ne:"东北风",ene:"东北偏东",e:"东风",ese:"东南偏东",se:"东南风",sse:"东南偏南",s:"南风",ssw:"西南偏南",sw:"西南风",wsw:"西南偏西",w:"西风",wnw:"西北偏西",nw:"西北风",nnw:"西北偏北"};
-// 月相：中文名 + 对应 SVG sprite 符号 id
-const MOON={"new":"新月","waxing-crescent":"娥眉月","first-quarter":"上弦月","waxing-gibbous":"盈凸月",
-  "full":"满月","waning-gibbous":"亏凸月","last-quarter":"下弦月","waning-crescent":"残月"};
-const MOON_ID={"new":"moon-new","waxing-crescent":"moon-waxing-crescent","first-quarter":"moon-first-quarter",
-  "waxing-gibbous":"moon-waxing-gibbous","full":"moon-full","waning-gibbous":"moon-waning-gibbous",
-  "last-quarter":"moon-last-quarter","waning-crescent":"moon-waning-crescent"};
-const moonZh=p=>MOON[p]||"月相";
-// 渲染月相图标（尺寸由 CSS 按展示位置给出，各位置与替换前一致）
-// phase 无法识别时返回空串，调用处回退显示中文名
-function moonSvg(phase){
-  const id=MOON_ID[phase];if(!id)return "";
-  return `<svg class="moon-svg" viewBox="0 0 32 32" role="img" aria-label="${moonZh(phase)}"><use href="#${id}"/></svg>`;
+// ============ 月相：动态绘制 ============
+// value 0.00-1.00：0=新月，0.25=上弦，0.5=满月，0.75=下弦
+let moonUid=0;
+// 最小可见亮面比例：接近新月时（如 value=0.98 → 亮面 0.4%）月牙在 17px 下不足一个像素，
+// 肉眼看着就是"空月"。除严格的新月（0/1）外，统一给一个可见下限。
+const MOON_MIN_LIT=0.06;
+
+// 计算月相 path：亮面在右（value<0.5）或左（value>0.5），椭圆水平半轴由 cos 决定
+function moonPhasePath(value,cx=16,cy=16,r=11){
+  const p=((value%1)+1)%1;
+  let t=Math.cos(2*Math.PI*p);
+  if(p!==0&&Math.abs(t)>1-2*MOON_MIN_LIT)t=Math.sign(t)*(1-2*MOON_MIN_LIT);   // 极小月牙保底
+  const rx=Math.abs(t)*r;
+  const rightSide=p<0.5;
+  const topX=cx,topY=cy-r,botX=cx,botY=cy+r;
+  const arcSweep=rightSide?1:0;
+  const ellipseSweep=rightSide?(t>0?0:1):(t>0?1:0);
+  return `M ${topX} ${topY} A ${r} ${r} 0 0 ${arcSweep} ${botX} ${botY} A ${rx} ${r} 0 0 ${ellipseSweep} ${topX} ${topY} Z`;
+}
+
+// 渲染月相 SVG：每个实例用唯一 clipPath id，避免互相覆盖
+function moonSvgByValue(value,size){
+  if(value==null||isNaN(value))return "";
+  const id="mp"+(++moonUid);
+  const path=moonPhasePath(value);
+  const s=size?` width="${size}" height="${size}"`:"";
+  return `<svg class="moon-svg" viewBox="0 0 32 32"${s} role="img" aria-label="月相"><defs><clipPath id="${id}"><path d="${path}"/></clipPath></defs><circle cx="16" cy="16" r="11" fill="#3A4A63" opacity="0.55"/><use href="#moonBody" clip-path="url(#${id})"/></svg>`;
+}
+
+// 8 相位字符串 → value，API 失败时降级用
+const MOON_VALUE_MAP={"new":0,"waxing-crescent":0.125,"first-quarter":0.25,"waxing-gibbous":0.375,"full":0.5,"waning-gibbous":0.625,"last-quarter":0.75,"waning-crescent":0.875};
+const MOON_ZH={"new":"新月","waxing-crescent":"娥眉月","first-quarter":"上弦月","waxing-gibbous":"盈凸月","full":"满月","waning-gibbous":"亏凸月","last-quarter":"下弦月","waning-crescent":"残月"};
+const moonZh=p=>MOON_ZH[p]||"月相";
+
+// ISO 时间 → yyyymmdd，用于与 moon_phase.json 的 date 字段匹配
+function toDateKey(iso){
+  const d=new Date(iso);
+  return `${d.getFullYear()}${String(d.getMonth()+1).padStart(2,"0")}${String(d.getDate()).padStart(2,"0")}`;
+}
+
+// 从月相数据取某天的 value；取不到则用 8 相位降级
+function getMoonValue(moonData,dateKey,astro){
+  if(moonData&&moonData.days){
+    const row=moonData.days.find(d=>d.date===dateKey);
+    if(row&&row.value!=null)return row.value;
+  }
+  return MOON_VALUE_MAP[astro&&astro.moonPhase]??0.5;
+}
+
+// 从月相数据取某天的中文名；取不到则用 8 相位降级
+function getMoonName(moonData,dateKey,astro){
+  if(moonData&&moonData.days){
+    const row=moonData.days.find(d=>d.date===dateKey);
+    if(row&&row.name)return row.name;
+  }
+  return moonZh(astro&&astro.moonPhase);
 }
 const IDX_ICON={"1":"run","2":"car","3":"shirt","4":"fish","5":"uv","6":"luggage","7":"allergy","8":"comfort","9":"sick","10":"haze","11":"snowflake","12":"sunglasses","13":"makeup","14":"tie","15":"traffic","16":"sunscreen"};
 const WEEK=["周日","周一","周二","周三","周四","周五","周六"];
@@ -941,7 +929,8 @@ function renderHero(city,d){
   $("sunrise").textContent=hm(day0.astro.sunrise);
   $("sunset").textContent=hm(day0.astro.sunset);
   $("solarNoon").textContent=hm(day0.astro.solarNoon);
-  $("moonMini").innerHTML=moonSvg(day0.astro.moonPhase)||moonZh(day0.astro.moonPhase);
+  const moonVal=getMoonValue(d.moon_phase,toDateKey(day0.forecastStartTime),day0.astro);
+  $("moonMini").innerHTML=moonSvgByValue(moonVal,22);
   drawSunArc(day0.astro);
   // 分钟级摘要 + 更新时间
   const mn=d.minutely_precip;
@@ -1111,8 +1100,11 @@ function renderDaily(d){
     const pop=x.daytime.precipitation?x.daytime.precipitation.probability||0:0;
     const L=(x.temperatureMin.value-glo)/span*100,Rr=(x.temperatureMax.value-glo)/span*100;
     const n=x.nighttime;
-    const mp=x.astro&&x.astro.moonPhase;
-    const moonIcon=moonSvg(mp);
+    const dk=toDateKey(x.forecastStartTime);
+    const moonVal=getMoonValue(d.moon_phase,dk,x.astro);
+    const moonIcon=moonSvgByValue(moonVal,17);          // 行首图标
+    const moonIconSm=moonSvgByValue(moonVal,14);        // 详情行图标：独立实例，保证 clipPath id 唯一
+    const moonNameTxt=getMoonName(d.moon_phase,dk,x.astro);  // 月相名统一取 moon_phase.json
     return `<div class="d-row" onclick="this.classList.toggle('open')">
       <div class="dw"><b class="mc">${moonIcon}</b><span class="dw-t"><b>${dayLabel(x.forecastStartTime)}</b>${dt.getMonth()+1}/${dt.getDate()}</span></div>
       <div class="dc-ico"><i class="qwi ${QI(x.daytime.condition.code)}" style="color:${iconColor(x.daytime.condition.code)}" title="白天 ${x.daytime.condition.text}"></i><span class="dc-cond">${x.daytime.condition.text}</span></div>
@@ -1135,7 +1127,7 @@ function renderDaily(d){
             <span class="de-l">${ico("uv")} 紫外线</span><span class="de-v">${x.uvIndexMax}（${uvText(x.uvIndexMax)}）</span>
             <span class="de-l">${ico("sunrise")} 日出/日落</span><span class="de-v">${hm(x.astro.sunrise)} / ${hm(x.astro.sunset)}</span>
             <span class="de-l">${ico("moon")} 月出/月落</span><span class="de-v">${hm(x.astro.moonrise)} / ${hm(x.astro.moonset)}</span>
-            <span class="de-l">${moonIcon}月相</span><span class="de-v">${moonZh(x.astro.moonPhase)}</span>
+            <span class="de-l">${moonIconSm}月相</span><span class="de-v">${moonNameTxt}</span>
           </div>
         </div>
       </div></div>`;
@@ -1236,8 +1228,16 @@ function renderAstro(d){
     ["民用晨光",hm(a.civilDawn)],["民用昏影",hm(a.civilDusk)],["航海晨光",hm(a.nauticalDawn)],["航海昏影",hm(a.nauticalDusk)],
     ["天文晨光",hm(a.astronomicalDawn)],["天文昏影",hm(a.astronomicalDusk)]];
   $("sunRows").innerHTML=rows.map(r=>`<div class="r"><span>${r[0]}</span><b>${r[1]}</b></div>`).join("");
-  $("moonBig").innerHTML=moonSvg(a.moonPhase)||moonZh(a.moonPhase);
-  $("moonName").textContent=moonZh(a.moonPhase);
+  const todayKey=toDateKey(d.daily_forecast.days[0].forecastStartTime);
+  const moonVal=getMoonValue(d.moon_phase,todayKey,a);
+  $("moonBig").innerHTML=moonSvgByValue(moonVal,54);
+  let moonName="月相";
+  if(d.moon_phase&&d.moon_phase.days){
+    const row=d.moon_phase.days.find(x=>x.date===todayKey);
+    if(row&&row.name)moonName=row.name;
+  }
+  if(!moonName||moonName==="月相")moonName=moonZh(a.moonPhase);
+  $("moonName").textContent=moonName;
   const mrows=[["月出",hm(a.moonrise)],["月落",hm(a.moonset)],["月中天",hm(a.moonTransit)],["月下点",hm(a.moonUnderfoot)]];
   $("moonRows").innerHTML=mrows.map(r=>`<div class="r"><span>${r[0]}</span><b>${r[1]}</b></div>`).join("");
 }
