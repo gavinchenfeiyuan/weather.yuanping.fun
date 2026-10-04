@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "tag": "5f2033c20ea842aa619666cd8d958f54c2502e8ddb345f5331c319db5dfcced3",
+    "tag": "971b5eb10f6d0db650752ed54f83d7fd2e0fa1190041a9e8c262c06a03bcef5b",
     "attributions": [
       "https://developer.qweather.com/attribution.html"
     ]
@@ -9,8 +9,8 @@
     {
       "code": "cn-mee",
       "name": "AQI (CN)",
-      "aqi": 32,
-      "aqiDisplay": "32",
+      "aqi": 27,
+      "aqiDisplay": "27",
       "level": "1",
       "category": "优",
       "color": {
@@ -35,14 +35,14 @@
       "name": "PM 2.5",
       "fullName": "颗粒物（粒径小于等于2.5µm）",
       "concentration": {
-        "value": 17.0,
+        "value": 14.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 25,
-          "aqiDisplay": "25"
+          "aqi": 21,
+          "aqiDisplay": "21"
         }
       ]
     },
@@ -51,14 +51,14 @@
       "name": "PM 10",
       "fullName": "颗粒物（粒径小于等于10µm）",
       "concentration": {
-        "value": 31.0,
+        "value": 27.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 32,
-          "aqiDisplay": "32"
+          "aqi": 27,
+          "aqiDisplay": "27"
         }
       ]
     },
@@ -67,7 +67,7 @@
       "name": "NO2",
       "fullName": "二氧化氮",
       "concentration": {
-        "value": 7.0,
+        "value": 6.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
@@ -83,14 +83,14 @@
       "name": "O3",
       "fullName": "臭氧",
       "concentration": {
-        "value": 46.0,
+        "value": 59.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 15,
-          "aqiDisplay": "15"
+          "aqi": 19,
+          "aqiDisplay": "19"
         }
       ]
     },
@@ -99,7 +99,7 @@
       "name": "SO2",
       "fullName": "二氧化硫",
       "concentration": {
-        "value": 3.0,
+        "value": 4.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
