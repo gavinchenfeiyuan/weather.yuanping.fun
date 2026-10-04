@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "tag": "971b5eb10f6d0db650752ed54f83d7fd2e0fa1190041a9e8c262c06a03bcef5b",
+    "tag": "dad25c7fcf4da78458540e7cfbbaacea5867fc916670fc9bfdc03eb53f32aefe",
     "attributions": [
       "https://developer.qweather.com/attribution.html"
     ]
@@ -67,14 +67,14 @@
       "name": "NO2",
       "fullName": "二氧化氮",
       "concentration": {
-        "value": 6.0,
+        "value": 5.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 4,
-          "aqiDisplay": "4"
+          "aqi": 3,
+          "aqiDisplay": "3"
         }
       ]
     },
@@ -83,14 +83,14 @@
       "name": "O3",
       "fullName": "臭氧",
       "concentration": {
-        "value": 59.0,
+        "value": 71.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 19,
-          "aqiDisplay": "19"
+          "aqi": 23,
+          "aqiDisplay": "23"
         }
       ]
     },
@@ -99,7 +99,7 @@
       "name": "SO2",
       "fullName": "二氧化硫",
       "concentration": {
-        "value": 4.0,
+        "value": 3.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
