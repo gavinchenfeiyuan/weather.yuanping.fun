@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "tag": "6d63ba7a736cd08722c1da1c084c6f3f121fe428859c9e1b55531ffb1b34c0d9",
+    "tag": "84204a9d25c6991be45e58255f3d1954455d0d80c5fa87f58699f90348943f9d",
     "attributions": [
       "https://developer.qweather.com/attribution.html"
     ]
@@ -9,8 +9,8 @@
     {
       "code": "cn-mee",
       "name": "AQI (CN)",
-      "aqi": 27,
-      "aqiDisplay": "27",
+      "aqi": 30,
+      "aqiDisplay": "30",
       "level": "1",
       "category": "优",
       "color": {
@@ -35,23 +35,7 @@
       "name": "PM 2.5",
       "fullName": "颗粒物（粒径小于等于2.5µm）",
       "concentration": {
-        "value": 17.0,
-        "unit": "μg/m³"
-      },
-      "subIndexes": [
-        {
-          "code": "cn-mee",
-          "aqi": 25,
-          "aqiDisplay": "25"
-        }
-      ]
-    },
-    {
-      "code": "pm10",
-      "name": "PM 10",
-      "fullName": "颗粒物（粒径小于等于10µm）",
-      "concentration": {
-        "value": 27.0,
+        "value": 19.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
@@ -63,18 +47,34 @@
       ]
     },
     {
-      "code": "no2",
-      "name": "NO2",
-      "fullName": "二氧化氮",
+      "code": "pm10",
+      "name": "PM 10",
+      "fullName": "颗粒物（粒径小于等于10µm）",
       "concentration": {
-        "value": 19.0,
+        "value": 30.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 10,
-          "aqiDisplay": "10"
+          "aqi": 30,
+          "aqiDisplay": "30"
+        }
+      ]
+    },
+    {
+      "code": "no2",
+      "name": "NO2",
+      "fullName": "二氧化氮",
+      "concentration": {
+        "value": 25.0,
+        "unit": "μg/m³"
+      },
+      "subIndexes": [
+        {
+          "code": "cn-mee",
+          "aqi": 13,
+          "aqiDisplay": "13"
         }
       ]
     },
@@ -83,14 +83,14 @@
       "name": "O3",
       "fullName": "臭氧",
       "concentration": {
-        "value": 76.0,
+        "value": 63.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 24,
-          "aqiDisplay": "24"
+          "aqi": 20,
+          "aqiDisplay": "20"
         }
       ]
     },
