@@ -1,61 +1,61 @@
 {
   "metadata": {
-    "tag": "39f5f091fc4853588365aabd760759056fb2c95a6fc86e6ac6b197ed1e0b2533",
+    "tag": "b65be60a3e922615a556d8e603d645a5e896cecb0fb147007a388be0610dc5ec",
     "attributions": [
       "https://developer.qweather.com/attribution.html"
     ]
   },
   "condition": {
-    "text": "小雨",
-    "code": "305"
+    "text": "阵雨",
+    "code": "300"
   },
   "temperature": {
-    "value": 22.85,
+    "value": 22.78,
     "unit": "°C"
   },
   "feelsLike": {
-    "value": 23.6,
+    "value": 22.88,
     "unit": "°C"
   },
-  "humidity": 0.92,
+  "humidity": 0.87,
   "wind": {
     "direction": {
-      "degree": 43,
-      "compass": "ne"
+      "degree": 359,
+      "compass": "n"
     },
     "speed": {
-      "value": 3.99,
+      "value": 4.54,
       "unit": "m/s"
     },
     "scale": 3
   },
   "windGust": {
-    "value": 7.42,
+    "value": 7.91,
     "unit": "m/s"
   },
   "precipitation": {
     "amount": {
-      "value": 1.08,
+      "value": 1.02,
       "unit": "mm"
     },
     "intensity": {
-      "value": 0.88,
+      "value": 0.59,
       "unit": "mm/h"
     },
     "type": "rain"
   },
   "pressure": {
-    "value": 1014.95,
+    "value": 1015.15,
     "unit": "hPa"
   },
   "visibility": {
-    "value": 18750,
+    "value": 21040,
     "unit": "m"
   },
   "dewPoint": {
-    "value": 21.52,
+    "value": 20.58,
     "unit": "°C"
   },
-  "cloudCover": 0.98,
+  "cloudCover": 0.99,
   "uvIndex": 1
 }
