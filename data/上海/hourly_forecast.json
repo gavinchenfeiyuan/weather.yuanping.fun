@@ -1,68 +1,11 @@
 {
   "metadata": {
-    "tag": "76538f768be7b2397ae06edb458b730c2e2d7891d130f0e0c6bdc809b77dccdf",
+    "tag": "7770f4f527f2622b0363b362cc6201c881fdce12052a3bea8a414ce0d8bf6d67",
     "attributions": [
       "https://developer.qweather.com/attribution.html"
     ]
   },
   "hours": [
-    {
-      "forecastTime": "2026-10-05T11:00Z",
-      "condition": {
-        "text": "多云",
-        "code": "101"
-      },
-      "temperature": {
-        "value": 20.72,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 21.12,
-        "unit": "°C"
-      },
-      "humidity": 0.54,
-      "wind": {
-        "direction": {
-          "degree": 136,
-          "compass": "se"
-        },
-        "speed": {
-          "value": 0.58,
-          "unit": "m/s"
-        },
-        "scale": 1
-      },
-      "windGust": {
-        "value": 2.87,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1020.15,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 23599,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 11.2,
-        "unit": "°C"
-      },
-      "cloudCover": 0.53,
-      "uvIndex": 0
-    },
     {
       "forecastTime": "2026-10-05T12:00Z",
       "condition": {
@@ -70,27 +13,27 @@
         "code": "101"
       },
       "temperature": {
-        "value": 20.06,
+        "value": 19.47,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 19.65,
+        "value": 18.34,
         "unit": "°C"
       },
-      "humidity": 0.59,
+      "humidity": 0.57,
       "wind": {
         "direction": {
-          "degree": 349,
-          "compass": "n"
+          "degree": 327,
+          "compass": "nnw"
         },
         "speed": {
-          "value": 1.99,
+          "value": 2.76,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 4.52,
+        "value": 5.29,
         "unit": "m/s"
       },
       "precipitation": {
@@ -110,11 +53,11 @@
         "unit": "hPa"
       },
       "visibility": {
-        "value": 21685,
+        "value": 24247,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 11.91,
+        "value": 10.78,
         "unit": "°C"
       },
       "cloudCover": 0.84,
@@ -127,7 +70,7 @@
         "code": "103"
       },
       "temperature": {
-        "value": 19.1,
+        "value": 19.09,
         "unit": "°C"
       },
       "feelsLike": {
@@ -137,17 +80,17 @@
       "humidity": 0.62,
       "wind": {
         "direction": {
-          "degree": 187,
+          "degree": 183,
           "compass": "s"
         },
         "speed": {
-          "value": 0.83,
+          "value": 0.8,
           "unit": "m/s"
         },
         "scale": 1
       },
       "windGust": {
-        "value": 3.2,
+        "value": 3.18,
         "unit": "m/s"
       },
       "precipitation": {
@@ -167,11 +110,11 @@
         "unit": "hPa"
       },
       "visibility": {
-        "value": 21114,
+        "value": 21224,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 11.74,
+        "value": 11.69,
         "unit": "°C"
       },
       "cloudCover": 0.45,
@@ -184,21 +127,21 @@
         "code": "103"
       },
       "temperature": {
-        "value": 18.95,
+        "value": 18.57,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 19.21,
+        "value": 18.82,
         "unit": "°C"
       },
-      "humidity": 0.63,
+      "humidity": 0.65,
       "wind": {
         "direction": {
-          "degree": 196,
+          "degree": 195,
           "compass": "ssw"
         },
         "speed": {
-          "value": 0.88,
+          "value": 0.86,
           "unit": "m/s"
         },
         "scale": 1
@@ -241,21 +184,21 @@
         "code": "103"
       },
       "temperature": {
-        "value": 18.71,
+        "value": 17.95,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 17.63,
+        "value": 16.85,
         "unit": "°C"
       },
-      "humidity": 0.63,
+      "humidity": 0.66,
       "wind": {
         "direction": {
-          "degree": 320,
+          "degree": 322,
           "compass": "nw"
         },
         "speed": {
-          "value": 2.82,
+          "value": 2.81,
           "unit": "m/s"
         },
         "scale": 2
@@ -298,27 +241,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 17.79,
+        "value": 17.04,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 16.44,
+        "value": 15.84,
         "unit": "°C"
       },
-      "humidity": 0.61,
+      "humidity": 0.64,
       "wind": {
         "direction": {
-          "degree": 331,
-          "compass": "nnw"
+          "degree": 326,
+          "compass": "nw"
         },
         "speed": {
-          "value": 2.87,
+          "value": 2.59,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 6.2,
+        "value": 5.91,
         "unit": "m/s"
       },
       "precipitation": {
@@ -355,27 +298,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 17.66,
+        "value": 16.91,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 16.24,
+        "value": 15.49,
         "unit": "°C"
       },
-      "humidity": 0.6,
+      "humidity": 0.63,
       "wind": {
         "direction": {
-          "degree": 332,
-          "compass": "nnw"
+          "degree": 326,
+          "compass": "nw"
         },
         "speed": {
-          "value": 2.83,
+          "value": 2.79,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 5.55,
+        "value": 5.51,
         "unit": "m/s"
       },
       "precipitation": {
@@ -412,27 +355,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 17.45,
+        "value": 16.33,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 15.95,
+        "value": 14.8,
         "unit": "°C"
       },
-      "humidity": 0.58,
+      "humidity": 0.62,
       "wind": {
         "direction": {
-          "degree": 323,
+          "degree": 319,
           "compass": "nw"
         },
         "speed": {
-          "value": 2.79,
+          "value": 2.76,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 5.39,
+        "value": 5.37,
         "unit": "m/s"
       },
       "precipitation": {
@@ -469,21 +412,21 @@
         "code": "100"
       },
       "temperature": {
-        "value": 16.77,
+        "value": 16.4,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 15.31,
+        "value": 14.93,
         "unit": "°C"
       },
-      "humidity": 0.6,
+      "humidity": 0.61,
       "wind": {
         "direction": {
-          "degree": 314,
+          "degree": 313,
           "compass": "nw"
         },
         "speed": {
-          "value": 2.62,
+          "value": 2.61,
           "unit": "m/s"
         },
         "scale": 2
@@ -530,23 +473,23 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 14.54,
+        "value": 14.53,
         "unit": "°C"
       },
       "humidity": 0.61,
       "wind": {
         "direction": {
-          "degree": 308,
+          "degree": 310,
           "compass": "nw"
         },
         "speed": {
-          "value": 2.56,
+          "value": 2.57,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 4.9,
+        "value": 4.91,
         "unit": "m/s"
       },
       "precipitation": {
@@ -583,27 +526,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 15.51,
+        "value": 15.89,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 14,
+        "value": 14.37,
         "unit": "°C"
       },
-      "humidity": 0.63,
+      "humidity": 0.61,
       "wind": {
         "direction": {
-          "degree": 300,
-          "compass": "wnw"
+          "degree": 304,
+          "compass": "nw"
         },
         "speed": {
-          "value": 2.51,
+          "value": 2.54,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 4.85,
+        "value": 4.88,
         "unit": "m/s"
       },
       "precipitation": {
@@ -640,27 +583,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 15.56,
+        "value": 15.93,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 14.02,
+        "value": 14.4,
         "unit": "°C"
       },
-      "humidity": 0.62,
+      "humidity": 0.61,
       "wind": {
         "direction": {
-          "degree": 300,
+          "degree": 302,
           "compass": "wnw"
         },
         "speed": {
-          "value": 2.55,
+          "value": 2.57,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 4.98,
+        "value": 5,
         "unit": "m/s"
       },
       "precipitation": {
@@ -707,17 +650,17 @@
       "humidity": 0.61,
       "wind": {
         "direction": {
-          "degree": 302,
+          "degree": 301,
           "compass": "wnw"
         },
         "speed": {
-          "value": 2.64,
+          "value": 2.63,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 5.16,
+        "value": 5.15,
         "unit": "m/s"
       },
       "precipitation": {
@@ -758,23 +701,23 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 16.15,
+        "value": 16.17,
         "unit": "°C"
       },
       "humidity": 0.58,
       "wind": {
         "direction": {
-          "degree": 301,
+          "degree": 298,
           "compass": "wnw"
         },
         "speed": {
-          "value": 2.94,
+          "value": 2.92,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 6.54,
+        "value": 6.52,
         "unit": "m/s"
       },
       "precipitation": {
@@ -815,23 +758,23 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 17.43,
+        "value": 17.44,
         "unit": "°C"
       },
       "humidity": 0.53,
       "wind": {
         "direction": {
-          "degree": 313,
+          "degree": 310,
           "compass": "nw"
         },
         "speed": {
-          "value": 2.89,
+          "value": 2.88,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 7.22,
+        "value": 7.21,
         "unit": "m/s"
       },
       "precipitation": {
@@ -872,13 +815,13 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 18.57,
+        "value": 18.56,
         "unit": "°C"
       },
       "humidity": 0.46,
       "wind": {
         "direction": {
-          "degree": 321,
+          "degree": 319,
           "compass": "nw"
         },
         "speed": {
@@ -929,17 +872,17 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 19.73,
+        "value": 19.72,
         "unit": "°C"
       },
       "humidity": 0.4,
       "wind": {
         "direction": {
-          "degree": 334,
+          "degree": 333,
           "compass": "nnw"
         },
         "speed": {
-          "value": 3.09,
+          "value": 3.1,
           "unit": "m/s"
         },
         "scale": 2
@@ -992,7 +935,7 @@
       "humidity": 0.38,
       "wind": {
         "direction": {
-          "degree": 334,
+          "degree": 333,
           "compass": "nnw"
         },
         "speed": {
@@ -1049,7 +992,7 @@
       "humidity": 0.36,
       "wind": {
         "direction": {
-          "degree": 335,
+          "degree": 334,
           "compass": "nnw"
         },
         "speed": {
@@ -1096,21 +1039,21 @@
         "code": "100"
       },
       "temperature": {
-        "value": 22.54,
+        "value": 22.92,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 20.71,
+        "value": 21.1,
         "unit": "°C"
       },
-      "humidity": 0.35,
+      "humidity": 0.34,
       "wind": {
         "direction": {
           "degree": 335,
           "compass": "nnw"
         },
         "speed": {
-          "value": 2.96,
+          "value": 2.97,
           "unit": "m/s"
         },
         "scale": 2
@@ -1153,14 +1096,14 @@
         "code": "100"
       },
       "temperature": {
-        "value": 22.38,
+        "value": 22.75,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 20.72,
+        "value": 21.1,
         "unit": "°C"
       },
-      "humidity": 0.35,
+      "humidity": 0.34,
       "wind": {
         "direction": {
           "degree": 329,
@@ -1214,23 +1157,23 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 21.35,
+        "value": 21.17,
         "unit": "°C"
       },
       "humidity": 0.35,
       "wind": {
         "direction": {
-          "degree": 329,
+          "degree": 326,
           "compass": "nnw"
         },
         "speed": {
-          "value": 2.03,
+          "value": 2.29,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 5.43,
+        "value": 5.7,
         "unit": "m/s"
       },
       "precipitation": {
@@ -1271,23 +1214,23 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 21.37,
+        "value": 21.2,
         "unit": "°C"
       },
       "humidity": 0.36,
       "wind": {
         "direction": {
-          "degree": 317,
+          "degree": 314,
           "compass": "nw"
         },
         "speed": {
-          "value": 1.92,
+          "value": 2.19,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 3.55,
+        "value": 3.82,
         "unit": "m/s"
       },
       "precipitation": {
@@ -1328,23 +1271,23 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 20.66,
+        "value": 20.48,
         "unit": "°C"
       },
       "humidity": 0.42,
       "wind": {
         "direction": {
-          "degree": 310,
+          "degree": 308,
           "compass": "nw"
         },
         "speed": {
-          "value": 1.38,
+          "value": 1.66,
           "unit": "m/s"
         },
-        "scale": 1
+        "scale": 2
       },
       "windGust": {
-        "value": 2.4,
+        "value": 2.68,
         "unit": "m/s"
       },
       "precipitation": {
@@ -1381,27 +1324,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 20.52,
+        "value": 20.9,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 20.37,
+        "value": 20.63,
         "unit": "°C"
       },
-      "humidity": 0.45,
+      "humidity": 0.44,
       "wind": {
         "direction": {
-          "degree": 184,
-          "compass": "s"
+          "degree": 299,
+          "compass": "wnw"
         },
         "speed": {
-          "value": 0.69,
+          "value": 0.88,
           "unit": "m/s"
         },
         "scale": 1
       },
       "windGust": {
-        "value": 1.92,
+        "value": 2.12,
         "unit": "m/s"
       },
       "precipitation": {
@@ -1438,27 +1381,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 19.74,
+        "value": 20.49,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 18.9,
+        "value": 19.69,
         "unit": "°C"
       },
-      "humidity": 0.48,
+      "humidity": 0.46,
       "wind": {
         "direction": {
-          "degree": 293,
+          "degree": 292,
           "compass": "wnw"
         },
         "speed": {
-          "value": 1.73,
+          "value": 1.72,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 2.89,
+        "value": 2.88,
         "unit": "m/s"
       },
       "precipitation": {
@@ -1499,17 +1442,17 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 18.41,
+        "value": 18.4,
         "unit": "°C"
       },
       "humidity": 0.53,
       "wind": {
         "direction": {
-          "degree": 166,
-          "compass": "sse"
+          "degree": 169,
+          "compass": "s"
         },
         "speed": {
-          "value": 0.96,
+          "value": 0.97,
           "unit": "m/s"
         },
         "scale": 1
@@ -1552,27 +1495,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 17.48,
+        "value": 17.86,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 16.81,
+        "value": 17.22,
         "unit": "°C"
       },
-      "humidity": 0.57,
+      "humidity": 0.56,
       "wind": {
         "direction": {
-          "degree": 168,
+          "degree": 162,
           "compass": "sse"
         },
         "speed": {
-          "value": 1.48,
+          "value": 1.45,
           "unit": "m/s"
         },
         "scale": 1
       },
       "windGust": {
-        "value": 2.75,
+        "value": 2.72,
         "unit": "m/s"
       },
       "precipitation": {
@@ -1609,14 +1552,14 @@
         "code": "100"
       },
       "temperature": {
-        "value": 16.64,
+        "value": 17.02,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 15.43,
+        "value": 15.83,
         "unit": "°C"
       },
-      "humidity": 0.6,
+      "humidity": 0.59,
       "wind": {
         "direction": {
           "degree": 287,
@@ -1670,23 +1613,23 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 15.05,
+        "value": 16.03,
         "unit": "°C"
       },
       "humidity": 0.61,
       "wind": {
         "direction": {
-          "degree": 295,
-          "compass": "wnw"
+          "degree": 258,
+          "compass": "wsw"
         },
         "speed": {
-          "value": 2.38,
+          "value": 0.88,
           "unit": "m/s"
         },
-        "scale": 2
+        "scale": 1
       },
       "windGust": {
-        "value": 4.09,
+        "value": 2.59,
         "unit": "m/s"
       },
       "precipitation": {
@@ -1733,8 +1676,8 @@
       "humidity": 0.62,
       "wind": {
         "direction": {
-          "degree": 300,
-          "compass": "wnw"
+          "degree": 305,
+          "compass": "nw"
         },
         "speed": {
           "value": 2.32,
@@ -1847,7 +1790,7 @@
       "humidity": 0.64,
       "wind": {
         "direction": {
-          "degree": 310,
+          "degree": 311,
           "compass": "nw"
         },
         "speed": {
@@ -1904,11 +1847,11 @@
       "humidity": 0.66,
       "wind": {
         "direction": {
-          "degree": 315,
+          "degree": 316,
           "compass": "nw"
         },
         "speed": {
-          "value": 2.16,
+          "value": 2.17,
           "unit": "m/s"
         },
         "scale": 2
@@ -2008,27 +1951,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 15.94,
+        "value": 15.56,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 14.8,
+        "value": 14.43,
         "unit": "°C"
       },
-      "humidity": 0.67,
+      "humidity": 0.68,
       "wind": {
         "direction": {
-          "degree": 323,
+          "degree": 317,
           "compass": "nw"
         },
         "speed": {
-          "value": 2.28,
+          "value": 2.24,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 3.34,
+        "value": 3.3,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2065,27 +2008,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 17.48,
+        "value": 16.72,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 16.5,
+        "value": 15.77,
         "unit": "°C"
       },
-      "humidity": 0.63,
+      "humidity": 0.67,
       "wind": {
         "direction": {
-          "degree": 319,
+          "degree": 311,
           "compass": "nw"
         },
         "speed": {
-          "value": 2.32,
+          "value": 2.24,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 3.84,
+        "value": 3.75,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2122,27 +2065,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 19.45,
+        "value": 19.07,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 18.76,
+        "value": 18.38,
         "unit": "°C"
       },
-      "humidity": 0.59,
+      "humidity": 0.6,
       "wind": {
         "direction": {
-          "degree": 295,
+          "degree": 294,
           "compass": "wnw"
         },
         "speed": {
-          "value": 2.17,
+          "value": 2.15,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 4.43,
+        "value": 4.41,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2189,8 +2132,8 @@
       "humidity": 0.56,
       "wind": {
         "direction": {
-          "degree": 324,
-          "compass": "nw"
+          "degree": 326,
+          "compass": "nnw"
         },
         "speed": {
           "value": 2.37,
@@ -2236,17 +2179,17 @@
         "code": "100"
       },
       "temperature": {
-        "value": 21.99,
+        "value": 22.37,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 22.12,
+        "value": 22.51,
         "unit": "°C"
       },
-      "humidity": 0.5,
+      "humidity": 0.49,
       "wind": {
         "direction": {
-          "degree": 170,
+          "degree": 172,
           "compass": "s"
         },
         "speed": {
@@ -2256,7 +2199,7 @@
         "scale": 1
       },
       "windGust": {
-        "value": 4.08,
+        "value": 4.09,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2293,17 +2236,17 @@
         "code": "100"
       },
       "temperature": {
-        "value": 22.9,
+        "value": 23.65,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 22.24,
+        "value": 23.02,
         "unit": "°C"
       },
-      "humidity": 0.46,
+      "humidity": 0.44,
       "wind": {
         "direction": {
-          "degree": 335,
+          "degree": 333,
           "compass": "nnw"
         },
         "speed": {
@@ -2313,7 +2256,7 @@
         "scale": 2
       },
       "windGust": {
-        "value": 5.42,
+        "value": 5.43,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2350,27 +2293,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 23.42,
+        "value": 24.17,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 23.18,
+        "value": 24.1,
         "unit": "°C"
       },
-      "humidity": 0.42,
+      "humidity": 0.4,
       "wind": {
         "direction": {
-          "degree": 196,
-          "compass": "ssw"
+          "degree": 158,
+          "compass": "sse"
         },
         "speed": {
-          "value": 1.35,
+          "value": 1.13,
           "unit": "m/s"
         },
         "scale": 1
       },
       "windGust": {
-        "value": 4.71,
+        "value": 4.49,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2407,27 +2350,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 24.33,
+        "value": 24.7,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 24,
+        "value": 24.74,
         "unit": "°C"
       },
-      "humidity": 0.37,
+      "humidity": 0.36,
       "wind": {
         "direction": {
-          "degree": 197,
-          "compass": "ssw"
+          "degree": 103,
+          "compass": "ese"
         },
         "speed": {
-          "value": 1.3,
+          "value": 0.76,
           "unit": "m/s"
         },
         "scale": 1
       },
       "windGust": {
-        "value": 4.59,
+        "value": 4.04,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2464,27 +2407,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 24.51,
+        "value": 24.89,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 23.49,
+        "value": 23.89,
         "unit": "°C"
       },
-      "humidity": 0.35,
+      "humidity": 0.34,
       "wind": {
         "direction": {
-          "degree": 346,
+          "degree": 348,
           "compass": "nnw"
         },
         "speed": {
-          "value": 2.2,
+          "value": 2.18,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 5.17,
+        "value": 5.15,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2525,23 +2468,23 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 24.12,
+        "value": 24.5,
         "unit": "°C"
       },
       "humidity": 0.34,
       "wind": {
         "direction": {
-          "degree": 203,
-          "compass": "ssw"
+          "degree": 11,
+          "compass": "n"
         },
         "speed": {
-          "value": 1.24,
+          "value": 0.65,
           "unit": "m/s"
         },
         "scale": 1
       },
       "windGust": {
-        "value": 3.79,
+        "value": 3.22,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2578,27 +2521,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 24.92,
+        "value": 24.54,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 24.73,
+        "value": 24.39,
         "unit": "°C"
       },
-      "humidity": 0.34,
+      "humidity": 0.35,
       "wind": {
         "direction": {
-          "degree": 189,
-          "compass": "s"
+          "degree": 36,
+          "compass": "ne"
         },
         "speed": {
-          "value": 1,
+          "value": 0.91,
           "unit": "m/s"
         },
         "scale": 1
       },
       "windGust": {
-        "value": 2.78,
+        "value": 2.7,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2635,27 +2578,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 24.56,
+        "value": 23.81,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 24.1,
+        "value": 23.34,
         "unit": "°C"
       },
-      "humidity": 0.39,
+      "humidity": 0.41,
       "wind": {
         "direction": {
-          "degree": 353,
+          "degree": 5,
           "compass": "n"
         },
         "speed": {
-          "value": 1.79,
+          "value": 1.75,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 2.37,
+        "value": 2.32,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2696,23 +2639,23 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 22.63,
+        "value": 22.67,
         "unit": "°C"
       },
       "humidity": 0.46,
       "wind": {
         "direction": {
-          "degree": 143,
-          "compass": "se"
+          "degree": 96,
+          "compass": "e"
         },
         "speed": {
-          "value": 1.51,
+          "value": 1.45,
           "unit": "m/s"
         },
         "scale": 1
       },
       "windGust": {
-        "value": 1.84,
+        "value": 1.78,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2749,27 +2692,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 20.66,
+        "value": 21.41,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 20.54,
+        "value": 21.11,
         "unit": "°C"
       },
-      "humidity": 0.55,
+      "humidity": 0.53,
       "wind": {
         "direction": {
-          "degree": 188,
-          "compass": "s"
+          "degree": 154,
+          "compass": "sse"
         },
         "speed": {
-          "value": 1.42,
+          "value": 1.73,
           "unit": "m/s"
         },
-        "scale": 1
+        "scale": 2
       },
       "windGust": {
-        "value": 1.99,
+        "value": 2.3,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2806,27 +2749,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 18.49,
+        "value": 19.99,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 18.17,
+        "value": 19.53,
         "unit": "°C"
       },
-      "humidity": 0.7,
+      "humidity": 0.63,
       "wind": {
         "direction": {
-          "degree": 207,
+          "degree": 201,
           "compass": "ssw"
         },
         "speed": {
-          "value": 2.03,
+          "value": 2.33,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 3.26,
+        "value": 3.55,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2863,27 +2806,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 18.13,
+        "value": 19.26,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 17.94,
+        "value": 19.2,
         "unit": "°C"
       },
-      "humidity": 0.72,
+      "humidity": 0.67,
       "wind": {
         "direction": {
-          "degree": 187,
+          "degree": 177,
           "compass": "s"
         },
         "speed": {
-          "value": 1.88,
+          "value": 1.75,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 3.03,
+        "value": 2.91,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2920,27 +2863,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 18.09,
+        "value": 19.22,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 17.68,
+        "value": 19,
         "unit": "°C"
       },
-      "humidity": 0.71,
+      "humidity": 0.66,
       "wind": {
         "direction": {
-          "degree": 228,
-          "compass": "sw"
+          "degree": 205,
+          "compass": "ssw"
         },
         "speed": {
-          "value": 2.12,
+          "value": 1.89,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 3.17,
+        "value": 2.95,
         "unit": "m/s"
       },
       "precipitation": {
@@ -2977,27 +2920,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 18.1,
+        "value": 19.22,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 17.77,
+        "value": 18.93,
         "unit": "°C"
       },
-      "humidity": 0.7,
+      "humidity": 0.65,
       "wind": {
         "direction": {
-          "degree": 280,
+          "degree": 279,
           "compass": "w"
         },
         "speed": {
-          "value": 1.93,
+          "value": 1.94,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 2.88,
+        "value": 2.89,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3034,27 +2977,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 18.56,
+        "value": 18.93,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 18.32,
+        "value": 18.77,
         "unit": "°C"
       },
-      "humidity": 0.68,
+      "humidity": 0.66,
       "wind": {
         "direction": {
-          "degree": 233,
+          "degree": 221,
           "compass": "sw"
         },
         "speed": {
-          "value": 1.81,
+          "value": 1.7,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 2.69,
+        "value": 2.58,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3091,27 +3034,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 18.52,
+        "value": 18.9,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 18.52,
+        "value": 18.94,
         "unit": "°C"
       },
-      "humidity": 0.68,
+      "humidity": 0.66,
       "wind": {
         "direction": {
-          "degree": 217,
-          "compass": "sw"
+          "degree": 209,
+          "compass": "ssw"
         },
         "speed": {
-          "value": 1.42,
+          "value": 1.38,
           "unit": "m/s"
         },
         "scale": 1
       },
       "windGust": {
-        "value": 2.21,
+        "value": 2.17,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3148,27 +3091,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 18.38,
+        "value": 18.76,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 17.93,
+        "value": 18.4,
         "unit": "°C"
       },
-      "humidity": 0.66,
+      "humidity": 0.65,
       "wind": {
         "direction": {
-          "degree": 350,
-          "compass": "n"
+          "degree": 320,
+          "compass": "nw"
         },
         "speed": {
-          "value": 1.98,
+          "value": 1.87,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 2.65,
+        "value": 2.54,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3209,23 +3152,23 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 17.68,
+        "value": 17.91,
         "unit": "°C"
       },
       "humidity": 0.65,
       "wind": {
         "direction": {
-          "degree": 241,
-          "compass": "wsw"
+          "degree": 213,
+          "compass": "ssw"
         },
         "speed": {
-          "value": 1.65,
+          "value": 1.3,
           "unit": "m/s"
         },
-        "scale": 2
+        "scale": 1
       },
       "windGust": {
-        "value": 2.39,
+        "value": 2.04,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3262,27 +3205,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 17.85,
+        "value": 17.47,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 17.22,
+        "value": 17.31,
         "unit": "°C"
       },
-      "humidity": 0.64,
+      "humidity": 0.66,
       "wind": {
         "direction": {
-          "degree": 282,
-          "compass": "wnw"
+          "degree": 225,
+          "compass": "sw"
         },
         "speed": {
-          "value": 1.92,
+          "value": 1.19,
           "unit": "m/s"
         },
-        "scale": 2
+        "scale": 1
       },
       "windGust": {
-        "value": 2.75,
+        "value": 2.02,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3319,27 +3262,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 18.04,
+        "value": 17.29,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 17.35,
+        "value": 16.58,
         "unit": "°C"
       },
-      "humidity": 0.64,
+      "humidity": 0.67,
       "wind": {
         "direction": {
-          "degree": 351,
-          "compass": "n"
+          "degree": 338,
+          "compass": "nnw"
         },
         "speed": {
-          "value": 2.07,
+          "value": 2.05,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 2.73,
+        "value": 2.71,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3376,27 +3319,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 18.42,
+        "value": 17.67,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 17.97,
+        "value": 17.2,
         "unit": "°C"
       },
-      "humidity": 0.65,
+      "humidity": 0.68,
       "wind": {
         "direction": {
-          "degree": 355,
+          "degree": 350,
           "compass": "n"
         },
         "speed": {
-          "value": 1.91,
+          "value": 1.9,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 2.48,
+        "value": 2.47,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3433,27 +3376,27 @@
         "code": "102"
       },
       "temperature": {
-        "value": 20.02,
+        "value": 19.27,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 19.64,
+        "value": 19.9,
         "unit": "°C"
       },
-      "humidity": 0.64,
+      "humidity": 0.67,
       "wind": {
         "direction": {
-          "degree": 353,
+          "degree": 2,
           "compass": "n"
         },
         "speed": {
-          "value": 2.28,
+          "value": 0.67,
           "unit": "m/s"
         },
-        "scale": 2
+        "scale": 1
       },
       "windGust": {
-        "value": 3.65,
+        "value": 2.07,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3494,23 +3437,23 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 20.65,
+        "value": 20.34,
         "unit": "°C"
       },
       "humidity": 0.69,
       "wind": {
         "direction": {
-          "degree": 9,
+          "degree": 354,
           "compass": "n"
         },
         "speed": {
-          "value": 1.21,
+          "value": 1.69,
           "unit": "m/s"
         },
-        "scale": 1
+        "scale": 2
       },
       "windGust": {
-        "value": 3.58,
+        "value": 4.06,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3547,27 +3490,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 22.11,
+        "value": 21.73,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 22.44,
+        "value": 22.38,
         "unit": "°C"
       },
-      "humidity": 0.59,
+      "humidity": 0.61,
       "wind": {
         "direction": {
-          "degree": 50,
-          "compass": "ne"
+          "degree": 102,
+          "compass": "ese"
         },
         "speed": {
-          "value": 1.54,
+          "value": 1.03,
           "unit": "m/s"
         },
         "scale": 1
       },
       "windGust": {
-        "value": 4.51,
+        "value": 4.01,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3604,27 +3547,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 23.38,
+        "value": 22.62,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 23.21,
+        "value": 22.47,
         "unit": "°C"
       },
-      "humidity": 0.5,
+      "humidity": 0.52,
       "wind": {
         "direction": {
-          "degree": 68,
-          "compass": "ene"
+          "degree": 84,
+          "compass": "e"
         },
         "speed": {
-          "value": 1.97,
+          "value": 1.9,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 5.28,
+        "value": 5.2,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3661,27 +3604,27 @@
         "code": "102"
       },
       "temperature": {
-        "value": 25.11,
+        "value": 23.98,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 24.68,
+        "value": 23.79,
         "unit": "°C"
       },
-      "humidity": 0.42,
+      "humidity": 0.44,
       "wind": {
         "direction": {
-          "degree": 83,
-          "compass": "e"
+          "degree": 59,
+          "compass": "ene"
         },
         "speed": {
-          "value": 2.11,
+          "value": 1.68,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 5.22,
+        "value": 4.8,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3718,27 +3661,27 @@
         "code": "101"
       },
       "temperature": {
-        "value": 25.85,
+        "value": 25.28,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 25.4,
+        "value": 24.94,
         "unit": "°C"
       },
-      "humidity": 0.38,
+      "humidity": 0.4,
       "wind": {
         "direction": {
-          "degree": 91,
+          "degree": 83,
           "compass": "e"
         },
         "speed": {
-          "value": 2.05,
+          "value": 1.86,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 4.98,
+        "value": 4.78,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3775,27 +3718,27 @@
         "code": "103"
       },
       "temperature": {
-        "value": 26.23,
+        "value": 25.47,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 25.72,
+        "value": 25.15,
         "unit": "°C"
       },
-      "humidity": 0.38,
+      "humidity": 0.4,
       "wind": {
         "direction": {
-          "degree": 93,
+          "degree": 88,
           "compass": "e"
         },
         "speed": {
-          "value": 2.2,
+          "value": 1.86,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 4.74,
+        "value": 4.41,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3832,27 +3775,27 @@
         "code": "101"
       },
       "temperature": {
-        "value": 26.4,
+        "value": 26.15,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 25.66,
+        "value": 25.79,
         "unit": "°C"
       },
-      "humidity": 0.37,
+      "humidity": 0.38,
       "wind": {
         "direction": {
-          "degree": 97,
+          "degree": 87,
           "compass": "e"
         },
         "speed": {
-          "value": 2.57,
+          "value": 1.97,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 5.47,
+        "value": 4.89,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3889,27 +3832,27 @@
         "code": "101"
       },
       "temperature": {
-        "value": 25.67,
+        "value": 25.41,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 24.77,
+        "value": 24.42,
         "unit": "°C"
       },
-      "humidity": 0.4,
+      "humidity": 0.41,
       "wind": {
         "direction": {
-          "degree": 87,
+          "degree": 90,
           "compass": "e"
         },
         "speed": {
-          "value": 2.89,
+          "value": 3,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 6.35,
+        "value": 6.47,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3933,7 +3876,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 11.19,
+        "value": 11.16,
         "unit": "°C"
       },
       "cloudCover": 0.72,
@@ -3946,27 +3889,27 @@
         "code": "102"
       },
       "temperature": {
-        "value": 24.3,
+        "value": 24.08,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 23.03,
+        "value": 22.91,
         "unit": "°C"
       },
-      "humidity": 0.44,
+      "humidity": 0.46,
       "wind": {
         "direction": {
-          "degree": 80,
+          "degree": 84,
           "compass": "e"
         },
         "speed": {
-          "value": 3.44,
+          "value": 3.31,
           "unit": "m/s"
         },
-        "scale": 3
+        "scale": 2
       },
       "windGust": {
-        "value": 7.4,
+        "value": 7.27,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3990,7 +3933,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 11.42,
+        "value": 11.59,
         "unit": "°C"
       },
       "cloudCover": 0.21,
@@ -4003,27 +3946,27 @@
         "code": "102"
       },
       "temperature": {
-        "value": 22.14,
+        "value": 22.31,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 21.37,
+        "value": 21.33,
         "unit": "°C"
       },
-      "humidity": 0.5,
+      "humidity": 0.49,
       "wind": {
         "direction": {
-          "degree": 74,
-          "compass": "ene"
+          "degree": 83,
+          "compass": "e"
         },
         "speed": {
-          "value": 2.45,
+          "value": 2.75,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 5.07,
+        "value": 5.37,
         "unit": "m/s"
       },
       "precipitation": {
@@ -4047,7 +3990,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 11.11,
+        "value": 10.97,
         "unit": "°C"
       },
       "cloudCover": 0.14,
@@ -4108,6 +4051,63 @@
         "unit": "°C"
       },
       "cloudCover": 0.11,
+      "uvIndex": 0
+    },
+    {
+      "forecastTime": "2026-10-08T11:00Z",
+      "condition": {
+        "text": "晴",
+        "code": "100"
+      },
+      "temperature": {
+        "value": 19.62,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 19.43,
+        "unit": "°C"
+      },
+      "humidity": 0.66,
+      "wind": {
+        "direction": {
+          "degree": 89,
+          "compass": "e"
+        },
+        "speed": {
+          "value": 2,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 3.89,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1021.75,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 22345,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 13.18,
+        "unit": "°C"
+      },
+      "cloudCover": 0.05,
       "uvIndex": 0
     }
   ]
