@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "tag": "ce75b23e92f855026863e88728371701db807c4d26b3de82e72a38e1be1133f9",
+    "tag": "05aea4e6b00972999f661f6aec7067eba3c6b3a5b8f6109d13b1dd1c048167cf",
     "attributions": [
       "https://developer.qweather.com/attribution.html"
     ]
@@ -9,8 +9,8 @@
     {
       "code": "cn-mee",
       "name": "AQI (CN)",
-      "aqi": 34,
-      "aqiDisplay": "34",
+      "aqi": 35,
+      "aqiDisplay": "35",
       "level": "1",
       "category": "优",
       "color": {
@@ -57,8 +57,8 @@
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 34,
-          "aqiDisplay": "34"
+          "aqi": 35,
+          "aqiDisplay": "35"
         }
       ]
     },
@@ -67,14 +67,14 @@
       "name": "NO2",
       "fullName": "二氧化氮",
       "concentration": {
-        "value": 5.0,
+        "value": 6.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 3,
-          "aqiDisplay": "3"
+          "aqi": 4,
+          "aqiDisplay": "4"
         }
       ]
     },
@@ -83,14 +83,14 @@
       "name": "O3",
       "fullName": "臭氧",
       "concentration": {
-        "value": 106.0,
+        "value": 103.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 34,
-          "aqiDisplay": "34"
+          "aqi": 33,
+          "aqiDisplay": "33"
         }
       ]
     },
@@ -121,8 +121,8 @@
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 6,
-          "aqiDisplay": "6"
+          "aqi": 7,
+          "aqiDisplay": "7"
         }
       ]
     }

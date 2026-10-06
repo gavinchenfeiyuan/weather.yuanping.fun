@@ -1,68 +1,11 @@
 {
   "metadata": {
-    "tag": "ffefb6230c5176a9c1a378bb28bee1eda3e7c09a9381514c96f97f3714ce9e4a",
+    "tag": "c7e28eb1b72d09815923171ec9b71ecd3fe1bc8de491f1d962f0613059d5aa99",
     "attributions": [
       "https://developer.qweather.com/attribution.html"
     ]
   },
   "hours": [
-    {
-      "forecastTime": "2026-10-06T10:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 20.92,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 20.09,
-        "unit": "°C"
-      },
-      "humidity": 0.37,
-      "wind": {
-        "direction": {
-          "degree": 309,
-          "compass": "nw"
-        },
-        "speed": {
-          "value": 1.26,
-          "unit": "m/s"
-        },
-        "scale": 1
-      },
-      "windGust": {
-        "value": 2.52,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1021.18,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 22930,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 5.86,
-        "unit": "°C"
-      },
-      "cloudCover": 0,
-      "uvIndex": 0
-    },
     {
       "forecastTime": "2026-10-06T11:00Z",
       "condition": {
@@ -70,27 +13,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 19.58,
+        "value": 19.77,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 18.6,
+        "value": 18.91,
         "unit": "°C"
       },
-      "humidity": 0.46,
+      "humidity": 0.4,
       "wind": {
         "direction": {
-          "degree": 311,
-          "compass": "nw"
+          "degree": 339,
+          "compass": "nnw"
         },
         "speed": {
-          "value": 1.76,
+          "value": 1.23,
           "unit": "m/s"
         },
-        "scale": 2
+        "scale": 1
       },
       "windGust": {
-        "value": 3.22,
+        "value": 2.7,
         "unit": "m/s"
       },
       "precipitation": {
@@ -110,11 +53,11 @@
         "unit": "hPa"
       },
       "visibility": {
-        "value": 23113,
+        "value": 22256,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 7.61,
+        "value": 5.92,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -127,27 +70,27 @@
         "code": "100"
       },
       "temperature": {
-        "value": 18.54,
+        "value": 18.56,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 17.66,
+        "value": 17.68,
         "unit": "°C"
       },
-      "humidity": 0.51,
+      "humidity": 0.5,
       "wind": {
         "direction": {
           "degree": 302,
           "compass": "wnw"
         },
         "speed": {
-          "value": 1.68,
+          "value": 1.64,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 2.66,
+        "value": 2.63,
         "unit": "m/s"
       },
       "precipitation": {
@@ -167,11 +110,11 @@
         "unit": "hPa"
       },
       "visibility": {
-        "value": 23056,
+        "value": 23016,
         "unit": "m"
       },
       "dewPoint": {
-        "value": 8.16,
+        "value": 8.02,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -184,11 +127,11 @@
         "code": "100"
       },
       "temperature": {
-        "value": 18.36,
+        "value": 18.37,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 17.84,
+        "value": 17.86,
         "unit": "°C"
       },
       "humidity": 0.52,
@@ -228,7 +171,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 8.26,
+        "value": 8.28,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -245,7 +188,7 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 17.45,
+        "value": 17.44,
         "unit": "°C"
       },
       "humidity": 0.53,
@@ -285,7 +228,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 8.61,
+        "value": 8.55,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -342,7 +285,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 8.53,
+        "value": 8.54,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -359,10 +302,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 16.17,
+        "value": 16.19,
         "unit": "°C"
       },
-      "humidity": 0.56,
+      "humidity": 0.57,
       "wind": {
         "direction": {
           "degree": 310,
@@ -399,7 +342,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 8.54,
+        "value": 8.64,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -416,7 +359,7 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 15.91,
+        "value": 15.92,
         "unit": "°C"
       },
       "humidity": 0.57,
@@ -456,7 +399,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 8.44,
+        "value": 8.46,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -473,7 +416,7 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 15.45,
+        "value": 15.46,
         "unit": "°C"
       },
       "humidity": 0.58,
@@ -513,7 +456,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 8.33,
+        "value": 8.42,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -530,7 +473,7 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 14.62,
+        "value": 14.63,
         "unit": "°C"
       },
       "humidity": 0.6,
@@ -570,7 +513,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 8.1,
+        "value": 8.18,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -701,10 +644,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 14.16,
+        "value": 14.12,
         "unit": "°C"
       },
-      "humidity": 0.61,
+      "humidity": 0.6,
       "wind": {
         "direction": {
           "degree": 318,
@@ -741,7 +684,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 8.18,
+        "value": 7.93,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -758,10 +701,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 15.72,
+        "value": 15.67,
         "unit": "°C"
       },
-      "humidity": 0.59,
+      "humidity": 0.58,
       "wind": {
         "direction": {
           "degree": 320,
@@ -798,7 +741,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 8.93,
+        "value": 8.59,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -815,10 +758,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 17.58,
+        "value": 17.54,
         "unit": "°C"
       },
-      "humidity": 0.56,
+      "humidity": 0.55,
       "wind": {
         "direction": {
           "degree": 308,
@@ -855,7 +798,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 9.58,
+        "value": 9.33,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -872,10 +815,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 19.44,
+        "value": 19.39,
         "unit": "°C"
       },
-      "humidity": 0.51,
+      "humidity": 0.5,
       "wind": {
         "direction": {
           "degree": 110,
@@ -912,7 +855,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 9.57,
+        "value": 9.24,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -929,10 +872,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 21.09,
+        "value": 21.06,
         "unit": "°C"
       },
-      "humidity": 0.44,
+      "humidity": 0.43,
       "wind": {
         "direction": {
           "degree": 69,
@@ -969,7 +912,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 8.91,
+        "value": 8.76,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -986,7 +929,7 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 22.62,
+        "value": 22.61,
         "unit": "°C"
       },
       "humidity": 0.39,
@@ -1026,7 +969,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 8.81,
+        "value": 8.72,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -1043,7 +986,7 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 23.54,
+        "value": 23.53,
         "unit": "°C"
       },
       "humidity": 0.35,
@@ -1083,7 +1026,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 7.87,
+        "value": 7.84,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -1100,7 +1043,7 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 23.67,
+        "value": 23.64,
         "unit": "°C"
       },
       "humidity": 0.33,
@@ -1140,7 +1083,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 7.35,
+        "value": 7.15,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -1157,7 +1100,7 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 24.34,
+        "value": 24.3,
         "unit": "°C"
       },
       "humidity": 0.3,
@@ -1197,7 +1140,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 6.78,
+        "value": 6.51,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -1214,10 +1157,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 23.83,
+        "value": 23.78,
         "unit": "°C"
       },
-      "humidity": 0.32,
+      "humidity": 0.31,
       "wind": {
         "direction": {
           "degree": 27,
@@ -1254,7 +1197,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 6.79,
+        "value": 6.43,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -1271,10 +1214,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 23.19,
+        "value": 23.14,
         "unit": "°C"
       },
-      "humidity": 0.34,
+      "humidity": 0.33,
       "wind": {
         "direction": {
           "degree": 23,
@@ -1311,7 +1254,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 7.25,
+        "value": 6.92,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -1328,7 +1271,7 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 22.05,
+        "value": 22.02,
         "unit": "°C"
       },
       "humidity": 0.4,
@@ -1368,7 +1311,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 8.83,
+        "value": 8.6,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -1385,10 +1328,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 21.3,
+        "value": 21.28,
         "unit": "°C"
       },
-      "humidity": 0.44,
+      "humidity": 0.43,
       "wind": {
         "direction": {
           "degree": 65,
@@ -1425,7 +1368,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 9.17,
+        "value": 9.01,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -1482,7 +1425,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 9.51,
+        "value": 9.52,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -1499,10 +1442,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 20.66,
+        "value": 20.68,
         "unit": "°C"
       },
-      "humidity": 0.48,
+      "humidity": 0.49,
       "wind": {
         "direction": {
           "degree": 188,
@@ -1539,7 +1482,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 9.84,
+        "value": 9.96,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -1556,10 +1499,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 18.77,
+        "value": 18.8,
         "unit": "°C"
       },
-      "humidity": 0.56,
+      "humidity": 0.57,
       "wind": {
         "direction": {
           "degree": 166,
@@ -1596,7 +1539,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 10.46,
+        "value": 10.64,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -1613,10 +1556,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 19.07,
+        "value": 19.11,
         "unit": "°C"
       },
-      "humidity": 0.55,
+      "humidity": 0.56,
       "wind": {
         "direction": {
           "degree": 155,
@@ -1653,7 +1596,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 10.2,
+        "value": 10.49,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -1670,7 +1613,7 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 18.05,
+        "value": 18.07,
         "unit": "°C"
       },
       "humidity": 0.56,
@@ -1710,7 +1653,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 9.9,
+        "value": 10.05,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -1727,10 +1670,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 18.4,
+        "value": 18.43,
         "unit": "°C"
       },
-      "humidity": 0.55,
+      "humidity": 0.56,
       "wind": {
         "direction": {
           "degree": 174,
@@ -1767,7 +1710,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 9.66,
+        "value": 9.88,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -1784,10 +1727,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 18.36,
+        "value": 18.4,
         "unit": "°C"
       },
-      "humidity": 0.6,
+      "humidity": 0.61,
       "wind": {
         "direction": {
           "degree": 154,
@@ -1824,7 +1767,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 10.46,
+        "value": 10.69,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -1841,10 +1784,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 17.66,
+        "value": 17.7,
         "unit": "°C"
       },
-      "humidity": 0.63,
+      "humidity": 0.65,
       "wind": {
         "direction": {
           "degree": 322,
@@ -1881,7 +1824,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 11.03,
+        "value": 11.28,
         "unit": "°C"
       },
       "cloudCover": 0.08,
@@ -1898,10 +1841,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 17.07,
+        "value": 17.12,
         "unit": "°C"
       },
-      "humidity": 0.68,
+      "humidity": 0.69,
       "wind": {
         "direction": {
           "degree": 139,
@@ -1938,7 +1881,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 11.16,
+        "value": 11.45,
         "unit": "°C"
       },
       "cloudCover": 0.32,
@@ -1995,7 +1938,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 11.22,
+        "value": 11.27,
         "unit": "°C"
       },
       "cloudCover": 0.52,
@@ -2012,7 +1955,7 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 16.08,
+        "value": 16.09,
         "unit": "°C"
       },
       "humidity": 0.69,
@@ -2052,7 +1995,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 11.01,
+        "value": 11.07,
         "unit": "°C"
       },
       "cloudCover": 0.99,
@@ -2069,10 +2012,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 16.3,
+        "value": 16.32,
         "unit": "°C"
       },
-      "humidity": 0.68,
+      "humidity": 0.69,
       "wind": {
         "direction": {
           "degree": 354,
@@ -2109,7 +2052,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 11,
+        "value": 11.1,
         "unit": "°C"
       },
       "cloudCover": 0.99,
@@ -2126,10 +2069,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 16.87,
+        "value": 16.9,
         "unit": "°C"
       },
-      "humidity": 0.67,
+      "humidity": 0.68,
       "wind": {
         "direction": {
           "degree": 346,
@@ -2166,7 +2109,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 11.39,
+        "value": 11.55,
         "unit": "°C"
       },
       "cloudCover": 1,
@@ -2183,7 +2126,7 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 18.5,
+        "value": 18.49,
         "unit": "°C"
       },
       "humidity": 0.67,
@@ -2223,7 +2166,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 12.71,
+        "value": 12.67,
         "unit": "°C"
       },
       "cloudCover": 1,
@@ -2240,7 +2183,7 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 20.59,
+        "value": 20.57,
         "unit": "°C"
       },
       "humidity": 0.6,
@@ -2280,7 +2223,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 12.59,
+        "value": 12.51,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -2337,7 +2280,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 11.13,
+        "value": 11.15,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -2354,7 +2297,7 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 22.67,
+        "value": 22.68,
         "unit": "°C"
       },
       "humidity": 0.45,
@@ -2394,7 +2337,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 10.42,
+        "value": 10.48,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -2411,10 +2354,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 23.99,
+        "value": 23.98,
         "unit": "°C"
       },
-      "humidity": 0.42,
+      "humidity": 0.41,
       "wind": {
         "direction": {
           "degree": 38,
@@ -2451,7 +2394,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 10.45,
+        "value": 10.39,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -2468,10 +2411,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 24.26,
+        "value": 24.24,
         "unit": "°C"
       },
-      "humidity": 0.42,
+      "humidity": 0.41,
       "wind": {
         "direction": {
           "degree": 46,
@@ -2508,7 +2451,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 10.56,
+        "value": 10.42,
         "unit": "°C"
       },
       "cloudCover": 0.01,
@@ -2525,7 +2468,7 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 24.44,
+        "value": 24.4,
         "unit": "°C"
       },
       "humidity": 0.42,
@@ -2565,7 +2508,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 10.96,
+        "value": 10.74,
         "unit": "°C"
       },
       "cloudCover": 0.08,
@@ -2582,10 +2525,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 24.85,
+        "value": 24.81,
         "unit": "°C"
       },
-      "humidity": 0.43,
+      "humidity": 0.42,
       "wind": {
         "direction": {
           "degree": 55,
@@ -2622,7 +2565,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 11.6,
+        "value": 11.34,
         "unit": "°C"
       },
       "cloudCover": 0.69,
@@ -2639,10 +2582,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 24.33,
+        "value": 24.3,
         "unit": "°C"
       },
-      "humidity": 0.45,
+      "humidity": 0.44,
       "wind": {
         "direction": {
           "degree": 68,
@@ -2679,7 +2622,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 11.9,
+        "value": 11.72,
         "unit": "°C"
       },
       "cloudCover": 0.78,
@@ -2696,10 +2639,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 23.82,
+        "value": 23.79,
         "unit": "°C"
       },
-      "humidity": 0.44,
+      "humidity": 0.43,
       "wind": {
         "direction": {
           "degree": 74,
@@ -2736,7 +2679,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 11.32,
+        "value": 11.11,
         "unit": "°C"
       },
       "cloudCover": 0.37,
@@ -2753,10 +2696,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 22.35,
+        "value": 22.33,
         "unit": "°C"
       },
-      "humidity": 0.52,
+      "humidity": 0.51,
       "wind": {
         "direction": {
           "degree": 79,
@@ -2793,7 +2736,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 12.23,
+        "value": 12.13,
         "unit": "°C"
       },
       "cloudCover": 0.04,
@@ -2810,7 +2753,7 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 20.57,
+        "value": 20.56,
         "unit": "°C"
       },
       "humidity": 0.58,
@@ -2850,7 +2793,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 12.31,
+        "value": 12.25,
         "unit": "°C"
       },
       "cloudCover": 0.01,
@@ -2907,7 +2850,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 12.77,
+        "value": 12.78,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -2924,10 +2867,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 18.34,
+        "value": 18.36,
         "unit": "°C"
       },
-      "humidity": 0.66,
+      "humidity": 0.67,
       "wind": {
         "direction": {
           "degree": 99,
@@ -2964,7 +2907,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 12.51,
+        "value": 12.61,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -2981,10 +2924,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 18.2,
+        "value": 18.28,
         "unit": "°C"
       },
-      "humidity": 0.68,
+      "humidity": 0.7,
       "wind": {
         "direction": {
           "degree": 97,
@@ -3021,7 +2964,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 12.78,
+        "value": 13.19,
         "unit": "°C"
       },
       "cloudCover": 0,
@@ -3038,10 +2981,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 18.16,
+        "value": 18.25,
         "unit": "°C"
       },
-      "humidity": 0.71,
+      "humidity": 0.73,
       "wind": {
         "direction": {
           "degree": 94,
@@ -3078,7 +3021,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 13.36,
+        "value": 13.77,
         "unit": "°C"
       },
       "cloudCover": 0.02,
@@ -3095,10 +3038,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 17.79,
+        "value": 17.87,
         "unit": "°C"
       },
-      "humidity": 0.76,
+      "humidity": 0.78,
       "wind": {
         "direction": {
           "degree": 98,
@@ -3135,7 +3078,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 13.7,
+        "value": 14.11,
         "unit": "°C"
       },
       "cloudCover": 0.03,
@@ -3152,10 +3095,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 17.57,
+        "value": 17.65,
         "unit": "°C"
       },
-      "humidity": 0.76,
+      "humidity": 0.78,
       "wind": {
         "direction": {
           "degree": 89,
@@ -3192,7 +3135,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 13.67,
+        "value": 14.06,
         "unit": "°C"
       },
       "cloudCover": 0.01,
@@ -3209,10 +3152,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 17.57,
+        "value": 17.62,
         "unit": "°C"
       },
-      "humidity": 0.77,
+      "humidity": 0.78,
       "wind": {
         "direction": {
           "degree": 72,
@@ -3249,7 +3192,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 13.76,
+        "value": 14.02,
         "unit": "°C"
       },
       "cloudCover": 0.17,
@@ -3266,10 +3209,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 18.46,
+        "value": 18.49,
         "unit": "°C"
       },
-      "humidity": 0.74,
+      "humidity": 0.75,
       "wind": {
         "direction": {
           "degree": 81,
@@ -3306,7 +3249,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 13.94,
+        "value": 14.09,
         "unit": "°C"
       },
       "cloudCover": 0.27,
@@ -3323,7 +3266,7 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 19.05,
+        "value": 19.09,
         "unit": "°C"
       },
       "humidity": 0.71,
@@ -3363,7 +3306,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 13.73,
+        "value": 13.91,
         "unit": "°C"
       },
       "cloudCover": 0.61,
@@ -3380,10 +3323,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 19.6,
+        "value": 19.63,
         "unit": "°C"
       },
-      "humidity": 0.67,
+      "humidity": 0.68,
       "wind": {
         "direction": {
           "degree": 73,
@@ -3420,7 +3363,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 13.49,
+        "value": 13.67,
         "unit": "°C"
       },
       "cloudCover": 0.71,
@@ -3437,10 +3380,10 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 20.65,
+        "value": 20.71,
         "unit": "°C"
       },
-      "humidity": 0.63,
+      "humidity": 0.65,
       "wind": {
         "direction": {
           "degree": 85,
@@ -3477,7 +3420,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 13.59,
+        "value": 13.91,
         "unit": "°C"
       },
       "cloudCover": 0.73,
@@ -3494,7 +3437,7 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 21.94,
+        "value": 21.95,
         "unit": "°C"
       },
       "humidity": 0.62,
@@ -3534,7 +3477,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 14.28,
+        "value": 14.31,
         "unit": "°C"
       },
       "cloudCover": 0.96,
@@ -3547,27 +3490,27 @@
         "code": "101"
       },
       "temperature": {
-        "value": 20.22,
+        "value": 20.54,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 20.57,
+        "value": 20.93,
         "unit": "°C"
       },
       "humidity": 0.7,
       "wind": {
         "direction": {
-          "degree": 82,
+          "degree": 91,
           "compass": "e"
         },
         "speed": {
-          "value": 1.69,
+          "value": 1.68,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 3.27,
+        "value": 3.26,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3591,7 +3534,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 14.68,
+        "value": 14.81,
         "unit": "°C"
       },
       "cloudCover": 0.85,
@@ -3604,27 +3547,27 @@
         "code": "103"
       },
       "temperature": {
-        "value": 21.98,
+        "value": 22.06,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 22.09,
+        "value": 22.2,
         "unit": "°C"
       },
-      "humidity": 0.66,
+      "humidity": 0.65,
       "wind": {
         "direction": {
-          "degree": 85,
+          "degree": 84,
           "compass": "e"
         },
         "speed": {
-          "value": 2.35,
+          "value": 2.3,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 5.49,
+        "value": 5.44,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3665,23 +3608,23 @@
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 22.91,
+        "value": 22.93,
         "unit": "°C"
       },
       "humidity": 0.58,
       "wind": {
         "direction": {
-          "degree": 89,
+          "degree": 81,
           "compass": "e"
         },
         "speed": {
-          "value": 3.19,
+          "value": 3.23,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 7.34,
+        "value": 7.37,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3705,7 +3648,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 14.59,
+        "value": 14.78,
         "unit": "°C"
       },
       "cloudCover": 0.96,
@@ -3718,27 +3661,27 @@
         "code": "104"
       },
       "temperature": {
-        "value": 23.95,
+        "value": 23.96,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 23.39,
+        "value": 23.4,
         "unit": "°C"
       },
-      "humidity": 0.56,
+      "humidity": 0.57,
       "wind": {
         "direction": {
-          "degree": 88,
-          "compass": "e"
+          "degree": 77,
+          "compass": "ene"
         },
         "speed": {
-          "value": 3.31,
+          "value": 3.43,
           "unit": "m/s"
         },
-        "scale": 2
+        "scale": 3
       },
       "windGust": {
-        "value": 7.47,
+        "value": 7.6,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3762,7 +3705,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 14.67,
+        "value": 15.05,
         "unit": "°C"
       },
       "cloudCover": 1,
@@ -3775,27 +3718,27 @@
         "code": "101"
       },
       "temperature": {
-        "value": 24.81,
+        "value": 24.85,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 24.5,
+        "value": 24.46,
         "unit": "°C"
       },
       "humidity": 0.54,
       "wind": {
         "direction": {
-          "degree": 93,
-          "compass": "e"
+          "degree": 78,
+          "compass": "ene"
         },
         "speed": {
-          "value": 3.07,
+          "value": 3.22,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 6.87,
+        "value": 7.02,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3819,7 +3762,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 14.96,
+        "value": 15.04,
         "unit": "°C"
       },
       "cloudCover": 0.72,
@@ -3832,27 +3775,27 @@
         "code": "104"
       },
       "temperature": {
-        "value": 25.44,
+        "value": 25.66,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 25.22,
+        "value": 25.36,
         "unit": "°C"
       },
       "humidity": 0.52,
       "wind": {
         "direction": {
-          "degree": 106,
-          "compass": "ese"
+          "degree": 88,
+          "compass": "e"
         },
         "speed": {
-          "value": 2.96,
+          "value": 3.1,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 6.65,
+        "value": 6.78,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3876,7 +3819,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 14.95,
+        "value": 14.96,
         "unit": "°C"
       },
       "cloudCover": 0.94,
@@ -3889,27 +3832,27 @@
         "code": "104"
       },
       "temperature": {
-        "value": 24.69,
+        "value": 25.06,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 24.38,
+        "value": 24.48,
         "unit": "°C"
       },
       "humidity": 0.54,
       "wind": {
         "direction": {
-          "degree": 98,
+          "degree": 86,
           "compass": "e"
         },
         "speed": {
-          "value": 2.96,
+          "value": 3.51,
           "unit": "m/s"
         },
-        "scale": 2
+        "scale": 3
       },
       "windGust": {
-        "value": 6.81,
+        "value": 7.35,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3933,7 +3876,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 14.68,
+        "value": 14.97,
         "unit": "°C"
       },
       "cloudCover": 1,
@@ -3946,27 +3889,27 @@
         "code": "103"
       },
       "temperature": {
-        "value": 24.41,
+        "value": 24.71,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 24.04,
+        "value": 24.16,
         "unit": "°C"
       },
-      "humidity": 0.54,
+      "humidity": 0.53,
       "wind": {
         "direction": {
-          "degree": 94,
+          "degree": 89,
           "compass": "e"
         },
         "speed": {
-          "value": 2.97,
+          "value": 3.32,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 6.51,
+        "value": 6.86,
         "unit": "m/s"
       },
       "precipitation": {
@@ -3990,7 +3933,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 14.47,
+        "value": 14.61,
         "unit": "°C"
       },
       "cloudCover": 0.39,
@@ -4003,27 +3946,27 @@
         "code": "102"
       },
       "temperature": {
-        "value": 23.73,
+        "value": 23.93,
         "unit": "°C"
       },
       "feelsLike": {
-        "value": 23.53,
+        "value": 23.52,
         "unit": "°C"
       },
       "humidity": 0.58,
       "wind": {
         "direction": {
-          "degree": 82,
+          "degree": 86,
           "compass": "e"
         },
         "speed": {
-          "value": 2.86,
+          "value": 3.26,
           "unit": "m/s"
         },
         "scale": 2
       },
       "windGust": {
-        "value": 6.71,
+        "value": 7.11,
         "unit": "m/s"
       },
       "precipitation": {
@@ -4047,7 +3990,7 @@
         "unit": "m"
       },
       "dewPoint": {
-        "value": 15.03,
+        "value": 15.23,
         "unit": "°C"
       },
       "cloudCover": 0.16,
@@ -4108,6 +4051,63 @@
         "unit": "°C"
       },
       "cloudCover": 0.28,
+      "uvIndex": 0
+    },
+    {
+      "forecastTime": "2026-10-09T10:00Z",
+      "condition": {
+        "text": "少云",
+        "code": "102"
+      },
+      "temperature": {
+        "value": 21.07,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 21.66,
+        "unit": "°C"
+      },
+      "humidity": 0.79,
+      "wind": {
+        "direction": {
+          "degree": 68,
+          "compass": "ene"
+        },
+        "speed": {
+          "value": 2.3,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 4.64,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1019.69,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 20889,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 17.33,
+        "unit": "°C"
+      },
+      "cloudCover": 0.18,
       "uvIndex": 0
     }
   ]
