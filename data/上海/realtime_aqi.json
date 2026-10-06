@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "tag": "ae5461476060173ca502c79a59174375322846f20fd8d1b870aebd327be390b4",
+    "tag": "a8c011fd8e5fdd939c33035efb38bea52db8b6a36649397f43c3031c7d25a5fd",
     "attributions": [
       "https://developer.qweather.com/attribution.html"
     ]
@@ -9,8 +9,8 @@
     {
       "code": "cn-mee",
       "name": "AQI (CN)",
-      "aqi": 93,
-      "aqiDisplay": "93",
+      "aqi": 82,
+      "aqiDisplay": "82",
       "level": "2",
       "category": "良",
       "color": {
@@ -39,14 +39,14 @@
       "name": "PM 2.5",
       "fullName": "颗粒物（粒径小于等于2.5µm）",
       "concentration": {
-        "value": 56.0,
+        "value": 51.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 93,
-          "aqiDisplay": "93"
+          "aqi": 82,
+          "aqiDisplay": "82"
         }
       ]
     },
@@ -55,14 +55,14 @@
       "name": "PM 10",
       "fullName": "颗粒物（粒径小于等于10µm）",
       "concentration": {
-        "value": 79.0,
+        "value": 73.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 71,
-          "aqiDisplay": "71"
+          "aqi": 67,
+          "aqiDisplay": "67"
         }
       ]
     },
@@ -71,14 +71,14 @@
       "name": "NO2",
       "fullName": "二氧化氮",
       "concentration": {
-        "value": 87.0,
+        "value": 80.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 44,
-          "aqiDisplay": "44"
+          "aqi": 41,
+          "aqiDisplay": "41"
         }
       ]
     },
@@ -103,7 +103,7 @@
       "name": "SO2",
       "fullName": "二氧化硫",
       "concentration": {
-        "value": 9.0,
+        "value": 8.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
