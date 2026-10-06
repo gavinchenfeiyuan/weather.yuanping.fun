@@ -1,127 +1,11 @@
 {
   "metadata": {
-    "tag": "c7e28eb1b72d09815923171ec9b71ecd3fe1bc8de491f1d962f0613059d5aa99",
+    "tag": "37e12c5bf50474f07c351dc75223ebbe5247585ea9eb66b551ad2fa9d9cd07f1",
     "attributions": [
       "https://developer.qweather.com/attribution.html"
     ]
   },
   "days": [
-    {
-      "forecastStartTime": "2026-10-05T16:00Z",
-      "forecastEndTime": "2026-10-06T16:00Z",
-      "astro": {
-        "sunrise": "2026-10-05T21:58Z",
-        "sunset": "2026-10-06T09:47Z",
-        "astronomicalDawn": "2026-10-05T20:42Z",
-        "nauticalDawn": "2026-10-05T21:09Z",
-        "civilDawn": "2026-10-05T21:35Z",
-        "astronomicalDusk": "2026-10-06T11:03Z",
-        "nauticalDusk": "2026-10-06T10:36Z",
-        "civilDusk": "2026-10-06T10:10Z",
-        "solarNoon": "2026-10-06T03:53Z",
-        "solarMidnight": "2026-10-05T15:53Z",
-        "moonrise": "2026-10-05T17:24Z",
-        "moonset": "2026-10-06T07:06Z",
-        "moonTransit": "2026-10-06T00:18Z",
-        "moonUnderfoot": "2026-10-06T12:18Z",
-        "moonPhase": "waning-crescent"
-      },
-      "temperatureMax": {
-        "value": 24.96,
-        "unit": "°C"
-      },
-      "temperatureMin": {
-        "value": 22.24,
-        "unit": "°C"
-      },
-      "temperatureAvg": {
-        "value": 23.56,
-        "unit": "°C"
-      },
-      "uvIndexMax": 6,
-      "daytime": {
-        "forecastStartTime": "2026-10-05T23:00Z",
-        "forecastEndTime": "2026-10-06T11:00Z",
-        "condition": {
-          "text": "少云",
-          "code": "102"
-        },
-        "temperatureMax": {
-          "value": 24.96,
-          "unit": "°C"
-        },
-        "temperatureMin": {
-          "value": 22.82,
-          "unit": "°C"
-        },
-        "humidity": 0.53,
-        "wind": {
-          "direction": {
-            "degree": 50,
-            "compass": "ne"
-          },
-          "speed": {
-            "value": 5,
-            "unit": "m/s"
-          },
-          "scale": 3
-        },
-        "windGustMax": {
-          "value": 10.51,
-          "unit": "m/s"
-        },
-        "precipitation": {
-          "amount": {
-            "value": 0,
-            "unit": "mm"
-          },
-          "probability": 0,
-          "type": "none"
-        },
-        "cloudCover": 0.19
-      },
-      "nighttime": {
-        "forecastStartTime": "2026-10-06T11:00Z",
-        "forecastEndTime": "2026-10-06T23:00Z",
-        "condition": {
-          "text": "晴",
-          "code": "100"
-        },
-        "temperatureMax": {
-          "value": 22.81,
-          "unit": "°C"
-        },
-        "temperatureMin": {
-          "value": 21.16,
-          "unit": "°C"
-        },
-        "humidity": 0.65,
-        "wind": {
-          "direction": {
-            "degree": 357,
-            "compass": "n"
-          },
-          "speed": {
-            "value": 4.97,
-            "unit": "m/s"
-          },
-          "scale": 3
-        },
-        "windGustMax": {
-          "value": 10.6,
-          "unit": "m/s"
-        },
-        "precipitation": {
-          "amount": {
-            "value": 0,
-            "unit": "mm"
-          },
-          "probability": 0,
-          "type": "none"
-        },
-        "cloudCover": 0.04
-      }
-    },
     {
       "forecastStartTime": "2026-10-06T16:00Z",
       "forecastEndTime": "2026-10-07T16:00Z",
@@ -143,15 +27,15 @@
         "moonPhase": "waning-crescent"
       },
       "temperatureMax": {
-        "value": 25.68,
+        "value": 25.75,
         "unit": "°C"
       },
       "temperatureMin": {
-        "value": 21,
+        "value": 21.58,
         "unit": "°C"
       },
       "temperatureAvg": {
-        "value": 23.07,
+        "value": 23.28,
         "unit": "°C"
       },
       "uvIndexMax": 7,
@@ -163,11 +47,11 @@
           "code": "102"
         },
         "temperatureMax": {
-          "value": 25.68,
+          "value": 25.75,
           "unit": "°C"
         },
         "temperatureMin": {
-          "value": 21,
+          "value": 21.58,
           "unit": "°C"
         },
         "humidity": 0.57,
@@ -177,13 +61,13 @@
             "compass": "ne"
           },
           "speed": {
-            "value": 5.94,
+            "value": 6.82,
             "unit": "m/s"
           },
           "scale": 4
         },
         "windGustMax": {
-          "value": 12.98,
+          "value": 13.91,
           "unit": "m/s"
         },
         "precipitation": {
@@ -194,7 +78,7 @@
           "probability": 0,
           "type": "none"
         },
-        "cloudCover": 0.07
+        "cloudCover": 0.06
       },
       "nighttime": {
         "forecastStartTime": "2026-10-07T11:00Z",
@@ -204,27 +88,27 @@
           "code": "102"
         },
         "temperatureMax": {
-          "value": 22.6,
+          "value": 23.3,
           "unit": "°C"
         },
         "temperatureMin": {
-          "value": 21.3,
+          "value": 21.98,
           "unit": "°C"
         },
-        "humidity": 0.65,
+        "humidity": 0.62,
         "wind": {
           "direction": {
-            "degree": 2,
+            "degree": 359,
             "compass": "n"
           },
           "speed": {
-            "value": 5.27,
+            "value": 4.93,
             "unit": "m/s"
           },
           "scale": 3
         },
         "windGustMax": {
-          "value": 10.45,
+          "value": 11.39,
           "unit": "m/s"
         },
         "precipitation": {
@@ -259,47 +143,47 @@
         "moonPhase": "waning-crescent"
       },
       "temperatureMax": {
-        "value": 26.05,
+        "value": 26.03,
         "unit": "°C"
       },
       "temperatureMin": {
-        "value": 21.3,
+        "value": 21.98,
         "unit": "°C"
       },
       "temperatureAvg": {
-        "value": 23.46,
+        "value": 24.2,
         "unit": "°C"
       },
-      "uvIndexMax": 5,
+      "uvIndexMax": 4,
       "daytime": {
         "forecastStartTime": "2026-10-07T23:00Z",
         "forecastEndTime": "2026-10-08T11:00Z",
         "condition": {
-          "text": "晴间多云",
-          "code": "103"
+          "text": "少云",
+          "code": "102"
         },
         "temperatureMax": {
-          "value": 26.05,
+          "value": 26.03,
           "unit": "°C"
         },
         "temperatureMin": {
-          "value": 21.87,
+          "value": 22.6,
           "unit": "°C"
         },
-        "humidity": 0.63,
+        "humidity": 0.61,
         "wind": {
           "direction": {
-            "degree": 44,
+            "degree": 43,
             "compass": "ne"
           },
           "speed": {
-            "value": 6.89,
+            "value": 6.69,
             "unit": "m/s"
           },
           "scale": 4
         },
         "windGustMax": {
-          "value": 15.42,
+          "value": 15.34,
           "unit": "m/s"
         },
         "precipitation": {
@@ -310,7 +194,7 @@
           "probability": 0,
           "type": "none"
         },
-        "cloudCover": 0.27
+        "cloudCover": 0.22
       },
       "nighttime": {
         "forecastStartTime": "2026-10-08T11:00Z",
@@ -320,27 +204,27 @@
           "code": "102"
         },
         "temperatureMax": {
-          "value": 23.91,
+          "value": 24.63,
           "unit": "°C"
         },
         "temperatureMin": {
-          "value": 21.77,
+          "value": 21.29,
           "unit": "°C"
         },
-        "humidity": 0.69,
+        "humidity": 0.7,
         "wind": {
           "direction": {
-            "degree": 356,
+            "degree": 355,
             "compass": "n"
           },
           "speed": {
-            "value": 4.91,
+            "value": 4.99,
             "unit": "m/s"
           },
           "scale": 3
         },
         "windGustMax": {
-          "value": 11.52,
+          "value": 11.57,
           "unit": "m/s"
         },
         "precipitation": {
@@ -375,15 +259,15 @@
         "moonPhase": "waning-crescent"
       },
       "temperatureMax": {
-        "value": 28.44,
+        "value": 27.35,
         "unit": "°C"
       },
       "temperatureMin": {
-        "value": 21.27,
+        "value": 21.28,
         "unit": "°C"
       },
       "temperatureAvg": {
-        "value": 23.57,
+        "value": 23.83,
         "unit": "°C"
       },
       "uvIndexMax": 5,
@@ -395,27 +279,27 @@
           "code": "102"
         },
         "temperatureMax": {
-          "value": 28.44,
+          "value": 27.35,
           "unit": "°C"
         },
         "temperatureMin": {
-          "value": 21.46,
+          "value": 21.86,
           "unit": "°C"
         },
         "humidity": 0.61,
         "wind": {
           "direction": {
-            "degree": 58,
-            "compass": "ene"
+            "degree": 43,
+            "compass": "ne"
           },
           "speed": {
-            "value": 3.34,
+            "value": 5.13,
             "unit": "m/s"
           },
-          "scale": 2
+          "scale": 3
         },
         "windGustMax": {
-          "value": 10.14,
+          "value": 11.5,
           "unit": "m/s"
         },
         "precipitation": {
@@ -426,7 +310,7 @@
           "probability": 0,
           "type": "none"
         },
-        "cloudCover": 0.17
+        "cloudCover": 0.23
       },
       "nighttime": {
         "forecastStartTime": "2026-10-09T11:00Z",
@@ -436,11 +320,11 @@
           "code": "100"
         },
         "temperatureMax": {
-          "value": 22.18,
+          "value": 24.77,
           "unit": "°C"
         },
         "temperatureMin": {
-          "value": 20.37,
+          "value": 20.23,
           "unit": "°C"
         },
         "humidity": 0.82,
@@ -450,13 +334,13 @@
             "compass": "n"
           },
           "speed": {
-            "value": 2.81,
+            "value": 3.02,
             "unit": "m/s"
           },
           "scale": 2
         },
         "windGustMax": {
-          "value": 6.54,
+          "value": 9.39,
           "unit": "m/s"
         },
         "precipitation": {
@@ -467,7 +351,7 @@
           "probability": 0.13,
           "type": "none"
         },
-        "cloudCover": 0.05
+        "cloudCover": 0.04
       }
     },
     {
@@ -491,18 +375,18 @@
         "moonPhase": "new-moon"
       },
       "temperatureMax": {
-        "value": 28.63,
+        "value": 28.33,
         "unit": "°C"
       },
       "temperatureMin": {
-        "value": 20.37,
+        "value": 20.23,
         "unit": "°C"
       },
       "temperatureAvg": {
-        "value": 23.92,
+        "value": 23.85,
         "unit": "°C"
       },
-      "uvIndexMax": 9,
+      "uvIndexMax": 10,
       "daytime": {
         "forecastStartTime": "2026-10-09T23:00Z",
         "forecastEndTime": "2026-10-10T11:00Z",
@@ -511,27 +395,68 @@
           "code": "102"
         },
         "temperatureMax": {
-          "value": 28.63,
+          "value": 28.33,
           "unit": "°C"
         },
         "temperatureMin": {
-          "value": 22.22,
+          "value": 21.41,
           "unit": "°C"
         },
-        "humidity": 0.62,
+        "humidity": 0.63,
         "wind": {
           "direction": {
-            "degree": 50,
+            "degree": 46,
             "compass": "ne"
           },
           "speed": {
-            "value": 3.63,
+            "value": 3.49,
             "unit": "m/s"
           },
           "scale": 3
         },
         "windGustMax": {
-          "value": 10.2,
+          "value": 9.1,
+          "unit": "m/s"
+        },
+        "precipitation": {
+          "amount": {
+            "value": 0,
+            "unit": "mm"
+          },
+          "probability": 0.13,
+          "type": "none"
+        },
+        "cloudCover": 0.06
+      },
+      "nighttime": {
+        "forecastStartTime": "2026-10-10T11:00Z",
+        "forecastEndTime": "2026-10-10T23:00Z",
+        "condition": {
+          "text": "晴间多云",
+          "code": "103"
+        },
+        "temperatureMax": {
+          "value": 23.6,
+          "unit": "°C"
+        },
+        "temperatureMin": {
+          "value": 22.36,
+          "unit": "°C"
+        },
+        "humidity": 0.85,
+        "wind": {
+          "direction": {
+            "degree": 19,
+            "compass": "nne"
+          },
+          "speed": {
+            "value": 3.07,
+            "unit": "m/s"
+          },
+          "scale": 2
+        },
+        "windGustMax": {
+          "value": 7.2,
           "unit": "m/s"
         },
         "precipitation": {
@@ -542,48 +467,7 @@
           "probability": 0.07,
           "type": "none"
         },
-        "cloudCover": 0.22
-      },
-      "nighttime": {
-        "forecastStartTime": "2026-10-10T11:00Z",
-        "forecastEndTime": "2026-10-10T23:00Z",
-        "condition": {
-          "text": "少云",
-          "code": "102"
-        },
-        "temperatureMax": {
-          "value": 23.56,
-          "unit": "°C"
-        },
-        "temperatureMin": {
-          "value": 22.35,
-          "unit": "°C"
-        },
-        "humidity": 0.85,
-        "wind": {
-          "direction": {
-            "degree": 18,
-            "compass": "nne"
-          },
-          "speed": {
-            "value": 3.13,
-            "unit": "m/s"
-          },
-          "scale": 2
-        },
-        "windGustMax": {
-          "value": 7.27,
-          "unit": "m/s"
-        },
-        "precipitation": {
-          "amount": {
-            "value": 0,
-            "unit": "mm"
-          },
-          "probability": 0,
-          "type": "none"
-        },
-        "cloudCover": 0.21
+        "cloudCover": 0.3
       }
     },
     {
@@ -607,18 +491,18 @@
         "moonPhase": "waxing-crescent"
       },
       "temperatureMax": {
-        "value": 28.38,
+        "value": 27.9,
         "unit": "°C"
       },
       "temperatureMin": {
-        "value": 21.78,
+        "value": 21.76,
         "unit": "°C"
       },
       "temperatureAvg": {
-        "value": 24.28,
+        "value": 24.15,
         "unit": "°C"
       },
-      "uvIndexMax": 7,
+      "uvIndexMax": 9,
       "daytime": {
         "forecastStartTime": "2026-10-10T23:00Z",
         "forecastEndTime": "2026-10-11T11:00Z",
@@ -627,27 +511,27 @@
           "code": "102"
         },
         "temperatureMax": {
-          "value": 28.38,
+          "value": 27.9,
           "unit": "°C"
         },
         "temperatureMin": {
-          "value": 23.32,
+          "value": 23.42,
           "unit": "°C"
         },
-        "humidity": 0.64,
+        "humidity": 0.66,
         "wind": {
           "direction": {
-            "degree": 68,
+            "degree": 65,
             "compass": "ene"
           },
           "speed": {
-            "value": 3.75,
+            "value": 3.87,
             "unit": "m/s"
           },
           "scale": 3
         },
         "windGustMax": {
-          "value": 9.59,
+          "value": 9.82,
           "unit": "m/s"
         },
         "precipitation": {
@@ -658,7 +542,7 @@
           "probability": 0.03,
           "type": "none"
         },
-        "cloudCover": 0.12
+        "cloudCover": 0.22
       },
       "nighttime": {
         "forecastStartTime": "2026-10-11T11:00Z",
@@ -668,27 +552,27 @@
           "code": "100"
         },
         "temperatureMax": {
-          "value": 22.89,
+          "value": 22.87,
           "unit": "°C"
         },
         "temperatureMin": {
-          "value": 20.57,
+          "value": 20.48,
           "unit": "°C"
         },
-        "humidity": 0.81,
+        "humidity": 0.83,
         "wind": {
           "direction": {
-            "degree": 355,
+            "degree": 358,
             "compass": "n"
           },
           "speed": {
-            "value": 2.42,
+            "value": 2.36,
             "unit": "m/s"
           },
           "scale": 2
         },
         "windGustMax": {
-          "value": 7.49,
+          "value": 7.19,
           "unit": "m/s"
         },
         "precipitation": {
@@ -696,10 +580,10 @@
             "value": 0,
             "unit": "mm"
           },
-          "probability": 0.03,
+          "probability": 0.07,
           "type": "none"
         },
-        "cloudCover": 0.02
+        "cloudCover": 0.03
       }
     },
     {
@@ -723,15 +607,15 @@
         "moonPhase": "waxing-crescent"
       },
       "temperatureMax": {
-        "value": 28.28,
+        "value": 27.68,
         "unit": "°C"
       },
       "temperatureMin": {
-        "value": 20.57,
+        "value": 20.48,
         "unit": "°C"
       },
       "temperatureAvg": {
-        "value": 23.8,
+        "value": 23.7,
         "unit": "°C"
       },
       "uvIndexMax": 7,
@@ -743,27 +627,27 @@
           "code": "102"
         },
         "temperatureMax": {
-          "value": 28.28,
+          "value": 27.68,
           "unit": "°C"
         },
         "temperatureMin": {
-          "value": 22.17,
+          "value": 22.31,
           "unit": "°C"
         },
-        "humidity": 0.66,
+        "humidity": 0.69,
         "wind": {
           "direction": {
-            "degree": 85,
+            "degree": 83,
             "compass": "e"
           },
           "speed": {
-            "value": 2.86,
+            "value": 2.27,
             "unit": "m/s"
           },
           "scale": 2
         },
         "windGustMax": {
-          "value": 5.48,
+          "value": 8.01,
           "unit": "m/s"
         },
         "precipitation": {
@@ -771,10 +655,10 @@
             "value": 0,
             "unit": "mm"
           },
-          "probability": 0.17,
+          "probability": 0.13,
           "type": "none"
         },
-        "cloudCover": 0.09
+        "cloudCover": 0.06
       },
       "nighttime": {
         "forecastStartTime": "2026-10-12T11:00Z",
@@ -784,27 +668,27 @@
           "code": "100"
         },
         "temperatureMax": {
-          "value": 23.06,
+          "value": 23.19,
           "unit": "°C"
         },
         "temperatureMin": {
-          "value": 20.05,
+          "value": 20.39,
           "unit": "°C"
         },
-        "humidity": 0.86,
+        "humidity": 0.87,
         "wind": {
           "direction": {
             "degree": 359,
             "compass": "n"
           },
           "speed": {
-            "value": 1.88,
+            "value": 1.91,
             "unit": "m/s"
           },
           "scale": 2
         },
         "windGustMax": {
-          "value": 3.7,
+          "value": 3.63,
           "unit": "m/s"
         },
         "precipitation": {
@@ -815,7 +699,7 @@
           "probability": 0,
           "type": "none"
         },
-        "cloudCover": 0.02
+        "cloudCover": 0.03
       }
     },
     {
@@ -839,15 +723,15 @@
         "moonPhase": "waxing-crescent"
       },
       "temperatureMax": {
-        "value": 28.38,
+        "value": 28.4,
         "unit": "°C"
       },
       "temperatureMin": {
-        "value": 20.05,
+        "value": 20.39,
         "unit": "°C"
       },
       "temperatureAvg": {
-        "value": 23.54,
+        "value": 23.66,
         "unit": "°C"
       },
       "uvIndexMax": 7,
@@ -859,27 +743,27 @@
           "code": "100"
         },
         "temperatureMax": {
-          "value": 28.38,
+          "value": 28.4,
           "unit": "°C"
         },
         "temperatureMin": {
-          "value": 20.05,
+          "value": 20.39,
           "unit": "°C"
         },
-        "humidity": 0.68,
+        "humidity": 0.7,
         "wind": {
           "direction": {
-            "degree": 116,
+            "degree": 108,
             "compass": "ese"
           },
           "speed": {
-            "value": 1.52,
+            "value": 1.77,
             "unit": "m/s"
           },
-          "scale": 1
+          "scale": 2
         },
         "windGustMax": {
-          "value": 2.84,
+          "value": 3.11,
           "unit": "m/s"
         },
         "precipitation": {
@@ -887,34 +771,34 @@
             "value": 0,
             "unit": "mm"
           },
-          "probability": 0.23,
+          "probability": 0.37,
           "type": "none"
         },
-        "cloudCover": 0
+        "cloudCover": 0.03
       },
       "nighttime": {
         "forecastStartTime": "2026-10-13T11:00Z",
         "forecastEndTime": "2026-10-13T23:00Z",
         "condition": {
-          "text": "晴",
-          "code": "100"
+          "text": "少云",
+          "code": "102"
         },
         "temperatureMax": {
           "value": 23.89,
           "unit": "°C"
         },
         "temperatureMin": {
-          "value": 21.06,
+          "value": 21.31,
           "unit": "°C"
         },
-        "humidity": 0.87,
+        "humidity": 0.88,
         "wind": {
           "direction": {
-            "degree": 7,
-            "compass": "n"
+            "degree": 16,
+            "compass": "nne"
           },
           "speed": {
-            "value": 1.72,
+            "value": 1.78,
             "unit": "m/s"
           },
           "scale": 2
@@ -928,10 +812,10 @@
             "value": 0,
             "unit": "mm"
           },
-          "probability": 0.13,
+          "probability": 0.3,
           "type": "none"
         },
-        "cloudCover": 0.02
+        "cloudCover": 0.06
       }
     },
     {
@@ -955,15 +839,15 @@
         "moonPhase": "waxing-crescent"
       },
       "temperatureMax": {
-        "value": 28.2,
+        "value": 26.54,
         "unit": "°C"
       },
       "temperatureMin": {
-        "value": 21.06,
+        "value": 21.31,
         "unit": "°C"
       },
       "temperatureAvg": {
-        "value": 23.59,
+        "value": 23.36,
         "unit": "°C"
       },
       "uvIndexMax": 7,
@@ -971,72 +855,31 @@
         "forecastStartTime": "2026-10-13T23:00Z",
         "forecastEndTime": "2026-10-14T11:00Z",
         "condition": {
-          "text": "晴间多云",
-          "code": "103"
+          "text": "少云",
+          "code": "102"
         },
         "temperatureMax": {
-          "value": 28.2,
+          "value": 26.54,
           "unit": "°C"
         },
         "temperatureMin": {
-          "value": 21.06,
+          "value": 21.31,
           "unit": "°C"
         },
-        "humidity": 0.73,
+        "humidity": 0.76,
         "wind": {
           "direction": {
-            "degree": 71,
+            "degree": 66,
             "compass": "ene"
           },
           "speed": {
-            "value": 3.19,
-            "unit": "m/s"
-          },
-          "scale": 2
-        },
-        "windGustMax": {
-          "value": 6.55,
-          "unit": "m/s"
-        },
-        "precipitation": {
-          "amount": {
-            "value": 0,
-            "unit": "mm"
-          },
-          "probability": 0.87,
-          "type": "none"
-        },
-        "cloudCover": 0.31
-      },
-      "nighttime": {
-        "forecastStartTime": "2026-10-14T11:00Z",
-        "forecastEndTime": "2026-10-14T23:00Z",
-        "condition": {
-          "text": "晴间多云",
-          "code": "103"
-        },
-        "temperatureMax": {
-          "value": 23.32,
-          "unit": "°C"
-        },
-        "temperatureMin": {
-          "value": 20.56,
-          "unit": "°C"
-        },
-        "humidity": 0.82,
-        "wind": {
-          "direction": {
-            "degree": 24,
-            "compass": "nne"
-          },
-          "speed": {
-            "value": 3.47,
+            "value": 3.45,
             "unit": "m/s"
           },
           "scale": 3
         },
         "windGustMax": {
-          "value": 7.18,
+          "value": 7.8,
           "unit": "m/s"
         },
         "precipitation": {
@@ -1044,10 +887,51 @@
             "value": 0,
             "unit": "mm"
           },
-          "probability": 0.73,
+          "probability": 0.8,
           "type": "none"
         },
-        "cloudCover": 0.4
+        "cloudCover": 0.25
+      },
+      "nighttime": {
+        "forecastStartTime": "2026-10-14T11:00Z",
+        "forecastEndTime": "2026-10-14T23:00Z",
+        "condition": {
+          "text": "多云",
+          "code": "101"
+        },
+        "temperatureMax": {
+          "value": 22.83,
+          "unit": "°C"
+        },
+        "temperatureMin": {
+          "value": 19.07,
+          "unit": "°C"
+        },
+        "humidity": 0.76,
+        "wind": {
+          "direction": {
+            "degree": 43,
+            "compass": "ne"
+          },
+          "speed": {
+            "value": 4.48,
+            "unit": "m/s"
+          },
+          "scale": 3
+        },
+        "windGustMax": {
+          "value": 7.8,
+          "unit": "m/s"
+        },
+        "precipitation": {
+          "amount": {
+            "value": 0,
+            "unit": "mm"
+          },
+          "probability": 0.4,
+          "type": "none"
+        },
+        "cloudCover": 0.73
       }
     },
     {
@@ -1071,18 +955,18 @@
         "moonPhase": "waxing-crescent"
       },
       "temperatureMax": {
-        "value": 25.55,
+        "value": 23.49,
         "unit": "°C"
       },
       "temperatureMin": {
-        "value": 18.64,
+        "value": 17.45,
         "unit": "°C"
       },
       "temperatureAvg": {
-        "value": 21.99,
+        "value": 20.78,
         "unit": "°C"
       },
-      "uvIndexMax": 6,
+      "uvIndexMax": 7,
       "daytime": {
         "forecastStartTime": "2026-10-14T23:00Z",
         "forecastEndTime": "2026-10-15T11:00Z",
@@ -1091,27 +975,27 @@
           "code": "103"
         },
         "temperatureMax": {
-          "value": 25.55,
+          "value": 23.49,
           "unit": "°C"
         },
         "temperatureMin": {
-          "value": 19.65,
+          "value": 18.44,
           "unit": "°C"
         },
-        "humidity": 0.65,
+        "humidity": 0.62,
         "wind": {
           "direction": {
-            "degree": 49,
+            "degree": 42,
             "compass": "ne"
           },
           "speed": {
-            "value": 5.1,
+            "value": 5.75,
             "unit": "m/s"
           },
-          "scale": 3
+          "scale": 4
         },
         "windGustMax": {
-          "value": 7.3,
+          "value": 8.42,
           "unit": "m/s"
         },
         "precipitation": {
@@ -1119,40 +1003,40 @@
             "value": 0,
             "unit": "mm"
           },
-          "probability": 0.37,
+          "probability": 0.13,
           "type": "none"
         },
-        "cloudCover": 0.31
+        "cloudCover": 0.4
       },
       "nighttime": {
         "forecastStartTime": "2026-10-15T11:00Z",
         "forecastEndTime": "2026-10-15T23:00Z",
         "condition": {
-          "text": "晴间多云",
-          "code": "103"
+          "text": "少云",
+          "code": "102"
         },
         "temperatureMax": {
-          "value": 20.42,
+          "value": 19.32,
           "unit": "°C"
         },
         "temperatureMin": {
-          "value": 18.19,
+          "value": 16.69,
           "unit": "°C"
         },
-        "humidity": 0.77,
+        "humidity": 0.73,
         "wind": {
           "direction": {
-            "degree": 5,
+            "degree": 356,
             "compass": "n"
           },
           "speed": {
-            "value": 3.53,
+            "value": 3.93,
             "unit": "m/s"
           },
           "scale": 3
         },
         "windGustMax": {
-          "value": 6.67,
+          "value": 7.61,
           "unit": "m/s"
         },
         "precipitation": {
@@ -1160,10 +1044,126 @@
             "value": 0,
             "unit": "mm"
           },
-          "probability": 0.27,
+          "probability": 0.03,
           "type": "none"
         },
-        "cloudCover": 0.37
+        "cloudCover": 0.22
+      }
+    },
+    {
+      "forecastStartTime": "2026-10-15T16:00Z",
+      "forecastEndTime": "2026-10-16T16:00Z",
+      "astro": {
+        "sunrise": "2026-10-15T22:03Z",
+        "sunset": "2026-10-16T09:37Z",
+        "astronomicalDawn": "2026-10-15T20:47Z",
+        "nauticalDawn": "2026-10-15T21:13Z",
+        "civilDawn": "2026-10-15T21:40Z",
+        "astronomicalDusk": "2026-10-16T10:53Z",
+        "nauticalDusk": "2026-10-16T10:27Z",
+        "civilDusk": "2026-10-16T10:00Z",
+        "solarNoon": "2026-10-16T03:50Z",
+        "solarMidnight": "2026-10-15T15:50Z",
+        "moonrise": "2026-10-16T03:03Z",
+        "moonset": "2026-10-16T13:30Z",
+        "moonTransit": "2026-10-16T08:17Z",
+        "moonUnderfoot": "2026-10-16T20:17Z",
+        "moonPhase": "waxing-crescent"
+      },
+      "temperatureMax": {
+        "value": 23.71,
+        "unit": "°C"
+      },
+      "temperatureMin": {
+        "value": 16.69,
+        "unit": "°C"
+      },
+      "temperatureAvg": {
+        "value": 20.2,
+        "unit": "°C"
+      },
+      "uvIndexMax": 5,
+      "daytime": {
+        "forecastStartTime": "2026-10-15T23:00Z",
+        "forecastEndTime": "2026-10-16T11:00Z",
+        "condition": {
+          "text": "多云",
+          "code": "101"
+        },
+        "temperatureMax": {
+          "value": 23.71,
+          "unit": "°C"
+        },
+        "temperatureMin": {
+          "value": 18.26,
+          "unit": "°C"
+        },
+        "humidity": 0.69,
+        "wind": {
+          "direction": {
+            "degree": 20,
+            "compass": "nne"
+          },
+          "speed": {
+            "value": 4.6,
+            "unit": "m/s"
+          },
+          "scale": 3
+        },
+        "windGustMax": {
+          "value": 8.34,
+          "unit": "m/s"
+        },
+        "precipitation": {
+          "amount": {
+            "value": 0,
+            "unit": "mm"
+          },
+          "probability": 0,
+          "type": "none"
+        },
+        "cloudCover": 0.78
+      },
+      "nighttime": {
+        "forecastStartTime": "2026-10-16T11:00Z",
+        "forecastEndTime": "2026-10-16T23:00Z",
+        "condition": {
+          "text": "晴间多云",
+          "code": "103"
+        },
+        "temperatureMax": {
+          "value": 23.12,
+          "unit": "°C"
+        },
+        "temperatureMin": {
+          "value": 19.9,
+          "unit": "°C"
+        },
+        "humidity": 0.81,
+        "wind": {
+          "direction": {
+            "degree": 341,
+            "compass": "nnw"
+          },
+          "speed": {
+            "value": 3.04,
+            "unit": "m/s"
+          },
+          "scale": 2
+        },
+        "windGustMax": {
+          "value": 6.24,
+          "unit": "m/s"
+        },
+        "precipitation": {
+          "amount": {
+            "value": 0,
+            "unit": "mm"
+          },
+          "probability": 0,
+          "type": "none"
+        },
+        "cloudCover": 0.35
       }
     }
   ]
