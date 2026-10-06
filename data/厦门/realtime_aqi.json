@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "tag": "a4c558fa3619cab22cdc1ba3ec2e19dfcb6fbcdf58e8152a4e72afec9234a49b",
+    "tag": "8aebc5d06ff51b629ff1ee22ccf20e9553bcf696e9d7aa0c76d8bf225963626b",
     "attributions": [
       "https://developer.qweather.com/attribution.html"
     ]
@@ -9,8 +9,8 @@
     {
       "code": "cn-mee",
       "name": "AQI (CN)",
-      "aqi": 32,
-      "aqiDisplay": "32",
+      "aqi": 35,
+      "aqiDisplay": "35",
       "level": "1",
       "category": "优",
       "color": {
@@ -35,14 +35,14 @@
       "name": "PM 2.5",
       "fullName": "颗粒物（粒径小于等于2.5µm）",
       "concentration": {
-        "value": 18.0,
+        "value": 19.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 26,
-          "aqiDisplay": "26"
+          "aqi": 28,
+          "aqiDisplay": "28"
         }
       ]
     },
@@ -51,14 +51,14 @@
       "name": "PM 10",
       "fullName": "颗粒物（粒径小于等于10µm）",
       "concentration": {
-        "value": 32.0,
+        "value": 35.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 32,
-          "aqiDisplay": "32"
+          "aqi": 35,
+          "aqiDisplay": "35"
         }
       ]
     },
@@ -73,8 +73,8 @@
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 4,
-          "aqiDisplay": "4"
+          "aqi": 5,
+          "aqiDisplay": "5"
         }
       ]
     },
@@ -83,14 +83,14 @@
       "name": "O3",
       "fullName": "臭氧",
       "concentration": {
-        "value": 57.0,
+        "value": 50.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 18,
-          "aqiDisplay": "18"
+          "aqi": 16,
+          "aqiDisplay": "16"
         }
       ]
     },
@@ -115,7 +115,7 @@
       "name": "CO",
       "fullName": "一氧化碳",
       "concentration": {
-        "value": 0.6,
+        "value": 0.7,
         "unit": "mg/m³"
       },
       "subIndexes": [
