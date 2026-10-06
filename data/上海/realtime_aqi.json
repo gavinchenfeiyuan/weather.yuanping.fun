@@ -9,8 +9,8 @@
     {
       "code": "cn-mee",
       "name": "AQI (CN)",
-      "aqi": 35,
-      "aqiDisplay": "35",
+      "aqi": 39,
+      "aqiDisplay": "39",
       "level": "1",
       "category": "优",
       "color": {
@@ -35,7 +35,23 @@
       "name": "PM 2.5",
       "fullName": "颗粒物（粒径小于等于2.5µm）",
       "concentration": {
-        "value": 22.0,
+        "value": 19.0,
+        "unit": "μg/m³"
+      },
+      "subIndexes": [
+        {
+          "code": "cn-mee",
+          "aqi": 28,
+          "aqiDisplay": "28"
+        }
+      ]
+    },
+    {
+      "code": "pm10",
+      "name": "PM 10",
+      "fullName": "颗粒物（粒径小于等于10µm）",
+      "concentration": {
+        "value": 32.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
@@ -47,34 +63,18 @@
       ]
     },
     {
-      "code": "pm10",
-      "name": "PM 10",
-      "fullName": "颗粒物（粒径小于等于10µm）",
-      "concentration": {
-        "value": 35.0,
-        "unit": "μg/m³"
-      },
-      "subIndexes": [
-        {
-          "code": "cn-mee",
-          "aqi": 35,
-          "aqiDisplay": "35"
-        }
-      ]
-    },
-    {
       "code": "no2",
       "name": "NO2",
       "fullName": "二氧化氮",
       "concentration": {
-        "value": 20.0,
+        "value": 15.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 10,
-          "aqiDisplay": "10"
+          "aqi": 8,
+          "aqiDisplay": "8"
         }
       ]
     },
@@ -83,14 +83,14 @@
       "name": "O3",
       "fullName": "臭氧",
       "concentration": {
-        "value": 110.0,
+        "value": 125.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 35,
-          "aqiDisplay": "35"
+          "aqi": 39,
+          "aqiDisplay": "39"
         }
       ]
     },
@@ -99,7 +99,7 @@
       "name": "SO2",
       "fullName": "二氧化硫",
       "concentration": {
-        "value": 10.0,
+        "value": 9.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
