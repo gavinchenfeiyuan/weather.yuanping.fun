@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "tag": "842bb724cadcc5f040989e5179f28c7f213e48f0748b5055943aa478b4f2c0cb",
+    "tag": "2a04e800909da23384a5802569a4c7ac01a2bb5d1c802cd716478a55fa86fa98",
     "attributions": [
       "https://developer.qweather.com/attribution.html"
     ]
@@ -9,26 +9,22 @@
     {
       "code": "cn-mee",
       "name": "AQI (CN)",
-      "aqi": 52,
-      "aqiDisplay": "52",
-      "level": "2",
-      "category": "良",
+      "aqi": 40,
+      "aqiDisplay": "40",
+      "level": "1",
+      "category": "优",
       "color": {
-        "red": 255,
-        "green": 255,
+        "red": 0,
+        "green": 228,
         "blue": 0,
         "alpha": 1
       },
-      "primaryPollutant": {
-        "code": "pm10",
-        "name": "PM 10",
-        "fullName": "颗粒物（粒径小于等于10µm）"
-      },
+      "primaryPollutant": null,
       "health": {
-        "effect": "空气质量可接受，但某些污染物可能对极少数异常敏感人群健康有较弱影响。",
+        "effect": "空气质量令人满意，基本无空气污染。",
         "advice": {
-          "generalPopulation": "一般人群可正常活动。",
-          "sensitivePopulation": "极少数异常敏感人群应减少户外活动。"
+          "generalPopulation": "各类人群可正常活动。",
+          "sensitivePopulation": "各类人群可正常活动。"
         }
       }
     }
@@ -45,8 +41,8 @@
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 15,
-          "aqiDisplay": "15"
+          "aqi": 14,
+          "aqiDisplay": "14"
         }
       ]
     },
@@ -55,14 +51,14 @@
       "name": "PM 10",
       "fullName": "颗粒物（粒径小于等于10µm）",
       "concentration": {
-        "value": 52.0,
+        "value": 25.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 52,
-          "aqiDisplay": "52"
+          "aqi": 25,
+          "aqiDisplay": "25"
         }
       ]
     },
@@ -71,7 +67,7 @@
       "name": "NO2",
       "fullName": "二氧化氮",
       "concentration": {
-        "value": 6.0,
+        "value": 7.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
@@ -87,7 +83,7 @@
       "name": "O3",
       "fullName": "臭氧",
       "concentration": {
-        "value": 127.0,
+        "value": 126.0,
         "unit": "μg/m³"
       },
       "subIndexes": [

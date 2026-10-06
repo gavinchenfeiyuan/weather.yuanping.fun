@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "tag": "842bb724cadcc5f040989e5179f28c7f213e48f0748b5055943aa478b4f2c0cb",
+    "tag": "2a04e800909da23384a5802569a4c7ac01a2bb5d1c802cd716478a55fa86fa98",
     "attributions": [
       "https://developer.qweather.com/attribution.html"
     ]
@@ -9,13 +9,13 @@
     {
       "code": "cn-mee",
       "name": "AQI (CN)",
-      "aqi": 93,
-      "aqiDisplay": "93",
-      "level": "2",
-      "category": "良",
+      "aqi": 114,
+      "aqiDisplay": "114",
+      "level": "3",
+      "category": "轻度污染",
       "color": {
         "red": 255,
-        "green": 255,
+        "green": 126,
         "blue": 0,
         "alpha": 1
       },
@@ -25,10 +25,10 @@
         "fullName": "颗粒物（粒径小于等于2.5µm）"
       },
       "health": {
-        "effect": "空气质量可接受，但某些污染物可能对极少数异常敏感人群健康有较弱影响。",
+        "effect": "易感人群症状有轻度加剧，健康人群出现刺激症状。",
         "advice": {
           "generalPopulation": "一般人群可正常活动。",
-          "sensitivePopulation": "极少数异常敏感人群应减少户外活动。"
+          "sensitivePopulation": "儿童、老年人及心脏病、呼吸系统疾病患者应减少长时间、高强度的户外锻炼。"
         }
       }
     }
@@ -39,14 +39,14 @@
       "name": "PM 2.5",
       "fullName": "颗粒物（粒径小于等于2.5µm）",
       "concentration": {
-        "value": 56.0,
+        "value": 75.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 93,
-          "aqiDisplay": "93"
+          "aqi": 114,
+          "aqiDisplay": "114"
         }
       ]
     },
@@ -55,14 +55,14 @@
       "name": "PM 10",
       "fullName": "颗粒物（粒径小于等于10µm）",
       "concentration": {
-        "value": 79.0,
+        "value": 103.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 71,
-          "aqiDisplay": "71"
+          "aqi": 89,
+          "aqiDisplay": "89"
         }
       ]
     },
@@ -87,14 +87,14 @@
       "name": "O3",
       "fullName": "臭氧",
       "concentration": {
-        "value": 10.0,
+        "value": 5.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 4,
-          "aqiDisplay": "4"
+          "aqi": 2,
+          "aqiDisplay": "2"
         }
       ]
     },
