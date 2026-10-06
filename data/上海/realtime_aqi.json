@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "tag": "c74666affe96bff8b8ebc0bf27d97986a58a0ae7fd0de20620e5ff23f1203ee6",
+    "tag": "1aca5a57adcce321af44d7dfe5ee0d16adcbfa69d7db2fee34d825ee3cb41085",
     "attributions": [
       "https://developer.qweather.com/attribution.html"
     ]
@@ -9,8 +9,8 @@
     {
       "code": "cn-mee",
       "name": "AQI (CN)",
-      "aqi": 46,
-      "aqiDisplay": "46",
+      "aqi": 48,
+      "aqiDisplay": "48",
       "level": "1",
       "category": "优",
       "color": {
@@ -35,14 +35,14 @@
       "name": "PM 2.5",
       "fullName": "颗粒物（粒径小于等于2.5µm）",
       "concentration": {
-        "value": 19.0,
+        "value": 22.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 27,
-          "aqiDisplay": "27"
+          "aqi": 32,
+          "aqiDisplay": "32"
         }
       ]
     },
@@ -51,14 +51,14 @@
       "name": "PM 10",
       "fullName": "颗粒物（粒径小于等于10µm）",
       "concentration": {
-        "value": 31.0,
+        "value": 36.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 31,
-          "aqiDisplay": "31"
+          "aqi": 36,
+          "aqiDisplay": "36"
         }
       ]
     },
@@ -67,7 +67,7 @@
       "name": "NO2",
       "fullName": "二氧化氮",
       "concentration": {
-        "value": 13.0,
+        "value": 14.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
@@ -83,14 +83,14 @@
       "name": "O3",
       "fullName": "臭氧",
       "concentration": {
-        "value": 147.0,
+        "value": 152.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 46,
-          "aqiDisplay": "46"
+          "aqi": 48,
+          "aqiDisplay": "48"
         }
       ]
     },
@@ -99,7 +99,7 @@
       "name": "SO2",
       "fullName": "二氧化硫",
       "concentration": {
-        "value": 8.0,
+        "value": 9.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
