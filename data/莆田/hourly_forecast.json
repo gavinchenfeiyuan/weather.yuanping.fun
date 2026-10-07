@@ -7,63 +7,6 @@
   },
   "hours": [
     {
-      "forecastTime": "2026-10-07T02:00Z",
-      "condition": {
-        "text": "晴",
-        "code": "100"
-      },
-      "temperature": {
-        "value": 23.91,
-        "unit": "°C"
-      },
-      "feelsLike": {
-        "value": 21.39,
-        "unit": "°C"
-      },
-      "humidity": 0.57,
-      "wind": {
-        "direction": {
-          "degree": 31,
-          "compass": "nne"
-        },
-        "speed": {
-          "value": 6.36,
-          "unit": "m/s"
-        },
-        "scale": 4
-      },
-      "windGust": {
-        "value": 12.52,
-        "unit": "m/s"
-      },
-      "precipitation": {
-        "amount": {
-          "value": 0,
-          "unit": "mm"
-        },
-        "intensity": {
-          "value": 0,
-          "unit": "mm/h"
-        },
-        "type": "none",
-        "probability": 0
-      },
-      "pressure": {
-        "value": 1022.19,
-        "unit": "hPa"
-      },
-      "visibility": {
-        "value": 23989,
-        "unit": "m"
-      },
-      "dewPoint": {
-        "value": 14.83,
-        "unit": "°C"
-      },
-      "cloudCover": 0.01,
-      "uvIndex": 6
-    },
-    {
       "forecastTime": "2026-10-07T03:00Z",
       "condition": {
         "text": "少云",
@@ -4109,6 +4052,63 @@
       },
       "cloudCover": 0.51,
       "uvIndex": 1
+    },
+    {
+      "forecastTime": "2026-10-10T02:00Z",
+      "condition": {
+        "text": "晴间多云",
+        "code": "103"
+      },
+      "temperature": {
+        "value": 25.7,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 25.87,
+        "unit": "°C"
+      },
+      "humidity": 0.61,
+      "wind": {
+        "direction": {
+          "degree": 30,
+          "compass": "nne"
+        },
+        "speed": {
+          "value": 3.36,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 7.48,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0,
+          "unit": "mm/h"
+        },
+        "type": "none",
+        "probability": 0
+      },
+      "pressure": {
+        "value": 1017.26,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 23747,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 17.64,
+        "unit": "°C"
+      },
+      "cloudCover": 0.29,
+      "uvIndex": 3
     }
   ]
 }
