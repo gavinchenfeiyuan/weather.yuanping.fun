@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "tag": "a1866dba7907110581fe67853391712dc50ed43ee710d7c445feec2aff3d7e96",
+    "tag": "ea58f56a5a788cf4a492386afe9f9ae376c0cea5aa49444aa026088695b5a939",
     "attributions": [
       "https://developer.qweather.com/attribution.html"
     ]
@@ -9,8 +9,8 @@
     {
       "code": "cn-mee",
       "name": "AQI (CN)",
-      "aqi": 47,
-      "aqiDisplay": "47",
+      "aqi": 49,
+      "aqiDisplay": "49",
       "level": "1",
       "category": "优",
       "color": {
@@ -35,14 +35,14 @@
       "name": "PM 2.5",
       "fullName": "颗粒物（粒径小于等于2.5µm）",
       "concentration": {
-        "value": 15.0,
+        "value": 17.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 22,
-          "aqiDisplay": "22"
+          "aqi": 24,
+          "aqiDisplay": "24"
         }
       ]
     },
@@ -51,14 +51,14 @@
       "name": "PM 10",
       "fullName": "颗粒物（粒径小于等于10µm）",
       "concentration": {
-        "value": 31.0,
+        "value": 34.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 32,
-          "aqiDisplay": "32"
+          "aqi": 34,
+          "aqiDisplay": "34"
         }
       ]
     },
@@ -83,14 +83,14 @@
       "name": "O3",
       "fullName": "臭氧",
       "concentration": {
-        "value": 149.0,
+        "value": 155.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 47,
-          "aqiDisplay": "47"
+          "aqi": 49,
+          "aqiDisplay": "49"
         }
       ]
     },
@@ -99,14 +99,14 @@
       "name": "SO2",
       "fullName": "二氧化硫",
       "concentration": {
-        "value": 6.0,
+        "value": 7.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 2,
-          "aqiDisplay": "2"
+          "aqi": 3,
+          "aqiDisplay": "3"
         }
       ]
     },
