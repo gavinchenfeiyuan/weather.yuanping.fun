@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "tag": "5d6f6dc975a927cd3afc6759abdd1b6b29cbcc2aa5d28b49f87b1a4744a11b40",
+    "tag": "a1866dba7907110581fe67853391712dc50ed43ee710d7c445feec2aff3d7e96",
     "attributions": [
       "https://developer.qweather.com/attribution.html"
     ]
@@ -35,14 +35,14 @@
       "name": "PM 2.5",
       "fullName": "颗粒物（粒径小于等于2.5µm）",
       "concentration": {
-        "value": 16.0,
+        "value": 15.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 23,
-          "aqiDisplay": "23"
+          "aqi": 22,
+          "aqiDisplay": "22"
         }
       ]
     },
@@ -51,14 +51,14 @@
       "name": "PM 10",
       "fullName": "颗粒物（粒径小于等于10µm）",
       "concentration": {
-        "value": 47.0,
+        "value": 31.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 47,
-          "aqiDisplay": "47"
+          "aqi": 32,
+          "aqiDisplay": "32"
         }
       ]
     },
@@ -67,7 +67,7 @@
       "name": "NO2",
       "fullName": "二氧化氮",
       "concentration": {
-        "value": 9.0,
+        "value": 8.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
@@ -83,14 +83,14 @@
       "name": "O3",
       "fullName": "臭氧",
       "concentration": {
-        "value": 140.0,
+        "value": 149.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 44,
-          "aqiDisplay": "44"
+          "aqi": 47,
+          "aqiDisplay": "47"
         }
       ]
     },
@@ -99,14 +99,14 @@
       "name": "SO2",
       "fullName": "二氧化硫",
       "concentration": {
-        "value": 7.0,
+        "value": 6.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 3,
-          "aqiDisplay": "3"
+          "aqi": 2,
+          "aqiDisplay": "2"
         }
       ]
     },
@@ -115,14 +115,14 @@
       "name": "CO",
       "fullName": "一氧化碳",
       "concentration": {
-        "value": 0.6,
+        "value": 0.5,
         "unit": "mg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 6,
-          "aqiDisplay": "6"
+          "aqi": 5,
+          "aqiDisplay": "5"
         }
       ]
     }
