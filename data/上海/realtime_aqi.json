@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "tag": "ea58f56a5a788cf4a492386afe9f9ae376c0cea5aa49444aa026088695b5a939",
+    "tag": "af1cdc941bb7153349e346248d51fe60c3986ad82082dfd1a4816e859610f456",
     "attributions": [
       "https://developer.qweather.com/attribution.html"
     ]
@@ -9,22 +9,26 @@
     {
       "code": "cn-mee",
       "name": "AQI (CN)",
-      "aqi": 50,
-      "aqiDisplay": "50",
-      "level": "1",
-      "category": "优",
+      "aqi": 60,
+      "aqiDisplay": "60",
+      "level": "2",
+      "category": "良",
       "color": {
-        "red": 0,
-        "green": 228,
+        "red": 255,
+        "green": 255,
         "blue": 0,
         "alpha": 1
       },
-      "primaryPollutant": null,
+      "primaryPollutant": {
+        "code": "o3",
+        "name": "O3",
+        "fullName": "臭氧"
+      },
       "health": {
-        "effect": "空气质量令人满意，基本无空气污染。",
+        "effect": "空气质量可接受，但某些污染物可能对极少数异常敏感人群健康有较弱影响。",
         "advice": {
-          "generalPopulation": "各类人群可正常活动。",
-          "sensitivePopulation": "各类人群可正常活动。"
+          "generalPopulation": "一般人群可正常活动。",
+          "sensitivePopulation": "极少数异常敏感人群应减少户外活动。"
         }
       }
     }
@@ -35,55 +39,7 @@
       "name": "PM 2.5",
       "fullName": "颗粒物（粒径小于等于2.5µm）",
       "concentration": {
-        "value": 32.0,
-        "unit": "μg/m³"
-      },
-      "subIndexes": [
-        {
-          "code": "cn-mee",
-          "aqi": 46,
-          "aqiDisplay": "46"
-        }
-      ]
-    },
-    {
-      "code": "pm10",
-      "name": "PM 10",
-      "fullName": "颗粒物（粒径小于等于10µm）",
-      "concentration": {
-        "value": 44.0,
-        "unit": "μg/m³"
-      },
-      "subIndexes": [
-        {
-          "code": "cn-mee",
-          "aqi": 45,
-          "aqiDisplay": "45"
-        }
-      ]
-    },
-    {
-      "code": "no2",
-      "name": "NO2",
-      "fullName": "二氧化氮",
-      "concentration": {
-        "value": 20.0,
-        "unit": "μg/m³"
-      },
-      "subIndexes": [
-        {
-          "code": "cn-mee",
-          "aqi": 11,
-          "aqiDisplay": "11"
-        }
-      ]
-    },
-    {
-      "code": "o3",
-      "name": "O3",
-      "fullName": "臭氧",
-      "concentration": {
-        "value": 158.0,
+        "value": 35.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
@@ -95,11 +51,59 @@
       ]
     },
     {
+      "code": "pm10",
+      "name": "PM 10",
+      "fullName": "颗粒物（粒径小于等于10µm）",
+      "concentration": {
+        "value": 50.0,
+        "unit": "μg/m³"
+      },
+      "subIndexes": [
+        {
+          "code": "cn-mee",
+          "aqi": 50,
+          "aqiDisplay": "50"
+        }
+      ]
+    },
+    {
+      "code": "no2",
+      "name": "NO2",
+      "fullName": "二氧化氮",
+      "concentration": {
+        "value": 23.0,
+        "unit": "μg/m³"
+      },
+      "subIndexes": [
+        {
+          "code": "cn-mee",
+          "aqi": 12,
+          "aqiDisplay": "12"
+        }
+      ]
+    },
+    {
+      "code": "o3",
+      "name": "O3",
+      "fullName": "臭氧",
+      "concentration": {
+        "value": 168.0,
+        "unit": "μg/m³"
+      },
+      "subIndexes": [
+        {
+          "code": "cn-mee",
+          "aqi": 60,
+          "aqiDisplay": "60"
+        }
+      ]
+    },
+    {
       "code": "so2",
       "name": "SO2",
       "fullName": "二氧化硫",
       "concentration": {
-        "value": 10.0,
+        "value": 11.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
@@ -115,14 +119,14 @@
       "name": "CO",
       "fullName": "一氧化碳",
       "concentration": {
-        "value": 0.7,
+        "value": 0.5,
         "unit": "mg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 7,
-          "aqiDisplay": "7"
+          "aqi": 6,
+          "aqiDisplay": "6"
         }
       ]
     }

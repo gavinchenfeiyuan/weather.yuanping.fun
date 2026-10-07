@@ -9,8 +9,8 @@
     {
       "code": "cn-mee",
       "name": "AQI (CN)",
-      "aqi": 50,
-      "aqiDisplay": "50",
+      "aqi": 49,
+      "aqiDisplay": "49",
       "level": "1",
       "category": "优",
       "color": {
@@ -35,14 +35,14 @@
       "name": "PM 2.5",
       "fullName": "颗粒物（粒径小于等于2.5µm）",
       "concentration": {
-        "value": 17.0,
+        "value": 18.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 24,
-          "aqiDisplay": "24"
+          "aqi": 26,
+          "aqiDisplay": "26"
         }
       ]
     },
@@ -51,14 +51,14 @@
       "name": "PM 10",
       "fullName": "颗粒物（粒径小于等于10µm）",
       "concentration": {
-        "value": 36.0,
+        "value": 34.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 36,
-          "aqiDisplay": "36"
+          "aqi": 35,
+          "aqiDisplay": "35"
         }
       ]
     },
@@ -73,8 +73,8 @@
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 4,
-          "aqiDisplay": "4"
+          "aqi": 5,
+          "aqiDisplay": "5"
         }
       ]
     },
@@ -83,14 +83,14 @@
       "name": "O3",
       "fullName": "臭氧",
       "concentration": {
-        "value": 158.0,
+        "value": 157.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 50,
-          "aqiDisplay": "50"
+          "aqi": 49,
+          "aqiDisplay": "49"
         }
       ]
     },
@@ -99,14 +99,14 @@
       "name": "SO2",
       "fullName": "二氧化硫",
       "concentration": {
-        "value": 7.0,
+        "value": 6.0,
         "unit": "μg/m³"
       },
       "subIndexes": [
         {
           "code": "cn-mee",
-          "aqi": 3,
-          "aqiDisplay": "3"
+          "aqi": 2,
+          "aqiDisplay": "2"
         }
       ]
     },
@@ -115,7 +115,7 @@
       "name": "CO",
       "fullName": "一氧化碳",
       "concentration": {
-        "value": 0.5,
+        "value": 0.4,
         "unit": "mg/m³"
       },
       "subIndexes": [
